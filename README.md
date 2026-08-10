@@ -37,43 +37,47 @@ PDFLince is a **Privacy-First, Client-Side PDF Toolkit**. The primary architectu
 
 #### 1.2. Directory Structure
 - `src/app/`: Next.js App Router structure. Contains localized routes (e.g., `(en)`, `es`, `fr`) and dynamic operation routes (`[operation]`).
-- `src/components/`: Reusable React components. The core engine is housed in `src/components/pdf-processor/`.
-- `src/lib/`: Core logic and utilities (`pdf-processor.ts`, `pdf-operations.ts`, `worker-client.ts`).
-- `src/workers/`: Contains `pdf.worker.ts`, which executes `pdf-operations.ts` functions off the main thread.
+- `src/components/`: Reusable React presentation components and feature workspaces.
+- `src/modules/pdf/`: Typed PDF feature modules, byte-level primitives, PDF.js infrastructure, the lazy registry, and browser service ports.
+- `src/lib/`: Small compatibility facades and general utilities; feature engines do not live here.
+- `src/workers/`: Contains the generic `pdf.worker.ts` protocol endpoint, which uses the same lazy registry as local execution.
 - `src/i18n/`: Internationalization configuration and dictionaries.
-- `tests/e2e/`: Playwright end-to-end tests.
+- `tests/unit/`: Fast byte-level operation, registry, and worker lifecycle tests.
+- `tests/e2e/`: Playwright browser, rendering, worker, UI, and download tests.
 
 ---
 
 ### 2. The Application Itself & The PDF Processor Engine
 
-The heart of the application is the `src/components/pdf-processor/index.tsx` component and its sub-components. Because it operates as a monolithic state machine orchestrating the entire PDF workflow, it is essential to understand its internal layout to easily navigate the codebase.
+PDFLince is organized as a modular monolith. Presentation components compose features, while PDF behavior is isolated under `src/modules/pdf/operations/`. Each operation owns a narrow options type, defaults, validation, execution function, and result type. Compression additionally quarantines low-level `pdf-lib` stream handling in its own `enhancements.ts`.
 
-#### 2.1. Internal Layout of `pdf-processor/index.tsx`
-This component (roughly 2,500 lines long) manages the entire lifecycle of user interaction, from file selection to processing and downloading.
+The UI never imports `pdf-lib`, PDF.js, or the worker client. `src/components/pdf-processor/services.tsx` injects three ports:
 
-**Shared State:**
-- **Files & Mode**: Tracks the uploaded files (`files`), the active tool/operation (`mode` such as `merge`, `compress`, `crop`), and whether an operation is active (`isProcessing`).
-- **Operation-Specific State**: Dictionaries tracking selected pages (`selectedPages`, `extractSelectionsByFile`), crop margins, rotation angles, and page order arrays.
-- **Dialog & UI State**: Tracks the final success/error modal (`statusDialogState`) and real-time preview caches (`compressionPreviewStates`).
+- `PdfProcessorService` executes typed operations and adapts byte results to browser artifacts;
+- `PdfDocumentService` provides page counts, dimensions, and thumbnails;
+- `DownloadService` owns browser download side effects.
 
-**Subcomponent Layout (Functional Modules):**
-The UI renders conditionally based on the active `mode`, composing several specialized child components. The files themselves are located in the `src/components/pdf-processor/` directory alongside `index.tsx`:
+Tests and a future UI can replace all three with fakes.
 
-- **`FileUploader` & `FileList` (Shared)**: Always present. They handle dragging/dropping files, rejecting invalid mime-types, and listing the currently staged files.
-- **`PageSelector` (Shared)**: A reusable grid component for picking specific pages from a PDF. It is dynamically mounted when the mode is `extract`, `crop`, or `rotate`.
-- **`UnifiedCropInterface`**: Rendered specifically when `mode === 'crop'`. It overlays crop handles on top of a PDF page preview.
-- **`PageOrderer`**: Rendered when `mode === 'reorder'`. It provides a drag-and-drop interface for rearranging individual pages.
-- **`ProcessingOptions` (Shared)**: A dynamically rendered form that changes its inputs based on the `mode` (e.g., showing compression level dropdowns for `compress`, or DPI inputs for `pdfToImages`).
-- **`CompressionPreviewCard` & `CompressionSummaryCard`**: Specific to the `compress` mode, these components manage the real-time background estimation of file size savings.
-- **`ProcessingStatusDialog` (Shared)**: The final overlay shown to the user containing the success messages and download buttons once the Web Worker completes the task.
+#### 2.1. Feature and presentation layout
 
-#### 2.2. Event Flow inside `index.tsx`
-1. User interacts with UI subcomponents (e.g. `UnifiedCropInterface`).
-2. The subcomponent calls a state updater passed down from `index.tsx` (e.g., setting new `cropMargins`).
-3. User clicks "Process". `index.tsx` delegates to `src/lib/pdf-processor.ts`.
-4. `pdf-processor.ts` talks to the Web Worker via `worker-client.ts`.
-5. Upon completion, `index.tsx` receives the generated `Blob`, updates `statusDialogState`, and renders the `ProcessingStatusDialog` with download links.
+- **`src/modules/pdf/operations/<feature>/`**: independent engines for merge, compress, split, extract, crop, rotate, reorder, PDF-to-images, and images-to-PDF.
+- **`src/modules/pdf/registry.ts`**: lazy operation loaders shared by worker and local execution.
+- **`src/modules/pdf/operation-map.ts`**: the compile-time key/options/result contract.
+- **`src/modules/pdf/infrastructure/`**: PDF.js and canvas adapters, separate from PDF mutation.
+- **`src/components/pdf-processor/features/`**: current feature workspaces and independent option panels.
+- **Shared presentation**: upload, file list, page selector/orderer, status dialog, and compression result cards.
+
+#### 2.2. Event flow
+
+1. A feature workspace updates interface state such as selected pages or crop margins.
+2. The processor shell calls the injected `PdfProcessorService` with a typed operation key and feature options.
+3. The service sends a typed request to the application Web Worker.
+4. The worker lazily loads only the requested operation and returns a typed result; byte buffers are transferred.
+5. Transport or capability failures can use the same registry locally. Deterministic document and validation errors return directly instead of repeating the work.
+6. The UI updates its result state and delegates downloads to `DownloadService`.
+
+See [`monolith-split.md`](./monolith-split.md) for the dependency analysis, `pdf-lib` constraints, architectural decisions, and extension recipe.
 
 #### 2.3. Security & Privacy Posture
 - **Zero Data Exfiltration**: There are no API endpoints for processing.
@@ -96,14 +100,15 @@ The UI renders conditionally based on the active `mode`, composing several speci
 
 - **Package Manager**: **`bun`** is the mandatory package manager and script runner. Do not use `npm` or `yarn`.
 - **Linting & Formatting**: `eslint` and `prettier`.
-- **Testing**: **`@playwright/test`** is used for E2E testing since all PDF modifications happen client-side in the browser.
+- **Testing**: Bun unit/operation contract tests cover byte-level behavior and worker lifecycle; **`@playwright/test`** covers browser workers, canvas/PDF.js rendering, UI, and downloads.
 - **Verification Script**: `./scripts/verify-all.sh` must be run before finalizing any code. It runs type-checking, linting, builds, Playwright tests, and Docker builds.
 
 ---
 
-### 5. Known Limitations & Shortbacks
+### 5. Known Limitations & Tradeoffs
 
 - **Browser Memory Limits**: Processing massive PDFs (e.g., 500MB+) may crash the browser tab due to V8 engine memory limits.
-- **Web Worker & OffscreenCanvas**: The worker utilizes `OffscreenCanvas`. If unsupported, the worker polyfills it poorly, causing a fallback to the main thread which can freeze the UI.
+- **Web Worker & Canvas capabilities**: Rendering and image normalization use `OffscreenCanvas` in the worker when available. Typed transport/capability failures may fall back to the main thread, where very large work can affect responsiveness.
 - **Static Export Restrictions**: Next.js features requiring a Node server (API Routes, Server Actions, Middleware) are completely unsupported due to the `next export` configuration.
-- **Monolithic Component Debt**: As detailed above, `src/components/pdf-processor/index.tsx` is highly coupled. Refactoring it to use a Context Provider or a state manager (like Zustand) would significantly improve maintainability.
+- **PDF fidelity boundaries**: Operations that construct a new document with `pdf-lib.copyPages` do not promise preservation of every document-level structure such as all outlines, forms, attachments, or named destinations.
+- **Compression scope**: Image optimization handles a deliberately limited set of PDF image streams and relies on quarantined `pdf-lib` core-object APIs; review its contract tests and `monolith-split.md` before upgrading `pdf-lib`.

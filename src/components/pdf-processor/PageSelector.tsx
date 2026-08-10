@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { getPdfPageCount, renderPdfThumbnail } from '../../lib/pdf-processor';
 import { useDictionary } from '../../i18n/LocaleProvider';
+import { usePdfProcessorServices } from './services';
 
 type PageSelectorProps = {
   file: File;
@@ -18,6 +18,7 @@ export default function PageSelector({
   onPageSelectAction,
   selectedPageRotationDegrees = 0,
 }: PageSelectorProps) {
+  const { documents } = usePdfProcessorServices();
   const [pageCount, setPageCount] = useState<number>(0);
   const [thumbnails, setThumbnails] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -33,7 +34,7 @@ export default function PageSelector({
       setError(null);
       try {
         // Get page count from the PDF
-        const count = await getPdfPageCount(file);
+        const count = await documents.getPageCount(file);
         if (!isMounted) return;
         setPageCount(count);
 
@@ -43,7 +44,7 @@ export default function PageSelector({
 
         for (let i = 1; i <= maxPages; i++) {
           if (!isMounted) return;
-          const thumbnail = await renderPdfThumbnail(file, i, 240);
+          const thumbnail = await documents.renderThumbnail(file, i, 240);
           if (!isMounted) return;
           setThumbnails(prev => [...prev, thumbnail]);
           // Small yield to ensure UI updates
@@ -67,7 +68,7 @@ export default function PageSelector({
     return () => {
       isMounted = false;
     };
-  }, [file, selectorStrings.error]);
+  }, [documents, file, selectorStrings.error]);
 
   // Helper for page selection
   const togglePageSelection = (pageNumber: number) => {

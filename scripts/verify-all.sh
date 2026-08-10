@@ -13,6 +13,9 @@ bun run lint
 echo "🔎 Running type check..."
 bunx tsc --noEmit
 
+echo "🧪 Running unit and operation contract tests..."
+bun run test:unit
+
 echo "🏗️ Building Next.js app..."
 bun run build
 

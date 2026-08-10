@@ -1,11 +1,3 @@
-export type OperationKey =
-	| "merge"
-	| "compress"
-	| "split"
-	| "extract"
-	| "crop"
-	| "rotate"
-	| "reorder"
-	| "rotate"
-	| "pdfToImages"
-	| "imagesToPdf";
+import type { PdfOperationKey } from '../modules/pdf/operation-map';
+
+export type OperationKey = PdfOperationKey;

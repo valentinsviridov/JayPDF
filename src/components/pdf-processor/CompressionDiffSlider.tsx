@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
-import { renderPdfThumbnail } from "../../lib/pdf-processor";
+import { usePdfProcessorServices } from "./services";
 
 type CompressionDiffSliderProps = {
   originalFile: File;
@@ -30,6 +30,7 @@ export default function CompressionDiffSlider({
   resultLabel,
   errorLabel,
 }: CompressionDiffSliderProps) {
+  const { documents } = usePdfProcessorServices();
   const [diffState, setDiffState] = useState<DiffState>({ state: "idle" });
   const [sliderValue, setSliderValue] = useState(50);
 
@@ -50,8 +51,8 @@ export default function CompressionDiffSlider({
     const loadThumbnails = async () => {
       try {
         const [originalThumb, compressedThumb] = await Promise.all([
-          renderPdfThumbnail(originalFile, 1, 320),
-          renderPdfThumbnail(compressedSource, 1, 320),
+          documents.renderThumbnail(originalFile, 1, 320),
+          documents.renderThumbnail(compressedSource, 1, 320),
         ]);
 
         if (cancelled) {
@@ -71,7 +72,7 @@ export default function CompressionDiffSlider({
     return () => {
       cancelled = true;
     };
-  }, [originalFile, compressedSource]);
+  }, [documents, originalFile, compressedSource]);
 
   const renderContent = () => {
     if (diffState.state === "ready") {

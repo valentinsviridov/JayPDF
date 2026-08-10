@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { getPdfPageDimensions, renderPdfThumbnail } from '../../lib/pdf-processor';
 import { useDictionary } from '../../i18n/LocaleProvider';
+import { usePdfProcessorServices } from './services';
 
 type CropMargins = {
   top: number;
@@ -48,6 +48,7 @@ export default function UnifiedCropInterface({
   cropMargins,
   onCropChangeAction,
 }: UnifiedCropInterfaceProps) {
+  const { documents } = usePdfProcessorServices();
   const dictionary = useDictionary();
   const cropStrings = dictionary.components.processingOptions.crop;
   
@@ -95,8 +96,8 @@ export default function UnifiedCropInterface({
 
       try {
         const [thumbnail, dimensions] = await Promise.all([
-          renderPdfThumbnail(file, pageNumber, 960),
-          getPdfPageDimensions(file, pageNumber),
+          documents.renderThumbnail(file, pageNumber, 960),
+          documents.getPageDimensions(file, pageNumber),
         ]);
 
         if (!isMounted) return;
@@ -121,7 +122,7 @@ export default function UnifiedCropInterface({
         URL.revokeObjectURL(objectUrl);
       }
     };
-  }, [file, pageNumber, cropStrings.manual.error]);
+  }, [documents, file, pageNumber, cropStrings.manual.error]);
 
   const displayRect = useMemo(() => {
     const host = surfaceRef.current;

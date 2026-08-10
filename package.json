@@ -23,6 +23,7 @@
     "lint:fix": "cross-env STRICT_LINT=true eslint --fix .",
     "preview": "bun run build && bunx serve out --single",
     "start": "bunx serve out --single",
+    "test:unit": "bun test tests/unit",
     "test:e2e": "playwright test",
     "setup-worker": "bun scripts/setup-pdf-worker.mjs"
   },

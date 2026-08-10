@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
-import { getPdfPageCount, renderPdfThumbnail } from '../../lib/pdf-processor';
 import { useDictionary } from '../../i18n/LocaleProvider';
+import { usePdfProcessorServices } from './services';
 
 type PageOrdererProps = {
   file: File;
@@ -26,6 +26,7 @@ const ordersMatch = (a: number[], b: number[]) => {
 };
 
 export default function PageOrderer({ file, onOrderChangeAction, initialOrder }: PageOrdererProps) {
+  const { documents } = usePdfProcessorServices();
   const [pageCount, setPageCount] = useState<number>(0);
   const [thumbnails, setThumbnails] = useState<string[]>([]);
   const [pageOrder, setPageOrder] = useState<number[]>([]);
@@ -64,7 +65,7 @@ export default function PageOrderer({ file, onOrderChangeAction, initialOrder }:
       setLoading(true);
       setError(null);
       try {
-        const count = await getPdfPageCount(file);
+        const count = await documents.getPageCount(file);
         if (!isMounted) return;
         setPageCount(count);
 
@@ -92,7 +93,7 @@ export default function PageOrderer({ file, onOrderChangeAction, initialOrder }:
 
         for (let i = 1; i <= maxPages; i++) {
           if (!isMounted) return;
-          const thumbnail = await renderPdfThumbnail(file, i, 240);
+          const thumbnail = await documents.renderThumbnail(file, i, 240);
           if (!isMounted) return;
           setThumbnails(prev => [...prev, thumbnail]);
           // Small yield to ensure UI updates
@@ -117,7 +118,7 @@ export default function PageOrderer({ file, onOrderChangeAction, initialOrder }:
       isMounted = false;
       initializedRef.current = false;
     };
-  }, [file, ordererStrings.error]);
+  }, [documents, file, ordererStrings.error]);
 
   useEffect(() => {
     if (!initialOrder || initialOrder.length === 0 || pageCount === 0) {

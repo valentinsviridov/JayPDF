@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useDictionary } from '../../i18n/LocaleProvider';
-import { getPdfPageCount, renderPdfThumbnail } from '../../lib/pdf-processor';
+import { usePdfProcessorServices } from './services';
 
 type FileListProps = {
   files: File[];
@@ -20,6 +20,7 @@ export default function FileList({
   currentIndex,
   onFileSelectAction 
 }: FileListProps) {
+  const { documents } = usePdfProcessorServices();
   const dictionary = useDictionary();
   const fileListStrings = dictionary.components.fileList;
   const [draggedItem, setDraggedItem] = useState<number | null>(null);
@@ -109,8 +110,8 @@ export default function FileList({
     const loadPdfMeta = async (file: File, key: string) => {
       try {
         const [thumbnail, pageCount] = await Promise.all([
-          renderPdfThumbnail(file, 1).catch(() => undefined),
-          getPdfPageCount(file).catch(() => undefined),
+          documents.renderThumbnail(file, 1).catch(() => undefined),
+          documents.getPageCount(file).catch(() => undefined),
         ]);
 
         if (cancelled) {
@@ -171,7 +172,7 @@ export default function FileList({
     return () => {
       cancelled = true;
     };
-  }, [files, buildFileKey]);
+  }, [documents, files, buildFileKey]);
 
   // Format the file size into a human-readable string
   const formatFileSize = (bytes: number): string => {

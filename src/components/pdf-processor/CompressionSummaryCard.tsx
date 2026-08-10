@@ -1,7 +1,7 @@
 "use client";
 
 import type { CompressionSummaryStrings } from "../../i18n/dictionaries/dictionary-types";
-import type { ProcessingResult } from "../../lib/pdf-processor";
+import type { CompressionResult as ProcessingResult } from "../../modules/pdf/operations/compress/definition";
 
 type CompressionSummaryCardProps = {
   strings: CompressionSummaryStrings;
