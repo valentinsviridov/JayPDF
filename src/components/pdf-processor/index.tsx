@@ -1,2 +1,2 @@
-export { default } from './PDFProcessorShell';
+export { default } from './WorkspaceShell';
 export type { PDFProcessorProps } from './PDFProcessorShell';

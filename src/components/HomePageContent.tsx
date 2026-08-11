@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PDFProcessor from "./pdf-processor";
 import type { Dictionary } from "../i18n/dictionaries/dictionary-types";
+import { BrandConfig } from "../config/brand";
 
 export function HomePageContent({ dictionary }: { dictionary: Dictionary }) {
   const {
@@ -18,7 +19,7 @@ export function HomePageContent({ dictionary }: { dictionary: Dictionary }) {
 
               <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
                 {home.hero.badges.map((badge) => (
-                  <span key={badge} className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--ui)] text-sm">
+                  <span key={badge} className="inline-flex items-center px-3 py-1 rounded-lg bg-[var(--ui)] text-sm">
                     {badge}
                   </span>
                 ))}
@@ -27,8 +28,8 @@ export function HomePageContent({ dictionary }: { dictionary: Dictionary }) {
 
             <div className="hidden md:block md:w-[20%] mt-8 md:mt-0">
               <Image
-                src="/images/stickers/pdflince_logo_processed.webp"
-                alt={home.hero.imageAlt}
+                src={BrandConfig.assets.logo}
+                alt={BrandConfig.productName}
                 width={220}
                 height={220}
                 className="w-full h-auto max-w-[220px] ml-auto opacity-85"

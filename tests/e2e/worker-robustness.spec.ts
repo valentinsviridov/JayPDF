@@ -51,11 +51,8 @@ test.describe('Worker Robustness & Rendering', () => {
         // 5. Click process
         await processBtn.click();
 
-        // 6. Wait for the success dialog (or error dialog) to appear
-        //    Success dialog shows "Download again" button
-        //    Error dialog shows "Retry" button
-        //    We wait for either, with generous timeout for worker processing
-        const successIndicator = page.getByRole('button', { name: /Download again/i });
+        // 6. Wait for processing to complete - look for success OR error state
+        const successIndicator = page.getByRole('button', { name: /Download Result/i });
         const errorIndicator = page.getByText(/error/i).first();
 
         await expect(successIndicator.or(errorIndicator)).toBeVisible({ timeout: 30000 });

@@ -58,7 +58,7 @@ test.describe('PDFLince Smoke Tests', () => {
         await fileInput.setInputFiles(testPdfPath);
 
         // Verify file appears in the list
-        await expect(page.getByText(path.basename(testPdfPath))).toBeVisible();
+        await expect(page.getByText(path.basename(testPdfPath)).first()).toBeVisible();
 
         // Verify default mode (Merge PDFs) tab is active or visible
         await expect(page.getByRole('button', { name: 'Merge PDFs', exact: true })).toBeVisible();

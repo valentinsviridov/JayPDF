@@ -2,6 +2,7 @@ import Image from "next/image";
 import PDFProcessor from "./pdf-processor";
 import FaqSection from "./faq-section";
 import type { OperationContent } from "../i18n/dictionaries/operation-types";
+import { BrandConfig } from "../config/brand";
 
 export function OperationPageContent({
   operation,
@@ -45,8 +46,8 @@ export function OperationPageContent({
 
             <div className="hidden md:block md:w-[30%] mt-8 md:mt-0">
               <Image
-                src="/images/stickers/pdflince_logo_processed.webp"
-                alt={operation.hero.imageAlt}
+                src={BrandConfig.assets.logo}
+                alt={BrandConfig.productName}
                 width={240}
                 height={240}
                 className="w-full h-auto max-w-[240px] ml-auto opacity-85"

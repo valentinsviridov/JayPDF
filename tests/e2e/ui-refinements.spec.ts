@@ -49,29 +49,19 @@ test.describe('UI Refinements', () => {
         const processButton = page.getByRole('button', { name: /Process 2 files/i });
         await processButton.click();
 
-        // 6. Wait for compression to finish — look for "Total Savings"
-        await expect(page.getByText('Total Savings')).toBeVisible({ timeout: 60_000 });
+        // 6. Wait for processing to finish — look for "Success!" inline result screen
+        await expect(page.getByText('Success!')).toBeVisible({ timeout: 60_000 });
+        await expect(page.getByText(/Your files have been processed locally/i)).toBeVisible();
 
-        // 7. Verify Total Savings summary card elements
-        // The card shows "X files optimized" 
-        await expect(page.getByText(/files optimized/i)).toBeVisible();
-        // And "saved in total"
-        await expect(page.getByText(/saved in total/i)).toBeVisible();
+        // 7. Verify the download button exists
+        const downloadButton = page.getByRole('button', { name: /Download Result/i });
+        await expect(downloadButton).toBeVisible();
 
-        // 8. Wait for the ProcessingStatusDialog modal to fully mount and become visible
-        const dialog = page.getByRole('dialog');
-        await expect(dialog).toBeVisible();
+        // 8. Clear All — click "Process More Files" button which acts as clear
+        const processMoreButton = page.getByRole('button', { name: /Process More Files/i });
+        await processMoreButton.click({ force: true });
 
-        // 9. Close the modal by clicking its close button
-        await page.keyboard.press('Escape');
-        
-        // Wait for the modal to fully unmount
-        await expect(dialog).not.toBeVisible();
-
-        // 9. Clear All — reset the file list
-        await clearAllButton.click({ force: true });
-
-        // 10. Verify list is empty
+        // 9. Verify list is empty
         await expect(page.getByTitle('ui-test-1.pdf')).not.toBeVisible();
         // Check for empty state (upload prompt)
         await expect(page.getByText(/Click to select/i)).toBeVisible();
