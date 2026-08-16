@@ -12,13 +12,17 @@ import { installPdfWorkerEnvironment } from '../modules/pdf/worker-environment';
 
 installPdfWorkerEnvironment();
 
+import type { PdfProgressUpdate } from '../modules/pdf/core/contracts';
+
 async function executeOperationRequest<Key extends PdfOperationKey>(
   request: PdfOperationWorkerRequest<Key>,
+  onProgress?: (progress: PdfProgressUpdate) => void,
 ) {
   return executePdfOperation(
     request.operation,
     request.files,
     request.options as PdfOperationOptions<Key>,
+    onProgress,
   );
 }
 
@@ -38,9 +42,12 @@ self.onmessage = async (event: MessageEvent<unknown>) => {
   }
 
   try {
+    const onProgress = (progress: PdfProgressUpdate) => {
+      self.postMessage({ id: candidate.id, type: 'progress', progress });
+    };
     const result = candidate.task === 'pageCount'
       ? await getPdfJsPageCount(candidate.files[0])
-      : await executeOperationRequest(candidate);
+      : await executeOperationRequest(candidate, onProgress);
     const response: PdfWorkerResponse = { id: candidate.id, success: true, result };
     self.postMessage(response, { transfer: collectPdfTransferables(result) });
   } catch (error) {

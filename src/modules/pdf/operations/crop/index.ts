@@ -1,14 +1,16 @@
-import type { BinaryInput, PdfOperationModule } from '../../core/contracts';
+import type { BinaryInput, PdfOperationModule, ProgressCallback } from '../../core/contracts';
 import { PdfModuleError, operationFailure } from '../../core/errors';
-import { requireInput } from '../../core/input';
+import { requireInput, yieldToEventLoop } from '../../core/input';
 import { applyMetadata, loadPdfWithBasicValidation } from '../../core/pdf-lib';
 import type { CropOptions } from './definition';
 
 export async function cropPdfPages(
   inputs: readonly BinaryInput[],
   options: CropOptions = {},
+  onProgress?: ProgressCallback,
 ): Promise<Uint8Array> {
   try {
+    onProgress?.({ percent: 10, stage: 'reading', detail: 'Reading document...' });
     const input = requireInput(inputs, 0, 'crop');
     const pageNumbers = options.pagesToCrop ?? [];
     if (pageNumbers.length === 0) {
@@ -42,7 +44,17 @@ export async function cropPdfPages(
       throw new PdfModuleError('NO_PAGES', 'No valid page numbers provided', { operation: 'crop' });
     }
 
-    for (const pageIndex of validIndices) {
+    for (let i = 0; i < validIndices.length; i += 1) {
+      await yieldToEventLoop();
+      const pageIndex = validIndices[i];
+      const percent = Math.round(15 + (((i + 1) / validIndices.length) * 75));
+      onProgress?.({
+        percent,
+        stage: 'cropping',
+        current: i + 1,
+        total: validIndices.length,
+        detail: `Cropping page ${pageIndex + 1}`,
+      });
       const page = pdfDoc.getPage(pageIndex);
       const mediaBox = page.getMediaBox();
       const rotationAngle = page.getRotation().angle;

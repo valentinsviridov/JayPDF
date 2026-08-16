@@ -20,9 +20,12 @@ export interface PdfWorkerLike {
 
 export type PdfWorkerFactory = () => PdfWorkerLike;
 
+import type { ProgressCallback } from './core/contracts';
+
 type PendingRequest = {
   resolve(value: unknown): void;
   reject(reason: unknown): void;
+  onProgress?: ProgressCallback;
 };
 
 const defaultWorkerFactory: PdfWorkerFactory = () =>
@@ -48,6 +51,7 @@ export class PdfWorkerClient {
     operation: Key,
     files: File[],
     options: PdfOperationOptions<Key>,
+    onProgress?: ProgressCallback,
   ): Promise<PdfOperationResult<Key>> {
     return this.request<PdfOperationResult<Key>>({
       id: this.idFactory(),
@@ -55,7 +59,7 @@ export class PdfWorkerClient {
       operation,
       files,
       options,
-    } as PdfWorkerRequest);
+    } as PdfWorkerRequest, onProgress);
   }
 
   getPageCount(file: File): Promise<number> {
@@ -76,7 +80,7 @@ export class PdfWorkerClient {
     return this.pendingRequests.size;
   }
 
-  private request<Result>(request: PdfWorkerRequest): Promise<Result> {
+  private request<Result>(request: PdfWorkerRequest, onProgress?: ProgressCallback): Promise<Result> {
     let worker: PdfWorkerLike;
     try {
       worker = this.getWorker();
@@ -87,7 +91,7 @@ export class PdfWorkerClient {
     }
 
     return new Promise<Result>((resolve, reject) => {
-      this.pendingRequests.set(request.id, { resolve, reject });
+      this.pendingRequests.set(request.id, { resolve, reject, onProgress });
       try {
         worker.postMessage(request);
       } catch (cause) {
@@ -114,9 +118,16 @@ export class PdfWorkerClient {
   private handleMessage(response: PdfWorkerResponse): void {
     const pending = this.pendingRequests.get(response.id);
     if (!pending) return;
+    if ('type' in response && response.type === 'progress') {
+      pending.onProgress?.(response.progress);
+      return;
+    }
     this.pendingRequests.delete(response.id);
-    if ('result' in response) pending.resolve(response.result);
-    else pending.reject(deserializePdfError(response.error));
+    if ('success' in response && response.success === true) {
+      pending.resolve(response.result);
+    } else if ('success' in response && response.success === false) {
+      pending.reject(deserializePdfError(response.error));
+    }
   }
 
   private handleTransportFailure(cause: unknown): void {

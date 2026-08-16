@@ -1,7 +1,7 @@
 import { degrees } from 'pdf-lib';
-import type { BinaryInput, PdfOperationModule } from '../../core/contracts';
+import type { BinaryInput, PdfOperationModule, ProgressCallback } from '../../core/contracts';
 import { PdfModuleError, operationFailure } from '../../core/errors';
-import { requireInput } from '../../core/input';
+import { requireInput, yieldToEventLoop } from '../../core/input';
 import { applyMetadata, loadPdfWithBasicValidation } from '../../core/pdf-lib';
 import type { RotateOptions } from './definition';
 
@@ -18,8 +18,10 @@ export function normalizeRotation(angle: number): 0 | 90 | 180 | 270 {
 export async function rotatePdfPages(
   inputs: readonly BinaryInput[],
   options: RotateOptions = {},
+  onProgress?: ProgressCallback,
 ): Promise<Uint8Array> {
   try {
+    onProgress?.({ percent: 10, stage: 'reading', detail: 'Reading document...' });
     const input = requireInput(inputs, 0, 'rotate');
     const pageNumbers = options.pagesToRotate ?? [];
     if (pageNumbers.length === 0) {
@@ -45,11 +47,22 @@ export async function rotatePdfPages(
       throw new PdfModuleError('NO_PAGES', 'No valid page numbers provided', { operation: 'rotate' });
     }
 
-    validIndices.forEach(pageIndex => {
+    for (let i = 0; i < validIndices.length; i += 1) {
+      await yieldToEventLoop();
+      const pageIndex = validIndices[i];
+      const percent = Math.round(15 + (((i + 1) / validIndices.length) * 75));
+      onProgress?.({
+        percent,
+        stage: 'rotating',
+        current: i + 1,
+        total: validIndices.length,
+        detail: `Rotating page ${pageIndex + 1}`,
+      });
       const page = pdfDoc.getPage(pageIndex);
       page.setRotation(degrees(normalizeRotation(page.getRotation().angle + rotationDegrees)));
-    });
+    }
 
+    onProgress?.({ percent: 90, stage: 'saving', detail: 'Finalizing rotated PDF...' });
     applyMetadata(pdfDoc, options.metadata);
     return pdfDoc.save({
       useObjectStreams: !pdfDoc.context.trailerInfo.Encrypt,

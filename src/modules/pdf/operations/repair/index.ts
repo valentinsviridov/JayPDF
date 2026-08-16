@@ -1,5 +1,5 @@
 import { PDFDocument } from 'pdf-lib';
-import type { BinaryInput, PdfOperationModule } from '../../core/contracts';
+import type { BinaryInput, PdfOperationModule, ProgressCallback } from '../../core/contracts';
 import { operationFailure } from '../../core/errors';
 import { requireInput, yieldToEventLoop } from '../../core/input';
 import { canvasToBlob } from '../../infrastructure/browser-images';
@@ -13,8 +13,10 @@ import type { RepairOptions } from './definition';
 export async function repairPdf(
   inputs: readonly BinaryInput[],
   options: RepairOptions = {},
+  onProgress?: ProgressCallback,
 ): Promise<Uint8Array> {
   try {
+    onProgress?.({ percent: 5, stage: 'reading', detail: 'Reading damaged PDF...' });
     const input = requireInput(inputs, 0, 'repair');
     const pdf = await loadPdfJsDocument(input);
     const scale = (options.renderDpi ?? 144) / 72;
@@ -26,6 +28,15 @@ export async function repairPdf(
 
     for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
       await yieldToEventLoop();
+      const percent = Math.round(5 + ((pageNumber / pdf.numPages) * 85));
+      onProgress?.({
+        percent,
+        stage: 'repairing',
+        current: pageNumber,
+        total: pdf.numPages,
+        detail: `Reconstructing page ${pageNumber} of ${pdf.numPages}`,
+      });
+
       const page = await pdf.getPage(pageNumber);
       const unscaledViewport = page.getViewport({ scale: 1 });
       const renderViewport = page.getViewport({ scale });
@@ -61,6 +72,7 @@ export async function repairPdf(
       page.cleanup();
     }
 
+    onProgress?.({ percent: 95, stage: 'saving', detail: 'Assembling clean PDF...' });
     return repairedDoc.save({ useObjectStreams: false });
   } catch (error) {
     throw operationFailure('repair', 'Failed to repair PDF', error);

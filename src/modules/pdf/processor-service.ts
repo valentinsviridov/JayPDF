@@ -22,6 +22,8 @@ export interface BrowserPdfResultMap {
   repair: Blob;
 }
 
+import type { ProgressCallback } from './core/contracts';
+
 export type BrowserPdfResult<Key extends PdfOperationKey> = BrowserPdfResultMap[Key];
 
 export interface PdfProcessorService {
@@ -29,6 +31,7 @@ export interface PdfProcessorService {
     operation: Key,
     files: readonly File[],
     options: PdfOperationOptions<Key>,
+    onProgress?: ProgressCallback,
   ): Promise<BrowserPdfResult<Key>>;
 }
 
@@ -65,16 +68,21 @@ export function createBrowserPdfProcessorService(
   workerClient: PdfWorkerClient = pdfWorkerClient,
 ): PdfProcessorService {
   return {
-    async execute<Key extends PdfOperationKey>(operation: Key, files: readonly File[], options: PdfOperationOptions<Key>) {
+    async execute<Key extends PdfOperationKey>(
+      operation: Key,
+      files: readonly File[],
+      options: PdfOperationOptions<Key>,
+      onProgress?: ProgressCallback,
+    ) {
       let result: PdfOperationResult<Key>;
       try {
-        result = await workerClient.runOperation(operation, [...files], options);
+        result = await workerClient.runOperation(operation, [...files], options, onProgress);
       } catch (workerError) {
         const canFallback = workerError instanceof PdfModuleError &&
           (workerError.code === 'WORKER_TRANSPORT' || workerError.code === 'UNSUPPORTED_CAPABILITY');
         if (!canFallback) throw workerError;
         console.warn(`Worker ${operation} failed, falling back to main thread`, workerError);
-        result = await executePdfOperation(operation, files, options);
+        result = await executePdfOperation(operation, files, options, onProgress);
       }
       const adapt = resultAdapters[operation] as ResultAdapter<Key>;
       return adapt(result);

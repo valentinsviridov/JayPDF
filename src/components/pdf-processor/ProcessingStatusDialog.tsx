@@ -27,11 +27,21 @@ export interface DonationPrompt {
   target?: "_self" | "_blank";
 }
 
+export interface DialogProgress {
+  percent: number;
+  stage?: string;
+  detail?: string;
+  current?: number;
+  total?: number;
+  elapsedSeconds?: number;
+}
+
 interface ProcessingStatusDialogProps {
   open: boolean;
   status: DialogStatus;
   title: string;
   description?: string;
+  progress?: DialogProgress | null;
   highlights?: DialogHighlight[];
   donationPrompt?: DonationPrompt | null;
   actions?: DialogAction[];
@@ -107,6 +117,7 @@ export function ProcessingStatusDialog({
   status,
   title,
   description,
+  progress,
   highlights,
   donationPrompt,
   actions,
@@ -197,6 +208,8 @@ export function ProcessingStatusDialog({
     );
   };
 
+  const boundedPercent = progress ? Math.min(100, Math.max(0, Math.round(progress.percent))) : 0;
+
   return createPortal(
     <div className="fixed inset-0 z-[10000] flex items-center justify-center px-4 py-6">
       <div
@@ -233,6 +246,25 @@ export function ProcessingStatusDialog({
           </button>
         </div>
         <div className="space-y-4 px-6 py-5 text-[var(--tx)]">
+          {progress ? (
+            <div className="space-y-2 rounded-xl bg-[var(--bg-2)] p-4 border border-[var(--ui-2)]">
+              <div className="flex items-center justify-between text-xs font-semibold">
+                <span className="text-[var(--tx)] truncate max-w-[70%]">
+                  {progress.detail || "Processing..."}
+                </span>
+                <span className="text-[var(--accent)] font-bold text-sm">
+                  {boundedPercent}%
+                </span>
+              </div>
+              <div className="h-2.5 w-full bg-[var(--ui-2)] rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-[var(--accent)] rounded-full transition-all duration-300 ease-out"
+                  style={{ width: `${boundedPercent}%` }}
+                />
+              </div>
+            </div>
+          ) : null}
+
           {description ? <p className="text-sm leading-relaxed text-[var(--tx-2)]">{description}</p> : null}
 
           {highlights && highlights.length > 0 ? (

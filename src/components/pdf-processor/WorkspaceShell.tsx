@@ -15,6 +15,8 @@ import { ReorderWorkspace } from './features/ReorderWorkspace';
 import { useDictionary } from '../../i18n/LocaleProvider';
 import ProcessingOptions from './ProcessingOptions';
 import CompressionPreviewCard, { PreviewStatus } from './CompressionPreviewCard';
+import { InsightfulProgressIndicator } from './InsightfulProgressIndicator';
+import type { PdfProgressUpdate } from '../../modules/pdf/core/contracts';
 
 interface WorkspaceShellProps {
   initialMode?: PdfOperationKey;
@@ -38,6 +40,18 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
   const [previewStatus, setPreviewStatus] = useState<PreviewStatus>('idle');
   const [previewResult, setPreviewResult] = useState<any>(null);
   const [currentFileIndex, setCurrentFileIndex] = useState(0);
+  const [progressState, setProgressState] = useState<{
+    percent: number;
+    stage?: string;
+    detail?: string;
+    current?: number;
+    total?: number;
+    elapsedSeconds: number;
+    activeFileName?: string;
+  }>({
+    percent: 0,
+    elapsedSeconds: 0,
+  });
 
   const files = state.sessionIds.map(id => state.sessions[id].originalFile);
 
@@ -106,6 +120,21 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
     if (!state.activeKey || state.sessionIds.length === 0) return;
     
     dispatch({ type: 'START_PROCESSING' });
+    setProgressState({
+      percent: 0,
+      elapsedSeconds: 0,
+      stage: 'starting',
+      detail: 'Initializing processing...',
+      activeFileName: state.sessions[state.sessionIds[0]]?.originalFile.name,
+    });
+
+    const startTime = Date.now();
+    const interval = setInterval(() => {
+      setProgressState(prev => ({
+        ...prev,
+        elapsedSeconds: Math.floor((Date.now() - startTime) / 1000),
+      }));
+    }, 1000);
     
     try {
       const activeFiles = state.sessionIds.map(id => state.sessions[id].originalFile);
@@ -134,16 +163,56 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
       
       if (state.activeKey === 'compress') {
         const results = [];
-        for (const file of activeFiles) {
-          const res = await processorService.processor.execute('compress', [file], mappedOptions);
+        for (let i = 0; i < activeFiles.length; i += 1) {
+          const file = activeFiles[i];
+          const res = await processorService.processor.execute(
+            'compress',
+            [file],
+            mappedOptions,
+            (prog: PdfProgressUpdate) => {
+              const filePercent = (prog.percent ?? 0) / 100;
+              const overallPercent = Math.round(((i + filePercent) / activeFiles.length) * 100);
+              setProgressState(prev => ({
+                ...prev,
+                percent: overallPercent,
+                stage: prog.stage,
+                detail: activeFiles.length > 1
+                  ? `File ${i + 1}/${activeFiles.length} (${file.name}): ${prog.detail || ''}`
+                  : prog.detail,
+                current: prog.current ?? i + 1,
+                total: prog.total ?? activeFiles.length,
+                activeFileName: file.name,
+              }));
+            },
+          );
           (res as any).name = file.name;
           results.push(res);
         }
         result = results;
       } else if (state.activeKey === 'repair') {
         const results = [];
-        for (const file of activeFiles) {
-          const res = await processorService.processor.execute('repair', [file], mappedOptions);
+        for (let i = 0; i < activeFiles.length; i += 1) {
+          const file = activeFiles[i];
+          const res = await processorService.processor.execute(
+            'repair',
+            [file],
+            mappedOptions,
+            (prog: PdfProgressUpdate) => {
+              const filePercent = (prog.percent ?? 0) / 100;
+              const overallPercent = Math.round(((i + filePercent) / activeFiles.length) * 100);
+              setProgressState(prev => ({
+                ...prev,
+                percent: overallPercent,
+                stage: prog.stage,
+                detail: activeFiles.length > 1
+                  ? `File ${i + 1}/${activeFiles.length} (${file.name}): ${prog.detail || ''}`
+                  : prog.detail,
+                current: prog.current,
+                total: prog.total,
+                activeFileName: file.name,
+              }));
+            },
+          );
           results.push({ blob: res, name: file.name });
         }
         result = results.length === 1 ? results[0] : results;
@@ -151,11 +220,23 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
         result = await processorService.processor.execute(
           state.activeKey,
           activeFiles,
-          mappedOptions
+          mappedOptions,
+          (prog: PdfProgressUpdate) => {
+            setProgressState(prev => ({
+              ...prev,
+              percent: prog.percent,
+              stage: prog.stage,
+              detail: prog.detail,
+              current: prog.current,
+              total: prog.total,
+              activeFileName: activeFiles[0]?.name,
+            }));
+          },
         );
       }
       
       if (result) {
+        setProgressState(prev => ({ ...prev, percent: 100, stage: 'complete', detail: 'Finalized' }));
         const getBlob = (r: any) => {
           if (r instanceof Blob) return r;
           if (r instanceof Uint8Array) return new Blob([r as any], { type: 'application/pdf' });
@@ -202,6 +283,8 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
       }
     } catch (err: any) {
       dispatch({ type: 'PROCESSING_FAILED', error: err.message || 'Processing failed' });
+    } finally {
+      clearInterval(interval);
     }
   };
 
@@ -471,10 +554,24 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
       )}
 
       {state.phase === 'PROCESSING' && (
-        <div className="bg-white rounded-xl shadow-sm border border-[var(--ui-2)] p-12 flex flex-col items-center justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--accent)] mb-4"></div>
-          <p className="text-lg font-medium">{processorStrings.processButton.processing}</p>
-          <p className="text-sm text-[var(--tx-3)] mt-2">Your files stay on this device.</p>
+        <div className="py-4">
+          <InsightfulProgressIndicator
+            percent={progressState.percent}
+            operationKey={state.activeKey}
+            operationLabel={
+              state.activeKey
+                ? (processorStrings as any).processButton?.processing || 'Processing...'
+                : 'Processing...'
+            }
+            stage={progressState.stage}
+            detail={progressState.detail}
+            current={progressState.current}
+            total={progressState.total}
+            elapsedSeconds={progressState.elapsedSeconds}
+            fileCount={state.sessionIds.length}
+            activeFileName={progressState.activeFileName}
+            privacyGuaranteeText="100% Client-Side Processing • Your files stay on this device"
+          />
         </div>
       )}
 

@@ -30,9 +30,18 @@ export type SerializedPdfError = {
   operation?: string;
 };
 
+import type { PdfProgressUpdate } from './core/contracts';
+
+export type PdfWorkerProgressResponse = {
+  id: string;
+  type: 'progress';
+  progress: PdfProgressUpdate;
+};
+
 export type PdfWorkerResponse =
   | { id: string; success: true; result: unknown }
-  | { id: string; success: false; error: SerializedPdfError };
+  | { id: string; success: false; error: SerializedPdfError }
+  | PdfWorkerProgressResponse;
 
 export function isPdfWorkerRequest(value: unknown): value is PdfWorkerRequest {
   if (!value || typeof value !== 'object') return false;

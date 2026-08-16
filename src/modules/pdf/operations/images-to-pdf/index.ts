@@ -1,5 +1,5 @@
 import { PDFDocument, rgb } from 'pdf-lib';
-import type { BinaryInput, PdfOperationModule } from '../../core/contracts';
+import type { BinaryInput, PdfOperationModule, ProgressCallback } from '../../core/contracts';
 import { PdfModuleError, operationFailure } from '../../core/errors';
 import { isNamedBinarySource, readBytes, requireInputs, yieldToEventLoop } from '../../core/input';
 import {
@@ -110,15 +110,27 @@ function resolvePageLayout(
 export async function imagesToPdf(
   inputs: readonly BinaryInput[],
   options: ImagesToPdfOptions = {},
+  onProgress?: ProgressCallback,
 ): Promise<Uint8Array> {
   try {
     requireInputs(inputs, 'imagesToPdf');
+    onProgress?.({ percent: 5, stage: 'reading', detail: 'Reading images...' });
     const pdfDoc = await PDFDocument.create();
     const margin = clamp(options.pageMarginPoints ?? 18, 0, 144);
     const background = parseBackgroundColor(options.backgroundColor);
 
-    for (const input of inputs) {
+    for (let index = 0; index < inputs.length; index += 1) {
       await yieldToEventLoop();
+      const percent = Math.round(5 + (((index + 1) / inputs.length) * 85));
+      onProgress?.({
+        percent,
+        stage: 'embedding',
+        current: index + 1,
+        total: inputs.length,
+        detail: `Embedding image ${index + 1} of ${inputs.length}`,
+      });
+
+      const input = inputs[index];
       const normalized = await normalizeImage(input);
       const image = normalized.format === 'png'
         ? await pdfDoc.embedPng(normalized.bytes)
@@ -146,6 +158,7 @@ export async function imagesToPdf(
       });
     }
 
+    onProgress?.({ percent: 95, stage: 'saving', detail: 'Generating PDF...' });
     return pdfDoc.save({ useObjectStreams: !pdfDoc.context.trailerInfo.Encrypt });
   } catch (error) {
     throw operationFailure('imagesToPdf', 'Failed to convert images to PDF', error);

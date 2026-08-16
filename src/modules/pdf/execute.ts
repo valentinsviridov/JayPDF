@@ -1,4 +1,4 @@
-import type { BinaryInput } from './core/contracts';
+import type { BinaryInput, ProgressCallback } from './core/contracts';
 import type {
   PdfOperationKey,
   PdfOperationOptions,
@@ -10,7 +10,8 @@ export async function executePdfOperation<Key extends PdfOperationKey>(
   key: Key,
   inputs: readonly BinaryInput[],
   options: PdfOperationOptions<Key>,
+  onProgress?: ProgressCallback,
 ): Promise<PdfOperationResult<Key>> {
   const operation = await loadPdfOperation(key);
-  return operation.execute(inputs, options);
+  return operation.execute(inputs, options, onProgress);
 }

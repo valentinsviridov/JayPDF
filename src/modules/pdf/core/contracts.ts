@@ -24,9 +24,23 @@ export type PageDimensions = {
   height: number;
 };
 
+export type PdfProgressUpdate = {
+  percent: number;
+  stage?: string;
+  detail?: string;
+  current?: number;
+  total?: number;
+};
+
+export type ProgressCallback = (progress: PdfProgressUpdate) => void;
+
 export interface PdfOperationModule<Key extends string, Options, Result> {
   readonly key: Key;
-  execute(inputs: readonly BinaryInput[], options: Options): Promise<Result>;
+  execute(
+    inputs: readonly BinaryInput[],
+    options: Options,
+    onProgress?: ProgressCallback,
+  ): Promise<Result>;
 }
 
 export type CropMargins = {

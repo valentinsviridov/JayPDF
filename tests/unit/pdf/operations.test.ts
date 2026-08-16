@@ -140,5 +140,19 @@ describe('independent PDF operation modules', () => {
       /This PDF document \(broken\.pdf\) is corrupted or malformed/
     );
   });
+
+  test('operations report insightful progress updates during execution', async () => {
+    const source1 = await createPdfBytes([100, 100]);
+    const source2 = await createPdfBytes([100]);
+    const progressUpdates: number[] = [];
+
+    await mergePdfs([source1, source2], {}, progress => {
+      progressUpdates.push(progress.percent);
+    });
+
+    expect(progressUpdates.length).toBeGreaterThan(0);
+    expect(progressUpdates[0] >= 0).toBe(true);
+    expect(progressUpdates[progressUpdates.length - 1] >= 90).toBe(true);
+  });
 });
 

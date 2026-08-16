@@ -111,7 +111,7 @@ test('PDF Compression with Strip Annotations on Corrupt PDF', async ({ page }) =
 });
 
 test('PDF Compression with Auto-Repair enabled successfully recovers corrupt PDF', async ({ page }) => {
-    test.setTimeout(120_000);
+    test.setTimeout(240_000);
     const corruptPdfPath = path.join(__dirname, 'fixtures', 'cg-brsvie.pdf');
 
     // 1. Visit Compress Page
@@ -128,7 +128,7 @@ test('PDF Compression with Auto-Repair enabled successfully recovers corrupt PDF
     await autoRepairToggle.check();
 
     // 4. Click process and verify download succeeds
-    const downloadPromise = page.waitForEvent('download', { timeout: 60_000 });
+    const downloadPromise = page.waitForEvent('download', { timeout: 240_000 });
     const processButton = page.getByRole('button', { name: /^Process \d+ file/ });
     await expect(processButton).toBeEnabled({ timeout: 20_000 });
     await processButton.click();

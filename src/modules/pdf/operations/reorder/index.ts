@@ -1,15 +1,17 @@
 import { PDFDocument } from 'pdf-lib';
-import type { BinaryInput, PdfOperationModule } from '../../core/contracts';
+import type { BinaryInput, PdfOperationModule, ProgressCallback } from '../../core/contracts';
 import { PdfModuleError, operationFailure } from '../../core/errors';
-import { requireInput } from '../../core/input';
+import { requireInput, yieldToEventLoop } from '../../core/input';
 import { copyBasicMetadata, loadPdfWithBasicValidation } from '../../core/pdf-lib';
 import type { ReorderOptions } from './definition';
 
 export async function reorderPdfPages(
   inputs: readonly BinaryInput[],
   options: ReorderOptions = {},
+  onProgress?: ProgressCallback,
 ): Promise<Uint8Array> {
   try {
+    onProgress?.({ percent: 10, stage: 'reading', detail: 'Reading document...' });
     const input = requireInput(inputs, 0, 'reorder');
     const pageOrder = options.pageOrder ?? [];
     if (pageOrder.length === 0) {
@@ -32,10 +34,13 @@ export async function reorderPdfPages(
       throw new PdfModuleError('NO_PAGES', 'No valid page numbers in order', { operation: 'reorder' });
     }
 
+    onProgress?.({ percent: 40, stage: 'reordering', detail: `Arranging ${validIndices.length} pages...` });
+    await yieldToEventLoop();
     const target = await PDFDocument.create();
     const pages = await target.copyPages(source, validIndices);
     pages.forEach(page => target.addPage(page));
     if (options.preserveMetadata !== false) copyBasicMetadata(source, target);
+    onProgress?.({ percent: 90, stage: 'saving', detail: 'Finalizing reordered PDF...' });
     return target.save({ useObjectStreams: false });
   } catch (error) {
     throw operationFailure('reorder', 'Failed to reorder pages', error);

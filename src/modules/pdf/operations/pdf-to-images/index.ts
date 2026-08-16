@@ -1,4 +1,4 @@
-import type { BinaryInput, PdfOperationModule } from '../../core/contracts';
+import type { BinaryInput, PdfOperationModule, ProgressCallback } from '../../core/contracts';
 import { operationFailure } from '../../core/errors';
 import { isNamedBinarySource, requireInput, yieldToEventLoop } from '../../core/input';
 import { canvasToBlob } from '../../infrastructure/browser-images';
@@ -26,8 +26,10 @@ function stripExtension(fileName: string): string {
 export async function pdfToImages(
   inputs: readonly BinaryInput[],
   options: PdfToImagesOptions = {},
+  onProgress?: ProgressCallback,
 ): Promise<PdfToImagesResult> {
   try {
+    onProgress?.({ percent: 5, stage: 'reading', detail: 'Reading PDF document...' });
     const input = requireInput(inputs, 0, 'pdfToImages');
     const pdf = await loadPdfJsDocument(input);
     const scale = (options.imageRenderDpi ?? 144) / 72;
@@ -39,6 +41,15 @@ export async function pdfToImages(
 
     for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
       await yieldToEventLoop();
+      const percent = Math.round(5 + ((pageNumber / pdf.numPages) * 85));
+      onProgress?.({
+        percent,
+        stage: 'converting',
+        current: pageNumber,
+        total: pdf.numPages,
+        detail: `Rendering page ${pageNumber} of ${pdf.numPages}`,
+      });
+
       const page = await pdf.getPage(pageNumber);
       const viewport = page.getViewport({ scale });
       const { canvas, context } = createPdfCanvas(
@@ -61,15 +72,19 @@ export async function pdfToImages(
     }
 
     if (options.bundleAsZip === false) {
+      onProgress?.({ percent: 100, stage: 'complete', detail: 'Conversion complete' });
       return { kind: 'files', files, imageCount: files.length, format };
     }
 
+    onProgress?.({ percent: 92, stage: 'packaging', detail: 'Creating ZIP archive...' });
     const { default: JSZip } = await import('jszip');
     const zip = new JSZip();
     files.forEach(file => zip.file(file.name, file.blob));
+    const zipBlob = await zip.generateAsync({ type: 'blob' });
+    onProgress?.({ percent: 100, stage: 'complete', detail: 'Conversion complete' });
     return {
       kind: 'zip',
-      blob: await zip.generateAsync({ type: 'blob' }),
+      blob: zipBlob,
       imageCount: files.length,
       format,
       suggestedName: `${baseName}_${extension}.zip`,
