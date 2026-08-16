@@ -6,7 +6,7 @@ import {
   type CompressionLevel,
 } from '../../../../modules/pdf/operations/compress/definition';
 import type { FeatureOptionsProps } from './shared';
-import { OptionToggle } from './shared';
+import { AutoRepairToggle, OptionToggle } from './shared';
 
 export function CompressOptions({ options, onOptionsChangeAction }: FeatureOptionsProps) {
   const strings = useDictionary().components.processingOptions.compress;
@@ -105,6 +105,10 @@ export function CompressOptions({ options, onOptionsChangeAction }: FeatureOptio
                 ? options.downscaleImagesDpi ?? preset.downscaleImagesDpi ?? 150
                 : undefined,
             })}
+          />
+          <AutoRepairToggle
+            checked={options.autoRepairCorrupted === true}
+            onChange={value => onOptionsChangeAction({ ...options, autoRepairCorrupted: value })}
           />
         </div>
       </div>

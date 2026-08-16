@@ -6,6 +6,7 @@ export type PdfToImagesOptions = {
   imageRenderDpi?: number;
   imageBaseName?: string;
   bundleAsZip?: boolean;
+  autoRepairCorrupted?: boolean;
 };
 
 export type PdfToImagesResult =
@@ -30,4 +31,5 @@ export const DEFAULT_PDF_TO_IMAGES_OPTIONS: PdfToImagesOptions = {
   imageRenderDpi: 144,
   bundleAsZip: true,
   imageBaseName: 'pdflince_pages',
+  autoRepairCorrupted: false,
 };

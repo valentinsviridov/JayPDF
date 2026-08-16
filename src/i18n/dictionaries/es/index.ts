@@ -28,6 +28,7 @@ export const esDictionary: Dictionary = {
       reorder: getOperationPath(DEFAULT_LOCALE, "reorder"),
       pdfToImages: getOperationPath(DEFAULT_LOCALE, "pdfToImages"),
       imagesToPdf: getOperationPath(DEFAULT_LOCALE, "imagesToPdf"),
+      repair: getOperationPath(DEFAULT_LOCALE, "repair"),
     },
   },
   metadata: {
@@ -127,6 +128,7 @@ export const esDictionary: Dictionary = {
         reorder: "Reordenar Páginas",
         pdfToImages: "PDF a imágenes",
         imagesToPdf: "Imágenes a PDF",
+        repair: "Reparar PDF",
       },
       license: "Procesamiento de PDF: PDF-lib (MIT), PDF.js (Apache 2.0) • Fuente: Geist (MIT)",
       disclaimer: "El servicio se proporciona 'tal cual' sin garantía de ningún tipo. El usuario es responsable del uso de los archivos generados.",
@@ -194,6 +196,10 @@ export const esDictionary: Dictionary = {
           label: "Imágenes a PDF",
           helper: "Combina JPG, PNG o WEBP en un único PDF con el diseño que prefieras.",
         },
+        repair: {
+          label: "Reparar PDF",
+          helper: "Recupera y reconstruye documentos PDF dañados o corruptos.",
+        },
       },
       upload: {
         title: "Selecciona tus archivos",
@@ -206,6 +212,7 @@ export const esDictionary: Dictionary = {
           reorder: "Selecciona un archivo para trabajar con sus páginas:",
           pdfToImages: "PDFs a convertir (se procesarán uno a uno):",
           imagesToPdf: "Imágenes a combinar (ordénalas para definir la secuencia final):",
+          repair: "PDFs a reparar (procesamiento local):",
           default: "Archivos seleccionados (puedes ordenarlos o eliminarlos):",
         },
         hints: {
@@ -214,6 +221,7 @@ export const esDictionary: Dictionary = {
           crop: "Selecciona las paginas a recortar y define cuantos puntos quitar de cada lado desde el panel de opciones.",
           pdfToImages: "Renderizamos un PDF por turno. Ajusta formato y DPI en el panel de opciones antes de exportar.",
           imagesToPdf: "Arrastra JPG, PNG, WEBP o TIFF. Usa las opciones para definir tamaño de página, orientación y márgenes.",
+          repair: "Recuperamos y reconstruimos PDFs dañados en documentos limpios y válidos.",
         },
       },
       downloadNames: {
@@ -226,6 +234,7 @@ export const esDictionary: Dictionary = {
         reorder: "reordenado_PDFLince",
         pdfToImages: "imagenes_PDFLince",
         imagesToPdf: "imagenes_a_pdf_PDFLince",
+        repair: "reparado_PDFLince",
       },
       processButton: {
         idleSingle: "Procesar 1 archivo",
@@ -405,6 +414,11 @@ export const esDictionary: Dictionary = {
         'Arrastra las páginas o usa las flechas para moverlas. Cuando termines, haz clic en "Guardar nueva ordenación" para aplicar los cambios.',
     },
     processingOptions: {
+      autoRepair: {
+        label: "Reparar archivos dañados automáticamente",
+        description: "Intenta reparar automáticamente archivos PDF corruptos o dañados antes de procesarlos.",
+        note: "La reparación automática reconstruye las páginas dañadas como imágenes limpias, lo que puede modificar la selección de texto o el diseño. Verifica el resultado.",
+      },
       compress: {
         title: "Compresión",
         level: "Nivel",

@@ -623,6 +623,72 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       "Helyszíni ellenőrzési fotójelentés összeállítása egyetlen dokumentumban a megrendelő számára.",
     ],
   },
+  repair: {
+    key: "repair",
+    slug: "javitas",
+    mode: "repair",
+    meta: {
+      title: "PDF javítása ingyen online | Sérült fájlok helyreállítása | PDFLince",
+      description:
+        "Sérült vagy hibás PDF-fájlok javítása közvetlenül a böngészőben. Olvashatatlan PDF-ek biztonságos és helyi helyreállítása.",
+      keywords: [
+        "pdf javítása",
+        "sérült pdf helyreállítása",
+        "hibás pdf javítás",
+        "pdf javítás online",
+      ],
+      ogTitle: "Sérült PDF-ek javítása és helyreállítása online | PDFLince",
+      ogDescription:
+        "Olvashatatlan PDF-dokumentumok javítása közvetlenül a böngészőben 100% adatvédelemmel, feltöltés nélkül.",
+      ogImageAlt: "PDFLince PDF javító felület",
+    },
+    hero: {
+      title: "Sérült PDF-ek helyi javítása és újjáépítése",
+      description:
+        "Sérült vagy olvashatatlan PDF-fájlok helyreállítása újrarajzolással és tiszta, érvényes dokumentummá történő újjáépítéssel.",
+      bulletPoints: [
+        "100% helyi és privát — a fájljaid soha nem hagyják el a készülékedet",
+        "Javítja a törött xref táblákat, a hibás adatfolyamokat és a sérült oldalakat",
+        "Tiszta, szabványos PDF-et hoz létre minden megtekintőhöz",
+      ],
+      imageAlt: "PDF javítási munkafolyamat",
+    },
+    benefitsTitle: "Miért javíts PDF-eket a PDFLince segítségével",
+    benefits: [
+      {
+        title: "Alapos helyreállítás",
+        description:
+          "Rugalmas megjelenítő motorokat használ a sérült fájlok oldalainak megmentésére.",
+      },
+      {
+        title: "Szabványos kimenet",
+        description:
+          "A helyreállított oldalakat egy teljesen új, érvényes PDF-dokumentummá építi újra.",
+      },
+      {
+        title: "Teljes adatvédelem",
+        description:
+          "Minden művelet helyben fut a böngésződben, külső szerverre küldés nélkül.",
+      },
+    ],
+    howTo: {
+      title: "Hogyan javíts meg egy PDF-et a PDFLince-szel",
+      steps: [
+        "Töltsd fel a sérült vagy hibás PDF-fájlt.",
+        "Kattints a „Feldolgozás” gombra a helyreállítás elindításához.",
+        "Töltsd le azonnal a javított, működőképes PDF-dokumentumot.",
+      ],
+      note:
+        "Ha egy fájl továbbra sem olvasható, a megnyitása és virtuális nyomtatóval PDF-be nyomtatása szintén segíthet.",
+    },
+    useCasesTitle: "Mikor segít a PDF javítása",
+    useCases: [
+      "Megszakadt letöltések vagy fájlátvitelek során megsérült PDF-ek javítása.",
+      "Olyan dokumentumok megmentése, amelyek más programokban nem nyithatók meg.",
+      "Régebbi vagy hibás szoftverek által exportált PDF-ek újjáépítése.",
+      "Korábban használhatatlan fájlok feldolgozhatóvá tétele.",
+    ],
+  },
 };
 
 export const operationsHu: Record<OperationKey, OperationContent> = {
@@ -635,4 +701,5 @@ export const operationsHu: Record<OperationKey, OperationContent> = {
   reorder: operationsHuContent.reorder,
   pdfToImages: operationsHuContent.pdfToImages,
   imagesToPdf: operationsHuContent.imagesToPdf,
+  repair: operationsHuContent.repair,
 };

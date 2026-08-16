@@ -23,6 +23,7 @@ const operationLoaders: OperationLoaders = {
   reorder: async () => (await import('./operations/reorder')).reorderOperation,
   pdfToImages: async () => (await import('./operations/pdf-to-images')).pdfToImagesOperation,
   imagesToPdf: async () => (await import('./operations/images-to-pdf')).imagesToPdfOperation,
+  repair: async () => (await import('./operations/repair')).repairOperation,
 };
 
 export function isPdfOperationKey(value: unknown): value is PdfOperationKey {

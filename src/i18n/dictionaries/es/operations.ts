@@ -605,6 +605,73 @@ const operationsEsContent: Record<OperationKey, OperationContent> = {
       "Enviar reportes fotográficos o inspecciones sin adjuntar decenas de archivos.",
     ],
   },
+  repair: {
+    key: "repair",
+    slug: "reparar",
+    mode: "repair",
+    meta: {
+      title: "Reparar PDF Gratis Online | Recuperar Archivos Dañados | PDFLince",
+      description:
+        "Repara archivos PDF dañados o corruptos directamente en tu navegador. Reconstruye PDFs ilegibles de forma segura y local.",
+      keywords: [
+        "reparar pdf",
+        "recuperar pdf",
+        "arreglar pdf corrupto",
+        "pdf dañado",
+        "reconstruir pdf",
+      ],
+      ogTitle: "Reparar y recuperar PDFs dañados online | PDFLince",
+      ogDescription:
+        "Arregla documentos PDF corruptos o ilegibles directamente en tu navegador con 100% de privacidad y sin subir archivos.",
+      ogImageAlt: "Interfaz de reparación de PDF en PDFLince",
+    },
+    hero: {
+      title: "Repara y reconstruye PDFs dañados localmente",
+      description:
+        "Recupera archivos PDF dañados, corruptos o ilegibles renderizándolos y reconstruyéndolos en documentos limpios y válidos.",
+      bulletPoints: [
+        "100% privado y en el navegador: tus archivos nunca salen de tu dispositivo",
+        "Recupera tablas xref rotas, flujos corruptos y páginas ilegibles",
+        "Genera PDFs limpios y totalmente estándar compatibles con todas las herramientas",
+      ],
+      imageAlt: "Flujo de reparación de PDF en PDFLince",
+    },
+    benefitsTitle: "Por qué reparar PDFs con PDFLince",
+    benefits: [
+      {
+        title: "Recuperación profunda",
+        description:
+          "Utiliza motores de renderizado resistentes para analizar y recuperar páginas de documentos corruptos que otros lectores rechazan.",
+      },
+      {
+        title: "Salida estándar",
+        description:
+          "Reconstruye las páginas recuperadas en un nuevo archivo PDF completamente válido y compatible.",
+      },
+      {
+        title: "Privacidad total",
+        description:
+          "Toda la recuperación se realiza localmente en tu navegador sin enviar datos a servidores externos.",
+      },
+    ],
+    howTo: {
+      title: "Cómo reparar un PDF con PDFLince",
+      steps: [
+        "Sube el archivo PDF dañado o ilegible.",
+        "Haz clic en “Procesar” para iniciar la recuperación y reconstrucción.",
+        "Descarga tu archivo PDF reparado y completamente funcional al instante.",
+      ],
+      note:
+        "Si un archivo sigue siendo ilegible, abrirlo en un visor e imprimirlo a PDF mediante una impresora virtual también puede ayudar.",
+    },
+    useCasesTitle: "Cuándo utilizar la reparación de PDF",
+    useCases: [
+      "Arreglar PDFs dañados durante descargas interrumpidas o transferencias de archivos.",
+      "Recuperar documentos que no se pueden abrir, unir o comprimir en otras herramientas.",
+      "Reconstruir PDFs malformados exportados por software antiguo o con errores.",
+      "Hacer compatibles con flujos de trabajo modernos archivos previamente no procesables.",
+    ],
+  },
 };
 
 export const operationsEs: Record<OperationKey, OperationContent> = {
@@ -617,4 +684,5 @@ export const operationsEs: Record<OperationKey, OperationContent> = {
   reorder: operationsEsContent.reorder,
   pdfToImages: operationsEsContent.pdfToImages,
   imagesToPdf: operationsEsContent.imagesToPdf,
+  repair: operationsEsContent.repair,
 };

@@ -20,6 +20,7 @@ const operationsRoutes: Record<OperationKey, string> = {
   reorder: getOperationPath(locale, "reorder"),
   pdfToImages: getOperationPath(locale, "pdfToImages"),
   imagesToPdf: getOperationPath(locale, "imagesToPdf"),
+  repair: getOperationPath(locale, "repair"),
 };
 
 export const itDictionary: Dictionary = {
@@ -133,6 +134,7 @@ export const itDictionary: Dictionary = {
         reorder: "Riordina pagine",
         pdfToImages: "PDF in immagini",
         imagesToPdf: "Immagini in PDF",
+        repair: "Ripara PDF",
       },
       license: "PDF Processing: PDF-lib (MIT), PDF.js (Apache 2.0) • Font: Geist (MIT)",
       disclaimer: "Il servizio è fornito così com'è senza alcuna garanzia. L'utente è responsabile dell'uso dei file generati.",
@@ -204,6 +206,11 @@ export const itDictionary: Dictionary = {
           helper:
             "Combina immagini JPG, PNG o WEBP in un unico PDF con layout personalizzato.",
         },
+        repair: {
+          label: "Ripara PDF",
+          helper:
+            "Recupera e ricostruisci documenti PDF danneggiati o corrotti.",
+        },
       },
 
       upload: {
@@ -220,6 +227,8 @@ export const itDictionary: Dictionary = {
             "PDF da convertire (elaborati uno alla volta):",
           imagesToPdf:
             "Immagini da combinare (riordina per la sequenza finale):",
+          repair:
+            "PDF da riparare (elaborazione locale):",
           default:
             "File selezionati (riordina o rimuovi):",
         },
@@ -234,6 +243,8 @@ export const itDictionary: Dictionary = {
             "Elaboriamo un PDF alla volta. Regola formato e DPI dal pannello opzioni prima di esportare.",
           imagesToPdf:
             "Trascina immagini JPG, PNG, WEBP o TIFF. Usa il pannello opzioni per scegliere dimensione pagina, margini e colore di sfondo.",
+          repair:
+            "Recuperiamo e ricostruiamo i PDF corrotti in documenti validi e puliti.",
         },
       },
 
@@ -247,6 +258,7 @@ export const itDictionary: Dictionary = {
         reorder: "riordinato_PDFLince",
         pdfToImages: "immagini_PDFLince",
         imagesToPdf: "immagini_a_pdf_PDFLince",
+        repair: "riparato_PDFLince",
       },
 
       processButton: {
@@ -462,6 +474,11 @@ export const itDictionary: Dictionary = {
         'Trascina le pagine o usa i pulsanti con le frecce. Quando hai finito, clicca su "Salva nuovo ordine" per applicare le modifiche.',
     },
     processingOptions: {
+      autoRepair: {
+        label: "Ripara automaticamente i file danneggiati",
+        description: "Tenta di riparare automaticamente i file PDF corrotti o illeggibili prima dell'elaborazione.",
+        note: "La riparazione automatica ricostruisce le pagine danneggiate come immagini pulite, il che potrebbe modificare la selezione del testo o l'impaginazione. Verifica il risultato.",
+      },
       compress: {
         title: "Compressione",
         level: "Livello",

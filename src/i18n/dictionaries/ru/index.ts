@@ -20,6 +20,7 @@ const operationsRoutes: Record<OperationKey, string> = {
   reorder: getOperationPath(locale, "reorder"),
   pdfToImages: getOperationPath(locale, "pdfToImages"),
   imagesToPdf: getOperationPath(locale, "imagesToPdf"),
+  repair: getOperationPath(locale, "repair"),
 };
 
 export const ruDictionary: Dictionary = {
@@ -133,6 +134,7 @@ export const ruDictionary: Dictionary = {
         reorder: "Переупорядочить",
         pdfToImages: "PDF в изображения",
         imagesToPdf: "Изображения в PDF",
+        repair: "Восстановить PDF",
       },
       license: "Обработка PDF: PDF-lib (MIT), PDF.js (Apache 2.0) • Шрифт: Geist (MIT)",
       disclaimer:
@@ -201,6 +203,10 @@ export const ruDictionary: Dictionary = {
           label: "Изображения в PDF",
           helper: "Объедините изображения JPG, PNG или WEBP в PDF с настраиваемым макетом.",
         },
+        repair: {
+          label: "Восстановить PDF",
+          helper: "Восстановление и пересборка поврежденных или нечитаемых PDF.",
+        },
       },
       upload: {
         title: "Выберите файлы",
@@ -213,6 +219,7 @@ export const ruDictionary: Dictionary = {
           reorder: "Выберите файл для работы со страницами:",
           pdfToImages: "PDF для конвертации (обрабатываются по очереди):",
           imagesToPdf: "Изображения для объединения (перетащите для выбора порядка):",
+          repair: "PDF для восстановления (локальная обработка):",
           default: "Выбранные файлы (перетащите или удалите):",
         },
         hints: {
@@ -221,6 +228,7 @@ export const ruDictionary: Dictionary = {
           crop: "Выберите страницы для обрезки, затем задайте количество пунктов для каждого края.",
           pdfToImages: "Обрабатываем по одному PDF. Настройте формат и DPI перед экспортом.",
           imagesToPdf: "Добавьте изображения JPG, PNG, WEBP или TIFF. Настройте размер, поля и цвет на панели параметров.",
+          repair: "Мы восстанавливаем и пересобираем поврежденные PDF в корректные документы.",
         },
       },
       downloadNames: {
@@ -233,6 +241,7 @@ export const ruDictionary: Dictionary = {
         reorder: "pereupordochennyi_PDFLince",
         pdfToImages: "izobrazheniya_PDFLince",
         imagesToPdf: "izobrazheniya_v_pdf_PDFLince",
+        repair: "vosstanovlennyi_PDFLince",
       },
       processButton: {
         idleSingle: "Обработать 1 файл",
@@ -412,6 +421,11 @@ export const ruDictionary: Dictionary = {
         "Перетащите страницы в нужном порядке. Когда закончите, нажмите «Сохранить порядок».",
     },
     processingOptions: {
+      autoRepair: {
+        label: "Автоматически восстанавливать повреждённые файлы",
+        description: "Автоматически пытается восстановить повреждённые или нечитаемые PDF-файлы перед обработкой.",
+        note: "Автоматическое восстановление перерисовывает повреждённые страницы как чистые изображения, что может изменить выделение текста или разметку. Пожалуйста, проверьте результат.",
+      },
       compress: {
         title: "Сжатие",
         level: "Уровень",

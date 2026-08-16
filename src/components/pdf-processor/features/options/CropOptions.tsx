@@ -2,7 +2,7 @@
 
 import { useDictionary } from '../../../../i18n/LocaleProvider';
 import type { FeatureOptionsProps } from './shared';
-import { OptionToggle } from './shared';
+import { AutoRepairToggle, OptionToggle } from './shared';
 
 export function CropOptions({ options, onOptionsChangeAction }: FeatureOptionsProps) {
   const strings = useDictionary().components.processingOptions.crop;
@@ -13,6 +13,10 @@ export function CropOptions({ options, onOptionsChangeAction }: FeatureOptionsPr
         label={strings.preserveMetadata}
         description={strings.preserveMetadataHint}
         onChange={value => onOptionsChangeAction({ ...options, preserveMetadata: value })}
+      />
+      <AutoRepairToggle
+        checked={options.autoRepairCorrupted === true}
+        onChange={value => onOptionsChangeAction({ ...options, autoRepairCorrupted: value })}
       />
     </div>
   );

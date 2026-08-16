@@ -27,11 +27,15 @@ export async function rotatePdfPages(
     }
 
     const rotationDegrees = options.rotationDegrees ?? 90;
-    const pdfDoc = await loadPdfWithBasicValidation(input, {
-      ignoreEncryption: true,
-      throwOnInvalidObject: false,
-      updateMetadata: options.preserveMetadata !== false,
-    });
+    const pdfDoc = await loadPdfWithBasicValidation(
+      input,
+      {
+        ignoreEncryption: true,
+        throwOnInvalidObject: false,
+        updateMetadata: options.preserveMetadata !== false,
+      },
+      { autoRepairCorrupted: options.autoRepairCorrupted },
+    );
     const validIndices = [...new Set(
       pageNumbers
         .map(pageNumber => pageNumber - 1)

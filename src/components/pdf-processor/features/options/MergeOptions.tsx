@@ -1,7 +1,7 @@
 "use client";
 
 import { useDictionary } from '../../../../i18n/LocaleProvider';
-import type { FeatureOptionsProps } from './shared';
+import { AutoRepairToggle, type FeatureOptionsProps } from './shared';
 
 export function MergeOptions({ options, onOptionsChangeAction }: FeatureOptionsProps) {
   const strings = useDictionary().components.processingOptions.merge;
@@ -64,6 +64,10 @@ export function MergeOptions({ options, onOptionsChangeAction }: FeatureOptionsP
           </div>
         </div>
       </div>
+      <AutoRepairToggle
+        checked={options.autoRepairCorrupted === true}
+        onChange={value => onOptionsChangeAction({ ...options, autoRepairCorrupted: value })}
+      />
     </div>
   );
 }

@@ -199,6 +199,7 @@ function PDFProcessorInterface({ initialMode }: { initialMode: ProcessingMode })
     rotate: cloneOptions(MODE_DEFAULTS.rotate),
     pdfToImages: cloneOptions(MODE_DEFAULTS.pdfToImages),
     imagesToPdf: cloneOptions(MODE_DEFAULTS.imagesToPdf),
+    repair: cloneOptions(MODE_DEFAULTS.repair),
   });
   const [processingOptions, setProcessingOptions] = useState<PDFProcessingOptions>(() =>
     cloneOptions(

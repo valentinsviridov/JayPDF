@@ -14,6 +14,8 @@ export type OptionToggleProps = {
   onChange: (value: boolean) => void;
 };
 
+import { useDictionary } from '../../../../i18n/LocaleProvider';
+
 export function OptionToggle({ label, description, checked, onChange }: OptionToggleProps) {
   return (
     <label className="flex cursor-pointer items-start gap-3 rounded-md border border-transparent px-2 py-2 transition hover:border-[var(--ui-2)] hover:bg-[var(--bg-1)]">
@@ -31,3 +33,27 @@ export function OptionToggle({ label, description, checked, onChange }: OptionTo
     </label>
   );
 }
+
+export function AutoRepairToggle({
+  checked,
+  onChange,
+}: {
+  checked: boolean;
+  onChange: (value: boolean) => void;
+}) {
+  const strings = useDictionary().components.processingOptions.autoRepair;
+  return (
+    <div className="space-y-1.5 pt-2 border-t border-[var(--ui-2)]">
+      <OptionToggle
+        checked={checked}
+        label={strings.label}
+        description={strings.description}
+        onChange={onChange}
+      />
+      <div className="ml-7 rounded-md border border-amber-500/20 bg-amber-500/10 p-2.5 text-xs text-amber-700 dark:text-amber-300">
+        <p>{strings.note}</p>
+      </div>
+    </div>
+  );
+}
+

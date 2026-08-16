@@ -7,9 +7,11 @@ export type RotateOptions = {
   rotationDegrees?: RotationDegrees;
   preserveMetadata?: boolean;
   metadata?: PdfMetadata;
+  autoRepairCorrupted?: boolean;
 };
 
 export const DEFAULT_ROTATE_OPTIONS: RotateOptions = {
   preserveMetadata: true,
   rotationDegrees: 90,
+  autoRepairCorrupted: false,
 };

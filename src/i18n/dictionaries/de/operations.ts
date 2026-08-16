@@ -1,4 +1,4 @@
-﻿import { OperationContent } from "../operation-types";
+import { OperationContent } from "../operation-types";
 import { OperationKey } from "../../../types/operations";
 
 const operationsDeContent: Record<OperationKey, OperationContent> = {
@@ -602,7 +602,73 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       "Eingescannte ArbeitsblÃ¤tter oder PrÃ¼fungen bÃ¼ndeln, bevor sie zurÃ¼ck an Lernende gehen.",
       "Spesenbelege als ein einziges PDF einreichen statt vieler einzelner AnhÃ¤nge.",
       "Lookbooks oder Produktkataloge aus Design-Exports in Sekunden erzeugen.",
-      "Fotodokumentationen oder Inspektionsberichte fÃ¼r Stakeholder zusammenstellen.",
+      "Fotodokumentationen oder Inspektionsberichte für Stakeholder zusammenstellen.",
+    ],
+  },
+  repair: {
+    key: "repair",
+    slug: "reparieren",
+    mode: "repair",
+    meta: {
+      title: "PDF reparieren kostenlos online | Beschädigte Dateien retten | PDFLince",
+      description:
+        "Repariere beschädigte oder fehlerhafte PDF-Dateien direkt im Browser. Unlesbare PDFs sicher und lokal wiederherstellen.",
+      keywords: [
+        "pdf reparieren",
+        "beschädigtes pdf retten",
+        "pdf reparieren kostenlos",
+        "defektes pdf wiederherstellen",
+      ],
+      ogTitle: "Beschädigte PDFs online reparieren | PDFLince",
+      ogDescription:
+        "Repariere fehlerhafte PDF-Dokumente direkt im Browser mit 100 % Privatsphäre und ohne Uploads.",
+      ogImageAlt: "PDFLince Reparatur-Werkzeug",
+    },
+    hero: {
+      title: "Beschädigte PDFs lokal reparieren und neu aufbauen",
+      description:
+        "Stelle beschädigte oder unlesbare PDF-Dateien wieder her, indem sie neu gerendert und als saubere Dokumente aufgebaut werden.",
+      bulletPoints: [
+        "100 % lokal im Browser — deine Dateien verlassen dein Gerät nicht",
+        "Stellt defekte xref-Tabellen und unlesbare Seiten wieder her",
+        "Erzeugt saubere, standardkonforme PDFs für alle Programme",
+      ],
+      imageAlt: "PDF-Reparatur-Workflow",
+    },
+    benefitsTitle: "Warum PDFs mit PDFLince reparieren",
+    benefits: [
+      {
+        title: "Tiefenwiederherstellung",
+        description:
+          "Nutzt robuste Rendering-Pipelines, um Seiten aus beschädigten Dokumenten zu retten.",
+      },
+      {
+        title: "Standardkonforme Ausgabe",
+        description:
+          "Erstellt aus den geretteten Seiten ein komplett neues, sauberes PDF-Dokument.",
+      },
+      {
+        title: "Volle Privatsphäre",
+        description:
+          "Alle Prozesse laufen rein lokal in deinem Browser ohne Serverübertragung.",
+      },
+    ],
+    howTo: {
+      title: "So reparierst du ein PDF mit PDFLince",
+      steps: [
+        "Lade die beschädigte PDF-Datei hoch.",
+        "Klicke auf „Verarbeiten“, um die Reparatur zu starten.",
+        "Lade dein repariertes PDF sofort herunter.",
+      ],
+      note:
+        "Falls eine Datei nicht gelesen werden kann, kann auch das Drucken über einen virtuellen PDF-Drucker helfen.",
+    },
+    useCasesTitle: "Wann eine PDF-Reparatur hilft",
+    useCases: [
+      "Reparieren von PDFs, die bei Downloads beschädigt wurden.",
+      "Dokumente retten, die in anderen Werkzeugen nicht geöffnet werden können.",
+      "Fehlerhafte PDFs aus älterer Software wieder nutzbar machen.",
+      "Zuvor unverarbeitbare Dateien für moderne Workflows fit machen.",
     ],
   },
 };
@@ -617,4 +683,5 @@ export const operationsDe: Record<OperationKey, OperationContent> = {
   reorder: operationsDeContent.reorder,
   pdfToImages: operationsDeContent.pdfToImages,
   imagesToPdf: operationsDeContent.imagesToPdf,
+  repair: operationsDeContent.repair,
 };

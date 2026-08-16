@@ -20,6 +20,7 @@ const operationsRoutes: Record<OperationKey, string> = {
   reorder: getOperationPath(locale, "reorder"),
   pdfToImages: getOperationPath(locale, "pdfToImages"),
   imagesToPdf: getOperationPath(locale, "imagesToPdf"),
+  repair: getOperationPath(locale, "repair"),
 };
 
 export const frDictionary: Dictionary = {
@@ -133,6 +134,7 @@ export const frDictionary: Dictionary = {
         reorder: "Réorganiser",
         pdfToImages: "PDF en images",
         imagesToPdf: "Images en PDF",
+        repair: "Réparer PDF",
       },
       license: "Traitement PDF: PDF-lib (MIT), PDF.js (Apache 2.0) • Police: Geist (MIT)",
       disclaimer: "Le service est fourni « tel quel » sans garantie d'aucune sorte. L'utilisateur est responsable de l'utilisation des fichiers.",
@@ -200,6 +202,10 @@ export const frDictionary: Dictionary = {
           label: "Images en PDF",
           helper: "Combinez des images JPG, PNG ou WEBP dans un PDF avec une mise en page personnalisée.",
         },
+        repair: {
+          label: "Réparer PDF",
+          helper: "Récupérer et reconstruire des documents PDF corrompus ou endommagés.",
+        },
       },
       upload: {
         title: "Sélectionnez vos fichiers",
@@ -212,6 +218,7 @@ export const frDictionary: Dictionary = {
           reorder: "Sélectionnez un fichier pour travailler avec ses pages :",
           pdfToImages: "PDF à convertir (traités un par un) :",
           imagesToPdf: "Images à combiner (réorganiser pour la séquence finale) :",
+          repair: "PDF à réparer (traitement local) :",
           default: "Fichiers sélectionnés (réorganiser ou supprimer) :",
         },
         hints: {
@@ -220,6 +227,7 @@ export const frDictionary: Dictionary = {
           crop: "Choisissez les pages à recadrer, puis définissez combien de points couper de chaque côté.",
           pdfToImages: "Nous traitons un PDF à la fois. Ajustez le format et le DPI avant d'exporter.",
           imagesToPdf: "Déposez des images JPG, PNG, WEBP ou TIFF. Utilisez le panneau d'options pour choisir la taille, les marges et la couleur.",
+          repair: "Nous récupérons et reconstruisons les PDF corrompus sous forme de documents valides.",
         },
       },
       downloadNames: {
@@ -232,6 +240,7 @@ export const frDictionary: Dictionary = {
         reorder: "reorganise_PDFLince",
         pdfToImages: "images_PDFLince",
         imagesToPdf: "images_vers_pdf_PDFLince",
+        repair: "repare_PDFLince",
       },
       processButton: {
         idleSingle: "Traiter 1 fichier",
@@ -411,6 +420,11 @@ export const frDictionary: Dictionary = {
         'Faites glisser les pages. Une fois terminé, cliquez sur "Enregistrer l\'ordre".',
     },
     processingOptions: {
+      autoRepair: {
+        label: "Réparer automatiquement les fichiers endommagés",
+        description: "Tente de réparer automatiquement les fichiers PDF corrompus ou illisibles avant le traitement.",
+        note: "La réparation automatique reconstruit les pages endommagées sous forme d'images nettes, ce qui peut modifier la sélection du texte ou la mise en page. Veuillez vérifier le résultat.",
+      },
       compress: {
         title: "Compression",
         level: "Niveau",

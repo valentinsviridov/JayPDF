@@ -1,7 +1,7 @@
 "use client";
 
 import { useDictionary } from '../../../../i18n/LocaleProvider';
-import type { FeatureOptionsProps } from './shared';
+import { AutoRepairToggle, type FeatureOptionsProps } from './shared';
 
 export function SplitOptions({ options, onOptionsChangeAction }: FeatureOptionsProps) {
   const strings = useDictionary().components.processingOptions.split;
@@ -25,6 +25,10 @@ export function SplitOptions({ options, onOptionsChangeAction }: FeatureOptionsP
         />
         <p className="text-xs text-[var(--tx-3)]">{strings.pagesPerFileHint}</p>
       </div>
+      <AutoRepairToggle
+        checked={options.autoRepairCorrupted === true}
+        onChange={value => onOptionsChangeAction({ ...options, autoRepairCorrupted: value })}
+      />
     </div>
   );
 }

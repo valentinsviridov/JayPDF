@@ -614,6 +614,72 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       "Documenteză fluxurile de lucru pentru revizuiri care necesită capturi de ecran ale paginilor.",
     ],
   },
+  repair: {
+    key: "repair",
+    slug: "repara",
+    mode: "repair",
+    meta: {
+      title: "Repară PDF Online Gratuit | Recuperează Fișiere Corupte | PDFLince",
+      description:
+        "Repară fișiere PDF deteriorate sau corupte direct în browser. Reconstruiește PDF-uri ilizibile local și în siguranță.",
+      keywords: [
+        "repara pdf",
+        "recuperare pdf corupt",
+        "reparare pdf gratuit",
+        "reconstruire pdf",
+      ],
+      ogTitle: "Repară și recuperează PDF-uri deteriorate online | PDFLince",
+      ogDescription:
+        "Repară documente PDF corupte direct în browser cu 100% confidențialitate și fără încărcare pe servere.",
+      ogImageAlt: "Interfață reparare PDF PDFLince",
+    },
+    hero: {
+      title: "Repară și reconstruiește PDF-uri deteriorate local",
+      description:
+        "Recuperează fișiere PDF corupte sau ilizibile reconstruindu-le în documente curate și valide.",
+      bulletPoints: [
+        "100% privat și în browser — fișierele tale nu părăsesc dispozitivul",
+        "Repară tabele xref defecte, fluxuri corupte și pagini ilizibile",
+        "Generează PDF-uri curate conforme cu standardele pentru orice program",
+      ],
+      imageAlt: "Flux de reparare PDF",
+    },
+    benefitsTitle: "De ce să repari PDF-uri cu PDFLince",
+    benefits: [
+      {
+        title: "Recuperare profundă",
+        description:
+          "Folosește motoare de randare reziliente pentru a analiza și recupera pagini din documente corupte.",
+      },
+      {
+        title: "Ieșire standard",
+        description:
+          "Reconstruiește paginile recuperate într-un fișier PDF nou, curat și complet valid.",
+      },
+      {
+        title: "Confidențialitate totală",
+        description:
+          "Toată procesarea are loc local în browser fără trimiterea datelor pe servere externe.",
+      },
+    ],
+    howTo: {
+      title: "Cum să repari un PDF cu PDFLince",
+      steps: [
+        "Încarcă fișierul PDF deteriorat sau ilizibil.",
+        "Fă clic pe „Procesează” pentru a începe recuperarea și reconstrucția.",
+        "Descarcă PDF-ul reparat instantaneu.",
+      ],
+      note:
+        "Dacă un fișier rămâne ilizibil, deschiderea lui într-un vizualizator și imprimarea în format PDF folosind o imprimantă virtuală poate ajuta de asemenea.",
+    },
+    useCasesTitle: "Când ajută repararea unui PDF",
+    useCases: [
+      "Repară PDF-uri corupte în timpul descărcărilor întrerupte sau transferurilor de fișiere.",
+      "Recuperează documente care nu se pot deschide sau îmbina în alte unelte.",
+      "Reconstruiește PDF-uri malformate exportate de programe învechite.",
+      "Fă utilizabile fișiere anterior neprocesabile.",
+    ],
+  },
 };
 
 export const operationsRo: Record<OperationKey, OperationContent> = {
@@ -626,4 +692,5 @@ export const operationsRo: Record<OperationKey, OperationContent> = {
   reorder: operationsRoContent.reorder,
   pdfToImages: operationsRoContent.pdfToImages,
   imagesToPdf: operationsRoContent.imagesToPdf,
+  repair: operationsRoContent.repair,
 };

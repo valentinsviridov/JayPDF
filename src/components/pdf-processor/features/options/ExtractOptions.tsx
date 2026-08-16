@@ -2,7 +2,7 @@
 
 import { useDictionary } from '../../../../i18n/LocaleProvider';
 import type { FeatureOptionsProps } from './shared';
-import { OptionToggle } from './shared';
+import { AutoRepairToggle, OptionToggle } from './shared';
 
 export function ExtractOptions({ options, onOptionsChangeAction }: FeatureOptionsProps) {
   const strings = useDictionary().components.processingOptions.extract;
@@ -14,6 +14,10 @@ export function ExtractOptions({ options, onOptionsChangeAction }: FeatureOption
         label={strings.preserveMetadata}
         description={strings.preserveMetadataHint}
         onChange={value => onOptionsChangeAction({ ...options, preserveMetadata: value })}
+      />
+      <AutoRepairToggle
+        checked={options.autoRepairCorrupted === true}
+        onChange={value => onOptionsChangeAction({ ...options, autoRepairCorrupted: value })}
       />
     </div>
   );

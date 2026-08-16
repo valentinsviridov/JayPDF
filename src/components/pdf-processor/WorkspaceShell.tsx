@@ -61,7 +61,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
     }, 500); // debounce
 
     return () => clearTimeout(timer);
-  }, [state.activeKey, files, state.options]);
+  }, [state.activeKey, files, state.options, processorService.processor]);
 
   const formatFileSize = (bytes: number): string => {
     if (bytes === 0) return '0 B';
@@ -140,6 +140,13 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
           results.push(res);
         }
         result = results;
+      } else if (state.activeKey === 'repair') {
+        const results = [];
+        for (const file of activeFiles) {
+          const res = await processorService.processor.execute('repair', [file], mappedOptions);
+          results.push({ blob: res, name: file.name });
+        }
+        result = results.length === 1 ? results[0] : results;
       } else {
         result = await processorService.processor.execute(
           state.activeKey,
@@ -153,6 +160,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
           if (r instanceof Blob) return r;
           if (r instanceof Uint8Array) return new Blob([r as any], { type: 'application/pdf' });
           if (r?.blob instanceof Blob) return r.blob;
+          if (r?.blob instanceof Uint8Array) return new Blob([r.blob as any], { type: 'application/pdf' });
           if (r?.data instanceof Uint8Array) return new Blob([r.data as any], { type: 'application/pdf' });
           if (r?.data instanceof Blob) return r.data;
           return r?.blob || r;

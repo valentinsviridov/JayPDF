@@ -108,6 +108,7 @@ test('PDF Crop Workflow on Corrupt PDF', async ({ page }) => {
     await expect(processButton).toBeEnabled({ timeout: 20_000 });
     await processButton.click();
 
-    // UI should show error after processing fails
-    await expect(page.getByText('This PDF document is corrupted or malformed').first()).toBeVisible({ timeout: 30_000 });
+    // UI should show error after processing fails with filename and virtual printer hint
+    await expect(page.getByText(/This PDF document \(cg-brsvie\.pdf\) is corrupted or malformed/i).first()).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByText(/printing the file to PDF using a virtual printer could help/i).first()).toBeVisible({ timeout: 30_000 });
 });

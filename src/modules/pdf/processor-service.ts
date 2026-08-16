@@ -19,6 +19,7 @@ export interface BrowserPdfResultMap {
   reorder: Blob;
   pdfToImages: PdfToImagesResult;
   imagesToPdf: Blob;
+  repair: Blob;
 }
 
 export type BrowserPdfResult<Key extends PdfOperationKey> = BrowserPdfResultMap[Key];
@@ -57,6 +58,7 @@ const resultAdapters: ResultAdapters = {
   reorder: createPdfBlob,
   pdfToImages: result => result,
   imagesToPdf: createPdfBlob,
+  repair: createPdfBlob,
 };
 
 export function createBrowserPdfProcessorService(

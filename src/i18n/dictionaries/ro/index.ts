@@ -20,6 +20,7 @@ const operationsRoutes: Record<OperationKey, string> = {
   reorder: getOperationPath(locale, "reorder"),
   pdfToImages: getOperationPath(locale, "pdfToImages"),
   imagesToPdf: getOperationPath(locale, "imagesToPdf"),
+  repair: getOperationPath(locale, "repair"),
 };
 
 export const roDictionary: Dictionary = {
@@ -141,6 +142,7 @@ export const roDictionary: Dictionary = {
         reorder: "Reordonează",
         pdfToImages: "PDF în Imagini",
         imagesToPdf: "Imagini în PDF",
+        repair: "Repară PDF",
       },
       license: "Procesare PDF: PDF-lib (MIT), PDF.js (Apache 2.0) • Font: Geist (MIT)",
       disclaimer: "Serviciul este furnizat „ca atare”, fără garanții de niciun fel. Utilizatorul este singurul responsabil pentru utilizarea fișierelor.",
@@ -208,6 +210,10 @@ export const roDictionary: Dictionary = {
           label: "Imagini în PDF",
           helper: "Combină imagini JPG, PNG sau WEBP într-un PDF cu un aspect personalizat.",
         },
+        repair: {
+          label: "Repară PDF",
+          helper: "Recuperează și reconstruiește documentele PDF deteriorate sau corupte.",
+        },
       },
       upload: {
         title: "Selectează fișierele",
@@ -220,6 +226,7 @@ export const roDictionary: Dictionary = {
           reorder: "Selectează un fișier pentru a lucra cu paginile sale:",
           pdfToImages: "PDF de convertit (procesate pe rând):",
           imagesToPdf: "Imagini de combinat (reordonează pentru secvența finală):",
+          repair: "PDF-uri de reparat (procesare locală):",
           default: "Fișiere selectate (reordonează sau elimină):",
         },
         hints: {
@@ -228,6 +235,7 @@ export const roDictionary: Dictionary = {
           crop: "Alege paginile de decupat, apoi definește câte puncte să elimini de pe fiecare parte.",
           pdfToImages: "Procesăm câte un PDF pe rând. Ajustează formatul și DPI-ul înainte de export.",
           imagesToPdf: "Adaugă imagini JPG, PNG, WEBP sau TIFF. Folosește panoul de opțiuni pentru a alege dimensiunea, marginile și culoarea.",
+          repair: "Recuperăm și reconstruim PDF-urile corupte în documente valide și curate.",
         },
       },
       downloadNames: {
@@ -240,6 +248,7 @@ export const roDictionary: Dictionary = {
         reorder: "reordonat_PDFLince",
         pdfToImages: "imagini_PDFLince",
         imagesToPdf: "imagini_in_pdf_PDFLince",
+        repair: "reparat_PDFLince",
       },
       processButton: {
         idleSingle: "Procesează 1 fișier",
@@ -419,6 +428,11 @@ export const roDictionary: Dictionary = {
         "Trage de pagini în ordinea dorită. Când ai terminat, fă clic pe „Salvează ordinea”.",
     },
     processingOptions: {
+      autoRepair: {
+        label: "Repară automat fișierele deteriorate",
+        description: "Încearcă să repare automat fișierele PDF corupte sau ilizibile înainte de procesare.",
+        note: "Repararea automată reconstruiește paginile deteriorate ca imagini curate, ceea ce poate modifica selectabilitatea textului sau aspectul. Vă rugăm să verificați rezultatul.",
+      },
       compress: {
         title: "Compresie",
         level: "Nivel",

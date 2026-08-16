@@ -13,11 +13,15 @@ export async function compressPdf(
   try {
     const input = requireInput(inputs, 0, 'compress');
     const bytes = await readBytes(input);
-    const pdfDoc = await loadPdfWithBasicValidation(bytes, {
-      ignoreEncryption: true,
-      throwOnInvalidObject: false,
-      updateMetadata: options.preserveMetadata !== false,
-    });
+    const pdfDoc = await loadPdfWithBasicValidation(
+      input,
+      {
+        ignoreEncryption: true,
+        throwOnInvalidObject: false,
+        updateMetadata: options.preserveMetadata !== false,
+      },
+      { autoRepairCorrupted: options.autoRepairCorrupted },
+    );
     const enhancements = await applyCompressionEnhancements(pdfDoc, {
       removeMetadata: options.preserveMetadata === false,
       stripAnnotations: options.stripAnnotations === true,

@@ -24,11 +24,15 @@ export async function cropPdfPages(
       bottom: Math.max(0, options.cropMargins.bottom ?? 0),
       left: Math.max(0, options.cropMargins.left ?? 0),
     };
-    const pdfDoc = await loadPdfWithBasicValidation(input, {
-      ignoreEncryption: true,
-      throwOnInvalidObject: false,
-      updateMetadata: options.preserveMetadata !== false,
-    });
+    const pdfDoc = await loadPdfWithBasicValidation(
+      input,
+      {
+        ignoreEncryption: true,
+        throwOnInvalidObject: false,
+        updateMetadata: options.preserveMetadata !== false,
+      },
+      { autoRepairCorrupted: options.autoRepairCorrupted },
+    );
     const validIndices = [...new Set(
       pageNumbers
         .map(pageNumber => pageNumber - 1)

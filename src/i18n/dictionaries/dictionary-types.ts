@@ -103,6 +103,7 @@ export interface PdfProcessorStrings {
       reorder: string;
       pdfToImages: string;
       imagesToPdf: string;
+      repair?: string;
       default: string;
     };
     hints: {
@@ -111,6 +112,7 @@ export interface PdfProcessorStrings {
       crop: string;
       pdfToImages: string;
       imagesToPdf: string;
+      repair?: string;
     };
   };
   downloadNames: Record<ModeKey, string>;
@@ -142,6 +144,7 @@ export interface PdfProcessorStrings {
     reordered: string;
     pdfToImages: PdfToImagesStatus;
     imagesToPdf: ImagesToPdfStatus;
+    repaired?: string;
     imageFormatLabels: Record<'png' | 'jpeg', string>;
   };
   errors: {
@@ -273,6 +276,11 @@ export interface PageOrdererStrings {
 }
 
 export interface ProcessingOptionsStrings {
+  autoRepair: {
+    label: string;
+    description: string;
+    note: string;
+  };
   compress: {
     title: string;
     level: string;
@@ -391,6 +399,10 @@ export interface ProcessingOptionsStrings {
     marginHint: string;
     backgroundLabel: string;
     backgroundHint: string;
+  };
+  repair?: {
+    title: string;
+    hint: string;
   };
 }
 

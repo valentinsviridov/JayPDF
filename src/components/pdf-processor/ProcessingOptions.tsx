@@ -8,6 +8,7 @@ import { ImagesToPdfOptions } from './features/options/ImagesToPdfOptions';
 import { MergeOptions } from './features/options/MergeOptions';
 import { PdfToImagesOptions } from './features/options/PdfToImagesOptions';
 import { ReorderOptions } from './features/options/ReorderOptions';
+import { RotateOptions } from './features/options/RotateOptions';
 import { SplitOptions } from './features/options/SplitOptions';
 import type { FeatureOptionsProps } from './features/options/shared';
 
@@ -24,6 +25,7 @@ const OPTIONS_COMPONENTS: Partial<Record<PdfOperationKey, OptionsComponent>> = {
   extract: ExtractOptions,
   crop: CropOptions,
   reorder: ReorderOptions,
+  rotate: RotateOptions,
   pdfToImages: PdfToImagesOptions,
   imagesToPdf: ImagesToPdfOptions,
 };

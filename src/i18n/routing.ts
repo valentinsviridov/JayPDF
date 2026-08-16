@@ -28,6 +28,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
   en: {
     compress: "",
@@ -39,6 +40,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
   pt: {
     compress: "",
@@ -50,6 +52,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
   de: {
     compress: "",
@@ -61,6 +64,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
   it: {
     compress: "",
@@ -72,6 +76,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
   fr: {
     compress: "",
@@ -83,6 +88,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
   ro: {
     compress: "",
@@ -94,6 +100,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
   ru: {
     compress: "",
@@ -105,6 +112,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
   hu: {
     compress: "",
@@ -116,6 +124,7 @@ const localeOperationSlugMap: Record<Locale, Record<OperationKey, string>> = {
     reorder: "",
     pdfToImages: "",
     imagesToPdf: "",
+    repair: "",
   },
 };
 

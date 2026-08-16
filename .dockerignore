@@ -1,16 +1,47 @@
-node_modules
+# Dependency directories
+node_modules/
+
+# Next.js build outputs and caches
+.next/
+out/
+build/
+dist/
+.turbo/
+tsconfig.tsbuildinfo
+
+# Version control
+.git/
+.github/
+.gitignore
+
+# IDEs and editors
+.idea/
+.vscode/
+.editorconfig
+*.swp
+*.swo
+
+# Tests, coverage, and reports
+tests/
+test-results/
+playwright-report/
+playwright.config.ts
+coverage/
+
+# Docker and CI/CD
 Dockerfile*
 docker-compose*
+compose*.yml
 .dockerignore
-.git
-.gitignore
-README.md
-LICENSE
-.vscode
 Makefile
-helm-charts
-.env
-.editorconfig
-.idea
-coverage*.next
-out
+helm-charts/
+
+# Documentation and markdown
+*.md
+LICENSE
+
+# Temporary files and logs
+*.log
+*.pdf
+.env*
+.npmrc

@@ -11,15 +11,33 @@ export async function mergePdfs(
 ): Promise<Uint8Array> {
   try {
     requireInputs(inputs, 'merge');
-    if (inputs.length === 1) return new Uint8Array(await readBytes(inputs[0]));
+    if (inputs.length === 1) {
+      const source = await loadPdfWithBasicValidation(
+        inputs[0],
+        {
+          ignoreEncryption: true,
+          throwOnInvalidObject: false,
+        },
+        { autoRepairCorrupted: options.autoRepairCorrupted },
+      );
+      if (options.metadata || options.autoRepairCorrupted) {
+        if (options.metadata) applyMetadata(source, options.metadata);
+        return source.save({ useObjectStreams: false });
+      }
+      return new Uint8Array(await readBytes(inputs[0]));
+    }
 
     const mergedPdf = await PDFDocument.create();
     for (let index = 0; index < inputs.length; index += 1) {
       await yieldToEventLoop();
-      const source = await loadPdfWithBasicValidation(inputs[index], {
-        ignoreEncryption: true,
-        throwOnInvalidObject: false,
-      });
+      const source = await loadPdfWithBasicValidation(
+        inputs[index],
+        {
+          ignoreEncryption: true,
+          throwOnInvalidObject: false,
+        },
+        { autoRepairCorrupted: options.autoRepairCorrupted },
+      );
       const copiedPages = await mergedPdf.copyPages(source, source.getPageIndices());
       copiedPages.forEach(page => mergedPdf.addPage(page));
 

@@ -105,6 +105,47 @@ test('PDF Compression with Strip Annotations on Corrupt PDF', async ({ page }) =
     await expect(processButton).toBeEnabled({ timeout: 20_000 });
     await processButton.click();
 
-    // 5. Verify inline error is rendered in the UI
-    await expect(page.getByText('This PDF document is corrupted or malformed').first()).toBeVisible({ timeout: 10_000 });
+    // 5. Verify inline error is rendered in the UI with filename and virtual printer hint
+    await expect(page.getByText(/This PDF document \(cg-brsvie\.pdf\) is corrupted or malformed/i).first()).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByText(/printing the file to PDF using a virtual printer could help/i).first()).toBeVisible({ timeout: 10_000 });
+});
+
+test('PDF Compression with Auto-Repair enabled successfully recovers corrupt PDF', async ({ page }) => {
+    test.setTimeout(120_000);
+    const corruptPdfPath = path.join(__dirname, 'fixtures', 'cg-brsvie.pdf');
+
+    // 1. Visit Compress Page
+    await page.goto('/compress', { timeout: 60_000 });
+
+    // 2. Upload the corrupt file
+    const fileInput = page.locator('input[type="file"]');
+    await fileInput.setInputFiles(corruptPdfPath);
+    await expect(page.getByText('cg-brsvie.pdf').first()).toBeVisible();
+
+    // 3. Enable "Fix corrupted files automatically"
+    const autoRepairToggle = page.getByLabel('Fix corrupted files automatically');
+    await expect(autoRepairToggle).toBeVisible();
+    await autoRepairToggle.check();
+
+    // 4. Click process and verify download succeeds
+    const downloadPromise = page.waitForEvent('download', { timeout: 60_000 });
+    const processButton = page.getByRole('button', { name: /^Process \d+ file/ });
+    await expect(processButton).toBeEnabled({ timeout: 20_000 });
+    await processButton.click();
+
+    const download = await downloadPromise;
+    expect(download.suggestedFilename()).toBe('cg-brsvie_compressed_PDFLince.pdf');
+
+    const downloadDest = path.join(__dirname, 'downloaded-repaired-compressed.pdf');
+    await download.saveAs(downloadDest);
+
+    const fileSize = fs.statSync(downloadDest).size;
+    expect(fileSize).toBeGreaterThan(0);
+
+    const pdfDoc = await PDFDocument.load(fs.readFileSync(downloadDest));
+    expect(pdfDoc.getPageCount()).toBe(75);
+
+    if (fs.existsSync(downloadDest)) {
+        try { fs.unlinkSync(downloadDest); } catch (e) {}
+    }
 });

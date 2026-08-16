@@ -131,6 +131,17 @@
       "ro": "/ro/imagini-in-pdf",
       "ru": "/ru/izobrazheniya-v-pdf",
       "hu": "/hu/kepek-pdf-be"
+    },
+    "repair": {
+      "en": "/repair",
+      "es": "/es/reparar",
+      "pt": "/pt/reparar",
+      "de": "/de/reparieren",
+      "it": "/it/ripara",
+      "fr": "/fr/reparer",
+      "ro": "/ro/repara",
+      "ru": "/ru/vosstanovit",
+      "hu": "/hu/javitas"
     }
   }
 }

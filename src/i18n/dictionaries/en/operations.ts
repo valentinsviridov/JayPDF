@@ -607,7 +607,73 @@ const operationsEnContent: Record<OperationKey, OperationContent> = {
       "Document review workflows that require screenshots of each page.",
     ],
   },
-
+  repair: {
+    key: "repair",
+    slug: "repair",
+    mode: "repair",
+    meta: {
+      title: "Repair PDF Online for Free | Recover Corrupted Files | PDFLince",
+      description:
+        "Repair damaged or corrupted PDF files directly in your browser. Rebuild unreadable PDFs securely and locally.",
+      keywords: [
+        "repair pdf",
+        "fix corrupt pdf",
+        "recover pdf",
+        "damaged pdf repair",
+        "rebuild pdf",
+      ],
+      ogTitle: "Repair & Recover Damaged PDFs Online | PDFLince",
+      ogDescription:
+        "Fix corrupt or unreadable PDF documents directly in your browser with 100% privacy and zero server uploads.",
+      ogImageAlt: "PDFLince PDF repair interface",
+    },
+    hero: {
+      title: "Repair and rebuild damaged PDFs locally",
+      description:
+        "Recover damaged, corrupted, or unreadable PDF files by re-rendering and rebuilding them into clean, valid documents.",
+      bulletPoints: [
+        "100% private and client-side — your files never leave your device",
+        "Recovers broken xref tables, malformed streams, and unreadable pages",
+        "Produces clean, fully standard PDFs compatible with all tools and viewers",
+      ],
+      imageAlt: "PDF repair workflow illustration",
+    },
+    benefitsTitle: "Why repair PDFs with PDFLince",
+    benefits: [
+      {
+        title: "Deep recovery",
+        description:
+          "Uses resilient rendering pipelines to parse and recover pages from corrupted documents that standard readers reject.",
+      },
+      {
+        title: "Standard output",
+        description:
+          "Rebuilds the recovered pages into a completely fresh, standards-compliant PDF file.",
+      },
+      {
+        title: "Complete privacy",
+        description:
+          "All recovery happens locally inside your browser with no data sent to external servers.",
+      },
+    ],
+    howTo: {
+      title: "How to repair a PDF with PDFLince",
+      steps: [
+        "Upload the damaged or unreadable PDF file.",
+        "Click “Process” to start the recovery and rebuilding process.",
+        "Download your repaired, fully functional PDF file instantly.",
+      ],
+      note:
+        "If a file remains completely unreadable, opening it in a viewer and printing it to PDF using a virtual printer may also help.",
+    },
+    useCasesTitle: "When to use PDF repair",
+    useCases: [
+      "Fix PDFs corrupted during interrupted downloads or file transfers.",
+      "Recover documents that fail to open, merge, or compress in other tools.",
+      "Rebuild malformed PDFs exported by legacy or buggy software.",
+      "Make previously unprocessable files compatible with modern workflows.",
+    ],
+  },
 };
 
 export const operationsEn: Record<OperationKey, OperationContent> = {
@@ -620,4 +686,5 @@ export const operationsEn: Record<OperationKey, OperationContent> = {
   reorder: operationsEnContent.reorder,
   pdfToImages: operationsEnContent.pdfToImages,
   imagesToPdf: operationsEnContent.imagesToPdf,
+  repair: operationsEnContent.repair,
 };

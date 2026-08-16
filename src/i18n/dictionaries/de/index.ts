@@ -20,6 +20,7 @@ const operationRoutes: Record<OperationKey, string> = {
   reorder: getOperationPath(locale, "reorder"),
   pdfToImages: getOperationPath(locale, "pdfToImages"),
   imagesToPdf: getOperationPath(locale, "imagesToPdf"),
+  repair: getOperationPath(locale, "repair"),
 };
 
 export const deDictionary: Dictionary = {
@@ -133,6 +134,7 @@ export const deDictionary: Dictionary = {
         reorder: "Seiten neu ordnen",
         pdfToImages: "PDF in Bilder",
         imagesToPdf: "Bilder zu PDF",
+        repair: "PDF reparieren",
       },
       license: "PDF-Verarbeitung: PDF-lib (MIT), PDF.js (Apache 2.0) • Schriftart: Geist (MIT)",
       disclaimer: "Der Dienst wird 'wie besehen' ohne jegliche Gewährleistung bereitgestellt. Der Benutzer ist für die Verwendung der generierten Dateien verantwortlich.",
@@ -200,6 +202,10 @@ export const deDictionary: Dictionary = {
           label: "Bilder zu PDF",
           helper: "Kombiniere JPG, PNG oder WEBP zu einem einzigen PDF mit passendem Layout.",
         },
+        repair: {
+          label: "PDF reparieren",
+          helper: "Beschädigte oder fehlerhafte PDF-Dokumente wiederherstellen und neu aufbauen.",
+        },
       },
       upload: {
         title: "Dateien auswählen",
@@ -212,6 +218,7 @@ export const deDictionary: Dictionary = {
           reorder: "Datei auswählen, um mit den Seiten zu arbeiten:",
           pdfToImages: "PDFs zum Konvertieren (werden nacheinander verarbeitet):",
           imagesToPdf: "Bilder zum Kombinieren (Reihenfolge festlegen):",
+          repair: "PDFs zum Reparieren (lokal verarbeitet):",
           default: "Ausgewählte Dateien (neu anordnen oder entfernen):",
         },
         hints: {
@@ -220,6 +227,7 @@ export const deDictionary: Dictionary = {
           crop: "Wahle die zuzuschneidenden Seiten und lege im Optionsbereich fest, wie viele Punkte pro Seite entfernt werden.",
           pdfToImages: "Wir rendern ein PDF nach dem einen. Stelle Format und DPI im Optionsbereich vor dem Export ein.",
           imagesToPdf: "Ziehe JPG, PNG, WEBP oder TIFF hinein. Wähle Seitenformat, Ausrichtung und Ränder im Optionspanel.",
+          repair: "Wir stellen beschädigte PDFs wieder her und bauen sie als saubere Dokumente neu auf.",
         },
       },
       downloadNames: {
@@ -232,6 +240,7 @@ export const deDictionary: Dictionary = {
         reorder: "neu_geordnet_PDFLince",
         pdfToImages: "bilder_PDFLince",
         imagesToPdf: "bilder_zu_pdf_PDFLince",
+        repair: "repariert_PDFLince",
       },
       processButton: {
         idleSingle: "1 Datei verarbeiten",
@@ -408,6 +417,11 @@ export const deDictionary: Dictionary = {
         'Ziehe die Seiten oder nutze die Pfeiltasten. Klicke anschließend auf "Neue Reihenfolge speichern", um die Änderungen zu übernehmen.',
     },
     processingOptions: {
+      autoRepair: {
+        label: "Beschädigte Dateien automatisch reparieren",
+        description: "Versucht beschädigte oder unlesbare PDF-Dateien vor der Verarbeitung automatisch zu reparieren.",
+        note: "Die automatische Reparatur rekonstruiert beschädigte Seiten als saubere Bilder, was die Textauswahl oder das Layout verändern kann. Bitte überprüfen Sie das Ergebnis.",
+      },
       compress: {
         title: "Komprimierung",
         level: "Stufe",

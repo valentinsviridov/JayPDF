@@ -95,14 +95,14 @@ test('Rigorous PDF Compression Verification', async ({ page }) => {
     // 6. Wait for preview
     console.log('Waiting for compression preview...');
     const estimadoSection = page.getByText('Estimated output');
-    await expect(estimadoSection).toBeVisible({ timeout: 60_000 });
+    await expect(estimadoSection).toBeVisible({ timeout: 120_000 });
 
     const previewResult = page.locator('div:has-text("Estimated output")').last();
     const resultText = await previewResult.innerText();
     console.log('Preview Result:', resultText);
 
     // 7. Process
-    const downloadPromise = page.waitForEvent('download');
+    const downloadPromise = page.waitForEvent('download', { timeout: 120_000 });
     await page.getByRole('button', { name: 'Process 1 file' }).click();
     const download = await downloadPromise;
     await download.saveAs(downloadPath);

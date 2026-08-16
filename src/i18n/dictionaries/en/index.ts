@@ -20,6 +20,7 @@ const operationsRoutes: Record<OperationKey, string> = {
   reorder: getOperationPath(locale, "reorder"),
   pdfToImages: getOperationPath(locale, "pdfToImages"),
   imagesToPdf: getOperationPath(locale, "imagesToPdf"),
+  repair: getOperationPath(locale, "repair"),
 };
 
 export const enDictionary: Dictionary = {
@@ -133,6 +134,7 @@ export const enDictionary: Dictionary = {
         reorder: "Reorder Pages",
         pdfToImages: "PDF to images",
         imagesToPdf: "Images to PDF",
+        repair: "Repair PDF",
       },
       license: "PDF Processing: PDF-lib (MIT), PDF.js (Apache 2.0) • Font: Geist (MIT)",
       disclaimer: "The service is provided 'as is' without warranty of any kind. The user is responsible for the use of the generated files.",
@@ -144,16 +146,16 @@ export const enDictionary: Dictionary = {
         info: "Notice",
         warning: "Warning",
       },
-      closeLabel: "Close",
+      closeLabel: "Dismiss notification",
     },
     fotolinceBanner: {
-      eyebrow: "Need to optimise images?",
-      title: "Compress, resize or convert photos with FotoLince",
+      eyebrow: "Companion project",
+      title: "Fotolince — Private photo tools",
       description:
-        "Our sister toolkit handles JPG, PNG and WEBP locally — perfect for shrinking visuals before you build a PDF.",
-      ctaLabel: "Open FotoLince",
+        "Resize, compress, convert, and crop images directly in your browser. No server uploads, total privacy.",
+      ctaLabel: "Open Fotolince",
       ctaHref: "https://fotolince.com",
-      imageAlt: "FotoLince logo",
+      imageAlt: "Fotolince logo preview",
     },
     feedback: {
       question: "Was this helpful?",
@@ -200,6 +202,10 @@ export const enDictionary: Dictionary = {
           label: "Images to PDF",
           helper: "Combine JPG, PNG or WEBP images into a single PDF with custom layout.",
         },
+        repair: {
+          label: "Repair PDF",
+          helper: "Recover and rebuild damaged or corrupt PDF documents.",
+        },
       },
       upload: {
         title: "Select your files",
@@ -212,6 +218,7 @@ export const enDictionary: Dictionary = {
           reorder: "Select a file to work with its pages:",
           pdfToImages: "PDFs to convert (processed one by one):",
           imagesToPdf: "Images to combine (reorder for the final sequence):",
+          repair: "PDFs to repair (processed locally):",
           default: "Selected files (reorder or remove them):",
         },
         hints: {
@@ -220,6 +227,7 @@ export const enDictionary: Dictionary = {
           crop: "Pick the pages to crop, then define how many points to trim from each side in the options panel.",
           pdfToImages: "We render one PDF at a time. Adjust format and DPI from the options panel before exporting.",
           imagesToPdf: "Drop JPG, PNG, WEBP or TIFF images. Use the options panel to choose page size, margins and background colour.",
+          repair: "We recover and rebuild corrupted PDFs into clean, valid documents.",
         },
       },
       downloadNames: {
@@ -232,6 +240,7 @@ export const enDictionary: Dictionary = {
         reorder: "reordered_PDFLince",
         pdfToImages: "images_PDFLince",
         imagesToPdf: "images_to_pdf_PDFLince",
+        repair: "repaired_PDFLince",
       },
       processButton: {
         idleSingle: "Process 1 file",
@@ -411,6 +420,11 @@ export const enDictionary: Dictionary = {
         'Drag the pages or use the arrow buttons. When you are done, click "Save new order" to apply the changes.',
     },
     processingOptions: {
+      autoRepair: {
+        label: "Fix corrupted files automatically",
+        description: "Automatically attempt to repair damaged or unreadable PDF files using the repair engine.",
+        note: "Automatic repair renders and reconstructs damaged pages as clean images, which can change text selectability or document layout. Please verify the output.",
+      },
       compress: {
         title: "Compression",
         level: "Level",

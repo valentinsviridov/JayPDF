@@ -124,4 +124,21 @@ describe('independent PDF operation modules', () => {
     expect(sanitizeImageBaseName('  Quarterly Résumé / 2026  ')).toBe('quarterly-résumé-2026');
     expect(sanitizeImageBaseName('***')).toBe('pdflince');
   });
+
+  test('loadPdfWithBasicValidation produces detailed error including filename and virtual printer advice on corrupt PDF', async () => {
+    const corruptBytes = new Uint8Array([1, 2, 3, 4, 5]);
+    const source = namedSource('corrupt-doc.pdf', 'application/pdf', corruptBytes);
+    await expect(mergePdfs([source])).rejects.toThrow(
+      /This PDF document \(corrupt-doc\.pdf\) is corrupted or malformed and cannot be safely processed\. Please repair the file before using it \(printing the file to PDF using a virtual printer could help\)\./
+    );
+  });
+
+  test('autoRepairCorrupted option defaults to false and preserves corrupt document error', async () => {
+    const corruptBytes = new Uint8Array([1, 2, 3, 4, 5]);
+    const source = namedSource('broken.pdf', 'application/pdf', corruptBytes);
+    await expect(compressPdf([source], { autoRepairCorrupted: false })).rejects.toThrow(
+      /This PDF document \(broken\.pdf\) is corrupted or malformed/
+    );
+  });
 });
+

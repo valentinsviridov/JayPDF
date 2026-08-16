@@ -574,6 +574,72 @@ const operationsItContent: Record<OperationKey, OperationContent> = {
       "Revisioni.",
     ],
   },
+  repair: {
+    key: "repair",
+    slug: "ripara",
+    mode: "repair",
+    meta: {
+      title: "Ripara PDF Online Gratis | Recupera File Danneggiati | PDFLince",
+      description:
+        "Ripara file PDF danneggiati o corrotti direttamente nel tuo browser. Ricostruisci PDF illeggibili in modo sicuro e locale.",
+      keywords: [
+        "ripara pdf",
+        "recupera pdf danneggiato",
+        "aggiusta pdf corrotto",
+        "riparazione pdf gratis",
+      ],
+      ogTitle: "Ripara e recupera PDF danneggiati online | PDFLince",
+      ogDescription:
+        "Ripara documenti PDF corrotti o illeggibili direttamente nel tuo browser con il 100% di privacy e senza caricare file.",
+      ogImageAlt: "Interfaccia riparazione PDF PDFLince",
+    },
+    hero: {
+      title: "Ripara e ricostruisci PDF danneggiati localmente",
+      description:
+        "Recupera file PDF corrotti o illeggibili effettuando il rendering e ricostruendoli in documenti puliti e validi.",
+      bulletPoints: [
+        "100% privato e nel browser — i tuoi file non lasciano mai il dispositivo",
+        "Ripara tabelle xref danneggiate, stream corrotti e pagine illeggibili",
+        "Genera PDF standard puliti e compatibili con tutti i lettori",
+      ],
+      imageAlt: "Flusso di riparazione PDF",
+    },
+    benefitsTitle: "Perché riparare PDF con PDFLince",
+    benefits: [
+      {
+        title: "Recupero profondo",
+        description:
+          "Utilizza motori di rendering resilienti per analizzare e recuperare pagine da documenti corrotti.",
+      },
+      {
+        title: "Output standard",
+        description:
+          "Ricostruisce le pagine recuperate in un nuovo file PDF conforme agli standard.",
+      },
+      {
+        title: "Privacy totale",
+        description:
+          "Tutte le operazioni si svolgono localmente nel browser senza inviare dati a server esterni.",
+      },
+    ],
+    howTo: {
+      title: "Come riparare un PDF con PDFLince",
+      steps: [
+        "Carica il file PDF danneggiato o illeggibile.",
+        "Fai clic su “Elabora” per avviare il ripristino e la ricostruzione.",
+        "Scarica immediatamente il tuo file PDF riparato.",
+      ],
+      note:
+        "Se un file rimane illeggibile, aprirlo in un visualizzatore e stamparlo su PDF tramite una stampante virtuale può essere d'aiuto.",
+    },
+    useCasesTitle: "Quando utilizzare la riparazione PDF",
+    useCases: [
+      "Riparare PDF danneggiati durante download o trasferimenti interrotti.",
+      "Recuperare documenti che non si aprono in altri strumenti.",
+      "Ricostruire PDF malformati generati da software datati.",
+      "Rendere utilizzabili file precedentemente non elaborabili.",
+    ],
+  },
 };
 
 export const operationsIt: Record<OperationKey, OperationContent> = {
@@ -584,7 +650,7 @@ export const operationsIt: Record<OperationKey, OperationContent> = {
   crop: operationsItContent.crop,
   rotate: operationsItContent.rotate,
   reorder: operationsItContent.reorder,
-
   pdfToImages: operationsItContent.pdfToImages,
   imagesToPdf: operationsItContent.imagesToPdf,
+  repair: operationsItContent.repair,
 };

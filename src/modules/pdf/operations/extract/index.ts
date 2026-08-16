@@ -16,10 +16,14 @@ export async function extractPdfPages(
       throw new PdfModuleError('NO_PAGES', 'No pages to extract', { operation: 'extract' });
     }
 
-    const source = await loadPdfWithBasicValidation(input, {
-      ignoreEncryption: true,
-      throwOnInvalidObject: false,
-    });
+    const source = await loadPdfWithBasicValidation(
+      input,
+      {
+        ignoreEncryption: true,
+        throwOnInvalidObject: false,
+      },
+      { autoRepairCorrupted: options.autoRepairCorrupted },
+    );
     const validIndices = pageNumbers
       .map(pageNumber => pageNumber - 1)
       .filter(index => Number.isInteger(index) && index >= 0 && index < source.getPageCount())

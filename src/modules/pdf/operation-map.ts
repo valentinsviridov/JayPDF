@@ -5,6 +5,7 @@ import type { ImagesToPdfOptions } from './operations/images-to-pdf/definition';
 import type { MergeOptions } from './operations/merge/definition';
 import type { PdfToImagesOptions, PdfToImagesResult } from './operations/pdf-to-images/definition';
 import type { ReorderOptions } from './operations/reorder/definition';
+import type { RepairOptions } from './operations/repair/definition';
 import type { RotateOptions } from './operations/rotate/definition';
 import type { SplitOptions } from './operations/split/definition';
 
@@ -18,6 +19,7 @@ export interface PdfOperationMap {
   reorder: { options: ReorderOptions; result: Uint8Array };
   pdfToImages: { options: PdfToImagesOptions; result: PdfToImagesResult };
   imagesToPdf: { options: ImagesToPdfOptions; result: Uint8Array };
+  repair: { options: RepairOptions; result: Uint8Array };
 }
 
 export type PdfOperationKey = keyof PdfOperationMap;
@@ -32,5 +34,6 @@ export type ProcessorOptions = CompressOptions &
   MergeOptions &
   PdfToImagesOptions &
   ReorderOptions &
+  RepairOptions &
   RotateOptions &
   SplitOptions;

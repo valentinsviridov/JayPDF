@@ -5,6 +5,7 @@ import { DEFAULT_IMAGES_TO_PDF_OPTIONS } from './operations/images-to-pdf/defini
 import { DEFAULT_MERGE_OPTIONS } from './operations/merge/definition';
 import { DEFAULT_PDF_TO_IMAGES_OPTIONS } from './operations/pdf-to-images/definition';
 import { DEFAULT_REORDER_OPTIONS } from './operations/reorder/definition';
+import { DEFAULT_REPAIR_OPTIONS } from './operations/repair/definition';
 import { DEFAULT_ROTATE_OPTIONS } from './operations/rotate/definition';
 import { DEFAULT_SPLIT_OPTIONS } from './operations/split/definition';
 import type { PdfOperationKey, ProcessorOptions } from './operation-map';
@@ -58,6 +59,10 @@ export const PDF_FEATURES: Record<PdfOperationKey, PdfFeatureDefinition> = {
   imagesToPdf: {
     key: 'imagesToPdf', inputKind: 'image', minimumFiles: 1, orderMatters: true,
     defaults: asProcessorOptions(DEFAULT_IMAGES_TO_PDF_OPTIONS),
+  },
+  repair: {
+    key: 'repair', inputKind: 'pdf', minimumFiles: 1, orderMatters: false,
+    defaults: asProcessorOptions(DEFAULT_REPAIR_OPTIONS),
   },
 };
 

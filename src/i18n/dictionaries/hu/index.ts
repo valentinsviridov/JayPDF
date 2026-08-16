@@ -20,6 +20,7 @@ const operationsRoutes: Record<OperationKey, string> = {
   reorder: getOperationPath(locale, "reorder"),
   pdfToImages: getOperationPath(locale, "pdfToImages"),
   imagesToPdf: getOperationPath(locale, "imagesToPdf"),
+  repair: getOperationPath(locale, "repair"),
 };
 
 export const huDictionary: Dictionary = {
@@ -139,6 +140,7 @@ export const huDictionary: Dictionary = {
         reorder: "Átrendezés",
         pdfToImages: "PDF képekbe",
         imagesToPdf: "Képek PDF-be",
+        repair: "PDF javítása",
       },
       license: "PDF-feldolgozás: PDF-lib (MIT), PDF.js (Apache 2.0) • Betűkészlet: Geist (MIT)",
       disclaimer:
@@ -207,6 +209,10 @@ export const huDictionary: Dictionary = {
           label: "Képek PDF-be",
           helper: "Kombinálj JPG, PNG vagy WEBP képeket PDF-be testre szabható elrendezéssel.",
         },
+        repair: {
+          label: "PDF javítása",
+          helper: "Sérült vagy hibás PDF dokumentumok helyreállítása és újjáépítése.",
+        },
       },
       upload: {
         title: "Fájlok kiválasztása",
@@ -219,6 +225,7 @@ export const huDictionary: Dictionary = {
           reorder: "Válassz fájlt az oldalak feldolgozásához:",
           pdfToImages: "Konvertálandó PDF (egymás után dolgozva fel):",
           imagesToPdf: "Kombinálandó képek (húzd át a végső sorrend megadásához):",
+          repair: "Javítandó PDF-ek (helyi feldolgozás):",
           default: "Kiválasztott fájlok (húzd át vagy töröld):",
         },
         hints: {
@@ -227,6 +234,7 @@ export const huDictionary: Dictionary = {
           crop: "Válaszd ki a vágandó oldalakat, majd határozd meg, hány pontot kell eltávolítani minden oldalról.",
           pdfToImages: "Egyszerre egy PDF-et dolgozunk fel. Az exportálás előtt állítsd be a formátumot és a DPI-t.",
           imagesToPdf: "Adj hozzá JPG, PNG, WEBP vagy TIFF képeket. A méret, a margók és a szín a beállítások panelen módosítható.",
+          repair: "A sérült PDF-eket helyreállítjuk és érvényes dokumentummá építjük újra.",
         },
       },
       downloadNames: {
@@ -239,6 +247,7 @@ export const huDictionary: Dictionary = {
         reorder: "atrendezett_PDFLince",
         pdfToImages: "kepek_PDFLince",
         imagesToPdf: "kepek_pdf_PDFLince",
+        repair: "javitott_PDFLince",
       },
       processButton: {
         idleSingle: "1 fájl feldolgozása",
@@ -418,6 +427,11 @@ export const huDictionary: Dictionary = {
         "Húzd az oldalakat a kívánt sorrendbe. Ha kész, kattints a \"Sorrend mentése\" gombra.",
     },
     processingOptions: {
+      autoRepair: {
+        label: "Sérült fájlok automatikus javítása",
+        description: "Automatikusan megkísérli kijavítani a sérült vagy olvashatatlan PDF-fájlokat a feldolgozás előtt.",
+        note: "Az automatikus javítás tiszta képként rekonstruálja a sérült oldalakat, ami megváltoztathatja a szövegkijelölést vagy az elrendezést. Kérjük, ellenőrizze az eredményt.",
+      },
       compress: {
         title: "Tömörítés",
         level: "Szint",

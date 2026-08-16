@@ -2,7 +2,7 @@
 
 import { useDictionary } from '../../../../i18n/LocaleProvider';
 import type { FeatureOptionsProps } from './shared';
-import { OptionToggle } from './shared';
+import { AutoRepairToggle, OptionToggle } from './shared';
 
 export function PdfToImagesOptions({ options, onOptionsChangeAction }: FeatureOptionsProps) {
   const strings = useDictionary().components.processingOptions.pdfToImages;
@@ -123,6 +123,10 @@ export function PdfToImagesOptions({ options, onOptionsChangeAction }: FeatureOp
           />
           <p className="mt-1 text-xs text-[var(--tx-3)]">{strings.baseNameHint}</p>
         </div>
+        <AutoRepairToggle
+          checked={options.autoRepairCorrupted === true}
+          onChange={value => onOptionsChangeAction({ ...options, autoRepairCorrupted: value })}
+        />
       </div>
     </div>
   );

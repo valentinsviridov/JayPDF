@@ -16,10 +16,14 @@ export async function reorderPdfPages(
       throw new PdfModuleError('NO_PAGES', 'No page order provided', { operation: 'reorder' });
     }
 
-    const source = await loadPdfWithBasicValidation(input, {
-      ignoreEncryption: true,
-      throwOnInvalidObject: false,
-    });
+    const source = await loadPdfWithBasicValidation(
+      input,
+      {
+        ignoreEncryption: true,
+        throwOnInvalidObject: false,
+      },
+      { autoRepairCorrupted: options.autoRepairCorrupted },
+    );
     const validIndices = pageOrder
       .map(pageNumber => pageNumber - 1)
       .filter(index => Number.isInteger(index) && index >= 0 && index < source.getPageCount());

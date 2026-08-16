@@ -18,10 +18,14 @@ export async function splitPdf(
       });
     }
 
-    const source = await loadPdfWithBasicValidation(input, {
-      ignoreEncryption: true,
-      throwOnInvalidObject: false,
-    });
+    const source = await loadPdfWithBasicValidation(
+      input,
+      {
+        ignoreEncryption: true,
+        throwOnInvalidObject: false,
+      },
+      { autoRepairCorrupted: options.autoRepairCorrupted },
+    );
     const results: Uint8Array[] = [];
 
     for (let start = 0; start < source.getPageCount(); start += pagesPerFile) {

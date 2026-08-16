@@ -7,6 +7,7 @@ export type CompressOptions = {
   downscaleImages?: boolean;
   downscaleImagesDpi?: number;
   imageQuality?: number;
+  autoRepairCorrupted?: boolean;
 };
 
 export type CompressionResult = {
@@ -25,6 +26,7 @@ export const COMPRESSION_PRESETS: Record<CompressionLevel, CompressOptions> = {
     stripAnnotations: false,
     downscaleImages: false,
     downscaleImagesDpi: 150,
+    autoRepairCorrupted: false,
   },
   medium: {
     compressionLevel: 'medium',
@@ -32,6 +34,7 @@ export const COMPRESSION_PRESETS: Record<CompressionLevel, CompressOptions> = {
     stripAnnotations: false,
     downscaleImages: true,
     downscaleImagesDpi: 150,
+    autoRepairCorrupted: false,
   },
   high: {
     compressionLevel: 'high',
@@ -39,10 +42,12 @@ export const COMPRESSION_PRESETS: Record<CompressionLevel, CompressOptions> = {
     stripAnnotations: true,
     downscaleImages: true,
     downscaleImagesDpi: 72,
+    autoRepairCorrupted: false,
   },
 };
 
 export const DEFAULT_COMPRESS_OPTIONS: CompressOptions = {
   ...COMPRESSION_PRESETS.medium,
   preserveMetadata: false,
+  autoRepairCorrupted: false,
 };
