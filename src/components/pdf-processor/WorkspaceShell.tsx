@@ -39,6 +39,8 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
 
   const [previewStatus, setPreviewStatus] = useState<PreviewStatus>('idle');
   const [previewResult, setPreviewResult] = useState<any>(null);
+  const [previewErrorMessage, setPreviewErrorMessage] = useState<string | undefined>(undefined);
+  const [previewRetryCount, setPreviewRetryCount] = useState(0);
   const [currentFileIndex, setCurrentFileIndex] = useState(0);
   const [progressState, setProgressState] = useState<{
     percent: number;
@@ -53,29 +55,64 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
     elapsedSeconds: 0,
   });
 
-  const files = state.sessionIds.map(id => state.sessions[id].originalFile);
+  const files = useMemo(
+    () => state.sessionIds.map(id => state.sessions[id]?.originalFile).filter(Boolean),
+    [state.sessionIds, state.sessions],
+  );
+
+  const activeFile = files[0] || null;
+  const activeFileSignature = activeFile
+    ? `${activeFile.name}-${activeFile.size}-${activeFile.lastModified}`
+    : '';
+  const optionsSignature = useMemo(() => JSON.stringify(state.options), [state.options]);
 
   useEffect(() => {
-    if (state.activeKey !== 'compress' || files.length === 0) {
+    if (state.activeKey !== 'compress' || !activeFile) {
       setPreviewStatus('idle');
       setPreviewResult(null);
+      setPreviewErrorMessage(undefined);
       return;
     }
-    
+
+    let isCancelled = false;
     setPreviewStatus('running');
+    setPreviewErrorMessage(undefined);
+
     const timer = setTimeout(async () => {
       try {
-        const fileToPreview = files[0];
-        const res = await processorService.processor.execute('compress', [fileToPreview], state.options as any);
-        setPreviewResult(res);
-        setPreviewStatus('ready');
-      } catch (err) {
-        setPreviewStatus('error');
+        const res = await processorService.processor.execute(
+          'compress',
+          [activeFile],
+          state.options as any,
+        );
+        if (!isCancelled) {
+          setPreviewResult(res);
+          setPreviewStatus('ready');
+          setPreviewErrorMessage(undefined);
+        }
+      } catch (err: any) {
+        if (!isCancelled) {
+          setPreviewStatus('error');
+          setPreviewErrorMessage(err?.message || 'Failed to calculate compression preview');
+        }
       }
-    }, 500); // debounce
+    }, 250); // debounce
 
-    return () => clearTimeout(timer);
-  }, [state.activeKey, files, state.options, processorService.processor]);
+    return () => {
+      isCancelled = true;
+      clearTimeout(timer);
+    };
+  }, [
+    state.activeKey,
+    activeFileSignature,
+    optionsSignature,
+    previewRetryCount,
+    processorService.processor,
+  ]);
+
+  const handleRetryPreview = () => {
+    setPreviewRetryCount(count => count + 1);
+  };
 
   const formatFileSize = (bytes: number): string => {
     if (bytes === 0) return '0 B';
@@ -531,13 +568,15 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
               />
             )}
 
-            {state.activeKey === 'compress' && (
+            {state.activeKey === 'compress' && activeFile && (
               <CompressionPreviewCard
                 strings={processorStrings.compressionPreview}
                 status={previewStatus}
                 result={previewResult}
                 formatFileSizeAction={formatFileSize}
-                fileName={files[0]?.name}
+                fileName={activeFile.name}
+                errorMessage={previewErrorMessage}
+                retryAction={handleRetryPreview}
               />
             )}
           </div>

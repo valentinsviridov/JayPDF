@@ -36,7 +36,7 @@ export async function compressPdf(
     const result = await pdfDoc.save({
       useObjectStreams: !pdfDoc.context.trailerInfo.Encrypt,
       addDefaultPage: false,
-      objectsPerTick: (options.compressionLevel ?? 'medium') === 'high' ? 500 : 50,
+      objectsPerTick: (options.compressionLevel ?? 'medium') === 'high' ? 500 : 200,
     });
     onProgress?.({ percent: 100, stage: 'complete', detail: 'Compression complete' });
 
