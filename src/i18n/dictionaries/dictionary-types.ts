@@ -286,8 +286,11 @@ export interface ProcessingOptionsStrings {
     level: string;
     levels: {
       low: string;
+      lowDescription: string;
       medium: string;
+      mediumDescription: string;
       high: string;
+      highDescription: string;
     };
     removeMetadata: string;
     removeMetadataHint: string;

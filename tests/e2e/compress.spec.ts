@@ -52,9 +52,9 @@ test('PDF Compression Workflow', async ({ page }) => {
     await expect(page.getByText('compress-test.pdf').first()).toBeVisible();
 
     // 5. Adjust Compression Settings
-    // Click "High" compression
+    // Click "Extreme / High" compression
     // Use force: true because the cookie banner or other fixed elements might intercept the click
-    await page.getByLabel('High').click({ force: true });
+    await page.getByLabel(/Extreme|High/i).click({ force: true });
 
     // 6. Process
     // Setup download listener before clicking

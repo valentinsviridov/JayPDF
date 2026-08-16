@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useWorkspace } from './controller/use-workspace';
 import FileUploader from './FileUploader';
 import FileList from './FileList';
@@ -66,8 +66,13 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
     : '';
   const optionsSignature = useMemo(() => JSON.stringify(state.options), [state.options]);
 
+  const activeFileRef = useRef(activeFile);
+  activeFileRef.current = activeFile;
+  const optionsRef = useRef(state.options);
+  optionsRef.current = state.options;
+
   useEffect(() => {
-    if (state.activeKey !== 'compress' || !activeFile) {
+    if (state.activeKey !== 'compress' || !activeFileSignature) {
       setPreviewStatus('idle');
       setPreviewResult(null);
       setPreviewErrorMessage(undefined);
@@ -79,11 +84,15 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
     setPreviewErrorMessage(undefined);
 
     const timer = setTimeout(async () => {
+      const fileToRun = activeFileRef.current;
+      const optionsToRun = optionsRef.current;
+      if (!fileToRun) return;
+
       try {
         const res = await processorService.processor.execute(
           'compress',
-          [activeFile],
-          state.options as any,
+          [fileToRun],
+          optionsToRun as any,
         );
         if (!isCancelled) {
           setPreviewResult(res);

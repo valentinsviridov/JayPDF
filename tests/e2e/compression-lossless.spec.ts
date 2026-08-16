@@ -79,8 +79,8 @@ test('Lossless (FlateDecode) PDF Compression Verification', async ({ page }) => 
     const fileInput = page.locator('input[type="file"]');
     await fileInput.setInputFiles(losslessPdfPath);
 
-    // 5. Select "High" (72 DPI)
-    await page.getByLabel('High').click({ force: true });
+    // 5. Select "Extreme / High" (72 DPI)
+    await page.getByLabel(/Extreme|High/i).click({ force: true });
 
     // 6. Wait for preview
     console.log('Waiting for compression preview...');

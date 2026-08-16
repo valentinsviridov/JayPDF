@@ -483,9 +483,12 @@ export const itDictionary: Dictionary = {
         title: "Compressione",
         level: "Livello",
         levels: {
-          low: "Basso",
-          medium: "Medio",
-          high: "Alto",
+          low: "Leggera (Alta qualità)",
+          lowDescription: "Minore compressione, preserva la massima qualità visiva",
+          medium: "Media (Bilanciata)",
+          mediumDescription: "Riduzione consigliata con una buona qualità",
+          high: "Estrema (File più piccolo)",
+          highDescription: "Massima compressione per ridurre al minimo la dimensione",
         },
         removeMetadata: "Rimuovi metadati",
         removeMetadataHint:

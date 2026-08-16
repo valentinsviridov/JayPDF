@@ -33,34 +33,47 @@ export function CompressOptions({ options, onOptionsChangeAction }: FeatureOptio
     <div className="mt-4 space-y-6">
       <div className="space-y-2">
         <h3 className="text-sm font-semibold text-[var(--tx)]">{strings.title}</h3>
-        <div className="grid gap-2 sm:grid-cols-3" role="radiogroup" aria-label={strings.level}>
+        <div className="grid gap-3 sm:grid-cols-3" role="radiogroup" aria-label={strings.level}>
           {(['low', 'medium', 'high'] as const).map(level => {
             const selected = currentLevel === level;
+            const descriptionKey = `${level}Description` as keyof typeof strings.levels;
+            const description = strings.levels[descriptionKey];
             return (
               <label
                 key={level}
-                className={`cursor-pointer rounded-lg border px-4 py-3 text-sm transition focus-within:ring-2 focus-within:ring-[var(--accent)] ${selected
-                  ? 'border-[var(--accent)] bg-[var(--bg-1)] text-[var(--tx)]'
-                  : 'border-[var(--ui-2)] bg-[var(--bg-2)] text-[var(--tx-2)] hover:border-[var(--accent)]/60'
+                className={`cursor-pointer rounded-lg border p-3.5 text-sm transition focus-within:ring-2 focus-within:ring-[var(--accent)] flex flex-col justify-between ${
+                  selected
+                    ? 'border-[var(--accent)] bg-[var(--bg-1)] text-[var(--tx)] shadow-xs'
+                    : 'border-[var(--ui-2)] bg-[var(--bg-2)] text-[var(--tx-2)] hover:border-[var(--accent)]/60'
                 }`}
               >
-                <span className="flex items-center justify-between gap-2">
-                  <span className="font-medium">{strings.levels[level]}</span>
-                  <input
-                    type="radio"
-                    className="sr-only"
-                    name="compression-level"
-                    checked={selected}
-                    onChange={() => selectLevel(level)}
-                  />
-                  <span
-                    aria-hidden
-                    className={`h-2 w-2 rounded-full ${selected
-                      ? 'bg-[var(--accent)]'
-                      : 'border border-[var(--ui-3)] bg-transparent'
-                    }`}
-                  />
-                </span>
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="font-semibold text-xs sm:text-sm text-[var(--tx)]">
+                      {strings.levels[level]}
+                    </span>
+                    <input
+                      type="radio"
+                      className="sr-only"
+                      name="compression-level"
+                      value={level}
+                      aria-label={strings.levels[level]}
+                      checked={selected}
+                      onChange={() => selectLevel(level)}
+                    />
+                    <span
+                      aria-hidden
+                      className={`h-2.5 w-2.5 shrink-0 rounded-full ${
+                        selected
+                          ? 'bg-[var(--accent)]'
+                          : 'border border-[var(--ui-3)] bg-transparent'
+                      }`}
+                    />
+                  </div>
+                  {description && (
+                    <p className="text-xs text-[var(--tx-3)] leading-relaxed">{description}</p>
+                  )}
+                </div>
               </label>
             );
           })}

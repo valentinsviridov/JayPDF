@@ -87,10 +87,10 @@ test('Rigorous PDF Compression Verification', async ({ page }) => {
     const fileInput = page.locator('input[type="file"]');
     await fileInput.setInputFiles(heavyPdfPath);
 
-    // 5. Select "High" (72 DPI)
+    // 5. Select "Extreme / High" (72 DPI)
     // 72 DPI for a 500pt (6.9 inch) image should be ~500 pixels.
     // Reducing from 2500 to 500 is a 25x reduction in pixels!
-    await page.getByLabel('High').click({ force: true });
+    await page.getByLabel(/Extreme|High/i).click({ force: true });
 
     // 6. Wait for preview
     console.log('Waiting for compression preview...');
