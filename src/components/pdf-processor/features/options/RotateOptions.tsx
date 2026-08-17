@@ -1,10 +1,11 @@
 "use client";
 
 import { useDictionary } from '../../../../i18n/LocaleProvider';
-import { AutoRepairToggle, OptionToggle, type FeatureOptionsProps } from './shared';
+import type { FeatureOptionsProps } from './shared';
+import { OptionToggle } from './shared';
 
 export function RotateOptions({ options, onOptionsChangeAction }: FeatureOptionsProps) {
-  const strings = useDictionary().components.processingOptions.crop; // or common
+  const strings = useDictionary().components.processingOptions.crop;
   return (
     <div className="mt-4 space-y-4">
       <OptionToggle
@@ -12,10 +13,6 @@ export function RotateOptions({ options, onOptionsChangeAction }: FeatureOptions
         label={strings.preserveMetadata}
         description={strings.preserveMetadataHint}
         onChange={value => onOptionsChangeAction({ ...options, preserveMetadata: value })}
-      />
-      <AutoRepairToggle
-        checked={options.autoRepairCorrupted === true}
-        onChange={value => onOptionsChangeAction({ ...options, autoRepairCorrupted: value })}
       />
     </div>
   );

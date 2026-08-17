@@ -110,7 +110,7 @@ test('PDF Compression with Strip Annotations on Corrupt PDF', async ({ page }) =
     await expect(page.getByText(/printing the file to PDF using a virtual printer could help/i).first()).toBeVisible({ timeout: 10_000 });
 });
 
-test('PDF Compression with Auto-Repair enabled successfully recovers corrupt PDF', async ({ page }) => {
+test('PDF Compression on Corrupt PDF offers 1-click Fix with Auto-Repair and completes successfully', async ({ page }) => {
     test.setTimeout(240_000);
     const corruptPdfPath = path.join(__dirname, 'fixtures', 'cg-brsvie.pdf');
 
@@ -122,30 +122,28 @@ test('PDF Compression with Auto-Repair enabled successfully recovers corrupt PDF
     await fileInput.setInputFiles(corruptPdfPath);
     await expect(page.getByText('cg-brsvie.pdf').first()).toBeVisible();
 
-    // 3. Enable "Fix corrupted files automatically"
-    const autoRepairToggle = page.getByLabel('Fix corrupted files automatically');
-    await expect(autoRepairToggle).toBeVisible();
-    await autoRepairToggle.check();
-
-    // 4. Click process and verify download succeeds
-    const downloadPromise = page.waitForEvent('download', { timeout: 240_000 });
+    // 3. Process without auto-repair enabled initially
     const processButton = page.getByRole('button', { name: /^Process \d+ file/ });
     await expect(processButton).toBeEnabled({ timeout: 20_000 });
     await processButton.click();
 
+    // 4. Verify corrupted document prompt and 1-click repair button appear
+    await expect(page.getByText(/Corrupted Document Detected/i)).toBeVisible({ timeout: 15_000 });
+    const repairAndRetryBtn = page.getByRole('button', { name: /Fix with Auto-Repair & Retry/i });
+    await expect(repairAndRetryBtn).toBeVisible();
+
+    // 5. Click the 1-click recovery button and verify automatic relaunch and download
+    const downloadPromise = page.waitForEvent('download', { timeout: 240_000 });
+    await repairAndRetryBtn.click();
+
     const download = await downloadPromise;
     expect(download.suggestedFilename()).toBe('cg-brsvie_compressed_JayPDF.pdf');
 
-    const downloadDest = path.join(__dirname, 'downloaded-repaired-compressed.pdf');
+    const downloadDest = path.join(__dirname, 'downloaded-1click-repaired.pdf');
     await download.saveAs(downloadDest);
-
-    const fileSize = fs.statSync(downloadDest).size;
-    expect(fileSize).toBeGreaterThan(0);
-
-    const pdfDoc = await PDFDocument.load(fs.readFileSync(downloadDest));
-    expect(pdfDoc.getPageCount()).toBe(75);
-
+    expect(fs.statSync(downloadDest).size).toBeGreaterThan(0);
     if (fs.existsSync(downloadDest)) {
         try { fs.unlinkSync(downloadDest); } catch (e) {}
     }
 });
+

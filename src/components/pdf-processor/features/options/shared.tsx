@@ -43,15 +43,15 @@ export function AutoRepairToggle({
 }) {
   const strings = useDictionary().components.processingOptions.autoRepair;
   return (
-    <div className="space-y-1.5 pt-2 border-t border-[var(--ui-2)]">
+    <div className="space-y-2 pt-2 border-t border-[var(--ui-2)]">
       <OptionToggle
         checked={checked}
         label={strings.label}
         description={strings.description}
         onChange={onChange}
       />
-      <div className="ml-7 rounded-md border border-amber-500/20 bg-amber-500/10 p-2.5 text-xs text-amber-700 dark:text-amber-300">
-        <p>{strings.note}</p>
+      <div className="ml-7 rounded-lg border border-amber-300 bg-amber-50 p-3 text-xs text-amber-950 shadow-xs dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100">
+        <p className="leading-relaxed font-medium">{strings.note}</p>
       </div>
     </div>
   );

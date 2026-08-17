@@ -193,7 +193,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
     return originalName ? `${stripPdfExtension(originalName)}_${base}${suffix}.pdf` : `${base}${suffix}.pdf`;
   };
 
-  const handleStartProcessing = async () => {
+  const handleStartProcessing = async (forceAutoRepair?: boolean) => {
     if (!state.activeKey || state.sessionIds.length === 0) return;
     
     dispatch({ type: 'START_PROCESSING' });
@@ -220,7 +220,11 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
         ? state.sessions[state.sessionIds[0]].pageOrder
         : undefined;
 
-      const mappedOptions: any = { ...state.options, pageOrder };
+      const mappedOptions: any = {
+        ...state.options,
+        pageOrder,
+        ...(forceAutoRepair ? { autoRepairCorrupted: true } : {}),
+      };
       
       const selectedPages: number[] = [];
       Object.values(extractSelectionsByFile).forEach(fileSelections => {
@@ -433,6 +437,27 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
     updateOptions(nextOptions);
   };
 
+  const autoRepairStrings = dictionary.components.processingOptions.autoRepair;
+
+  const isCorruptionError = Boolean(
+    state.globalError && (
+      state.globalError.includes('corrupted or malformed') ||
+      state.globalError.includes('CORRUPT_PDF') ||
+      state.globalError.includes('repair the file before using it')
+    )
+  );
+
+  const corruptedFilename = useMemo(() => {
+    if (!state.globalError) return state.sessions[state.sessionIds[0]]?.originalFile.name || '';
+    const match = state.globalError.match(/\(file:\s*"([^"]+)"\)/);
+    return match ? match[1] : (state.sessions[state.sessionIds[0]]?.originalFile.name || '');
+  }, [state.globalError, state.sessions, state.sessionIds]);
+
+  const handleRelaunchWithAutoRepair = () => {
+    setProcessingOptions((prev: any) => ({ ...prev, autoRepairCorrupted: true }));
+    handleStartProcessing(true);
+  };
+
   const resolveIdleButtonLabel = () => {
     const processButton = processorStrings.processButton;
     
@@ -624,7 +649,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
 
           <div className="mt-8 flex justify-end">
             <button
-              onClick={handleStartProcessing}
+              onClick={() => handleStartProcessing()}
               className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--accent)] text-white rounded-xl hover:bg-[var(--accent-2)] transition-all shadow-sm font-semibold text-sm sm:text-base cursor-pointer"
             >
               {(() => {
@@ -701,27 +726,75 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
       )}
       
       {state.phase === 'ERROR' && (
-        <div className="bg-white rounded-xl shadow-sm border border-red-200 p-8 text-center">
-          <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <AlertCircle className="w-8 h-8" />
-          </div>
-          <h2 className="text-2xl font-bold mb-2">An Error Occurred</h2>
-          <p className="text-red-600 mb-8">{state.globalError || 'Something went wrong.'}</p>
-          
-          <div className="flex justify-center space-x-4">
-            <button 
-              onClick={() => dispatch({ type: 'RESET_TO_READY' })}
-              className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
-            >
-              Try Again
-            </button>
-            <button 
-              onClick={clearFiles}
-              className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
-            >
-              Start Over
-            </button>
-          </div>
+        <div className="bg-white rounded-2xl shadow-sm border border-red-200 p-6 sm:p-8 text-center max-w-2xl mx-auto">
+          {isCorruptionError ? (
+            <div>
+              <div className="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Wrench className="w-8 h-8" />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold mb-3 text-[var(--tx)]">
+                Corrupted Document Detected
+              </h2>
+              {state.globalError && (
+                <p className="text-xs text-red-700 bg-red-50 p-3 rounded-lg border border-red-200 mb-4 text-left leading-relaxed">
+                  {state.globalError}
+                </p>
+              )}
+              
+              <div className="rounded-lg border border-amber-300 bg-amber-50 p-3.5 mb-6 text-xs text-amber-950 text-left shadow-xs dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100">
+                <p className="font-semibold mb-1">Automatic Repair Available:</p>
+                <p className="leading-relaxed">
+                  {autoRepairStrings.note}
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
+                <button
+                  onClick={handleRelaunchWithAutoRepair}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 bg-[var(--accent)] text-white rounded-xl hover:bg-[var(--accent-2)] transition-all shadow-sm font-semibold text-sm sm:text-base cursor-pointer"
+                >
+                  <Wrench className="w-4 h-4" />
+                  <span>Fix with Auto-Repair &amp; Retry</span>
+                </button>
+                <button
+                  onClick={() => dispatch({ type: 'RESET_TO_READY' })}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 border border-[var(--ui-2)] rounded-xl hover:bg-[var(--ui)] text-[var(--tx-2)] transition-colors font-medium text-sm sm:text-base cursor-pointer"
+                >
+                  Back to Options
+                </button>
+                <button
+                  onClick={clearFiles}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs text-[var(--tx-3)] hover:text-red-600 transition-colors cursor-pointer"
+                >
+                  <Trash2 className="w-3.5 h-3.5" />
+                  <span>Start Over</span>
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <AlertCircle className="w-8 h-8" />
+              </div>
+              <h2 className="text-2xl font-bold mb-2">An Error Occurred</h2>
+              <p className="text-red-600 mb-8">{state.globalError || 'Something went wrong.'}</p>
+              
+              <div className="flex justify-center space-x-4">
+                <button 
+                  onClick={() => dispatch({ type: 'RESET_TO_READY' })}
+                  className="px-6 py-2.5 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm cursor-pointer"
+                >
+                  Try Again
+                </button>
+                <button 
+                  onClick={clearFiles}
+                  className="px-6 py-2.5 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm cursor-pointer"
+                >
+                  Start Over
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
