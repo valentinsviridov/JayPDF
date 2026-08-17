@@ -17,6 +17,7 @@ import ProcessingOptions from './ProcessingOptions';
 import CompressionPreviewCard, { PreviewStatus } from './CompressionPreviewCard';
 import { InsightfulProgressIndicator } from './InsightfulProgressIndicator';
 import type { PdfProgressUpdate } from '../../modules/pdf/core/contracts';
+import { resolveGeneratedFilename } from '../../lib/filename';
 import {
   Layers,
   Minimize2,
@@ -180,17 +181,14 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
   }, [state.activeKey]);
 
   const resolveDownloadName = (operation: string, originalName?: string, index?: number) => {
-    const stripPdfExtension = (name: string) => name.replace(/\.pdf$/i, '');
-    if (operation === 'pdfToImages') {
-      if ((state.options as any).bundleAsZip) {
-        return `${originalName ? stripPdfExtension(originalName) : 'jaypdf_images'}.zip`;
-      }
-      return `${originalName ? stripPdfExtension(originalName) : 'jaypdf_image'}${index !== undefined ? `_${index + 1}` : ''}.png`;
-    }
     const modeNames: Record<string, string> = (processorStrings as any).downloadNames || {};
-    const base = modeNames[operation] || 'result_JayPDF';
-    const suffix = index !== undefined ? `_${index + 1}` : '';
-    return originalName ? `${stripPdfExtension(originalName)}_${base}${suffix}.pdf` : `${base}${suffix}.pdf`;
+    return resolveGeneratedFilename({
+      operation,
+      originalName,
+      index,
+      modeNames,
+      bundleAsZip: Boolean((state.options as any).bundleAsZip),
+    });
   };
 
   const handleStartProcessing = async (forceAutoRepair?: boolean) => {

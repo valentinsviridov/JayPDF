@@ -55,7 +55,7 @@ test('PDF Page Extraction Workflow', async ({ page }, testInfo) => {
     const download = await downloadPromise;
 
     // 5. Verification
-    expect(download.suggestedFilename()).toMatch(/extracted_JayPDF\.pdf$/);
+    expect(download.suggestedFilename()).toMatch(/extracted_JayPDF_\d{8}_\d{6}\.pdf$/);
     const downloadPath = path.join(__dirname, 'downloaded-extracted.pdf');
     await download.saveAs(downloadPath);
 
@@ -92,7 +92,7 @@ test('PDF Page Reordering Workflow', async ({ page }, testInfo) => {
     const download = await downloadPromise;
 
     // 5. Verification
-    expect(download.suggestedFilename()).toMatch(/reordered_JayPDF\.pdf$/);
+    expect(download.suggestedFilename()).toMatch(/reordered_JayPDF_\d{8}_\d{6}\.pdf$/);
 
     // Clean up
     const downloadPath = path.join(__dirname, 'downloaded-reordered.pdf');

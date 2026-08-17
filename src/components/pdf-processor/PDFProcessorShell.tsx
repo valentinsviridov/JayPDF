@@ -23,6 +23,7 @@ import {
   isPdfFile,
 } from '../../modules/pdf/catalog';
 import type { ProcessorOptions as PDFProcessingOptions } from '../../modules/pdf/operation-map';
+import { resolveGeneratedFilename } from '../../lib/filename';
 import type { CompressionResult as ProcessingResult } from '../../modules/pdf/operations/compress/definition';
 import { createPdfBlob } from '../../modules/pdf/processor-service';
 import {
@@ -299,27 +300,15 @@ function PDFProcessorInterface({ initialMode }: { initialMode: ProcessingMode })
         }
       }
 
-      const base = downloadNames[operation] ?? `jaypdf_${operation}`;
-
-      if (!originalName) {
-        if (operation === 'split' && typeof index === 'number') {
-          return ensurePdfExtension(`${base}_${index + 1}`);
-        }
-        return ensurePdfExtension(base);
-      }
-
-      const sanitized = operation === 'imagesToPdf'
-        ? originalName.replace(/\.[^/.]+$/, '')
-        : stripPdfExtension(originalName);
-
-      if (operation === 'split') {
-        const suffix = typeof index === 'number' ? `_${index + 1}` : '';
-        return ensurePdfExtension(`${sanitized}${suffix}`);
-      }
-
-      return ensurePdfExtension(`${sanitized}_${base}`);
+      return resolveGeneratedFilename({
+        operation,
+        originalName,
+        index,
+        modeNames: downloadNames,
+        bundleAsZip: Boolean(processingOptions.bundleAsZip),
+      });
     },
-    [downloadNames, processingOptions.metadata]
+    [downloadNames, processingOptions.bundleAsZip]
   );
 
   const currentFileKey = currentFile ? buildFileSignature(currentFile) : null;
