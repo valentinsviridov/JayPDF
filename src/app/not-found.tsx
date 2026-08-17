@@ -30,15 +30,14 @@ export default function NotFound() {
             width: "100%",
             borderBottom: "1px solid #ffe7e5",
             backgroundColor: "rgba(255, 255, 255, 0.9)",
-            padding: "1rem 1.5rem",
+            padding: "1px 1.5rem",
             display: "flex",
             alignItems: "center",
           }}
         >
           <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%", display: "flex" }}>
-            <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit" }}>
-              <JayPdfLogo className="w-8 h-8 mr-2" />
-              <span style={{ fontSize: "1.25rem", fontWeight: 700, fontFamily: "'Montserrat', sans-serif" }}>JayPDF</span>
+            <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit", height: "80px", margin: "1px 0" }} aria-label="JayPDF">
+              <JayPdfLogo className="h-full w-auto max-h-full object-contain" />
             </Link>
           </div>
         </header>
@@ -60,7 +59,7 @@ export default function NotFound() {
         >
           {/* Mascot and Badge */}
           <div style={{ position: "relative", marginBottom: "1.5rem" }}>
-            <JayPdfLogo className="w-28 h-28" />
+            <JayPdfLogo variant="icon" className="w-28 h-28" />
             <div style={{
               position: "absolute",
               top: "-5px",

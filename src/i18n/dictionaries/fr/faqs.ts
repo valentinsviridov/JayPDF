@@ -45,9 +45,9 @@ export const faqsFr = {
   ],
   tech: [
     {
-      question: "Quelle technologie propulse JayPDF ?",
+      question: "Quelles technologies propulsent JayPDF ?",
       answer:
-        "JayPDF utilise un moteur JavaScript léger pour manipuler nativement les PDF dans le navigateur sans dépendre d'extensions natives. Cela permet de garder l'application plus légère et la maintenance plus simple.",
+        "JayPDF repose sur des technologies web modernes s'exécutant à 100 % côté client dans votre navigateur : pdf-lib pour la manipulation, la fusion, le découpage et l'édition de pages PDF ; Mozilla PDF.js pour le rendu rapide, les miniatures et l'analyse de documents ; JSZip pour l'archivage des images exportées ; Web Workers pour un traitement en arrière-plan fluide sans figer le navigateur ; et Next.js / React avec TypeScript pour l'interface utilisateur.",
     },
     {
       question: "Les éléments interactifs sont-ils perdus lorsque je compresse un PDF ?",

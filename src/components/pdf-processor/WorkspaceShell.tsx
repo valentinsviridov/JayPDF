@@ -463,12 +463,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto flex flex-col space-y-6">
-      <div className="text-center space-y-2 mb-6" id="pdf-processor">
-        <h2 className="text-3xl font-bold tracking-tight">{BrandConfig.productName} Workspace</h2>
-        <p className="text-[var(--tx-2)]">{BrandConfig.shortPromise}</p>
-      </div>
-
+    <div className="w-full max-w-7xl mx-auto flex flex-col space-y-6" id="pdf-processor">
       {(state.phase === 'EMPTY' || state.phase === 'READY') && (
         <div className="mb-6 bg-white/90 p-5 rounded-2xl border border-[var(--ui-2)] shadow-xs">
           <div className="flex items-center justify-between mb-3.5">

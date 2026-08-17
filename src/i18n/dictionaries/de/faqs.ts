@@ -45,9 +45,9 @@ export const faqsDe = {
   ],
   tech: [
     {
-      question: "Welche Technologie steckt hinter JayPDF?",
+      question: "Welche Technologien treiben JayPDF an?",
       answer:
-        "JayPDF nutzt eine schlanke JavaScript-Engine, die PDFs nativ im Browser bearbeitet – ganz ohne zusätzliche native Module. Das sorgt für kleine Bundles und eine einfache Wartung.",
+        "JayPDF basiert auf modernen Webtechnologien, die zu 100 % clientseitig im Browser laufen: pdf-lib für PDF-Bearbeitung, Zusammenführen, Teilen und Seitenoperationen; Mozillas PDF.js für schnelles Rendern, Vorschaubilder und Dokumentenanalyse; JSZip für den ZIP-Export von Bildern; Web Workers für reaktionsschnelle Hintergrundverarbeitung ohne Blockieren des Browsers; sowie Next.js / React mit TypeScript für die Benutzeroberfläche.",
     },
     {
       question: "Gehen beim Komprimieren interaktive Elemente verloren?",

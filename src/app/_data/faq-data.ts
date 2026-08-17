@@ -53,8 +53,8 @@ export const latamFaqs = [
 
 export const techFaqs = [
   {
-    question: "¿Qué tecnología utiliza JayPDF para procesar los PDFs?",
-    answer: "JayPDF utiliza un motor ligero escrito en JavaScript moderno para manipular los PDFs de forma nativa en el navegador sin depender de componentes nativos. Esto reduce el tamaño del paquete y permite un mantenimiento mucho más sencillo."
+    question: "¿Qué tecnologías utiliza JayPDF para procesar los PDFs?",
+    answer: "JayPDF está construido con tecnologías web modernas que se ejecutan 100% en el cliente: pdf-lib para la manipulación, unión, división y edición de páginas de PDFs; Mozilla PDF.js para el renderizado rápido, miniaturas y lectura de documentos; JSZip para empaquetar exportaciones de imágenes; Web Workers para procesamiento en segundo plano sin congelar el navegador; y Next.js / React con TypeScript para la interfaz."
   },
   {
     question: "¿Se pierden las características interactivas del PDF al comprimirlo?",

@@ -50,9 +50,9 @@ export const faqsHu = {
   ],
   tech: [
     {
-      question: "Milyen technológiára épül a JayPDF?",
+      question: "Milyen technológiák működtetik a JayPDF-et?",
       answer:
-        "A JayPDF pdf-lib és PDF.js könyvtárakat használ – könnyűsúlyú, nyílt forráskódú JavaScript-könyvtárakat –, amelyek közvetlenül a böngészőben végzik el a teljes PDF-feldolgozást, szerveres függőség nélkül.",
+        "A JayPDF 100%-ban kliensoldalon futó modern webes technológiákra épül: a pdf-lib könyvtárra a PDF-ek szerkesztéséhez, összefűzéséhez, szétbontásához és oldalkezeléséhez; a Mozilla PDF.js motorra a gyors rendereléshez, előnézeti képekhez és dokumentumelemzéshez; a JSZip-re az exportált képek tömörítéséhez; Web Workers háttérfolyamatokra a zökkenőmentes működésért; valamint Next.js / React és TypeScript keretrendszerre a felhasználói felülethez.",
     },
     {
       question: "Megmaradnak az interaktív elemek PDF tömörítés után?",

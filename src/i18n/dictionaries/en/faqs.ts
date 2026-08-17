@@ -45,9 +45,9 @@ export const faqsEn = {
   ],
   tech: [
     {
-      question: "What technology powers JayPDF?",
+      question: "What technologies power JayPDF?",
       answer:
-        "JayPDF uses a lightweight JavaScript engine to manipulate PDFs natively in the browser without relying on native extensions. That keeps the bundle lighter and maintenance simpler.",
+        "JayPDF is built with modern web technologies running 100% client-side: pdf-lib for document manipulation, merging, splitting, and page editing; Mozilla's PDF.js for fast PDF rendering, thumbnailing, and parsing; JSZip for archiving image exports; Web Workers for responsive background processing without freezing the browser; and Next.js / React with strict TypeScript for the user interface.",
     },
     {
       question: "Do interactive elements get lost when I compress a PDF?",

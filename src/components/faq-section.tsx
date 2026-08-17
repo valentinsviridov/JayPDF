@@ -5,7 +5,7 @@ import { useDictionary, useLocale } from "../i18n/LocaleProvider";
 import type { FAQItem } from "../i18n/dictionaries/dictionary-types";
 import { FaqSchema } from "./seo/FaqSchema";
 
-export default function FaqSection() {
+export default function FaqSection({ showTitle = true }: { showTitle?: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [region, setRegion] = useState<string | null>(null);
   const locale = useLocale();
@@ -51,7 +51,7 @@ export default function FaqSection() {
 
   return (
     <section className="my-10">
-      <h2 className="text-2xl font-bold mb-6 text-center">{labels.title}</h2>
+      {showTitle && <h2 className="text-2xl font-bold mb-6 text-center">{labels.title}</h2>}
 
       <div className="max-w-4xl mx-auto">
         {faqs.map((faq, index) => (

@@ -7,9 +7,9 @@ export const BrandConfig = {
   gitRepository: "git@github.com:valentinsviridov/JayPDF.git",
   originalRepository: "https://github.com/GSiesto/PDFLince",
   assets: {
-    logo: "/images/jaypdf-logo.svg",
-    favicon: "/favicon.svg",
-    ogImage: "/images/og-image.png",
+    logo: "/images/jaypdf-logo.png",
+    favicon: "/favicon.png",
+    ogImage: "/images/jaypdf-logo.png",
   },
   output: {
     filenamePrefix: "jaypdf_",

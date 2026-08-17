@@ -43,10 +43,9 @@ export default function NavMenu() {
 
   return (
     <nav className="w-full border-b border-[var(--ui)] bg-[var(--bg)]/90 backdrop-blur-sm">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-wrap justify-between items-center">
-        <Link href={routes.home} className="flex items-center group">
-          <JayPdfLogo className="w-8 h-8 mr-2.5 transition-transform group-hover:scale-105" />
-          <span className="text-xl font-bold tracking-tight text-[var(--tx)]">JayPDF</span>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-[1px] flex flex-wrap justify-between items-center">
+        <Link href={routes.home} className="flex items-center group h-[64px] sm:h-[80px] md:h-[92px] my-[1px]" aria-label="JayPDF">
+          <JayPdfLogo className="h-full w-auto max-h-full object-contain transition-transform group-hover:scale-[1.02]" />
         </Link>
 
         <button

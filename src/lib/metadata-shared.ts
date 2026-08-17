@@ -3,8 +3,10 @@ import { Metadata } from "next";
 export const METADATA_BASE = new URL("https://pdflince.com");
 
 export const SHARED_ICONS = [
-    { rel: "icon", url: "/favicon.ico?v=2" },
-    { rel: "apple-touch-icon", url: "/favicon.ico?v=2" },
+    { rel: "icon", url: "/favicon.ico?v=3" },
+    { rel: "icon", type: "image/png", sizes: "32x32", url: "/favicon-32x32.png?v=3" },
+    { rel: "icon", type: "image/png", sizes: "48x48", url: "/favicon.png?v=3" },
+    { rel: "apple-touch-icon", sizes: "180x180", url: "/apple-touch-icon.png?v=3" },
 ];
 
 export const SHARED_OPEN_GRAPH: Metadata["openGraph"] = {

@@ -45,9 +45,9 @@ export const faqsRo = {
   ],
   tech: [
     {
-      question: "Ce tehnologie alimentează JayPDF?",
+      question: "Ce tehnologii stau la baza JayPDF?",
       answer:
-        "JayPDF folosește un motor JavaScript ușor pentru a manipula nativ PDF-urile în browser, fără a depinde de extensii native. Aceasta păstrează aplicația mai ușoară și întreținerea mai simplă.",
+        "JayPDF este construit cu tehnologii web moderne care rulează 100% pe partea de client: pdf-lib pentru manipularea, unirea, împărțirea și editarea paginilor PDF; Mozilla PDF.js pentru redare rapidă, miniaturi și analiză a documentelor; JSZip pentru arhivarea imaginilor exportate; Web Workers pentru procesare în fundal fără blocarea browserului; și Next.js / React cu TypeScript pentru interfață.",
     },
     {
       question: "Elementele interactive se pierd când comprim un PDF?",

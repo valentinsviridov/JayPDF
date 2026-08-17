@@ -13,7 +13,7 @@ export function FaqPageContent({ dictionary }: { dictionary: Dictionary }) {
           <p className="text-xl text-[var(--tx-2)] max-w-3xl mx-auto">{faqPage.intro}</p>
         </div>
 
-        <FaqSection />
+        <FaqSection showTitle={false} />
 
         {faqPage.contact && (
           <div className="my-12 p-8 surface-card">
