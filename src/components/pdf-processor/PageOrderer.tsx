@@ -88,10 +88,9 @@ export default function PageOrderer({ file, onOrderChangeAction, initialOrder }:
           onOrderChangeActionRef.current(startingOrder);
         }
 
-        const maxPages = Math.min(count, 120);
         setThumbnails([]); // Reset
 
-        for (let i = 1; i <= maxPages; i++) {
+        for (let i = 1; i <= count; i++) {
           if (!isMounted) return;
           const thumbnail = await documents.renderThumbnail(file, i, 240);
           if (!isMounted) return;
@@ -366,12 +365,12 @@ export default function PageOrderer({ file, onOrderChangeAction, initialOrder }:
           <div className="w-full bg-[var(--ui-2)] rounded-full h-2.5 overflow-hidden">
             <div
               className="bg-[var(--accent)] h-2.5 rounded-full transition-all duration-300 ease-out"
-              style={{ width: `${Math.min(100, (thumbnails.length / Math.max(1, Math.min(pageCount || 120, 120))) * 100)}%` }}
+              style={{ width: `${Math.min(100, (thumbnails.length / Math.max(1, pageCount)) * 100)}%` }}
             ></div>
           </div>
           {pageCount > 0 && (
             <p className="mt-2 text-xs text-[var(--tx-3)]">
-              {thumbnails.length} / {Math.min(pageCount, 120)}
+              {thumbnails.length} / {pageCount}
             </p>
           )}
         </div>
@@ -381,15 +380,6 @@ export default function PageOrderer({ file, onOrderChangeAction, initialOrder }:
 
   if (error) {
     return <div className="text-center p-8 text-red-500">{error}</div>;
-  }
-
-  if (pageCount > 120) {
-    return (
-      <div className="text-center p-6 bg-[var(--bg-2)] rounded-lg">
-        <p className="text-[var(--tx-2)] mb-4">{ordererStrings.limitReached(pageCount)}</p>
-        <p className="text-[var(--tx-3)] text-sm">{ordererStrings.limitHint}</p>
-      </div>
-    );
   }
 
   return (
