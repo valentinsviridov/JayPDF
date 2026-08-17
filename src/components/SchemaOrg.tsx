@@ -1,10 +1,11 @@
 import Script from "next/script";
+import { BrandConfig } from "../config/brand";
 
 export function SchemaOrg() {
     const schema = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "PDFLince",
+        "name": BrandConfig.productName,
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Any",
         "offers": {
@@ -20,12 +21,15 @@ export function SchemaOrg() {
             "Extract Pages",
             "Reorder Pages",
             "PDF to Image",
-            "Image to PDF"
+            "Image to PDF",
+            "Repair PDF",
+            "Crop PDF",
+            "Rotate PDF"
         ],
         "softwareRequirements": "Modern Web Browser",
         "author": {
             "@type": "Organization",
-            "name": "PDFLince"
+            "name": BrandConfig.productName
         }
     };
 

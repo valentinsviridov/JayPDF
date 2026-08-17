@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "ru" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://jaypdf.com";
+const siteUrl = "";
 const homePath = getRoutePath(locale, "home");
 
 const operationsRoutes: Record<OperationKey, string> = {
@@ -65,8 +65,6 @@ export const ruDictionary: Dictionary = {
         url: `${siteUrl}${homePath}`,
         locale: "ru_RU",
         type: "website",
-        imageUrl: "https://jaypdf.com/og-images/og-image-ru.png",
-        imageAlt: "JayPDF - Конфиденциальная и бесплатная обработка PDF",
       },
     },
     faq: {
@@ -109,7 +107,6 @@ export const ruDictionary: Dictionary = {
       home: "Главная",
       faq: "Вопросы и ответы",
       support: "Поддержать",
-      photo: "FotoLince",
       languageLabel: "Язык",
       menuLabel: "Открыть меню навигации",
     },
@@ -120,7 +117,6 @@ export const ruDictionary: Dictionary = {
         home: "Главная",
         faq: "Вопросы и ответы",
         support: "Поддержать",
-        photo: "FotoLince",
         contact: "Контакт",
       },
       capabilitiesLabel: "Популярные действия",
@@ -148,15 +144,6 @@ export const ruDictionary: Dictionary = {
         warning: "Предупреждение",
       },
       closeLabel: "Закрыть",
-    },
-    fotolinceBanner: {
-      eyebrow: "Нужно оптимизировать изображения?",
-      title: "Сжимайте, изменяйте размер или конвертируйте с FotoLince",
-      description:
-        "Наш инструментарий обрабатывает файлы JPG, PNG и WEBP локально — идеально для уменьшения размера изображений перед конвертацией в PDF.",
-      ctaLabel: "Открыть FotoLince",
-      ctaHref: "https://fotolince.com",
-      imageAlt: "Логотип FotoLince",
     },
     feedback: {
       question: "Было полезно?",
@@ -721,7 +708,7 @@ export const ruDictionary: Dictionary = {
         description:
           "Каждый, кто поддерживает JayPDF, помогает сохранить жизнь полезному набору PDF-инструментов.",
         ctaLabel: "Написать команде",
-        ctaHref: "mailto:info@jaypdf.com?subject=Привет%20команда%20JayPDF",
+        ctaHref: "mailto:info@jaypdf.org?subject=Привет%20команда%20JayPDF",
       },
       legalNotice: {
         title: "Правовая информация и прозрачность",
@@ -729,7 +716,7 @@ export const ruDictionary: Dictionary = {
           "JayPDF — независимый личный проект, управляемый небольшой командой добровольцев.",
           "Взносы добровольны и направляются исключительно на покрытие расходов на хостинг и разработку.",
           "Платежи не являются налогово вычитаемыми пожертвованиями; Stripe автоматически выдаст квитанцию.",
-          "Сервис предоставляется «как есть», без гарантий. Вопросы? info@jaypdf.com.",
+          "Сервис предоставляется «как есть», без гарантий. Вопросы? info@jaypdf.org.",
         ],
       },
     },

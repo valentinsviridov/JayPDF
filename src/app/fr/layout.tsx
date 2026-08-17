@@ -8,7 +8,7 @@ import { LocaleProvider } from "../../i18n/LocaleProvider";
 import { SchemaOrg } from "../../components/SchemaOrg";
 import { BreadcrumbSchema } from "../../components/seo/BreadcrumbSchema";
 
-import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER } from "../../lib/metadata-shared";
+import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES } from "../../lib/metadata-shared";
 
 const LOCALE = "fr" as const;
 
@@ -18,39 +18,14 @@ export const metadata = {
   description: "Outils PDF gratuits en ligne pour fusionner, compresser, diviser, extraire et convertir. 100% privé, traitement local dans votre navigateur.",
   icons: SHARED_ICONS,
   alternates: {
-    canonical: "https://pdflince.com/fr/",
-    languages: {
-      'es-ES': 'https://pdflince.com/es/',
-      'es-MX': 'https://pdflince.com/es/',
-      'es-CO': 'https://pdflince.com/es/',
-      'es-AR': 'https://pdflince.com/es/',
-      'es': 'https://pdflince.com/es/',
-      'en': 'https://pdflince.com/',
-      'en-US': 'https://pdflince.com/',
-      'fr': 'https://pdflince.com/fr/',
-      'fr-FR': 'https://pdflince.com/fr/',
-      'pt': 'https://pdflince.com/pt/',
-      'pt-BR': 'https://pdflince.com/pt/',
-      'pt-PT': 'https://pdflince.com/pt/',
-      'de': 'https://pdflince.com/de/',
-      'de-DE': 'https://pdflince.com/de/',
-      'it': 'https://pdflince.com/it/',
-      'it-IT': 'https://pdflince.com/it/',
-      'ro': 'https://pdflince.com/ro/',
-      'ro-RO': 'https://pdflince.com/ro/',
-      'ru': 'https://pdflince.com/ru/',
-      'ru-RU': 'https://pdflince.com/ru/',
-      'hu': 'https://pdflince.com/hu/',
-      'hu-HU': 'https://pdflince.com/hu/',
-      'x-default': 'https://pdflince.com/',
-    },
+    canonical: "/fr/",
+    languages: SHARED_ALTERNATES_LANGUAGES,
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-fr.png", width: 1409, height: 736, alt: "JayPDF - Traitement PDF privé et gratuit" }],
     title: "JayPDF - Outils PDF gratuits et privés dans votre navigateur",
     description: "Fusionnez, compressez, divisez et convertissez des PDF sans télécharger de fichiers. Sécurisé et 100% privé.",
-    url: "https://pdflince.com/fr",
+    url: "/fr/",
     locale: "fr_FR",
     type: "website",
   },

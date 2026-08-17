@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "hu" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://jaypdf.com";
+const siteUrl = "";
 const homePath = getRoutePath(locale, "home");
 
 const operationsRoutes: Record<OperationKey, string> = {
@@ -71,8 +71,6 @@ export const huDictionary: Dictionary = {
         url: `${siteUrl}${homePath}`,
         locale: "hu_HU",
         type: "website",
-        imageUrl: "https://jaypdf.com/og-images/og-image-hu.png",
-        imageAlt: "JayPDF - Privát és ingyenes PDF-feldolgozás",
       },
     },
     faq: {
@@ -115,7 +113,6 @@ export const huDictionary: Dictionary = {
       home: "Főoldal",
       faq: "Gyakori kérdések",
       support: "Támogatás",
-      photo: "FotoLince",
       languageLabel: "Nyelv",
       menuLabel: "Navigációs menü megnyitása",
     },
@@ -126,7 +123,6 @@ export const huDictionary: Dictionary = {
         home: "Főoldal",
         faq: "Gyakori kérdések",
         support: "Támogatás",
-        photo: "FotoLince",
         contact: "Kapcsolat",
       },
       capabilitiesLabel: "Népszerű műveletek",
@@ -154,15 +150,6 @@ export const huDictionary: Dictionary = {
         warning: "Figyelmeztetés",
       },
       closeLabel: "Bezárás",
-    },
-    fotolinceBanner: {
-      eyebrow: "Képeket kell optimalizálnod?",
-      title: "Tömörítsd, méretezd át vagy konvertáld a FotoLince-szel",
-      description:
-        "Eszközkészletünk helyben dolgozza fel a JPG, PNG és WEBP fájlokat – tökéletes a képek méretének csökkentéséhez, mielőtt PDF-be konvertálnád őket.",
-      ctaLabel: "FotoLince megnyitása",
-      ctaHref: "https://fotolince.com",
-      imageAlt: "FotoLince logó",
     },
     feedback: {
       question: "Hasznos volt?",
@@ -727,7 +714,7 @@ export const huDictionary: Dictionary = {
         description:
           "Mindenki, aki támogatja a JayPDF-t, hozzájárul egy hasznos PDF-eszközkészlet életben tartásához.",
         ctaLabel: "E-mail küldése a csapatnak",
-        ctaHref: "mailto:info@jaypdf.com?subject=Helló%20JayPDF%20csapat",
+        ctaHref: "mailto:info@jaypdf.org?subject=Helló%20JayPDF%20csapat",
       },
       legalNotice: {
         title: "Jogi tájékoztató és átláthatóság",
@@ -735,7 +722,7 @@ export const huDictionary: Dictionary = {
           "A JayPDF egy független személyes projekt, amelyet egy kis önkéntes csapat kezel.",
           "A hozzájárulások önkéntesek, és kizárólag a tárhellyel és fejlesztéssel kapcsolatos költségek fedezésére szolgálnak.",
           "A befizetések nem adókedvezményes adományok; a Stripe automatikus nyugtát állít ki.",
-          "A szolgáltatás \"jelenlegi állapotában\" kerül nyújtásra, garancia nélkül. Kérdések? info@jaypdf.com.",
+          "A szolgáltatás \"jelenlegi állapotában\" kerül nyújtásra, garancia nélkül. Kérdések? info@jaypdf.org.",
         ],
       },
     },

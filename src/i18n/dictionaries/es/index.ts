@@ -6,7 +6,7 @@ import type { Dictionary } from "../dictionary-types";
 
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[DEFAULT_LOCALE];
 
-const siteUrl = "https://jaypdf.com";
+const siteUrl = "";
 
 export const esDictionary: Dictionary = {
   locale: DEFAULT_LOCALE,
@@ -52,16 +52,14 @@ export const esDictionary: Dictionary = {
         "herramienta pdf privada",
         "procesar pdf en el navegador",
       ],
-      canonical: `${siteUrl}`,
+      canonical: "/es",
       openGraph: {
         title: "JayPDF – Unir, Comprimir, Dividir, PDF a Imagen e Imagen a PDF",
         description:
           "Une, comprime, divide, extrae, reordena y convierte PDFs sin subir archivos. Kit gratuito, privado y en español con procesamiento 100% local.",
-        url: siteUrl,
+        url: "/es",
         locale: "es_ES",
         type: "website",
-        imageUrl: "https://jaypdf.com/og-images/og-image-es.png",
-        imageAlt: "JayPDF - Procesamiento de PDFs privado y gratuito",
       },
     },
     faq: {
@@ -103,7 +101,6 @@ export const esDictionary: Dictionary = {
       home: "Inicio",
       faq: "Preguntas Frecuentes",
       support: "Apoyar",
-      photo: "FotoLince",
       languageLabel: "Idioma",
       menuLabel: "Abrir menú de navegación",
     },
@@ -114,7 +111,6 @@ export const esDictionary: Dictionary = {
         home: "Inicio",
         faq: "Preguntas Frecuentes",
         support: "Apoyar",
-        photo: "FotoLince",
         contact: "Contacto",
       },
       capabilitiesLabel: "Operaciones populares",
@@ -141,15 +137,6 @@ export const esDictionary: Dictionary = {
         warning: "Precaución",
       },
       closeLabel: "Cerrar",
-    },
-    fotolinceBanner: {
-      eyebrow: "¿Necesitas optimizar imágenes?",
-      title: "Comprime, redimensiona o convierte tus fotos con FotoLince",
-      description:
-        "Nuestra herramienta hermana procesa JPG, PNG y WEBP directamente en tu navegador: ideal antes de crear un PDF.",
-      ctaLabel: "Visitar FotoLince",
-      ctaHref: "https://fotolince.com",
-      imageAlt: "Logotipo de FotoLince",
     },
     feedback: {
       question: "¿Te ha sido útil?",
@@ -715,7 +702,7 @@ export const esDictionary: Dictionary = {
         description:
           "Cada persona que apoya JayPDF hace posible que sigamos construyendo herramientas útiles, privadas y accesibles para todos.",
         ctaLabel: "Escribirnos",
-        ctaHref: "mailto:info@jaypdf.com?subject=Hola%20equipo%20de%20JayPDF",
+        ctaHref: "mailto:info@jaypdf.org?subject=Hola%20equipo%20de%20JayPDF",
       },
       legalNotice: {
         title: "Aviso legal y transparencia",
@@ -723,7 +710,7 @@ export const esDictionary: Dictionary = {
           "JayPDF es un proyecto personal independiente gestionado por un pequeño equipo.",
           "Las donaciones son voluntarias y se destinan a cubrir gastos de infraestructura y tiempo de desarrollo.",
           "Las aportaciones no son donaciones benéficas ni generan ventajas fiscales; Stripe emitirá un recibo automático.",
-          "El servicio se ofrece tal cual, sin garantías explícitas; para cualquier duda escríbenos a info@jaypdf.com.",
+          "El servicio se ofrece tal cual, sin garantías explícitas; para cualquier duda escríbenos a info@jaypdf.org.",
         ],
       },
     },

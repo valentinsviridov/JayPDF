@@ -8,7 +8,7 @@ import { LocaleProvider } from "../../i18n/LocaleProvider";
 import { SchemaOrg } from "../../components/SchemaOrg";
 import { BreadcrumbSchema } from "../../components/seo/BreadcrumbSchema";
 
-import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER } from "../../lib/metadata-shared";
+import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES } from "../../lib/metadata-shared";
 
 const LOCALE = "ru" as const;
 
@@ -18,39 +18,14 @@ export const metadata = {
   description: "Бесплатные онлайн-инструменты для PDF: сжатие, объединение, разделение, извлечение и конвертация. 100% конфиденциально, локальная обработка в браузере.",
   icons: SHARED_ICONS,
   alternates: {
-    canonical: "https://pdflince.com/ru/",
-    languages: {
-      'es-ES': 'https://pdflince.com/es/',
-      'es-MX': 'https://pdflince.com/es/',
-      'es-CO': 'https://pdflince.com/es/',
-      'es-AR': 'https://pdflince.com/es/',
-      'es': 'https://pdflince.com/es/',
-      'en': 'https://pdflince.com/',
-      'en-US': 'https://pdflince.com/',
-      'fr': 'https://pdflince.com/fr/',
-      'fr-FR': 'https://pdflince.com/fr/',
-      'pt': 'https://pdflince.com/pt/',
-      'pt-BR': 'https://pdflince.com/pt/',
-      'pt-PT': 'https://pdflince.com/pt/',
-      'de': 'https://pdflince.com/de/',
-      'de-DE': 'https://pdflince.com/de/',
-      'it': 'https://pdflince.com/it/',
-      'it-IT': 'https://pdflince.com/it/',
-      'ro': 'https://pdflince.com/ro/',
-      'ro-RO': 'https://pdflince.com/ro/',
-      'ru': 'https://pdflince.com/ru/',
-      'ru-RU': 'https://pdflince.com/ru/',
-      'hu': 'https://pdflince.com/hu/',
-      'hu-HU': 'https://pdflince.com/hu/',
-      'x-default': 'https://pdflince.com/',
-    },
+    canonical: "/ru/",
+    languages: SHARED_ALTERNATES_LANGUAGES,
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-ru.png", width: 1409, height: 736, alt: "JayPDF - Конфиденциальная и бесплатная обработка PDF" }],
     title: "JayPDF - Бесплатные и конфиденциальные инструменты для PDF в браузере",
     description: "Объединяйте, сжимайте, делите и конвертируйте PDF без загрузки на сервер. Безопасно и 100% конфиденциально.",
-    url: "https://pdflince.com/ru",
+    url: "/ru/",
     locale: "ru_RU",
     type: "website",
   },

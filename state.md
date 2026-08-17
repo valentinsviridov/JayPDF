@@ -309,11 +309,10 @@ The audit found translated or implemented content with no active renderer, inclu
 
 - unused home CTA/callout fields;
 - unused FAQ CTA fields;
-- FotoLince banner fields;
 - cookie-banner fields;
 - feedback translations and the unreferenced feedback widget;
 - a second unused FAQ dataset;
-- unused support/photo navigation fields;
+- unused support navigation fields;
 - duplicate operation content exposure through dictionary metadata and page content.
 
 Removing these reduces translation and rebrand cost substantially.

@@ -8,7 +8,7 @@ import { LocaleProvider } from "../../i18n/LocaleProvider";
 import { SchemaOrg } from "../../components/SchemaOrg";
 import { BreadcrumbSchema } from "../../components/seo/BreadcrumbSchema";
 
-import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER } from "../../lib/metadata-shared";
+import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES } from "../../lib/metadata-shared";
 
 const LOCALE = "de" as const;
 
@@ -18,39 +18,14 @@ export const metadata = {
   description: "Kostenlose Online-PDF-Tools zum Zusammenführen, Komprimieren, Teilen, Extrahieren und Konvertieren von PDFs. 100% privat, lokale Verarbeitung in Ihrem Browser.",
   icons: SHARED_ICONS,
   alternates: {
-    canonical: "https://pdflince.com/de/",
-    languages: {
-      'es-ES': 'https://pdflince.com/es/',
-      'es-MX': 'https://pdflince.com/es/',
-      'es-CO': 'https://pdflince.com/es/',
-      'es-AR': 'https://pdflince.com/es/',
-      'es': 'https://pdflince.com/es/',
-      'en': 'https://pdflince.com/',
-      'en-US': 'https://pdflince.com/',
-      'fr': 'https://pdflince.com/fr/',
-      'fr-FR': 'https://pdflince.com/fr/',
-      'pt': 'https://pdflince.com/pt/',
-      'pt-BR': 'https://pdflince.com/pt/',
-      'pt-PT': 'https://pdflince.com/pt/',
-      'de': 'https://pdflince.com/de/',
-      'de-DE': 'https://pdflince.com/de/',
-      'it': 'https://pdflince.com/it/',
-      'it-IT': 'https://pdflince.com/it/',
-      'ro': 'https://pdflince.com/ro/',
-      'ro-RO': 'https://pdflince.com/ro/',
-      'ru': 'https://pdflince.com/ru/',
-      'ru-RU': 'https://pdflince.com/ru/',
-      'hu': 'https://pdflince.com/hu/',
-      'hu-HU': 'https://pdflince.com/hu/',
-      'x-default': 'https://pdflince.com/',
-    },
+    canonical: "/de/",
+    languages: SHARED_ALTERNATES_LANGUAGES,
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-de.png", width: 1409, height: 736, alt: "JayPDF – Private und kostenlose PDF-Bearbeitung" }],
     title: "JayPDF - Kostenlose und private PDF-Tools in Ihrem Browser",
     description: "PDFs zusammenführen, komprimieren, teilen und konvertieren, ohne Dateien hochzuladen. Sichere und 100% private Verarbeitung.",
-    url: "https://pdflince.com/de",
+    url: "/de/",
     locale: "de_DE",
     type: "website",
   },

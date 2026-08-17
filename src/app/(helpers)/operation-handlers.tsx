@@ -6,13 +6,12 @@ import { getLocalizedAlternateMap, getOperationSlug, matchOperationKeyBySlug } f
 import type { OperationKey } from "../../types/operations";
 import { OperationPageContent } from "../../components/OperationPageContent";
 
-function buildLanguagesMap(operationKey: OperationKey, baseUrl: string) {
+function buildLanguagesMap(operationKey: OperationKey) {
   const alternatesMap = getLocalizedAlternateMap({ type: "operation", key: operationKey });
   const entries = (Object.entries(alternatesMap) as [Locale, string][]).map(([localeKey, path]) => {
     const hrefLang = localeLabels[localeKey].hrefLang;
     const pathWithSlash = path.endsWith("/") ? path : `${path}/`;
-    const absoluteUrl = new URL(pathWithSlash, baseUrl).toString();
-    return [hrefLang, absoluteUrl] as const;
+    return [hrefLang, pathWithSlash] as const;
   });
   const languages = Object.fromEntries(entries) as Record<string, string>;
   const defaultHref = localeLabels[DEFAULT_LOCALE].hrefLang;
@@ -24,33 +23,23 @@ export function buildOperationMetadata(locale: Locale, operationKey: OperationKe
   return (): Metadata => {
     const dictionary = getDictionary(locale);
     const operationMeta = dictionary.metadata.operations[operationKey];
-    const baseUrl = dictionary.metadata.site.openGraph.url;
     const canonicalPath = dictionary.routes.operations[operationKey];
     const canonicalPathWithSlash = canonicalPath.endsWith("/") ? canonicalPath : `${canonicalPath}/`;
-    const canonicalUrl = new URL(canonicalPathWithSlash, baseUrl).toString();
-    const languages = buildLanguagesMap(operationKey, baseUrl);
+    const languages = buildLanguagesMap(operationKey);
 
     return {
       title: operationMeta.meta.title,
       description: operationMeta.meta.description,
       keywords: operationMeta.meta.keywords,
       alternates: {
-        canonical: canonicalUrl,
+        canonical: canonicalPathWithSlash,
         languages,
       },
       openGraph: {
         title: operationMeta.meta.ogTitle ?? operationMeta.meta.title,
         description: operationMeta.meta.ogDescription ?? operationMeta.meta.description,
-        url: canonicalUrl,
+        url: canonicalPathWithSlash,
         locale: dictionary.metadata.site.openGraph.locale,
-        images: [
-          {
-            url: dictionary.metadata.site.openGraph.imageUrl,
-            width: 1409,
-            height: 736,
-            alt: operationMeta.meta.ogImageAlt ?? operationMeta.hero.imageAlt,
-          },
-        ],
       },
     };
   };

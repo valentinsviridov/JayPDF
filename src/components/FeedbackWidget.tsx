@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useDictionary } from '../i18n/LocaleProvider';
-
+import { BrandConfig } from '../config/brand';
 
 export function FeedbackWidget() {
     const dictionary = useDictionary();
@@ -11,14 +11,13 @@ export function FeedbackWidget() {
         question: "Was this helpful?",
         thanks: "Thanks for your feedback!",
         whatWrong: "Tell us what went wrong",
-        emailSubject: "Feedback for PDFLince"
+        emailSubject: `Feedback for ${BrandConfig.productName}`
     };
 
     const [status, setStatus] = useState<'idle' | 'positive' | 'negative'>('idle');
 
     const handleFeedback = (type: 'positive' | 'negative') => {
         setStatus(type);
-
     };
 
     if (status === 'positive') {
@@ -35,7 +34,7 @@ export function FeedbackWidget() {
         return (
             <div className="mt-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-center animate-in fade-in">
                 <a
-                    href={`mailto:contact@pdflince.com?subject=${encodeURIComponent(t.emailSubject)}`}
+                    href={`mailto:${BrandConfig.contactEmail}?subject=${encodeURIComponent(t.emailSubject)}`}
                     className="text-sm text-red-600 font-medium hover:underline flex items-center justify-center gap-2"
                 >
                     <span>{t.whatWrong}</span>

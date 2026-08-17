@@ -5,13 +5,12 @@ import { getLocalizedAlternateMap } from "../../i18n/routing";
 
 type StaticRouteKey = "home" | "faq" | "support";
 
-function buildLanguagesMap(identifier: { type: "static"; key: StaticRouteKey }, baseUrl: string) {
+function buildLanguagesMap(identifier: { type: "static"; key: StaticRouteKey }) {
   const alternatesMap = getLocalizedAlternateMap(identifier);
   const entries = (Object.entries(alternatesMap) as [Locale, string][]).map(([localeKey, path]) => {
     const hrefLang = localeLabels[localeKey].hrefLang;
     const pathWithSlash = path.endsWith("/") ? path : `${path}/`;
-    const absoluteUrl = new URL(pathWithSlash, baseUrl).toString();
-    return [hrefLang, absoluteUrl] as const;
+    return [hrefLang, pathWithSlash] as const;
   });
 
   const languages = Object.fromEntries(entries) as Record<string, string>;
@@ -24,8 +23,7 @@ export function createHomeMetadata(locale: Locale) {
   return (): Metadata => {
     const dictionary = getDictionary(locale);
     const siteMeta = dictionary.metadata.site;
-    const baseUrl = siteMeta.openGraph.url;
-    const languages = buildLanguagesMap({ type: "static", key: "home" }, baseUrl);
+    const languages = buildLanguagesMap({ type: "static", key: "home" });
 
     return {
       title: siteMeta.title,
@@ -40,14 +38,6 @@ export function createHomeMetadata(locale: Locale) {
         description: siteMeta.openGraph.description,
         url: siteMeta.openGraph.url,
         locale: siteMeta.openGraph.locale,
-        images: [
-          {
-            url: siteMeta.openGraph.imageUrl,
-            width: 1409,
-            height: 736,
-            alt: siteMeta.openGraph.imageAlt,
-          },
-        ],
       },
     };
   };
@@ -57,8 +47,7 @@ export function createFaqMetadata(locale: Locale) {
   return (): Metadata => {
     const dictionary = getDictionary(locale);
     const faqMeta = dictionary.metadata.faq;
-    const baseUrl = dictionary.metadata.site.openGraph.url;
-    const languages = buildLanguagesMap({ type: "static", key: "faq" }, baseUrl);
+    const languages = buildLanguagesMap({ type: "static", key: "faq" });
 
     return {
       title: faqMeta.title,
@@ -76,8 +65,7 @@ export function createSupportMetadata(locale: Locale) {
   return (): Metadata => {
     const dictionary = getDictionary(locale);
     const supportMeta = dictionary.metadata.support;
-    const baseUrl = dictionary.metadata.site.openGraph.url;
-    const languages = buildLanguagesMap({ type: "static", key: "support" }, baseUrl);
+    const languages = buildLanguagesMap({ type: "static", key: "support" });
 
     return {
       title: supportMeta.title,

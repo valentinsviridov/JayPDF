@@ -1,11 +1,10 @@
 import { MetadataRoute } from "next";
 
 import { getRouteMap } from "../i18n/routing";
+import { BrandConfig } from "../config/brand";
 
 export const dynamic = "force-static";
 export const revalidate = false;
-
-const siteUrl = "https://pdflince.com";
 
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
 
@@ -13,6 +12,7 @@ const weekly: ChangeFrequency = "weekly";
 const monthly: ChangeFrequency = "monthly";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const siteUrl = BrandConfig.canonicalOrigin;
   const { home, faq, operations } = getRouteMap();
   const lastModified = new Date();
   const entries: MetadataRoute.Sitemap = [];

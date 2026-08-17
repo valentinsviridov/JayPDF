@@ -9,7 +9,7 @@ import { SchemaOrg } from "../../components/SchemaOrg";
 import { BreadcrumbSchema } from "../../components/seo/BreadcrumbSchema";
 import { localeLabels, DEFAULT_LOCALE, isLocale } from "../../i18n/config";
 
-import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER } from "../../lib/metadata-shared";
+import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES } from "../../lib/metadata-shared";
 
 export const metadata = {
   metadataBase: METADATA_BASE,
@@ -18,39 +18,14 @@ export const metadata = {
   keywords: "merge pdf, compress pdf, split pdf, extract pdf pages, rotate pdf pages, reorder pdf, pdf to images, images to pdf, convert pdf, edit pdf offline",
   icons: SHARED_ICONS,
   alternates: {
-    canonical: "https://pdflince.com/",
-    languages: {
-      'es-ES': 'https://pdflince.com/es/',
-      'es-MX': 'https://pdflince.com/es/',
-      'es-CO': 'https://pdflince.com/es/',
-      'es-AR': 'https://pdflince.com/es/',
-      'es': 'https://pdflince.com/es/',
-      'en': 'https://pdflince.com/',
-      'en-US': 'https://pdflince.com/',
-      'fr': 'https://pdflince.com/fr/',
-      'fr-FR': 'https://pdflince.com/fr/',
-      'pt': 'https://pdflince.com/pt/',
-      'pt-BR': 'https://pdflince.com/pt/',
-      'pt-PT': 'https://pdflince.com/pt/',
-      'de': 'https://pdflince.com/de/',
-      'de-DE': 'https://pdflince.com/de/',
-      'it': 'https://pdflince.com/it/',
-      'it-IT': 'https://pdflince.com/it/',
-      'ro': 'https://pdflince.com/ro/',
-      'ro-RO': 'https://pdflince.com/ro/',
-      'ru': 'https://pdflince.com/ru/',
-      'ru-RU': 'https://pdflince.com/ru/',
-      'hu': 'https://pdflince.com/hu/',
-      'hu-HU': 'https://pdflince.com/hu/',
-      'x-default': 'https://pdflince.com/',
-    },
+    canonical: "/",
+    languages: SHARED_ALTERNATES_LANGUAGES,
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-en.png", width: 1409, height: 736, alt: "JayPDF - Private and free PDF processing" }],
     title: "JayPDF - Free and Private PDF Tools in Your Browser",
     description: "Merge, compress, split, and convert PDFs without uploading files. Secure and 100% private processing.",
-    url: "https://pdflince.com",
+    url: "/",
     locale: "en_US",
     type: "website",
   },

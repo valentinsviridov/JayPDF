@@ -59,7 +59,7 @@ The application will transition through a pure reducer with explicit phases:
 - **Preserve localized operation URLs**: Serve as focused deep-links into the workspace.
 - **Consolidate FAQs**: Keep localized FAQ URLs as compatibility entries to a unified Help/Trust content section.
 - **Remove Support Pages**: Remove dead support pages and associated unused translated content.
-- **Clean unused fields**: Remove FotoLince banners, cookie banners, unused CTAs.
+- **Clean unused fields**: Remove cookie banners, unused CTAs.
 
 ## 8. Accessibility
 - Replace the div-based drop zone with a native label/button pattern supporting keyboard activation, visible focus, and live validation.

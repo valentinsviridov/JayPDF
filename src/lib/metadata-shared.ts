@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const METADATA_BASE = new URL("https://pdflince.com");
+export const METADATA_BASE = new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://jaypdf.org");
 
 export const SHARED_ICONS = [
     { rel: "icon", url: "/favicon.ico?v=3" },
@@ -10,16 +10,35 @@ export const SHARED_ICONS = [
 ];
 
 export const SHARED_OPEN_GRAPH: Metadata["openGraph"] = {
-    images: [
-        {
-            url: "https://pdflince.com/og-images/og-image-es.png",
-            width: 1409,
-            height: 736,
-            alt: "JayPDF - Procesamiento de PDFs privado y gratuito"
-        }
-    ],
+    type: "website",
 };
 
 export const SHARED_TWITTER: Metadata["twitter"] = {
-    card: "summary_large_image",
+    card: "summary",
+};
+
+export const SHARED_ALTERNATES_LANGUAGES = {
+    'es-ES': '/es/',
+    'es-MX': '/es/',
+    'es-CO': '/es/',
+    'es-AR': '/es/',
+    'es': '/es/',
+    'en': '/',
+    'en-US': '/',
+    'fr': '/fr/',
+    'fr-FR': '/fr/',
+    'pt': '/pt/',
+    'pt-BR': '/pt/',
+    'pt-PT': '/pt/',
+    'de': '/de/',
+    'de-DE': '/de/',
+    'it': '/it/',
+    'it-IT': '/it/',
+    'ro': '/ro/',
+    'ro-RO': '/ro/',
+    'ru': '/ru/',
+    'ru-RU': '/ru/',
+    'hu': '/hu/',
+    'hu-HU': '/hu/',
+    'x-default': '/',
 };

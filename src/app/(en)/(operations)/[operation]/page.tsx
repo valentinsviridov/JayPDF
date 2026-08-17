@@ -1,23 +1,21 @@
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { DEFAULT_LOCALE, localeLabels, type Locale } from "../../../../i18n/config"
-import { getDictionary } from "../../../../i18n/get-dictionary"
-import { getLocalizedAlternateMap, getOperationSlug, matchOperationKeyBySlug } from "../../../../i18n/routing"
-import type { OperationKey } from "../../../../types/operations"
-import { OperationPageContent } from "../../../../components/OperationPageContent"
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { DEFAULT_LOCALE, Locale, localeLabels } from "../../../../i18n/config";
+import { getDictionary } from "../../../../i18n/get-dictionary";
+import { getLocalizedAlternateMap, getOperationSlug, matchOperationKeyBySlug } from "../../../../i18n/routing";
+import type { OperationKey } from "../../../../types/operations";
+import { OperationPageContent } from "../../../../components/OperationPageContent";
 
-interface OperationPageParams {
+type OperationPageParams = {
   operation: string;
-}
+};
 
-export function generateStaticParams(): OperationPageParams[] {
+export async function generateStaticParams(): Promise<OperationPageParams[]> {
   const dictionary = getDictionary(DEFAULT_LOCALE);
   return (Object.keys(dictionary.operations) as OperationKey[]).map((operationKey) => ({
     operation: getOperationSlug(DEFAULT_LOCALE, operationKey),
   }));
 }
-
-export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<OperationPageParams> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -28,14 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<OperationPa
 
   const dictionary = getDictionary(DEFAULT_LOCALE);
   const operation = dictionary.metadata.operations[operationKey];
-  const baseUrl = dictionary.metadata.site.openGraph.url;
   const canonicalPath = dictionary.routes.operations[operationKey];
-  const canonicalUrl = new URL(canonicalPath, baseUrl).toString();
+  const canonicalPathWithSlash = canonicalPath.endsWith("/") ? canonicalPath : `${canonicalPath}/`;
   const alternatesMap = getLocalizedAlternateMap({ type: "operation", key: operationKey });
   const languagesEntries = Object.entries(alternatesMap).map(([localeKey, path]) => {
     const hrefLang = localeLabels[localeKey as Locale].hrefLang;
-    const absoluteUrl = new URL(path, baseUrl).toString();
-    return [hrefLang, absoluteUrl];
+    const pathWithSlash = path.endsWith("/") ? path : `${path}/`;
+    return [hrefLang, pathWithSlash];
   });
   const languages = Object.fromEntries(languagesEntries) as Record<string, string>;
   const defaultHref = localeLabels[DEFAULT_LOCALE].hrefLang;
@@ -47,22 +44,14 @@ export async function generateMetadata({ params }: { params: Promise<OperationPa
     description: operation.meta.description,
     keywords: operation.meta.keywords,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: canonicalPathWithSlash,
       languages: alternatesLanguages,
     },
     openGraph: {
       title: operation.meta.ogTitle ?? operation.meta.title,
       description: operation.meta.ogDescription ?? operation.meta.description,
-      url: canonicalUrl,
+      url: canonicalPathWithSlash,
       locale: dictionary.metadata.site.openGraph.locale,
-      images: [
-        {
-          url: dictionary.metadata.site.openGraph.imageUrl,
-          width: 1409,
-          height: 736,
-          alt: operation.meta.ogImageAlt ?? operation.hero.imageAlt,
-        },
-      ],
     },
   };
 }

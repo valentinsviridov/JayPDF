@@ -40,15 +40,6 @@ type SizeLabel = (size: string) => string;
 
 type PagesLabel = (count: number) => string;
 
-export interface FotolinceBannerStrings {
-  eyebrow: string;
-  title: string;
-  description: string;
-  ctaLabel: string;
-  ctaHref: string;
-  imageAlt: string;
-}
-
 export interface FAQItem {
   question: string;
   answer: string;
@@ -58,7 +49,6 @@ export interface NavStrings {
   home: string;
   faq: string;
   support: string;
-  photo: string;
   languageLabel: string;
   menuLabel: string;
 }
@@ -70,7 +60,6 @@ export interface FooterStrings {
     home: string;
     faq: string;
     support: string;
-    photo: string;
     contact: string;
   };
   capabilitiesLabel: string;
@@ -522,7 +511,6 @@ export interface ComponentsStrings {
   nav: NavStrings;
   footer: FooterStrings;
   notifications: NotificationStrings;
-  fotolinceBanner: FotolinceBannerStrings;
   pdfProcessor: PdfProcessorStrings;
   fileUploader: FileUploaderStrings;
   fileList: FileListStrings;
@@ -557,8 +545,8 @@ export interface Dictionary {
         url: string;
         locale: string;
         type: string;
-        imageUrl: string;
-        imageAlt: string;
+        imageUrl?: string;
+        imageAlt?: string;
       };
     };
     faq: {

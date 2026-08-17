@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "en" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://jaypdf.com";
+const siteUrl = "";
 const homePath = getRoutePath(locale, "home");
 
 const operationsRoutes: Record<OperationKey, string> = {
@@ -65,8 +65,6 @@ export const enDictionary: Dictionary = {
         url: `${siteUrl}${homePath}`,
         locale: "en_US",
         type: "website",
-        imageUrl: "https://jaypdf.com/og-images/og-image-en.png",
-        imageAlt: "JayPDF - Private and free PDF processing",
       },
     },
     faq: {
@@ -109,7 +107,6 @@ export const enDictionary: Dictionary = {
       home: "Home",
       faq: "FAQ",
       support: "Support",
-      photo: "FotoLince",
       languageLabel: "Language",
       menuLabel: "Toggle navigation menu",
     },
@@ -120,7 +117,6 @@ export const enDictionary: Dictionary = {
         home: "Home",
         faq: "FAQ",
         support: "Support",
-        photo: "FotoLince",
         contact: "Contact",
       },
       capabilitiesLabel: "Popular actions",
@@ -147,15 +143,6 @@ export const enDictionary: Dictionary = {
         warning: "Warning",
       },
       closeLabel: "Dismiss notification",
-    },
-    fotolinceBanner: {
-      eyebrow: "Companion project",
-      title: "Fotolince — Private photo tools",
-      description:
-        "Resize, compress, convert, and crop images directly in your browser. No server uploads, total privacy.",
-      ctaLabel: "Open Fotolince",
-      ctaHref: "https://fotolince.com",
-      imageAlt: "Fotolince logo preview",
     },
     feedback: {
       question: "Was this helpful?",
@@ -720,7 +707,7 @@ export const enDictionary: Dictionary = {
         description:
           "Every person who backs JayPDF helps keep a useful, privacy-first PDF toolkit alive for everyone.",
         ctaLabel: "Email the team",
-        ctaHref: "mailto:info@jaypdf.com?subject=Hello%20JayPDF%20team",
+        ctaHref: "mailto:info@jaypdf.org?subject=Hello%20JayPDF%20team",
       },
       legalNotice: {
         title: "Legal & transparency notes",
@@ -728,7 +715,7 @@ export const enDictionary: Dictionary = {
           "JayPDF is an independent personal project run by a small volunteer team.",
           "Contributions are voluntary and help cover hosting, tooling, and development time.",
           "Payments are not charitable donations and do not create tax deductions; Stripe will email an automatic receipt.",
-          "The service is provided as-is with no warranties. Questions? Reach out at info@jaypdf.com.",
+          "The service is provided as-is with no warranties. Questions? Reach out at info@jaypdf.org.",
         ],
       },
     },

@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "pt" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://jaypdf.com";
+const siteUrl = "";
 const homePath = getRoutePath(locale, "home");
 
 const operationRoutes: Record<OperationKey, string> = {
@@ -64,8 +64,6 @@ export const ptDictionary: Dictionary = {
         url: `${siteUrl}${homePath}`,
         locale: "pt_BR",
         type: "website",
-        imageUrl: "https://jaypdf.com/og-images/og-image-pt.png",
-        imageAlt: "JayPDF - Processamento de PDFs privado e gratuito",
       },
     },
     faq: {
@@ -107,7 +105,6 @@ export const ptDictionary: Dictionary = {
       home: "Início",
       faq: "Perguntas frequentes",
       support: "Apoiar",
-      photo: "FotoLince",
       languageLabel: "Idioma",
       menuLabel: "Abrir menu de navegação",
     },
@@ -118,7 +115,6 @@ export const ptDictionary: Dictionary = {
         home: "Início",
         faq: "Perguntas frequentes",
         support: "Apoiar",
-        photo: "FotoLince",
         contact: "Contato",
       },
       capabilitiesLabel: "Operações populares",
@@ -145,15 +141,6 @@ export const ptDictionary: Dictionary = {
         warning: "Atenção",
       },
       closeLabel: "Fechar",
-    },
-    fotolinceBanner: {
-      eyebrow: "Precisa otimizar imagens?",
-      title: "Comprimir, redimensionar ou converter fotos com o FotoLince",
-      description:
-        "Nossa ferramenta irmã trata JPG, PNG e WEBP direto no navegador — perfeita para ajustar imagens antes de gerar um PDF.",
-      ctaLabel: "Abrir FotoLince",
-      ctaHref: "https://fotolince.com",
-      imageAlt: "Logotipo do FotoLince",
     },
     feedback: {
       question: "Isso foi útil?",
@@ -720,7 +707,7 @@ export const ptDictionary: Dictionary = {
         description:
           "Cada pessoa que apoia o JayPDF ajuda a manter uma ferramenta útil, privada e acessível para todo mundo.",
         ctaLabel: "Falar com o time",
-        ctaHref: "mailto:info@jaypdf.com?subject=Oi%20time%20do%20JayPDF",
+        ctaHref: "mailto:info@jaypdf.org?subject=Oi%20time%20do%20JayPDF",
       },
       legalNotice: {
         title: "Aviso legal e transparência",
@@ -728,7 +715,7 @@ export const ptDictionary: Dictionary = {
           "JayPDF é um projeto pessoal independente mantido por uma pequena equipe voluntária.",
           "As contribuições são voluntárias e ajudam a pagar hospedagem, ferramentas e tempo de desenvolvimento.",
           "Os pagamentos não são doações filantrópicas nem geram benefícios fiscais; a Stripe enviará um recibo automático.",
-          "O serviço é fornecido no estado em que se encontra, sem garantias. Dúvidas? Escreva para info@jaypdf.com.",
+          "O serviço é fornecido no estado em que se encontra, sem garantias. Dúvidas? Escreva para info@jaypdf.org.",
         ],
       },
     },

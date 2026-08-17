@@ -1,10 +1,11 @@
 import { MetadataRoute } from "next";
+import { BrandConfig } from "../config/brand";
 
 export const dynamic = "force-static";
 export const revalidate = false;
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = "https://pdflince.com";
+    const baseUrl = BrandConfig.canonicalOrigin;
 
     return {
         rules: {

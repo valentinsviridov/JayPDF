@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "ro" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://jaypdf.com";
+const siteUrl = "";
 const homePath = getRoutePath(locale, "home");
 
 const operationsRoutes: Record<OperationKey, string> = {
@@ -73,8 +73,6 @@ export const roDictionary: Dictionary = {
         url: `${siteUrl}${homePath}`,
         locale: "ro_RO",
         type: "website",
-        imageUrl: "https://jaypdf.com/og-images/og-image-ro.png",
-        imageAlt: "JayPDF - Procesare PDF privată și gratuită",
       },
     },
     faq: {
@@ -117,7 +115,6 @@ export const roDictionary: Dictionary = {
       home: "Acasă",
       faq: "Întrebări frecvente",
       support: "Susține",
-      photo: "FotoLince",
       languageLabel: "Limbă",
       menuLabel: "Comută meniul de navigare",
     },
@@ -128,7 +125,6 @@ export const roDictionary: Dictionary = {
         home: "Acasă",
         faq: "Întrebări frecvente",
         support: "Susține",
-        photo: "FotoLince",
         contact: "Contact",
       },
       capabilitiesLabel: "Acțiuni populare",
@@ -155,15 +151,6 @@ export const roDictionary: Dictionary = {
         warning: "Avertisment",
       },
       closeLabel: "Închide",
-    },
-    fotolinceBanner: {
-      eyebrow: "Ai nevoie să optimizezi imagini?",
-      title: "Comprimă, redimensionează sau convertește cu FotoLince",
-      description:
-        "Setul nostru de instrumente procesează fișiere JPG, PNG și WEBP la nivel local — ideal pentru a reduce dimensiunea imaginilor înainte de a le transforma în PDF.",
-      ctaLabel: "Deschide FotoLince",
-      ctaHref: "https://fotolince.com",
-      imageAlt: "Logo FotoLince",
     },
     feedback: {
       question: "A fost util?",
@@ -728,7 +715,7 @@ export const roDictionary: Dictionary = {
         description:
           "Fiecare persoană care susține JayPDF ajută la menținerea în viață a unui set util de instrumente PDF.",
         ctaLabel: "Trimite un e-mail echipei",
-        ctaHref: "mailto:info@jaypdf.com?subject=Salut%20echipa%20JayPDF",
+        ctaHref: "mailto:info@jaypdf.org?subject=Salut%20echipa%20JayPDF",
       },
       legalNotice: {
         title: "Informații legale și transparență",
@@ -736,7 +723,7 @@ export const roDictionary: Dictionary = {
           "JayPDF este un proiect personal independent gestionat de o echipă mică de voluntari.",
           "Contribuțiile sunt voluntare și ajută exclusiv la acoperirea găzduirii și a timpului de dezvoltare.",
           "Plățile nu sunt donații deductibile fiscal; Stripe va emite o chitanță automată.",
-          "Serviciul este furnizat ca atare, fără garanții. Întrebări? info@jaypdf.com.",
+          "Serviciul este furnizat ca atare, fără garanții. Întrebări? info@jaypdf.org.",
         ],
       },
     },
