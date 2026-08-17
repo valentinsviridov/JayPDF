@@ -121,7 +121,7 @@ export const huDictionary: Dictionary = {
     },
     footer: {
       privacy: "Helyi feldolgozás • 100% privát • Nyílt licencek",
-      rights: `Copyright © 2026 Valentin Sviridov — PDF-eszközök az adatvédelem kompromisszuma nélkül`,
+      rights: `Copyright © 2026 JayPDF — PDF-eszközök az adatvédelem kompromisszuma nélkül`,
       links: {
         home: "Főoldal",
         faq: "Gyakori kérdések",

@@ -1,8 +1,7 @@
-import Image from "next/image";
 import PDFProcessor from "./pdf-processor";
 import FaqSection from "./faq-section";
 import type { OperationContent } from "../i18n/dictionaries/operation-types";
-import { BrandConfig } from "../config/brand";
+import JayPdfLogo from "./JayPdfLogo";
 
 export function OperationPageContent({
   operation,
@@ -24,75 +23,38 @@ export function OperationPageContent({
 
   return (
     <div className="min-h-screen bg-gradient-soft relative">
-      <div className="container mx-auto px-4 py-8" style={{ maxWidth: "var(--max-width-wide-page)" }}>
+      <div className="container mx-auto px-4 sm:px-6 py-8" style={{ maxWidth: "var(--max-width-wide-page)" }}>
         <section className="mb-10 relative">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="text-center md:text-left md:max-w-[70%]">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">{operation.hero.title}</h1>
-              <p className="text-xl text-[var(--tx-2)] max-w-3xl">{operation.hero.description}</p>
-
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {operation.hero.bulletPoints.map((point) => (
-                  <span
-                    key={point}
-                    className="inline-flex items-start gap-2 px-3 py-2 rounded-lg bg-[var(--ui)] text-sm text-left"
-                  >
-                    <span className="text-[var(--accent)]">✓</span>
-                    {point}
-                  </span>
-                ))}
-              </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left md:max-w-[75%]">
+              <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-3 text-[var(--tx)]">
+                {operation.hero.title}
+              </h1>
+              <p className="text-lg md:text-xl text-[var(--tx-2)] max-w-3xl leading-relaxed">
+                {operation.hero.description}
+              </p>
             </div>
 
-            <div className="hidden md:block md:w-[30%] mt-8 md:mt-0">
-              <Image
-                src={BrandConfig.assets.logo}
-                alt={BrandConfig.productName}
-                width={240}
-                height={240}
-                className="w-full h-auto max-w-[240px] ml-auto opacity-85"
-                priority
-                unoptimized
-              />
+            <div className="hidden md:flex justify-end md:w-[25%]">
+              <div className="p-4 rounded-2xl bg-white/60 border border-[var(--ui-2)] shadow-xs backdrop-blur-xs">
+                <JayPdfLogo className="w-32 h-32" />
+              </div>
             </div>
           </div>
         </section>
 
         <PDFProcessor initialMode={operation.mode} />
 
-        <section className="my-12">
-          <h2 className="text-2xl font-bold mb-6 text-center">{operation.benefitsTitle}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {operation.benefits.map((benefit) => (
-              <div key={benefit.title} className="surface-card p-6 h-full">
-                <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-[var(--tx-2)]">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="surface-card bg-[var(--bg-2)]/80 p-8 my-12">
-          <h2 className="text-2xl font-bold mb-4">{operation.howTo.title}</h2>
-          <ol className="list-decimal list-inside space-y-3 text-[var(--tx-2)]">
+        <section className="surface-card bg-white/90 border border-[var(--ui-2)] rounded-2xl p-6 sm:p-8 my-10 shadow-xs">
+          <h2 className="text-xl font-bold mb-4 text-[var(--tx)]">{operation.howTo.title}</h2>
+          <ol className="list-decimal list-inside space-y-2.5 text-[var(--tx-2)] text-sm sm:text-base leading-relaxed">
             {operation.howTo.steps.map((step, index) => (
               <li key={`${operation.slug}-step-${index}`}>{step}</li>
             ))}
           </ol>
           {operation.howTo.note && (
-            <p className="mt-4 text-sm text-[var(--tx-3)]">{operation.howTo.note}</p>
+            <p className="mt-4 pt-3 border-t border-[var(--ui)] text-xs text-[var(--tx-3)]">{operation.howTo.note}</p>
           )}
-        </section>
-
-        <section className="my-12">
-          <h2 className="text-2xl font-bold mb-4 text-center">{operation.useCasesTitle}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {operation.useCases.map((useCase) => (
-              <div key={useCase} className="surface-card p-5">
-                <p className="text-[var(--tx-2)]">{useCase}</p>
-              </div>
-            ))}
-          </div>
         </section>
 
         <script

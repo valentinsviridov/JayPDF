@@ -123,7 +123,7 @@ export const roDictionary: Dictionary = {
     },
     footer: {
       privacy: "Procesare locală • 100% privată • Licențe deschise",
-      rights: `Copyright © 2026 Valentin Sviridov — Instrumente pentru manipularea PDF-urilor fără a compromite confidențialitatea`,
+      rights: `Copyright © 2026 JayPDF — Instrumente pentru manipularea PDF-urilor fără a compromite confidențialitatea`,
       links: {
         home: "Acasă",
         faq: "Întrebări frecvente",

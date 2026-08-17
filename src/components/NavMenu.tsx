@@ -8,6 +8,8 @@ import { useDictionary, useLocale } from '../i18n/LocaleProvider';
 import { SUPPORTED_LOCALES, localeLabels, type Locale } from '../i18n/config';
 import { getLocalizedAlternateMap, getRouteIdentifierForPath, getRoutePath } from '../i18n/routing';
 
+import JayPdfLogo from './JayPdfLogo';
+
 export default function NavMenu() {
   const pathname = usePathname();
   const router = useRouter();
@@ -41,10 +43,10 @@ export default function NavMenu() {
 
   return (
     <nav className="w-full border-b border-[var(--ui)] bg-[var(--bg)]/90 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
-        <Link href={routes.home} className="flex items-center">
-          <Image src="/favicon.ico?v=2" alt="PDFLince logo" width={32} height={32} className="mr-2" unoptimized />
-          <span className="text-xl font-bold">PDFLince</span>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-4 flex flex-wrap justify-between items-center">
+        <Link href={routes.home} className="flex items-center group">
+          <JayPdfLogo className="w-8 h-8 mr-2.5 transition-transform group-hover:scale-105" />
+          <span className="text-xl font-bold tracking-tight text-[var(--tx)]">JayPDF</span>
         </Link>
 
         <button

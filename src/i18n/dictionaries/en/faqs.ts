@@ -20,6 +20,11 @@ export const faqsEn = {
       answer:
         "Yes. JayPDF is optimised for desktops, tablets, and phones. The interface adapts to any screen size.",
     },
+    {
+      question: "Why is the project named JayPDF?",
+      answer:
+        "The project is named after Jay, a Maine Coon cat whose name also happens to be the English word for the jay bird species (like the Blue Jay). This playful double meaning inspired both the toolkit's name and its vibrant blue jay-themed visual identity.",
+    },
   ],
   regional: [
     {

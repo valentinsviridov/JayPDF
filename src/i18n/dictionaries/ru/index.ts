@@ -115,7 +115,7 @@ export const ruDictionary: Dictionary = {
     },
     footer: {
       privacy: "Локальная обработка • 100% конфиденциально • Открытые лицензии",
-      rights: `Copyright © 2026 Valentin Sviridov — Инструменты для работы с PDF без компромиссов с конфиденциальностью`,
+      rights: `Copyright © 2026 JayPDF — Инструменты для работы с PDF без компромиссов с конфиденциальностью`,
       links: {
         home: "Главная",
         faq: "Вопросы и ответы",

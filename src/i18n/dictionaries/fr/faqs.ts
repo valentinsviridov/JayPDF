@@ -20,6 +20,11 @@ export const faqsFr = {
       answer:
         "Oui. JayPDF est optimisé pour les ordinateurs de bureau, les tablettes et les téléphones. L'interface s'adapte à toutes les tailles d'écran.",
     },
+    {
+      question: "Pourquoi le projet s'appelle-t-il JayPDF ?",
+      answer:
+        "Le projet porte le nom de Jay, un chat Maine Coon dont le nom correspond également au mot anglais désignant l'oiseau geai (« jay », comme le geai bleu / Blue Jay). Ce double sens a inspiré à la fois le nom de l'outil et son identité visuelle aux couleurs du geai bleu.",
+    },
   ],
   regional: [
     {

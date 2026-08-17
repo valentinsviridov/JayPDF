@@ -115,7 +115,7 @@ export const enDictionary: Dictionary = {
     },
     footer: {
       privacy: "Local processing • 100% private • Open licences",
-      rights: `Copyright © 2026 Valentin Sviridov — Tools to manipulate PDFs without compromising privacy`,
+      rights: `Copyright © 2026 JayPDF — Tools to manipulate PDFs without compromising privacy`,
       links: {
         home: "Home",
         faq: "FAQ",

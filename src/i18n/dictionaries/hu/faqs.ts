@@ -25,6 +25,11 @@ export const faqsHu = {
       answer:
         "Igen. A felület teljesen reszponzív és kényelmes Android és iPhone okostelefonokon, valamint tableteken is. Egy modern böngésző elegendő – Chrome, Firefox, Safari vagy Edge. Semmilyen alkalmazást nem kell telepíteni.",
     },
+    {
+      question: "Miért JayPDF a projekt neve?",
+      answer:
+        "A projekt egy Jay nevű Maine Coon macskáról kapta a nevét, akinek a neve az angol nyelvben a szajkó madárfajt («jay», mint a kék szajkó / Blue Jay) is jelenti. Ez a kettős jelentés adta az eszközkészlet nevét és a kék szajkó színeire épülő vizuális arculatát.",
+    },
   ],
   regional: [
     {

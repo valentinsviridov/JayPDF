@@ -20,6 +20,11 @@ export const faqsIt = {
       answer:
         "Sì. JayPDF è ottimizzato per desktop, tablet e telefoni. L'interfaccia si adatta a qualsiasi dimensione dello schermo.",
     },
+    {
+      question: "Perché il progetto si chiama JayPDF?",
+      answer:
+        "Il progetto prende il nome da Jay, un gatto Maine Coon il cui nome coincide anche con il termine inglese che indica la ghiandaia («jay», come la ghiandaia azzurra / Blue Jay). Questo doppio significato ha ispirato sia il nome del toolkit sia la sua identità visiva nei toni della ghiandaia azzurra.",
+    },
   ],
   regional: [
     {

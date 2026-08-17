@@ -23,6 +23,18 @@ JayPDF is designed to process documents locally in your browser.
 
 ## 🚀 Getting Started
 
+### Clone and Run Locally
+
+```bash
+git clone git@github.com:valentinsviridov/JayPDF.git
+cd JayPDF
+bun install
+bun run setup-worker
+bun run dev
+```
+
+### Run with Docker
+
 You can pull and run the pre-built Docker image directly from the GitHub Container Registry (GHCR):
 
 ```bash

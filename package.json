@@ -12,6 +12,10 @@
     "pdf-lib"
   ],
   "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:valentinsviridov/JayPDF.git"
+  },
   "type": "module",
   "engines": {
     "bun": ">=1.0.0"

@@ -115,7 +115,7 @@ export const frDictionary: Dictionary = {
     },
     footer: {
       privacy: "Traitement local • 100% privé • Licences ouvertes",
-      rights: `Copyright © 2026 Valentin Sviridov — Outils pour manipuler des PDF sans compromettre la confidentialité`,
+      rights: `Copyright © 2026 JayPDF — Outils pour manipuler des PDF sans compromettre la confidentialité`,
       links: {
         home: "Accueil",
         faq: "FAQ",

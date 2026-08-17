@@ -34,6 +34,34 @@ import { CropWorkspace } from './features/CropWorkspace';
 import { ExtractWorkspace } from './features/ExtractWorkspace';
 import { ReorderWorkspace } from './features/ReorderWorkspace';
 import { RotateWorkspace } from './features/RotateWorkspace';
+import {
+  Layers,
+  Minimize2,
+  Scissors,
+  FileOutput,
+  Crop,
+  RotateCw,
+  ArrowUpDown,
+  Wrench,
+  FileImage,
+  Images,
+  Trash2,
+  Download,
+  Sparkles,
+} from 'lucide-react';
+
+const OPERATION_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  merge: Layers,
+  compress: Minimize2,
+  split: Scissors,
+  extract: FileOutput,
+  crop: Crop,
+  rotate: RotateCw,
+  reorder: ArrowUpDown,
+  repair: Wrench,
+  pdfToImages: FileImage,
+  imagesToPdf: Images,
+};
 
 type ProcessingMode = OperationKey;
 
@@ -1907,29 +1935,32 @@ function PDFProcessorInterface({ initialMode }: { initialMode: ProcessingMode })
   return (
     <>
       <div className="p-6 surface-card" id="pdf-processor">
-        <div className="mb-6">
-          <h2 className="text-xl font-bold mb-4">{processorStrings.title}</h2>
-          <div className="flex flex-wrap gap-2">
+        <div className="mb-6 bg-white/90 p-5 rounded-2xl border border-[var(--ui-2)] shadow-xs">
+          <h2 className="text-base font-bold text-[var(--tx)] mb-3">{processorStrings.title}</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
             {MODE_TABS.map(modeKey => {
               const tabStrings = (modes as Record<ProcessingMode, { label: string }>)[modeKey];
               const label = tabStrings?.label ?? modeKey;
               const isActive = mode === modeKey;
+              const IconComponent = OPERATION_ICONS[modeKey] || Sparkles;
               return (
                 <button
                   key={modeKey}
-                  className={`px-4 py-2 rounded-lg ${isActive
-                    ? 'bg-[var(--accent)] text-white'
-                    : 'bg-[var(--ui-2)] text-[var(--tx-2)]'
+                  type="button"
+                  className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all duration-150 cursor-pointer ${isActive
+                    ? 'bg-[var(--accent)] text-white shadow-sm ring-2 ring-[var(--accent)]/20 font-semibold scale-[1.01]'
+                    : 'bg-[var(--bg-2)] border border-[var(--ui-2)] text-[var(--tx-2)] hover:bg-[var(--ui)] hover:text-[var(--tx)] hover:border-[var(--ui-3)]'
                     }`}
                   onClick={() => handleModeChange(modeKey)}
                 >
-                  {label}
+                  <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[var(--accent)]'}`} />
+                  <span className="truncate">{label}</span>
                 </button>
               );
             })}
           </div>
 
-          <p className="mt-2 text-sm text-[var(--tx-2)]">{getModeHelpText()}</p>
+          <p className="mt-3 text-xs text-[var(--tx-3)]">{getModeHelpText()}</p>
         </div>
 
         <div className="mb-6">

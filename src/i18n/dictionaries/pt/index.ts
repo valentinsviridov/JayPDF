@@ -113,7 +113,7 @@ export const ptDictionary: Dictionary = {
     },
     footer: {
       privacy: "Processamento local • 100% privado • Licenças abertas",
-      rights: `Copyright © 2026 Valentin Sviridov — Ferramentas para manipular PDFs sem comprometer a privacidade`,
+      rights: `Copyright © 2026 JayPDF — Ferramentas para manipular PDFs sem comprometer a privacidade`,
       links: {
         home: "Início",
         faq: "Perguntas frequentes",

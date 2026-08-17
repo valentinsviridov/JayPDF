@@ -20,6 +20,11 @@ export const faqsRo = {
       answer:
         "Da. JayPDF este optimizat pentru computere desktop, tablete și telefoane. Interfața se adaptează la orice dimensiune de ecran.",
     },
+    {
+      question: "De ce se numește proiectul JayPDF?",
+      answer:
+        "Proiectul poartă numele motanului Maine Coon Jay, al cărui nume coincide totodată cu termenul englezesc pentru specia de pasăre gaiță („jay”, precum gaița albastră / Blue Jay). Acest dublu sens a inspirat atât numele instrumentului, cât și identitatea vizuală în culorile gaiței albastre.",
+    },
   ],
   regional: [
     {

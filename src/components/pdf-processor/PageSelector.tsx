@@ -12,6 +12,8 @@ type PageSelectorProps = {
   selectedPageRotationDegrees?: 0 | 90 | 180 | 270 | -90 | -180 | -270;
 };
 
+import { CheckSquare, Square } from 'lucide-react';
+
 export default function PageSelector({
   file,
   selectedPages,
@@ -130,23 +132,25 @@ export default function PageSelector({
 
   return (
     <div>
-      <div className="flex justify-between mb-4">
+      <div className="flex justify-between items-center mb-4">
         <p className="text-sm text-[var(--tx-2)]">
           {selectorStrings.summary(pageCount, Object.keys(selectedPages).length)}
         </p>
-        <div className="space-x-2">
+        <div className="flex items-center space-x-3">
           <button
-            className="text-sm text-[var(--tx-3)] hover:text-[var(--accent)]"
+            className="inline-flex items-center gap-1 text-sm text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors cursor-pointer"
             onClick={selectAllPages}
           >
-            {selectorStrings.selectAll}
+            <CheckSquare className="w-3.5 h-3.5" />
+            <span>{selectorStrings.selectAll}</span>
           </button>
           <button
-            className="text-sm text-[var(--tx-3)] hover:text-[var(--accent)]"
+            className="inline-flex items-center gap-1 text-sm text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
             onClick={deselectAllPages}
             disabled={Object.keys(selectedPages).length === 0}
           >
-            {selectorStrings.deselectAll}
+            <Square className="w-3.5 h-3.5" />
+            <span>{selectorStrings.deselectAll}</span>
           </button>
         </div>
       </div>

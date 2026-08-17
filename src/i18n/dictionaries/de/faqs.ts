@@ -20,6 +20,11 @@ export const faqsDe = {
       answer:
         "Ja. Die Oberfläche passt sich an Desktops, Tablets und Mobilgeräte an, sodass du überall effizient arbeiten kannst.",
     },
+    {
+      question: "Warum heißt das Projekt JayPDF?",
+      answer:
+        "Das Projekt ist nach dem Maine-Coon-Kater Jay benannt. Sein Name ist im Englischen zugleich die Bezeichnung für die Vogelart Häher bzw. Eichelhäher („jay“ / Blue Jay). Diese doppelte Bedeutung hat sowohl den Namen als auch das vom Blauhäher inspirierte visuelle Erscheinungsbild geprägt.",
+    },
   ],
   regional: [
     {

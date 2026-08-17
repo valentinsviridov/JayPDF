@@ -53,7 +53,7 @@ export default function FaqSection() {
     <section className="my-10">
       <h2 className="text-2xl font-bold mb-6 text-center">{labels.title}</h2>
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {faqs.map((faq, index) => (
           <div key={`${faq.question}-${index}`} className="mb-4 border border-[var(--ui-2)] rounded-lg overflow-hidden">
             <button

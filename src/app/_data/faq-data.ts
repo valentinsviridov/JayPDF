@@ -14,6 +14,10 @@ export const commonFaqs = [
   {
     question: "¿JayPDF funciona en dispositivos móviles?",
     answer: "Sí, JayPDF está optimizado tanto para ordenadores como para dispositivos móviles. La interfaz se adapta a cualquier tamaño de pantalla."
+  },
+  {
+    question: "¿De dónde viene el nombre JayPDF?",
+    answer: "El proyecto lleva el nombre de Jay, un gato Maine Coon cuyo nombre coincide además con la palabra en inglés para el arrendajo («jay», como el arrendajo azul / Blue Jay). Este doble sentido inspiró tanto el nombre de la herramienta como su identidad visual con los colores del arrendajo azul."
   }
 ];
 

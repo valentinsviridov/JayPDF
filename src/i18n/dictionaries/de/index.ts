@@ -115,7 +115,7 @@ export const deDictionary: Dictionary = {
     },
     footer: {
       privacy: "Lokale Verarbeitung • 100 % privat • Offene Lizenzen",
-      rights: `Copyright © 2026 Valentin Sviridov — Werkzeuge zur PDF-Bearbeitung ohne Datenschutzkompromisse`,
+      rights: `Copyright © 2026 JayPDF — Werkzeuge zur PDF-Bearbeitung ohne Datenschutzkompromisse`,
       links: {
         home: "Startseite",
         faq: "FAQ",

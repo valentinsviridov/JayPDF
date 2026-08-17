@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useDictionary } from '../../i18n/LocaleProvider';
 import { usePdfProcessorServices } from './services';
+import { Crop, RotateCcw } from 'lucide-react';
 
 type CropMargins = {
   top: number;
@@ -235,7 +236,10 @@ export default function UnifiedCropInterface({
     <div className="rounded-xl border border-[var(--ui-2)] bg-[var(--bg-2)] p-5 shadow-sm">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-4 border-b border-[var(--ui-2)] pb-4">
         <div>
-          <h3 className="text-base font-semibold text-[var(--tx)]">{cropStrings.title || 'Crop PDF'}</h3>
+          <h3 className="text-base font-semibold text-[var(--tx)] flex items-center gap-2">
+            <Crop className="w-4 h-4 text-[var(--accent)]" />
+            <span>{cropStrings.title || 'Crop PDF'}</span>
+          </h3>
           <p className="text-sm text-[var(--tx-3)]">{cropStrings.hint}</p>
         </div>
         
@@ -258,10 +262,11 @@ export default function UnifiedCropInterface({
           </div>
           <button
             type="button"
-            className="rounded-lg px-3 py-1.5 text-xs font-medium text-[var(--tx-2)] transition-colors hover:bg-[var(--bg-1)] hover:text-[var(--accent)]"
+            className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium text-[var(--tx-2)] transition-colors hover:bg-[var(--bg-1)] hover:text-[var(--accent)] cursor-pointer"
             onClick={handleReset}
           >
-            {cropStrings.manual.reset}
+            <RotateCcw className="w-3.5 h-3.5" />
+            <span>{cropStrings.manual.reset}</span>
           </button>
         </div>
       </div>

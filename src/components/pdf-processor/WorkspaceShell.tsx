@@ -17,6 +17,37 @@ import ProcessingOptions from './ProcessingOptions';
 import CompressionPreviewCard, { PreviewStatus } from './CompressionPreviewCard';
 import { InsightfulProgressIndicator } from './InsightfulProgressIndicator';
 import type { PdfProgressUpdate } from '../../modules/pdf/core/contracts';
+import {
+  Layers,
+  Minimize2,
+  Scissors,
+  FileOutput,
+  Crop,
+  RotateCw,
+  ArrowUpDown,
+  Wrench,
+  FileImage,
+  Images,
+  Trash2,
+  Download,
+  Sparkles,
+  RefreshCw,
+  AlertCircle,
+  CheckCircle2,
+} from 'lucide-react';
+
+const OPERATION_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  merge: Layers,
+  compress: Minimize2,
+  split: Scissors,
+  extract: FileOutput,
+  crop: Crop,
+  rotate: RotateCw,
+  reorder: ArrowUpDown,
+  repair: Wrench,
+  pdfToImages: FileImage,
+  imagesToPdf: Images,
+};
 
 interface WorkspaceShellProps {
   initialMode?: PdfOperationKey;
@@ -432,35 +463,39 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto flex flex-col space-y-6">
-      <div className="text-center space-y-2 mb-8" id="pdf-processor">
-        <h2 className="text-3xl font-bold">{BrandConfig.productName} Workspace</h2>
+    <div className="w-full max-w-7xl mx-auto flex flex-col space-y-6">
+      <div className="text-center space-y-2 mb-6" id="pdf-processor">
+        <h2 className="text-3xl font-bold tracking-tight">{BrandConfig.productName} Workspace</h2>
         <p className="text-[var(--tx-2)]">{BrandConfig.shortPromise}</p>
       </div>
 
       {(state.phase === 'EMPTY' || state.phase === 'READY') && (
-        <div className="mb-8">
-          <h2 className="text-xl font-bold mb-4">{processorStrings.title}</h2>
-          <div className="overflow-x-auto pb-2">
-            <div className="flex flex-wrap gap-2 min-w-max">
-              {PDF_FEATURE_KEYS.map(modeKey => {
-                const tabStrings = (dictionary.components.pdfProcessor.modes as any)[modeKey];
-                const label = tabStrings?.label ?? modeKey;
-                const isActive = state.activeKey === modeKey;
-                return (
-                  <button
-                    key={modeKey}
-                    className={`px-4 py-2 rounded-lg ${isActive
-                      ? 'bg-[var(--accent)] text-white'
-                      : 'bg-[var(--ui-2)] text-[var(--tx-2)] hover:bg-[var(--ui)]'
-                      }`}
-                    onClick={() => selectOperation(modeKey)}
-                  >
-                    {label}
-                  </button>
-                );
-              })}
-            </div>
+        <div className="mb-6 bg-white/90 p-5 rounded-2xl border border-[var(--ui-2)] shadow-xs">
+          <div className="flex items-center justify-between mb-3.5">
+            <h2 className="text-base font-bold text-[var(--tx)]">{processorStrings.title}</h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
+            {PDF_FEATURE_KEYS.map(modeKey => {
+              const tabStrings = (dictionary.components.pdfProcessor.modes as any)[modeKey];
+              const label = tabStrings?.label ?? modeKey;
+              const isActive = state.activeKey === modeKey;
+              const IconComponent = OPERATION_ICONS[modeKey] || Sparkles;
+              return (
+                <button
+                  key={modeKey}
+                  type="button"
+                  className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all duration-150 cursor-pointer ${
+                    isActive
+                      ? 'bg-[var(--accent)] text-white shadow-sm ring-2 ring-[var(--accent)]/20 font-semibold scale-[1.01]'
+                      : 'bg-[var(--bg-2)] border border-[var(--ui-2)] text-[var(--tx-2)] hover:bg-[var(--ui)] hover:text-[var(--tx)] hover:border-[var(--ui-3)]'
+                  }`}
+                  onClick={() => selectOperation(modeKey)}
+                >
+                  <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[var(--accent)]'}`} />
+                  <span className="truncate">{label}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
@@ -471,10 +506,11 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
             <h2 className="text-xl font-bold">{processorStrings.upload.title}</h2>
             {files.length > 0 && (
               <button
-                className="text-sm text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors cursor-pointer"
                 onClick={clearFiles}
               >
-                {processorStrings.upload.clearAll}
+                <Trash2 className="w-3.5 h-3.5" />
+                <span>{processorStrings.upload.clearAll}</span>
               </button>
             )}
           </div>
@@ -494,9 +530,10 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
             </h3>
             <button 
               onClick={clearFiles}
-              className="text-sm text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm text-[var(--tx-3)] hover:text-[var(--accent)] transition-colors cursor-pointer"
             >
-              {processorStrings.upload.clearAll}
+              <Trash2 className="w-3.5 h-3.5" />
+              <span>{processorStrings.upload.clearAll}</span>
             </button>
           </div>
           
@@ -593,9 +630,13 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
           <div className="mt-8 flex justify-end">
             <button
               onClick={handleStartProcessing}
-              className="px-6 py-3 bg-[var(--accent)] text-white rounded-lg hover:bg-opacity-90 transition-colors shadow-sm font-medium"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--accent)] text-white rounded-xl hover:bg-[var(--accent-2)] transition-all shadow-sm font-semibold text-sm sm:text-base cursor-pointer"
             >
-              {resolveIdleButtonLabel()}
+              {(() => {
+                const ActiveIcon = (state.activeKey && OPERATION_ICONS[state.activeKey]) || Sparkles;
+                return <ActiveIcon className="w-4 h-4" />;
+              })()}
+              <span>{resolveIdleButtonLabel()}</span>
             </button>
           </div>
         </div>
@@ -626,7 +667,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
       {state.phase === 'RESULT' && (
         <div className="bg-white rounded-xl shadow-sm border border-[var(--ui-2)] p-8 text-center">
           <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+            <CheckCircle2 className="w-8 h-8" />
           </div>
           <h2 className="text-2xl font-bold mb-2">Success!</h2>
           <p className="text-[var(--tx-2)] mb-8">Your files have been processed locally.</p>
@@ -634,9 +675,10 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
           <div className="flex justify-center space-x-4">
             <button 
               onClick={clearFiles}
-              className="px-6 py-2 border border-[var(--ui-2)] rounded-lg hover:bg-[var(--ui)] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-2.5 border border-[var(--ui-2)] rounded-xl hover:bg-[var(--ui)] transition-colors font-medium text-sm cursor-pointer"
             >
-              Process More Files
+              <RefreshCw className="w-4 h-4" />
+              <span>Process More Files</span>
             </button>
             {state.results[0]?.blob && (
               <button
@@ -653,9 +695,10 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
                   URL.revokeObjectURL(url);
                 }
               }}
-              className="px-8 py-3 bg-[var(--accent)] text-white rounded-lg hover:bg-opacity-90 transition-colors shadow-sm font-bold"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-[var(--accent)] text-white rounded-xl hover:bg-[var(--accent-2)] transition-all shadow-sm font-bold text-sm sm:text-base cursor-pointer"
             >
-              Download Result
+              <Download className="w-4 h-4" />
+              <span>Download Result</span>
             </button>
             )}
           </div>
@@ -665,7 +708,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
       {state.phase === 'ERROR' && (
         <div className="bg-white rounded-xl shadow-sm border border-red-200 p-8 text-center">
           <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <AlertCircle className="w-8 h-8" />
           </div>
           <h2 className="text-2xl font-bold mb-2">An Error Occurred</h2>
           <p className="text-red-600 mb-8">{state.globalError || 'Something went wrong.'}</p>

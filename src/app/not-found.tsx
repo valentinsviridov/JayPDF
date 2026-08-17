@@ -3,6 +3,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import "../styles/globals.css";
 
+import JayPdfLogo from "../components/JayPdfLogo";
+
 export const metadata: Metadata = {
   title: "404 – Page Not Found | JayPDF",
   description: "The page you were looking for doesn't exist. Go back to JayPDF and continue working with your PDFs.",
@@ -35,7 +37,7 @@ export default function NotFound() {
         >
           <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%", display: "flex" }}>
             <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit" }}>
-              <Image src="/favicon.ico" alt="JayPDF logo" width={32} height={32} style={{ marginRight: "0.5rem" }} />
+              <JayPdfLogo className="w-8 h-8 mr-2" />
               <span style={{ fontSize: "1.25rem", fontWeight: 700, fontFamily: "'Montserrat', sans-serif" }}>JayPDF</span>
             </Link>
           </div>
@@ -58,13 +60,7 @@ export default function NotFound() {
         >
           {/* Mascot and Badge */}
           <div style={{ position: "relative", marginBottom: "1.5rem" }}>
-            <Image 
-              src="/images/stickers/pdflince_logo_processed.webp" 
-              alt="JayPDF Mascot" 
-              width={120}
-              height={120}
-              style={{ width: "120px", height: "auto", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.1))" }} 
-            />
+            <JayPdfLogo className="w-28 h-28" />
             <div style={{
               position: "absolute",
               top: "-5px",

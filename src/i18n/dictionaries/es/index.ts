@@ -109,7 +109,7 @@ export const esDictionary: Dictionary = {
     },
     footer: {
       privacy: "Procesamiento local • 100% privado • Licencias abiertas",
-      rights: `Copyright © 2026 Valentin Sviridov - Herramientas para manipular PDFs sin comprometer tu privacidad`,
+      rights: `Copyright © 2026 JayPDF - Herramientas para manipular PDFs sin comprometer tu privacidad`,
       links: {
         home: "Inicio",
         faq: "Preguntas Frecuentes",
