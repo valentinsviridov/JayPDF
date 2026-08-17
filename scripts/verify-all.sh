@@ -29,6 +29,6 @@ PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true bunx --no-install playwright ins
 PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true bun run test:e2e
 
 echo "🐳 Building Docker image..."
-docker build --progress=plain -t pdflince:local .
+docker build --progress=plain -t jaypdf:local .
 
 echo "✅ All checks passed successfully! The application is ready."

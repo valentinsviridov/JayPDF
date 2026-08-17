@@ -7,7 +7,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "comprima",
     mode: "compress",
     meta: {
-      title: "Comprimă PDF online gratuit | Redu dimensiunea | PDFLince | Compress PDF",
+      title: "Comprimă PDF online gratuit | Redu dimensiunea | JayPDF | Compress PDF",
       description:
         "Redu eficient dimensiunea fișierului PDF fără pierderi de calitate. Compresie gratuită și privată direct în browserul tău.",
       keywords: [
@@ -18,10 +18,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "pdf mai mic",
         "compress pdf",
       ],
-      ogTitle: "Comprimă PDF-uri fără a pierde din calitate | PDFLince",
+      ogTitle: "Comprimă PDF-uri fără a pierde din calitate | JayPDF",
       ogDescription:
         "Adaugă fișierul, alege nivelul optim de compresie și descarcă un PDF mult mai mic în câteva secunde — în siguranță, fără încărcare pe vreun server.",
-      ogImageAlt: "Interfața instrumentului de compresie PDFLince",
+      ogImageAlt: "Interfața instrumentului de compresie JayPDF",
     },
     hero: {
       title: "Comprimă PDF online cu rezultate clare",
@@ -32,9 +32,9 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "Alege o compresie de bază, medie sau agresivă în funcție de obiectivele tale",
         "Păstrează metadatele și structura documentului atunci când ai nevoie",
       ],
-      imageAlt: "Fluxul de lucru pentru compresia PDF în PDFLince",
+      imageAlt: "Fluxul de lucru pentru compresia PDF în JayPDF",
     },
-    benefitsTitle: "De ce să comprimi PDF-uri cu PDFLince",
+    benefitsTitle: "De ce să comprimi PDF-uri cu JayPDF",
     benefits: [
       {
         title: "Calitate echilibrată",
@@ -53,7 +53,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Cum să comprimi un PDF cu PDFLince",
+      title: "Cum să comprimi un PDF cu JayPDF",
       steps: [
         "Fă clic pe „Încarcă fișierele tale” și selectează PDF-ul pe care dorești să-l optimizezi.",
         "Alege nivelul de compresie și ajustează opțiunile avansate precum păstrarea metadatelor.",
@@ -75,7 +75,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "imagini-in-pdf",
     mode: "imagesToPdf",
     meta: {
-      title: "Creează PDF din imagini | JPG, PNG în PDF | PDFLince | Images to PDF",
+      title: "Creează PDF din imagini | JPG, PNG în PDF | JayPDF | Images to PDF",
       description:
         "Creează un PDF profesional din imaginile tale. Organizează fotografiile, personalizează aspectul paginii și generează documentul local în browser.",
       keywords: [
@@ -86,10 +86,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "creeaza pdf din imagini",
         "images to pdf",
       ],
-      ogTitle: "Creează un PDF clar din imaginile tale | PDFLince",
+      ogTitle: "Creează un PDF clar din imaginile tale | JayPDF",
       ogDescription:
         "Trage imaginile la locul lor, configurează setările de pagină și exportă un fișier PDF gata de imprimat — fără încărcări și fără filigrane.",
-      ogImageAlt: "Crearea unui PDF din imagini în PDFLince",
+      ogImageAlt: "Crearea unui PDF din imagini în JayPDF",
     },
     hero: {
       title: "Creează un PDF îngrijit din imagini",
@@ -102,7 +102,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Fluxul de lucru pentru imagini în PDF",
     },
-    benefitsTitle: "De ce să asamblezi PDF-uri din imagini cu PDFLince",
+    benefitsTitle: "De ce să asamblezi PDF-uri din imagini cu JayPDF",
     benefits: [
       {
         title: "Aspect consistent",
@@ -143,7 +143,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "uneste",
     mode: "merge",
     meta: {
-      title: "Unește PDF | Combină mai multe PDF-uri gratuit | PDFLince | Merge PDF",
+      title: "Unește PDF | Combină mai multe PDF-uri gratuit | JayPDF | Merge PDF",
       description:
         "Combină mai multe fișiere PDF într-un singur document organizat, fără limită de pagini. Trage, reordonează și descarcă fișierul unit instant.",
       keywords: [
@@ -154,10 +154,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "fuziune pdf",
         "merge pdf",
       ],
-      ogTitle: "Unește mai multe PDF-uri în câteva secunde | PDFLince",
+      ogTitle: "Unește mai multe PDF-uri în câteva secunde | JayPDF",
       ogDescription:
         "Organizează documentele în ordinea perfectă, ajustează setările și descarcă un fișier PDF unificat fără a încărca vreodată datele tale.",
-      ogImageAlt: "Combinarea mai multor PDF-uri în PDFLince",
+      ogImageAlt: "Combinarea mai multor PDF-uri în JayPDF",
     },
     hero: {
       title: "Unește PDF-uri online — rapid și sigur",
@@ -170,7 +170,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Fuziunea documentelor PDF",
     },
-    benefitsTitle: "Avantajele unirii cu PDFLince",
+    benefitsTitle: "Avantajele unirii cu JayPDF",
     benefits: [
       {
         title: "Livrare consistentă",
@@ -189,7 +189,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Cum să unești PDF-uri cu PDFLince",
+      title: "Cum să unești PDF-uri cu JayPDF",
       steps: [
         "Fă clic pe „Încarcă fișierele tale” și selectează cel puțin două PDF-uri.",
         "Folosește săgețile sau trage fiecare fișier pentru a stabili secvența finală.",
@@ -211,7 +211,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "divide",
     mode: "split",
     meta: {
-      title: "Divide un PDF pe pagini sau capitole | Gratuit | PDFLince | Split PDF",
+      title: "Divide un PDF pe pagini sau capitole | Gratuit | JayPDF | Split PDF",
       description:
         "Separă PDF-ul tău în mai multe fișiere după intervale de pagini sau capitole specifice. Bucură-te de control deplin asupra structurii documentului tău.",
       keywords: [
@@ -222,10 +222,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "taie pdf",
         "split pdf",
       ],
-      ogTitle: "Divide PDF-urile tale cu precizie | PDFLince",
+      ogTitle: "Divide PDF-urile tale cu precizie | JayPDF",
       ogDescription:
         "Alege exact cum dorești să împarți documentul, generează oricâte fișiere individuale ai nevoie și descarcă-le instantaneu.",
-      ogImageAlt: "Divizarea unui PDF în PDFLince",
+      ogImageAlt: "Divizarea unui PDF în JayPDF",
     },
     hero: {
       title: "Divide PDF-uri pe pagini sau segmente",
@@ -238,7 +238,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Fluxul de lucru pentru divizarea PDF",
     },
-    benefitsTitle: "Ce îți oferă divizarea cu PDFLince",
+    benefitsTitle: "Ce îți oferă divizarea cu JayPDF",
     benefits: [
       {
         title: "Control asupra informațiilor partajate",
@@ -257,14 +257,14 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Cum să divizezi un PDF cu PDFLince",
+      title: "Cum să divizezi un PDF cu JayPDF",
       steps: [
         "Încarcă PDF-ul pe care dorești să-l fragmentezi de pe dispozitivul tău.",
         "Alege dacă dorești să divizezi după un număr fix de pagini sau prin intervale personalizate.",
         "Apasă pe „Procesează” și descarcă automat documentele nou generate.",
       ],
       note:
-        "PDFLince descarcă primul fișier imediat și le salvează pe restul pe dispozitivul tău fără pași suplimentari.",
+        "JayPDF descarcă primul fișier imediat și le salvează pe restul pe dispozitivul tău fără pași suplimentari.",
     },
     useCasesTitle: "Scenarii tipice pentru divizarea PDF-urilor",
     useCases: [
@@ -279,7 +279,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "extrage",
     mode: "extract",
     meta: {
-      title: "Extrage pagini PDF | Salvează paginile selectate | PDFLince | Extract PDF pages",
+      title: "Extrage pagini PDF | Salvează paginile selectate | JayPDF | Extract PDF pages",
       description:
         "Selectează pagini specifice din orice PDF și creează instantaneu un nou document personalizat. Procesare privată și nelimitată.",
       keywords: [
@@ -290,10 +290,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "creeaza pdf nou",
         "extract pdf pages",
       ],
-      ogTitle: "Extrage doar paginile de care ai nevoie | PDFLince",
+      ogTitle: "Extrage doar paginile de care ai nevoie | JayPDF",
       ogDescription:
         "Bifează paginile relevante pe care dorești să le păstrezi, generează un nou fișier PDF în câteva secunde și menține siguranța datelor tale.",
-      ogImageAlt: "Selectarea paginilor PDF în PDFLince",
+      ogImageAlt: "Selectarea paginilor PDF în JayPDF",
     },
     hero: {
       title: "Extrage pagini PDF specifice",
@@ -306,7 +306,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Extragerea paginilor dintr-un PDF",
     },
-    benefitsTitle: "Avantajele extragerii paginilor cu PDFLince",
+    benefitsTitle: "Avantajele extragerii paginilor cu JayPDF",
     benefits: [
       {
         title: "Documente mai relevante",
@@ -325,7 +325,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Cum să extragi pagini cu PDFLince",
+      title: "Cum să extragi pagini cu JayPDF",
       steps: [
         "Încarcă PDF-ul și alege documentul cu care dorești să lucrezi.",
         "Selectează paginile de care ai nevoie din grila de miniaturi.",
@@ -347,7 +347,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "decupeaza",
     mode: "crop",
     meta: {
-      title: "Decupează pagini PDF | Ajustează marginile | PDFLince | Crop PDF",
+      title: "Decupează pagini PDF | Ajustează marginile | JayPDF | Crop PDF",
       description:
         "Decupează pagini PDF și elimină marginile inutile direct în browser. Selectează paginile și definește zona de decupare.",
       keywords: [
@@ -359,10 +359,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "elimina spatiu alb pdf",
         "crop pdf",
       ],
-      ogTitle: "Decupează pagini PDF local în browserul tău | PDFLince",
+      ogTitle: "Decupează pagini PDF local în browserul tău | JayPDF",
       ogDescription:
         "Redu marginile albe și concentrează fiecare pagină doar pe conținutul esențial, cu o procesare complet privată pe dispozitivul tău.",
-      ogImageAlt: "Decuparea paginilor PDF în PDFLince",
+      ogImageAlt: "Decuparea paginilor PDF în JayPDF",
     },
     hero: {
       title: "Decupează pagini PDF și elimină marginile",
@@ -375,7 +375,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Fluxul de lucru pentru decuparea PDF",
     },
-    benefitsTitle: "De ce să decupezi PDF-uri cu PDFLince",
+    benefitsTitle: "De ce să decupezi PDF-uri cu JayPDF",
     benefits: [
       {
         title: "Pagini mai curate",
@@ -394,7 +394,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Cum să decupezi pagini PDF cu PDFLince",
+      title: "Cum să decupezi pagini PDF cu JayPDF",
       steps: [
         "Încarcă PDF-ul și alege fișierul ale cărui pagini dorești să le decupezi.",
         "Selectează paginile de modificat și configurează marginile de decupare.",
@@ -416,7 +416,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "roteste",
     mode: "rotate",
     meta: {
-      title: "Rotește pagini PDF | Întoarce paginile online | PDFLince | Rotate PDF",
+      title: "Rotește pagini PDF | Întoarce paginile online | JayPDF | Rotate PDF",
       description:
         "Rotește paginile selectate din PDF cu 90 sau 180 de grade direct în browser. Privat, gratuit și complet local.",
       keywords: [
@@ -427,10 +427,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "roteste pagina pdf",
         "rotate pdf",
       ],
-      ogTitle: "Rotește pagini PDF în câteva secunde | PDFLince",
+      ogTitle: "Rotește pagini PDF în câteva secunde | JayPDF",
       ogDescription:
         "Selectează paginile care au nevoie de o altă orientare, alege 90 sau 180 de grade și descarcă PDF-ul corectat fără a încărca nimic.",
-      ogImageAlt: "Rotirea paginilor PDF în PDFLince",
+      ogImageAlt: "Rotirea paginilor PDF în JayPDF",
     },
     hero: {
       title: "Rotește paginile PDF fără pierdere de calitate",
@@ -443,7 +443,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Fluxul de lucru pentru rotirea paginilor PDF",
     },
-    benefitsTitle: "De ce să rotești pagini cu PDFLince",
+    benefitsTitle: "De ce să rotești pagini cu JayPDF",
     benefits: [
       {
         title: "Corecții precise",
@@ -484,7 +484,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "reordoneaza",
     mode: "reorder",
     meta: {
-      title: "Reordonează paginile PDF | Schimbă ordinea | PDFLince | Reorder PDF",
+      title: "Reordonează paginile PDF | Schimbă ordinea | JayPDF | Reorder PDF",
       description:
         "Reordonează cu ușurință paginile PDF-ului tău printr-o interfață simplă de tip drag-and-drop. Corectează ordinea documentelor și salvează instant.",
       keywords: [
@@ -494,7 +494,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "sorteaza pagini pdf",
         "reorder pdf",
       ],
-      ogTitle: "Organizează paginile PDF fără a instala programe | PDFLince",
+      ogTitle: "Organizează paginile PDF fără a instala programe | JayPDF",
       ogDescription:
         "Mută paginile la locul lor, corectează erorile de sortare și descarcă documentul PDF perfect organizat.",
       ogImageAlt: "Reorganizarea paginilor PDF",
@@ -510,7 +510,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Interfața pentru ordonarea paginilor",
     },
-    benefitsTitle: "De ce să reordonezi pagini cu PDFLince",
+    benefitsTitle: "De ce să reordonezi pagini cu JayPDF",
     benefits: [
       {
         title: "Fluxuri de lucru rapide",
@@ -529,7 +529,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Cum să reordonezi paginile cu PDFLince",
+      title: "Cum să reordonezi paginile cu JayPDF",
       steps: [
         "Încarcă PDF-ul și alege documentul pe care dorești să-l modifici.",
         "Trage fiecare miniatură până când ordinea paginilor este cea corectă.",
@@ -551,7 +551,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "pdf-in-imagini",
     mode: "pdfToImages",
     meta: {
-      title: "Convertește PDF în imagini | Export PNG sau JPEG | PDFLince | PDF to Images",
+      title: "Convertește PDF în imagini | Export PNG sau JPEG | JayPDF | PDF to Images",
       description:
         "Convertește fiecare pagină a PDF-ului tău în imagini PNG sau JPEG de înaltă calitate. Alege rezoluția și descarcă-le ca arhivă ZIP.",
       keywords: [
@@ -562,10 +562,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "descarca pdf ca imagini",
         "pdf to images",
       ],
-      ogTitle: "Exportă paginile PDF ca imagini clare | PDFLince",
+      ogTitle: "Exportă paginile PDF ca imagini clare | JayPDF",
       ogDescription:
         "Redă fiecare pagină ca o imagine clară direct în browserul tău. Ajustează calitatea și obține instant o arhivă ZIP.",
-      ogImageAlt: "PDFLince exportând pagini PDF în imagini",
+      ogImageAlt: "JayPDF exportând pagini PDF în imagini",
     },
     hero: {
       title: "Convertește paginile PDF în PNG sau JPEG",
@@ -578,7 +578,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Fluxul de lucru pentru conversia PDF în imagini",
     },
-    benefitsTitle: "De ce să exporți PDF-uri ca imagini cu PDFLince",
+    benefitsTitle: "De ce să exporți PDF-uri ca imagini cu JayPDF",
     benefits: [
       {
         title: "Calitate pregătită de prezentare",
@@ -619,7 +619,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
     slug: "repara",
     mode: "repair",
     meta: {
-      title: "Repară PDF Online Gratuit | Recuperează Fișiere Corupte | PDFLince",
+      title: "Repară PDF Online Gratuit | Recuperează Fișiere Corupte | JayPDF",
       description:
         "Repară fișiere PDF deteriorate sau corupte direct în browser. Reconstruiește PDF-uri ilizibile local și în siguranță.",
       keywords: [
@@ -628,10 +628,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
         "reparare pdf gratuit",
         "reconstruire pdf",
       ],
-      ogTitle: "Repară și recuperează PDF-uri deteriorate online | PDFLince",
+      ogTitle: "Repară și recuperează PDF-uri deteriorate online | JayPDF",
       ogDescription:
         "Repară documente PDF corupte direct în browser cu 100% confidențialitate și fără încărcare pe servere.",
-      ogImageAlt: "Interfață reparare PDF PDFLince",
+      ogImageAlt: "Interfață reparare PDF JayPDF",
     },
     hero: {
       title: "Repară și reconstruiește PDF-uri deteriorate local",
@@ -644,7 +644,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Flux de reparare PDF",
     },
-    benefitsTitle: "De ce să repari PDF-uri cu PDFLince",
+    benefitsTitle: "De ce să repari PDF-uri cu JayPDF",
     benefits: [
       {
         title: "Recuperare profundă",
@@ -663,7 +663,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Cum să repari un PDF cu PDFLince",
+      title: "Cum să repari un PDF cu JayPDF",
       steps: [
         "Încarcă fișierul PDF deteriorat sau ilizibil.",
         "Fă clic pe „Procesează” pentru a începe recuperarea și reconstrucția.",

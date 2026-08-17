@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "hu" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://pdflince.com";
+const siteUrl = "https://jaypdf.com";
 const homePath = getRoutePath(locale, "home");
 
 const operationsRoutes: Record<OperationKey, string> = {
@@ -37,9 +37,9 @@ export const huDictionary: Dictionary = {
   },
   metadata: {
     site: {
-      title: "PDFLince – PDF tömörítése, összefűzése és konvertálása ingyen",
+      title: "JayPDF – PDF tömörítése, összefűzése és konvertálása ingyen",
       description:
-        "A PDFLince egy adatvédelemre összpontosító PDF-eszközkészlet, amely közvetlenül a böngésződben összefűzi, tömöríti, szétbontja, kinyeri, elforgatja és konvertálja a PDF-eket. Minden feldolgozás az eszközödön marad.",
+        "A JayPDF egy adatvédelemre összpontosító PDF-eszközkészlet, amely közvetlenül a böngésződben összefűzi, tömöríti, szétbontja, kinyeri, elforgatja és konvertálja a PDF-eket. Minden feldolgozás az eszközödön marad.",
       keywords: [
         "pdf tömörítés",
         "pdf compress",
@@ -65,22 +65,22 @@ export const huDictionary: Dictionary = {
       ],
       canonical: `${siteUrl}${homePath}`,
       openGraph: {
-        title: "PDFLince – PDF tömörítése, összefűzése, szétbontása, képekbe konvertálása",
+        title: "JayPDF – PDF tömörítése, összefűzése, szétbontása, képekbe konvertálása",
         description:
           "Fűzd össze, tömörítsd, oszd fel, nyerd ki, rendezd át és konvertáld a PDF-eket szerverre való feltöltés nélkül. Ingyenes, privát, helyi feldolgozással.",
         url: `${siteUrl}${homePath}`,
         locale: "hu_HU",
         type: "website",
-        imageUrl: "https://pdflince.com/og-images/og-image-hu.png",
-        imageAlt: "PDFLince - Privát és ingyenes PDF-feldolgozás",
+        imageUrl: "https://jaypdf.com/og-images/og-image-hu.png",
+        imageAlt: "JayPDF - Privát és ingyenes PDF-feldolgozás",
       },
     },
     faq: {
-      title: "Gyakori kérdések | PDFLince – Ingyenes PDF-eszközkészlet",
+      title: "Gyakori kérdések | JayPDF – Ingyenes PDF-eszközkészlet",
       description:
-        "Válaszok a PDFLince-re vonatkozó leggyakoribb kérdésekre. Tudd meg, hogyan fűzheted össze, tömörítheted, bonthatod szét, kinyerheted és rendezheted át a PDF-eket fájlok feltöltése nélkül.",
+        "Válaszok a JayPDF-re vonatkozó leggyakoribb kérdésekre. Tudd meg, hogyan fűzheted össze, tömörítheted, bonthatod szét, kinyerheted és rendezheted át a PDF-eket fájlok feltöltése nélkül.",
       keywords: [
-        "pdflince gyakori kerdesek",
+        "jaypdf gyakori kerdesek",
         "pdf kérdések",
         "pdf segítség",
         "pdf összefűzés segítség",
@@ -92,22 +92,22 @@ export const huDictionary: Dictionary = {
       canonical: `${siteUrl}${getRoutePath(locale, "faq")}`,
     },
     support: {
-      title: "Támogasd a PDFLince-t | Tartsd fenn ingyenesen és privát módon",
+      title: "Támogasd a JayPDF-t | Tartsd fenn ingyenesen és privát módon",
       description:
-        "A támogatásod lehetővé teszi, hogy a PDFLince kis, független és adatvédelemre összpontosító projekt maradjon. Segíts fedezni a tárhellyel és fejlesztéssel kapcsolatos költségeket.",
+        "A támogatásod lehetővé teszi, hogy a JayPDF kis, független és adatvédelemre összpontosító projekt maradjon. Segíts fedezni a tárhellyel és fejlesztéssel kapcsolatos költségeket.",
       keywords: [
-        "pdflince támogatása",
+        "jaypdf támogatása",
         "pdf eszköz segítése",
         "adatvédelmi projektek támogatása",
-        "pdflince stripe adomány",
-        "pdflince ingyenesen megtartása",
+        "jaypdf stripe adomány",
+        "jaypdf ingyenesen megtartása",
       ],
       canonical: `${siteUrl}${getRoutePath(locale, "support")}`,
     },
     operations: operationsHu,
   },
   brand: {
-    name: "PDFLince",
+    name: "JayPDF",
     tagline: "Helyi feldolgozás • 100% privát",
   },
   components: {
@@ -121,7 +121,7 @@ export const huDictionary: Dictionary = {
     },
     footer: {
       privacy: "Helyi feldolgozás • 100% privát • Nyílt licencek",
-      rights: `© ${new Date().getFullYear()} PDFLince — PDF-eszközök az adatvédelem kompromisszuma nélkül`,
+      rights: `Copyright © 2026 Valentin Sviridov — PDF-eszközök az adatvédelem kompromisszuma nélkül`,
       links: {
         home: "Főoldal",
         faq: "Gyakori kérdések",
@@ -168,7 +168,7 @@ export const huDictionary: Dictionary = {
       question: "Hasznos volt?",
       thanks: "Köszönjük a visszajelzést!",
       whatWrong: "Mondd el, mi nem működött jól",
-      emailSubject: "Visszajelzés a PDFLince-nek",
+      emailSubject: "Visszajelzés a JayPDF-nek",
     },
     pdfProcessor: {
       title: "Válassz műveletet",
@@ -238,16 +238,16 @@ export const huDictionary: Dictionary = {
         },
       },
       downloadNames: {
-        compress: "tomoritett_PDFLince",
-        merge: "osszefuzott_PDFLince",
-        split: "resz_PDFLince",
-        extract: "kinyert_PDFLince",
-        crop: "vagott_PDFLince",
-        rotate: "forgatott_PDFLince",
-        reorder: "atrendezett_PDFLince",
-        pdfToImages: "kepek_PDFLince",
-        imagesToPdf: "kepek_pdf_PDFLince",
-        repair: "javitott_PDFLince",
+        compress: "tomoritett_JayPDF",
+        merge: "osszefuzott_JayPDF",
+        split: "resz_JayPDF",
+        extract: "kinyert_JayPDF",
+        crop: "vagott_JayPDF",
+        rotate: "forgatott_JayPDF",
+        reorder: "atrendezett_JayPDF",
+        pdfToImages: "kepek_JayPDF",
+        imagesToPdf: "kepek_pdf_JayPDF",
+        repair: "javitott_JayPDF",
       },
       processButton: {
         idleSingle: "1 fájl feldolgozása",
@@ -337,10 +337,10 @@ export const huDictionary: Dictionary = {
         clear: "Összesítés törlése",
       },
       donationReminder: {
-        message: "A PDFLince segített időt megtakarítani? Támogatásoddal ingyenes marad.",
-        actionLabel: "PDFLince támogatása",
+        message: "A JayPDF segített időt megtakarítani? Támogatásoddal ingyenes marad.",
+        actionLabel: "JayPDF támogatása",
         withSavings: (percent: string, saved: string) =>
-          `Megtakarítottál ${saved}-t (${percent}%)? Segíts megőrizni a PDFLince-t reklámmentesen.`,
+          `Megtakarítottál ${saved}-t (${percent}%)? Segíts megőrizni a JayPDF-t reklámmentesen.`,
       },
       statusDialog: {
         processingTitle: "Helyi feldolgozás",
@@ -356,8 +356,8 @@ export const huDictionary: Dictionary = {
         retryLabel: "Újrapróbálás",
         closeLabel: "Bezárás",
         sharePrompt: {
-          dialogMessage: "A PDFLince teljesen ingyenes, és tiszteletben tartja az adatvédelmedet. Segíts megőrizni ezt azzal, hogy ajánlod egy kollégádnak.",
-          shareText: "Imént használtam a PDFLince-t PDF-fájlok kezelésére. Egy ingyenes, gyors és teljesen privát eszközkészlet PDF-ek szétbontásához, tömörítéséhez, összefűzéséhez és konvertálásához közvetlenül a böngészőben. Kiváló érzékeny dokumentumokhoz!",
+          dialogMessage: "A JayPDF teljesen ingyenes, és tiszteletben tartja az adatvédelmedet. Segíts megőrizni ezt azzal, hogy ajánlod egy kollégádnak.",
+          shareText: "Imént használtam a JayPDF-t PDF-fájlok kezelésére. Egy ingyenes, gyors és teljesen privát eszközkészlet PDF-ek szétbontásához, tömörítéséhez, összefűzéséhez és konvertálásához közvetlenül a böngészőben. Kiváló érzékeny dokumentumokhoz!",
           actionLabel: "Megosztás",
           copiedLabel: "Másolva!",
         },
@@ -526,7 +526,7 @@ export const huDictionary: Dictionary = {
         zipLabel: "Képek csomagolása ZIP-be",
         zipHint: "Letöltés egyetlen archívumban.",
         baseNameLabel: "Fájlnév alap",
-        baseNamePlaceholder: "pdflince_oldalak",
+        baseNamePlaceholder: "jaypdf_oldalak",
         baseNameHint: "Hagyd üresen az eredeti PDF neve használatához.",
       },
       imagesToPdf: {
@@ -564,14 +564,14 @@ export const huDictionary: Dictionary = {
   pages: {
     home: {
       hero: {
-        title: "PDFLince: PDF tömörítése, összefűzése és konvertálása ingyen",
+        title: "JayPDF: PDF tömörítése, összefűzése és konvertálása ingyen",
         subtitle:
           "Tömörítsd, fűzd össze, bontsd szét, nyerd ki, forgasd el és konvertáld a PDF-eket közvetlenül a böngésződben. Szerverre feltöltés nélkül, teljesen privát módon.",
         badges: [
           "PDF tömörítése",
           "PDF összefűzése",
           "Helyi feldolgozás",
-          "PDFLince támogatása",
+          "JayPDF támogatása",
         ],
         imageAlt: "PDF dokumentum illusztrációja",
         ctaLinks: [
@@ -588,7 +588,7 @@ export const huDictionary: Dictionary = {
         ],
       },
       why: {
-        title: "Miért válaszd a PDFLince-t?",
+        title: "Miért válaszd a JayPDF-t?",
         cards: [
           {
             title: "Alapból privát",
@@ -611,7 +611,7 @@ export const huDictionary: Dictionary = {
         ],
       },
       callout: {
-        title: "Segíts megőrizni a PDFLince-t ingyenesen",
+        title: "Segíts megőrizni a JayPDF-t ingyenesen",
         description:
           "Minden adományod fedezi a tárhelyköltségeket, és lehetővé teszi a 100%-ban privát, reklám- és nyomkövetés-mentes működés fenntartását.",
         ctaLabel: "Projekt támogatása",
@@ -622,9 +622,9 @@ export const huDictionary: Dictionary = {
     },
     faq: {
       title: "Gyakori kérdések",
-      intro: "Válaszok a PDFLince-re vonatkozó leggyakoribb kérdésekre",
+      intro: "Válaszok a JayPDF-re vonatkozó leggyakoribb kérdésekre",
       cta: {
-        title: "Próbáld ki a PDFLince-t most",
+        title: "Próbáld ki a JayPDF-t most",
         description:
           "Fűzd össze, tömörítsd, bontsd szét, nyerd ki, forgasd el és rendezd át a PDF-eket teljes bizalmassággal.",
         ctaLabel: "Ugrás az eszközökhöz",
@@ -633,9 +633,9 @@ export const huDictionary: Dictionary = {
     support: {
       hero: {
         eyebrow: "🌱 Független projekt",
-        title: "Segíts megőrizni a PDFLince-t ingyenesen és privát módon",
+        title: "Segíts megőrizni a JayPDF-t ingyenesen és privát módon",
         subtitle:
-          "A PDFLince egy kis, szenvedéllyel fejlesztett projekt. A támogatásod fedezi a szerverköltségeket.",
+          "A JayPDF egy kis, szenvedéllyel fejlesztett projekt. A támogatásod fedezi a szerverköltségeket.",
         highlight: "Csupán egy egyszerű eszköz, amely tiszteletben tartja az adatvédelmedet.",
       },
       reasons: {
@@ -644,7 +644,7 @@ export const huDictionary: Dictionary = {
           {
             title: "Maradjon ingyenes",
             description:
-              "Az adományok lehetővé teszik, hogy a PDFLince 100%-ban ingyenes maradjon mindenki számára.",
+              "Az adományok lehetővé teszik, hogy a JayPDF 100%-ban ingyenes maradjon mindenki számára.",
             icon: "💚",
           },
           {
@@ -677,7 +677,7 @@ export const huDictionary: Dictionary = {
             id: "monthly",
             title: "Havi támogatás",
             amount: "10 €/hó",
-            description: "Heti dedikált fejlesztési időt biztosít a PDFLince javítására.",
+            description: "Heti dedikált fejlesztési időt biztosít a JayPDF javítására.",
             ctaLabel: "10 €/hó adományozása",
             ctaHref: "#stripe-checkout-monthly",
             badge: "💙 Köszönjük",
@@ -708,7 +708,7 @@ export const huDictionary: Dictionary = {
           {
             question: "Mi történik, ha nem tudok adományozni?",
             answer:
-              "Semmi gond. A PDFLince ingyenes marad. Már az is óriási segítség, ha megosztod másokkal.",
+              "Semmi gond. A JayPDF ingyenes marad. Már az is óriási segítség, ha megosztod másokkal.",
           },
           {
             question: "Kapok nyugtát?",
@@ -725,17 +725,17 @@ export const huDictionary: Dictionary = {
       closing: {
         title: "Köszönjük, hogy itt vagy",
         description:
-          "Mindenki, aki támogatja a PDFLince-t, hozzájárul egy hasznos PDF-eszközkészlet életben tartásához.",
+          "Mindenki, aki támogatja a JayPDF-t, hozzájárul egy hasznos PDF-eszközkészlet életben tartásához.",
         ctaLabel: "E-mail küldése a csapatnak",
-        ctaHref: "mailto:info@pdflince.com?subject=Helló%20PDFLince%20csapat",
+        ctaHref: "mailto:info@jaypdf.com?subject=Helló%20JayPDF%20csapat",
       },
       legalNotice: {
         title: "Jogi tájékoztató és átláthatóság",
         points: [
-          "A PDFLince egy független személyes projekt, amelyet egy kis önkéntes csapat kezel.",
+          "A JayPDF egy független személyes projekt, amelyet egy kis önkéntes csapat kezel.",
           "A hozzájárulások önkéntesek, és kizárólag a tárhellyel és fejlesztéssel kapcsolatos költségek fedezésére szolgálnak.",
           "A befizetések nem adókedvezményes adományok; a Stripe automatikus nyugtát állít ki.",
-          "A szolgáltatás \"jelenlegi állapotában\" kerül nyújtásra, garancia nélkül. Kérdések? info@pdflince.com.",
+          "A szolgáltatás \"jelenlegi állapotában\" kerül nyújtásra, garancia nélkül. Kérdések? info@jaypdf.com.",
         ],
       },
     },

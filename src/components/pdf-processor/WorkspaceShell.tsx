@@ -152,12 +152,12 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
     const stripPdfExtension = (name: string) => name.replace(/\.pdf$/i, '');
     if (operation === 'pdfToImages') {
       if ((state.options as any).bundleAsZip) {
-        return `${originalName ? stripPdfExtension(originalName) : 'pdflince_images'}.zip`;
+        return `${originalName ? stripPdfExtension(originalName) : 'jaypdf_images'}.zip`;
       }
-      return `${originalName ? stripPdfExtension(originalName) : 'pdflince_image'}${index !== undefined ? `_${index + 1}` : ''}.png`;
+      return `${originalName ? stripPdfExtension(originalName) : 'jaypdf_image'}${index !== undefined ? `_${index + 1}` : ''}.png`;
     }
     const modeNames: Record<string, string> = (processorStrings as any).downloadNames || {};
-    const base = modeNames[operation] || 'result_PDFLince';
+    const base = modeNames[operation] || 'result_JayPDF';
     const suffix = index !== undefined ? `_${index + 1}` : '';
     return originalName ? `${stripPdfExtension(originalName)}_${base}${suffix}.pdf` : `${base}${suffix}.pdf`;
   };
@@ -646,7 +646,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
                   const url = URL.createObjectURL(result.blob as Blob);
                   const a = document.createElement('a');
                   a.href = url;
-                  a.download = result.filename || 'pdflince_result.pdf';
+                  a.download = result.filename || 'jaypdf_result.pdf';
                   document.body.appendChild(a);
                   a.click();
                   document.body.removeChild(a);

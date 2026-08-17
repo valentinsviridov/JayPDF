@@ -1,5 +1,5 @@
 {
-  "name": "pdflince",
+  "name": "jaypdf",
   "version": "1.0.0",
   "description": "Privacy-first client-side PDF toolkit running 100% in the browser.",
   "keywords": [
@@ -11,7 +11,7 @@
     "react",
     "pdf-lib"
   ],
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "type": "module",
   "engines": {
     "bun": ">=1.0.0"

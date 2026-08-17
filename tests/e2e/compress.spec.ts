@@ -67,7 +67,7 @@ test('PDF Compression Workflow', async ({ page }) => {
     const download = await downloadPromise;
 
     // Check filename
-    expect(download.suggestedFilename()).toMatch(/compressed_PDFLince\.pdf$/);
+    expect(download.suggestedFilename()).toMatch(/compressed_JayPDF\.pdf$/);
 
     // Save to temp path to check size
     const downloadPath = path.join(__dirname, 'downloaded-compressed.pdf');
@@ -134,7 +134,7 @@ test('PDF Compression with Auto-Repair enabled successfully recovers corrupt PDF
     await processButton.click();
 
     const download = await downloadPromise;
-    expect(download.suggestedFilename()).toBe('cg-brsvie_compressed_PDFLince.pdf');
+    expect(download.suggestedFilename()).toBe('cg-brsvie_compressed_JayPDF.pdf');
 
     const downloadDest = path.join(__dirname, 'downloaded-repaired-compressed.pdf');
     await download.saveAs(downloadDest);

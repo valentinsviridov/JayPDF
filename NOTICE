@@ -1,0 +1,23 @@
+JayPDF
+Copyright (c) 2026 Valentin Sviridov
+
+JayPDF contains software derived from PDFLince.
+
+PDFLince
+Original project: https://github.com/GSiesto/PDFLince
+Original creator / maintainer: Guillermo Siesto
+Original copyright notice:
+Copyright (c) 2026 PDFLince
+
+PDFLince was distributed under the MIT License.
+
+The complete original MIT license notice is preserved in:
+
+LICENSES/MIT-PDFLince.txt
+
+JayPDF is an independent project and is not affiliated with,
+sponsored by, or endorsed by the original PDFLince project or
+its maintainer.
+
+Substantial modifications and new JayPDF code are:
+Copyright (c) 2026 Valentin Sviridov

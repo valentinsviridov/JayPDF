@@ -1,7 +1,7 @@
 export const BrandConfig = {
-  productName: "PDFLince",
+  productName: "JayPDF",
   shortPromise: "Privacy-first, local PDF processing.",
-  canonicalOrigin: "https://pdflince.com", // Will be updated when new domain is selected
+  canonicalOrigin: "https://pdflince.com",
   contactEmail: "contact@pdflince.com",
   independentRepository: "https://github.com/valentinsviridov/PDFLince",
   originalRepository: "https://github.com/GSiesto/PDFLince",
@@ -11,9 +11,9 @@ export const BrandConfig = {
     ogImage: "/images/og-image.png",
   },
   output: {
-    filenamePrefix: "pdflince_",
+    filenamePrefix: "jaypdf_",
   },
   storage: {
-    namespace: "pdflince_app_",
+    namespace: "jaypdf_app_",
   },
 } as const;

@@ -66,7 +66,7 @@ test('PDF Rotate Workflow', async ({ page }) => {
     await processButton.click();
     const download = await downloadPromise;
 
-    expect(download.suggestedFilename()).toMatch(/rotated_PDFLince\.pdf$/);
+    expect(download.suggestedFilename()).toMatch(/rotated_JayPDF\.pdf$/);
 
     const downloadPath = path.join(__dirname, 'downloaded-rotated.pdf');
     await download.saveAs(downloadPath);

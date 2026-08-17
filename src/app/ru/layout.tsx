@@ -14,7 +14,7 @@ const LOCALE = "ru" as const;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
-  title: "PDFLince - Сжать, объединить, разделить и конвертировать PDF",
+  title: "JayPDF - Сжать, объединить, разделить и конвертировать PDF",
   description: "Бесплатные онлайн-инструменты для PDF: сжатие, объединение, разделение, извлечение и конвертация. 100% конфиденциально, локальная обработка в браузере.",
   icons: SHARED_ICONS,
   alternates: {
@@ -47,8 +47,8 @@ export const metadata = {
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-ru.png", width: 1409, height: 736, alt: "PDFLince - Конфиденциальная и бесплатная обработка PDF" }],
-    title: "PDFLince - Бесплатные и конфиденциальные инструменты для PDF в браузере",
+    images: [{ url: "https://pdflince.com/og-images/og-image-ru.png", width: 1409, height: 736, alt: "JayPDF - Конфиденциальная и бесплатная обработка PDF" }],
+    title: "JayPDF - Бесплатные и конфиденциальные инструменты для PDF в браузере",
     description: "Объединяйте, сжимайте, делите и конвертируйте PDF без загрузки на сервер. Безопасно и 100% конфиденциально.",
     url: "https://pdflince.com/ru",
     locale: "ru_RU",

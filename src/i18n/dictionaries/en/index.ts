@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "en" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://pdflince.com";
+const siteUrl = "https://jaypdf.com";
 const homePath = getRoutePath(locale, "home");
 
 const operationsRoutes: Record<OperationKey, string> = {
@@ -37,9 +37,9 @@ export const enDictionary: Dictionary = {
   },
   metadata: {
     site: {
-      title: "PDFLince – Merge, compress and convert PDFs for free | No uploads",
+      title: "JayPDF – Merge, compress and convert PDFs for free | No uploads",
       description:
-        "PDFLince is a privacy-first toolkit that merges, compresses, splits, extracts, rotates, reorders and converts PDFs to and from images directly in your browser. All processing stays on-device, so your files never leave you.",
+        "JayPDF is a privacy-first toolkit that merges, compresses, splits, extracts, rotates, reorders and converts PDFs to and from images directly in your browser. All processing stays on-device, so your files never leave you.",
       keywords: [
         "merge pdf",
         "compress pdf",
@@ -59,22 +59,22 @@ export const enDictionary: Dictionary = {
       ],
       canonical: `${siteUrl}${homePath}`,
       openGraph: {
-        title: "PDFLince – Merge, Compress, Split, PDF to Image & Image to PDF",
+        title: "JayPDF – Merge, Compress, Split, PDF to Image & Image to PDF",
         description:
           "Merge, compress, split, extract, reorder and convert PDFs without uploading files. Free, private and backed by fully local processing.",
         url: `${siteUrl}${homePath}`,
         locale: "en_US",
         type: "website",
-        imageUrl: "https://pdflince.com/og-images/og-image-en.png",
-        imageAlt: "PDFLince - Private and free PDF processing",
+        imageUrl: "https://jaypdf.com/og-images/og-image-en.png",
+        imageAlt: "JayPDF - Private and free PDF processing",
       },
     },
     faq: {
-      title: "FAQ | PDFLince – Free PDF processing toolkit",
+      title: "FAQ | JayPDF – Free PDF processing toolkit",
       description:
-        "Answers to frequent questions about PDFLince. Learn how to merge, compress, split, extract, rotate and reorder PDFs without uploading your files.",
+        "Answers to frequent questions about JayPDF. Learn how to merge, compress, split, extract, rotate and reorder PDFs without uploading your files.",
       keywords: [
-        "pdflince faq",
+        "jaypdf faq",
         "pdf questions",
         "pdf help",
         "merge pdf help",
@@ -86,22 +86,22 @@ export const enDictionary: Dictionary = {
       canonical: `${siteUrl}${getRoutePath(locale, "faq")}`,
     },
     support: {
-      title: "Support PDFLince | Keep the toolkit free and private",
+      title: "Support JayPDF | Keep the toolkit free and private",
       description:
-        "Your donation keeps PDFLince small, independent, and privacy-first. Help cover hosting and ongoing improvements.",
+        "Your donation keeps JayPDF small, independent, and privacy-first. Help cover hosting and ongoing improvements.",
       keywords: [
-        "donate to pdflince",
+        "donate to jaypdf",
         "support pdf toolkit",
         "fund privacy projects",
-        "pdflince stripe donations",
-        "keep pdflince free",
+        "jaypdf stripe donations",
+        "keep jaypdf free",
       ],
       canonical: `${siteUrl}${getRoutePath(locale, "support")}`,
     },
     operations: operationsEn,
   },
   brand: {
-    name: "PDFLince",
+    name: "JayPDF",
     tagline: "Local processing • 100% private",
   },
   components: {
@@ -115,7 +115,7 @@ export const enDictionary: Dictionary = {
     },
     footer: {
       privacy: "Local processing • 100% private • Open licences",
-      rights: `© ${new Date().getFullYear()} PDFLince — Tools to manipulate PDFs without compromising privacy`,
+      rights: `Copyright © 2026 Valentin Sviridov — Tools to manipulate PDFs without compromising privacy`,
       links: {
         home: "Home",
         faq: "FAQ",
@@ -161,7 +161,7 @@ export const enDictionary: Dictionary = {
       question: "Was this helpful?",
       thanks: "Thanks for your feedback!",
       whatWrong: "Tell us what went wrong",
-      emailSubject: "Feedback for PDFLince",
+      emailSubject: "Feedback for JayPDF",
     },
     pdfProcessor: {
       title: "Choose an operation",
@@ -231,16 +231,16 @@ export const enDictionary: Dictionary = {
         },
       },
       downloadNames: {
-        compress: "compressed_PDFLince",
-        merge: "merged_PDFLince",
-        split: "part_PDFLince",
-        extract: "extracted_PDFLince",
-        crop: "cropped_PDFLince",
-        rotate: "rotated_PDFLince",
-        reorder: "reordered_PDFLince",
-        pdfToImages: "images_PDFLince",
-        imagesToPdf: "images_to_pdf_PDFLince",
-        repair: "repaired_PDFLince",
+        compress: "compressed_JayPDF",
+        merge: "merged_JayPDF",
+        split: "part_JayPDF",
+        extract: "extracted_JayPDF",
+        crop: "cropped_JayPDF",
+        rotate: "rotated_JayPDF",
+        reorder: "reordered_JayPDF",
+        pdfToImages: "images_JayPDF",
+        imagesToPdf: "images_to_pdf_JayPDF",
+        repair: "repaired_JayPDF",
       },
       processButton: {
         idleSingle: "Process 1 file",
@@ -330,10 +330,10 @@ export const enDictionary: Dictionary = {
         clear: "Clear summary",
       },
       donationReminder: {
-        message: "Did PDFLince save you time today? Your support keeps it private and free.",
-        actionLabel: "Support PDFLince",
+        message: "Did JayPDF save you time today? Your support keeps it private and free.",
+        actionLabel: "Support JayPDF",
         withSavings: (percent: string, saved: string) =>
-          `Saved ${saved} (${percent}% smaller)? Help keep PDFLince private and ad-free.`,
+          `Saved ${saved} (${percent}% smaller)? Help keep JayPDF private and ad-free.`,
       },
       statusDialog: {
         processingTitle: "Processing locally",
@@ -349,8 +349,8 @@ export const enDictionary: Dictionary = {
         retryLabel: "Retry",
         closeLabel: "Close",
         sharePrompt: {
-          dialogMessage: "PDFLince is completely free and respects your privacy. Help us keep it that way by sharing it with a colleague.",
-          shareText: "I just used PDFLince to manage my PDFs. It's a free, fast, and completely private toolkit to split, compress, merge, and convert PDFs directly in the browser. Perfect for sensitive documents!",
+          dialogMessage: "JayPDF is completely free and respects your privacy. Help us keep it that way by sharing it with a colleague.",
+          shareText: "I just used JayPDF to manage my PDFs. It's a free, fast, and completely private toolkit to split, compress, merge, and convert PDFs directly in the browser. Perfect for sensitive documents!",
           actionLabel: "Share",
           copiedLabel: "Copied!",
         },
@@ -519,7 +519,7 @@ export const enDictionary: Dictionary = {
         zipLabel: "Bundle images in a ZIP",
         zipHint: "Download a single archive instead of triggering one file per page.",
         baseNameLabel: "Base filename",
-        baseNamePlaceholder: "pdflince_pages",
+        baseNamePlaceholder: "jaypdf_pages",
         baseNameHint: "We use this as the prefix for exported files. Leave blank to reuse the PDF name.",
       },
       imagesToPdf: {
@@ -557,14 +557,14 @@ export const enDictionary: Dictionary = {
   pages: {
     home: {
       hero: {
-        title: "PDFLince: Compress, merge and convert PDF online for free",
+        title: "JayPDF: Compress, merge and convert PDF online for free",
         subtitle:
           "Compress PDF, merge PDF, split documents, extract pages, rotate pages, and convert PDF to images or images to PDF right in your browser. No uploads, fully private, always free.",
         badges: [
           "Compress PDF fast",
           "Merge PDFs without limits",
           "Local processing",
-          "Support PDFLince",
+          "Support JayPDF",
         ],
         imageAlt: "PDF document illustration",
         ctaLinks: [
@@ -581,7 +581,7 @@ export const enDictionary: Dictionary = {
         ],
       },
       why: {
-        title: "Why use PDFLince?",
+        title: "Why use JayPDF?",
         cards: [
           {
             title: "Private by default",
@@ -604,7 +604,7 @@ export const enDictionary: Dictionary = {
         ],
       },
       callout: {
-        title: "Help keep PDFLince free",
+        title: "Help keep JayPDF free",
         description:
           "Every donation covers hosting, development time, and lets us keep the experience 100% private with no ads or trackers.",
         ctaLabel: "Support the project",
@@ -615,9 +615,9 @@ export const enDictionary: Dictionary = {
     },
     faq: {
       title: "Frequently Asked Questions",
-      intro: "Answers to the most common PDFLince questions",
+      intro: "Answers to the most common JayPDF questions",
       cta: {
-        title: "Try PDFLince now",
+        title: "Try JayPDF now",
         description:
           "Merge, compress, split, extract, rotate, and reorder PDFs with full privacy. No sign-ups, no uploads.",
         ctaLabel: "Go to the toolkit",
@@ -626,9 +626,9 @@ export const enDictionary: Dictionary = {
     support: {
       hero: {
         eyebrow: "🌱 Indie project",
-        title: "Help keep PDFLince free and private",
+        title: "Help keep JayPDF free and private",
         subtitle:
-          "PDFLince is a tiny passion project. Your support covers the servers and buys time to polish new features.",
+          "JayPDF is a tiny passion project. Your support covers the servers and buys time to polish new features.",
         highlight: "Just a small tool that respects your privacy.",
       },
       reasons: {
@@ -637,7 +637,7 @@ export const enDictionary: Dictionary = {
           {
             title: "Keep it free",
             description:
-              "Donations let us keep PDFLince 100% free for everyone, with no premium tiers or locked features.",
+              "Donations let us keep JayPDF 100% free for everyone, with no premium tiers or locked features.",
             icon: "💚",
           },
           {
@@ -670,7 +670,7 @@ export const enDictionary: Dictionary = {
             id: "monthly",
             title: "Monthly support",
             amount: "€10/mo",
-            description: "Gives us time every week to improve PDFLince.",
+            description: "Gives us time every week to improve JayPDF.",
             ctaLabel: "Give €10/mo",
             ctaHref: "#stripe-checkout-monthly",
             badge: "💙 Thank you",
@@ -701,7 +701,7 @@ export const enDictionary: Dictionary = {
           {
             question: "What if I can't donate?",
             answer:
-              "No worries. PDFLince will stay free. Sharing the tool or telling us how it helped is already amazing support.",
+              "No worries. JayPDF will stay free. Sharing the tool or telling us how it helped is already amazing support.",
           },
           {
             question: "Will I get a receipt?",
@@ -718,17 +718,17 @@ export const enDictionary: Dictionary = {
       closing: {
         title: "Thanks for being here",
         description:
-          "Every person who backs PDFLince helps keep a useful, privacy-first PDF toolkit alive for everyone.",
+          "Every person who backs JayPDF helps keep a useful, privacy-first PDF toolkit alive for everyone.",
         ctaLabel: "Email the team",
-        ctaHref: "mailto:info@pdflince.com?subject=Hello%20PDFLince%20team",
+        ctaHref: "mailto:info@jaypdf.com?subject=Hello%20JayPDF%20team",
       },
       legalNotice: {
         title: "Legal & transparency notes",
         points: [
-          "PDFLince is an independent personal project run by a small volunteer team.",
+          "JayPDF is an independent personal project run by a small volunteer team.",
           "Contributions are voluntary and help cover hosting, tooling, and development time.",
           "Payments are not charitable donations and do not create tax deductions; Stripe will email an automatic receipt.",
-          "The service is provided as-is with no warranties. Questions? Reach out at info@pdflince.com.",
+          "The service is provided as-is with no warranties. Questions? Reach out at info@jaypdf.com.",
         ],
       },
     },

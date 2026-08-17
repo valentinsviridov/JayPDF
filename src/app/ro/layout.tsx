@@ -14,7 +14,7 @@ const LOCALE = "ro" as const;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
-  title: "PDFLince - Unește, Comprimă, Divide și Convertește PDF-uri",
+  title: "JayPDF - Unește, Comprimă, Divide și Convertește PDF-uri",
   description: "Instrumente PDF gratuite, online, pentru a uni, comprima, divide, extrage și converti. 100% privat, procesare locală în browserul tău.",
   icons: SHARED_ICONS,
   alternates: {
@@ -47,8 +47,8 @@ export const metadata = {
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-ro.png", width: 1409, height: 736, alt: "PDFLince - Procesare PDF privată și gratuită" }],
-    title: "PDFLince - Instrumente PDF gratuite și private în browserul tău",
+    images: [{ url: "https://pdflince.com/og-images/og-image-ro.png", width: 1409, height: 736, alt: "JayPDF - Procesare PDF privată și gratuită" }],
+    title: "JayPDF - Instrumente PDF gratuite și private în browserul tău",
     description: "Unește, comprimă, divide și convertește PDF-uri fără a încărca fișierele pe server. Securizat și 100% privat.",
     url: "https://pdflince.com/ro",
     locale: "ro_RO",

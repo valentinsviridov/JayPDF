@@ -30,6 +30,6 @@ export const DEFAULT_PDF_TO_IMAGES_OPTIONS: PdfToImagesOptions = {
   imageOutputQuality: 0.9,
   imageRenderDpi: 144,
   bundleAsZip: true,
-  imageBaseName: 'pdflince_pages',
+  imageBaseName: 'jaypdf_pages',
   autoRepairCorrupted: false,
 };

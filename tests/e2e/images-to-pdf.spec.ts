@@ -37,7 +37,7 @@ test('Images to PDF Workflow', async ({ page }) => {
     const download = await downloadPromise;
 
     // 7. Verification
-    expect(download.suggestedFilename()).toMatch(/images_to_pdf_PDFLince\.pdf$/);
+    expect(download.suggestedFilename()).toMatch(/images_to_pdf_JayPDF\.pdf$/);
 
     const downloadPath = path.join(__dirname, 'downloaded-images-to-pdf.pdf');
     await download.saveAs(downloadPath);

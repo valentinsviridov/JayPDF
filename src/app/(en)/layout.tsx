@@ -13,7 +13,7 @@ import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER } from "
 
 export const metadata = {
   metadataBase: METADATA_BASE,
-  title: "PDFLince - Merge, Compress, Split, and Convert PDFs Online",
+  title: "JayPDF - Merge, Compress, Split, and Convert PDFs Online",
   description: "Free online PDF tools to merge, compress, split, extract, and convert PDFs. 100% private, local processing in your browser.",
   keywords: "merge pdf, compress pdf, split pdf, extract pdf pages, rotate pdf pages, reorder pdf, pdf to images, images to pdf, convert pdf, edit pdf offline",
   icons: SHARED_ICONS,
@@ -47,8 +47,8 @@ export const metadata = {
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-en.png", width: 1409, height: 736, alt: "PDFLince - Private and free PDF processing" }],
-    title: "PDFLince - Free and Private PDF Tools in Your Browser",
+    images: [{ url: "https://pdflince.com/og-images/og-image-en.png", width: 1409, height: 736, alt: "JayPDF - Private and free PDF processing" }],
+    title: "JayPDF - Free and Private PDF Tools in Your Browser",
     description: "Merge, compress, split, and convert PDFs without uploading files. Secure and 100% private processing.",
     url: "https://pdflince.com",
     locale: "en_US",

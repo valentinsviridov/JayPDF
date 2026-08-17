@@ -13,7 +13,7 @@ const getTestPdfPath = (workerIndex: number) => path.join(__dirname, `smoke-test
 test.beforeAll(async ({}, testInfo) => {
     const pdfDoc = await PDFDocument.create();
     const page = pdfDoc.addPage();
-    page.drawText('This is a test PDF for PDFLince smoke tests.', {
+    page.drawText('This is a test PDF for JayPDF smoke tests.', {
         x: 50,
         y: 700,
         size: 24,
@@ -35,14 +35,14 @@ test.afterAll(({}, testInfo) => {
 });
 
 
-test.describe('PDFLince Smoke Tests', () => {
+test.describe('JayPDF Smoke Tests', () => {
     test.beforeEach(async ({ page }) => {
         // Default locale is English, served at root
         await page.goto('/');
     });
 
     test('Homepage loads correctly', async ({ page }) => {
-        await expect(page).toHaveTitle(/PDFLince/i);
+        await expect(page).toHaveTitle(/JayPDF/i);
         // Check for main headline or key text
         await expect(page.locator('h1')).toBeVisible();
         // "Local processing" is in the tagline/badges

@@ -8,7 +8,7 @@
 
 ## Architecture & Privacy
 
-PDFLince processes all files **100% client-side** in your browser. No file data is ever uploaded to a server. This privacy-first design means:
+JayPDF processes all files **100% client-side** in your browser. No file data is ever uploaded to a server. This privacy-first design means:
 
 - **No server-side file processing** — zero risk of server-side data exposure
 - **No API keys or credentials** stored in the codebase
@@ -16,11 +16,9 @@ PDFLince processes all files **100% client-side** in your browser. No file data 
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability, please report it responsibly:
+If you discover a security vulnerability, please report it responsibly by opening a confidential Security Advisory on GitHub or contacting the project owner directly.
 
-1. **Email**: [info@pdflince.com](mailto:info@pdflince.com) with subject line `[SECURITY] <brief description>`
-2. **Do NOT** open a public GitHub issue for security vulnerabilities
-3. This is a solo-maintained project — reports are handled on a best-effort basis
+Please do NOT disclose vulnerabilities in public issue trackers before they can be addressed.
 
 ### What to include
 
@@ -31,10 +29,10 @@ If you discover a security vulnerability, please report it responsibly:
 
 ## Scope
 
-Since PDFLince is a static client-side application, the most relevant vulnerabilities are:
+Since JayPDF is a static client-side application, the most relevant vulnerabilities are:
 
 - **XSS** via crafted PDF content or file names
 - **Dependency vulnerabilities** in client-side libraries (pdf-lib, pdfjs-dist, etc.)
-- **Data leakage** via analytics or third-party scripts
+- **Data leakage** via third-party scripts
 
 Server-infrastructure vulnerabilities (SSRF, RCE, etc.) are **out of scope** as no server processes user data.

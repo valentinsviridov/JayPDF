@@ -1,7 +1,7 @@
 services:
-  pdflince:
-    image: pdflince:latest
-    container_name: pdflince
+  jaypdf:
+    image: jaypdf:latest
+    container_name: jaypdf
 
     build:
       context: .

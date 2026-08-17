@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-4 max-w-3xl mx-auto text-xs text-[var(--tx-3)]/80">
-          Based on PDFLince, originally created by Guillermo Siesto (GSiesto), and used under the MIT License. This independent fork is not affiliated with or maintained by the original author.
+          Portions derived from PDFLince, originally created by Guillermo Siesto (GSiesto), used under the MIT License. JayPDF is an independent project and is not affiliated with or endorsed by the original author.
         </p>
 
         <p className="mt-6 text-[var(--tx-3)] text-xs uppercase tracking-wide">{footer.capabilitiesLabel}</p>

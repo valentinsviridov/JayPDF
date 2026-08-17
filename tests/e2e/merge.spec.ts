@@ -51,7 +51,7 @@ test('PDF Merge Workflow', async ({ page }) => {
     const download = await downloadPromise;
 
     // 5. Verification
-    expect(download.suggestedFilename()).toMatch(/merged_PDFLince\.pdf$/);
+    expect(download.suggestedFilename()).toMatch(/merged_JayPDF\.pdf$/);
 
     // Verify page count of result
     const downloadPath = path.join(__dirname, 'downloaded-merged.pdf');

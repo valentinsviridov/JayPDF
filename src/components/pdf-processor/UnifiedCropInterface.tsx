@@ -68,19 +68,19 @@ export default function UnifiedCropInterface({
   useEffect(() => {
     setIsClient(true);
     try {
-      const savedUnit = localStorage.getItem('PDFLINCE_CROP_UNIT') as Unit;
-      if (savedUnit && UNIT_CONVERSIONS[savedUnit]) {
+      const savedUnit = localStorage.getItem('JAYPDF_CROP_UNIT') as Unit;
+      if (savedUnit && ['px', 'mm', 'cm', 'in', 'pt', '%'].includes(savedUnit)) {
         setUnit(savedUnit);
       }
     } catch {
-      // Ignore localStorage errors
+      // Ignore storage errors in private browsing
     }
   }, []);
 
   const handleUnitChange = (newUnit: Unit) => {
     setUnit(newUnit);
     try {
-      localStorage.setItem('PDFLINCE_CROP_UNIT', newUnit);
+      localStorage.setItem('JAYPDF_CROP_UNIT', newUnit);
     } catch {
       // Ignore
     }

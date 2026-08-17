@@ -271,7 +271,7 @@ function PDFProcessorInterface({ initialMode }: { initialMode: ProcessingMode })
         }
       }
 
-      const base = downloadNames[operation] ?? `pdflince_${operation}`;
+      const base = downloadNames[operation] ?? `jaypdf_${operation}`;
 
       if (!originalName) {
         if (operation === 'split' && typeof index === 'number') {

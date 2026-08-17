@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "ro" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://pdflince.com";
+const siteUrl = "https://jaypdf.com";
 const homePath = getRoutePath(locale, "home");
 
 const operationsRoutes: Record<OperationKey, string> = {
@@ -37,9 +37,9 @@ export const roDictionary: Dictionary = {
   },
   metadata: {
     site: {
-      title: "PDFLince – Unește, comprimă și convertește PDF-uri gratuit",
+      title: "JayPDF – Unește, comprimă și convertește PDF-uri gratuit",
       description:
-        "PDFLince este un set de instrumente axat pe confidențialitate care unește, comprimă, divide, extrage, rotește și convertește PDF-uri direct în browser. Toată procesarea rămâne pe dispozitivul tău.",
+        "JayPDF este un set de instrumente axat pe confidențialitate care unește, comprimă, divide, extrage, rotește și convertește PDF-uri direct în browser. Toată procesarea rămâne pe dispozitivul tău.",
       keywords: [
         "uneste pdf",
         "merge pdf",
@@ -67,22 +67,22 @@ export const roDictionary: Dictionary = {
       ],
       canonical: `${siteUrl}${homePath}`,
       openGraph: {
-        title: "PDFLince – Unește, Comprimă, Divide, PDF în Imagine",
+        title: "JayPDF – Unește, Comprimă, Divide, PDF în Imagine",
         description:
           "Unește, comprimă, divide, extrage, reordonează și convertește PDF-uri fără a încărca fișierele pe server. Gratuit, privat și susținut de o procesare locală.",
         url: `${siteUrl}${homePath}`,
         locale: "ro_RO",
         type: "website",
-        imageUrl: "https://pdflince.com/og-images/og-image-ro.png",
-        imageAlt: "PDFLince - Procesare PDF privată și gratuită",
+        imageUrl: "https://jaypdf.com/og-images/og-image-ro.png",
+        imageAlt: "JayPDF - Procesare PDF privată și gratuită",
       },
     },
     faq: {
-      title: "FAQ | PDFLince – Set de instrumente gratuit pentru procesare PDF",
+      title: "FAQ | JayPDF – Set de instrumente gratuit pentru procesare PDF",
       description:
-        "Răspunsuri la întrebări frecvente despre PDFLince. Află cum să unești, comprimi, divizezi, extragi și reordonezi PDF-uri fără a-ți încărca fișierele.",
+        "Răspunsuri la întrebări frecvente despre JayPDF. Află cum să unești, comprimi, divizezi, extragi și reordonezi PDF-uri fără a-ți încărca fișierele.",
       keywords: [
-        "pdflince faq",
+        "jaypdf faq",
         "intrebari pdf",
         "ajutor pdf",
         "ajutor unire pdf",
@@ -94,22 +94,22 @@ export const roDictionary: Dictionary = {
       canonical: `${siteUrl}${getRoutePath(locale, "faq")}`,
     },
     support: {
-      title: "Susține PDFLince | Menține instrumentele gratuite și private",
+      title: "Susține JayPDF | Menține instrumentele gratuite și private",
       description:
-        "Donația ta permite ca PDFLince să rămână un proiect mic, independent și axat pe confidențialitate. Ajută la acoperirea costurilor de găzduire și a îmbunătățirilor.",
+        "Donația ta permite ca JayPDF să rămână un proiect mic, independent și axat pe confidențialitate. Ajută la acoperirea costurilor de găzduire și a îmbunătățirilor.",
       keywords: [
-        "doneaza pdflince",
+        "doneaza jaypdf",
         "sustine set instrumente pdf",
         "sustine proiecte confidentialitate",
-        "donatii stripe pdflince",
-        "pastreaza pdflince gratuit",
+        "donatii stripe jaypdf",
+        "pastreaza jaypdf gratuit",
       ],
       canonical: `${siteUrl}${getRoutePath(locale, "support")}`,
     },
     operations: operationsRo,
   },
   brand: {
-    name: "PDFLince",
+    name: "JayPDF",
     tagline: "Procesare locală • 100% privată",
   },
   components: {
@@ -123,7 +123,7 @@ export const roDictionary: Dictionary = {
     },
     footer: {
       privacy: "Procesare locală • 100% privată • Licențe deschise",
-      rights: `© ${new Date().getFullYear()} PDFLince — Instrumente pentru manipularea PDF-urilor fără a compromite confidențialitatea`,
+      rights: `Copyright © 2026 Valentin Sviridov — Instrumente pentru manipularea PDF-urilor fără a compromite confidențialitatea`,
       links: {
         home: "Acasă",
         faq: "Întrebări frecvente",
@@ -169,7 +169,7 @@ export const roDictionary: Dictionary = {
       question: "A fost util?",
       thanks: "Îți mulțumim pentru feedback!",
       whatWrong: "Spune-ne ce nu a funcționat bine",
-      emailSubject: "Feedback pentru PDFLince",
+      emailSubject: "Feedback pentru JayPDF",
     },
     pdfProcessor: {
       title: "Alege o operațiune",
@@ -239,16 +239,16 @@ export const roDictionary: Dictionary = {
         },
       },
       downloadNames: {
-        compress: "comprimat_PDFLince",
-        merge: "unit_PDFLince",
-        split: "parte_PDFLince",
-        extract: "extras_PDFLince",
-        crop: "decupat_PDFLince",
-        rotate: "rotit_PDFLince",
-        reorder: "reordonat_PDFLince",
-        pdfToImages: "imagini_PDFLince",
-        imagesToPdf: "imagini_in_pdf_PDFLince",
-        repair: "reparat_PDFLince",
+        compress: "comprimat_JayPDF",
+        merge: "unit_JayPDF",
+        split: "parte_JayPDF",
+        extract: "extras_JayPDF",
+        crop: "decupat_JayPDF",
+        rotate: "rotit_JayPDF",
+        reorder: "reordonat_JayPDF",
+        pdfToImages: "imagini_JayPDF",
+        imagesToPdf: "imagini_in_pdf_JayPDF",
+        repair: "reparat_JayPDF",
       },
       processButton: {
         idleSingle: "Procesează 1 fișier",
@@ -338,10 +338,10 @@ export const roDictionary: Dictionary = {
         clear: "Șterge rezumatul",
       },
       donationReminder: {
-        message: "Te-a ajutat PDFLince să economisești timp? Susținerea ta îl menține gratuit.",
-        actionLabel: "Susține PDFLince",
+        message: "Te-a ajutat JayPDF să economisești timp? Susținerea ta îl menține gratuit.",
+        actionLabel: "Susține JayPDF",
         withSavings: (percent: string, saved: string) =>
-          `Ai economisit ${saved} (${percent}%)? Ajută-ne să menținem PDFLince fără reclame.`,
+          `Ai economisit ${saved} (${percent}%)? Ajută-ne să menținem JayPDF fără reclame.`,
       },
       statusDialog: {
         processingTitle: "Procesare locală",
@@ -357,8 +357,8 @@ export const roDictionary: Dictionary = {
         retryLabel: "Reîncearcă",
         closeLabel: "Închide",
         sharePrompt: {
-          dialogMessage: "PDFLince este complet gratuit și îți respectă confidențialitatea. Ajută-ne să-l păstrăm așa recomandându-l unui coleg.",
-          shareText: "Tocmai am folosit PDFLince pentru a-mi gestiona PDF-urile. Este un set de instrumente gratuit, rapid și complet privat pentru a diviza, comprima, uni și converti PDF-uri direct în browser. Excelent pentru documente sensibile!",
+          dialogMessage: "JayPDF este complet gratuit și îți respectă confidențialitatea. Ajută-ne să-l păstrăm așa recomandându-l unui coleg.",
+          shareText: "Tocmai am folosit JayPDF pentru a-mi gestiona PDF-urile. Este un set de instrumente gratuit, rapid și complet privat pentru a diviza, comprima, uni și converti PDF-uri direct în browser. Excelent pentru documente sensibile!",
           actionLabel: "Partajează",
           copiedLabel: "Copiat!",
         },
@@ -527,7 +527,7 @@ export const roDictionary: Dictionary = {
         zipLabel: "Grupează imaginile într-un ZIP",
         zipHint: "Descarcă o singură arhivă.",
         baseNameLabel: "Nume de bază al fișierului",
-        baseNamePlaceholder: "pdflince_pagini",
+        baseNamePlaceholder: "jaypdf_pagini",
         baseNameHint: "Lasă gol pentru a reutiliza numele PDF-ului original.",
       },
       imagesToPdf: {
@@ -565,14 +565,14 @@ export const roDictionary: Dictionary = {
   pages: {
     home: {
       hero: {
-        title: "PDFLince: Comprimă, unește și convertește PDF gratuit",
+        title: "JayPDF: Comprimă, unește și convertește PDF gratuit",
         subtitle:
           "Comprimă, unește, divide, extrage, rotește și convertește PDF-uri direct în browser. Fără încărcare pe server, complet privat.",
         badges: [
           "Comprimă PDF",
           "Unește PDF",
           "Procesare locală",
-          "Susține PDFLince",
+          "Susține JayPDF",
         ],
         imageAlt: "Ilustrație a unui document PDF",
         ctaLinks: [
@@ -589,7 +589,7 @@ export const roDictionary: Dictionary = {
         ],
       },
       why: {
-        title: "De ce să folosești PDFLince?",
+        title: "De ce să folosești JayPDF?",
         cards: [
           {
             title: "Privat implicit",
@@ -612,7 +612,7 @@ export const roDictionary: Dictionary = {
         ],
       },
       callout: {
-        title: "Ajută-ne să menținem PDFLince gratuit",
+        title: "Ajută-ne să menținem JayPDF gratuit",
         description:
           "Fiecare donație acoperă costurile de găzduire și ne permite să menținem experiența 100% privată, fără reclame și fără urmărire.",
         ctaLabel: "Susține proiectul",
@@ -623,9 +623,9 @@ export const roDictionary: Dictionary = {
     },
     faq: {
       title: "Întrebări Frecvente",
-      intro: "Răspunsuri la cele mai comune întrebări despre PDFLince",
+      intro: "Răspunsuri la cele mai comune întrebări despre JayPDF",
       cta: {
-        title: "Încearcă PDFLince acum",
+        title: "Încearcă JayPDF acum",
         description:
           "Unește, comprimă, divide, extrage, rotește și reordonează PDF-uri în deplină confidențialitate.",
         ctaLabel: "Mergi la instrumente",
@@ -634,9 +634,9 @@ export const roDictionary: Dictionary = {
     support: {
       hero: {
         eyebrow: "🌱 Proiect independent",
-        title: "Ajută-ne să păstrăm PDFLince gratuit și privat",
+        title: "Ajută-ne să păstrăm JayPDF gratuit și privat",
         subtitle:
-          "PDFLince este un proiect mic, dezvoltat din pasiune. Susținerea ta acoperă costurile serverelor.",
+          "JayPDF este un proiect mic, dezvoltat din pasiune. Susținerea ta acoperă costurile serverelor.",
         highlight: "Doar un instrument simplu care îți respectă confidențialitatea.",
       },
       reasons: {
@@ -645,7 +645,7 @@ export const roDictionary: Dictionary = {
           {
             title: "Păstrează-l gratuit",
             description:
-              "Donațiile ne permit să menținem PDFLince 100% gratuit pentru toată lumea.",
+              "Donațiile ne permit să menținem JayPDF 100% gratuit pentru toată lumea.",
             icon: "💚",
           },
           {
@@ -678,7 +678,7 @@ export const roDictionary: Dictionary = {
             id: "monthly",
             title: "Susținere lunară",
             amount: "10 €/lună",
-            description: "Ne oferă timp dedicat în fiecare săptămână pentru a îmbunătăți PDFLince.",
+            description: "Ne oferă timp dedicat în fiecare săptămână pentru a îmbunătăți JayPDF.",
             ctaLabel: "Donează 10 €/lună",
             ctaHref: "#stripe-checkout-monthly",
             badge: "💙 Mulțumim",
@@ -709,7 +709,7 @@ export const roDictionary: Dictionary = {
           {
             question: "Ce se întâmplă dacă nu pot dona ?",
             answer:
-              "Nicio problemă. PDFLince va rămâne gratuit. Partajarea site-ului cu alții este deja un ajutor extraordinar.",
+              "Nicio problemă. JayPDF va rămâne gratuit. Partajarea site-ului cu alții este deja un ajutor extraordinar.",
           },
           {
             question: "Voi primi o chitanță ?",
@@ -726,17 +726,17 @@ export const roDictionary: Dictionary = {
       closing: {
         title: "Îți mulțumim că ești aici",
         description:
-          "Fiecare persoană care susține PDFLince ajută la menținerea în viață a unui set util de instrumente PDF.",
+          "Fiecare persoană care susține JayPDF ajută la menținerea în viață a unui set util de instrumente PDF.",
         ctaLabel: "Trimite un e-mail echipei",
-        ctaHref: "mailto:info@pdflince.com?subject=Salut%20echipa%20PDFLince",
+        ctaHref: "mailto:info@jaypdf.com?subject=Salut%20echipa%20JayPDF",
       },
       legalNotice: {
         title: "Informații legale și transparență",
         points: [
-          "PDFLince este un proiect personal independent gestionat de o echipă mică de voluntari.",
+          "JayPDF este un proiect personal independent gestionat de o echipă mică de voluntari.",
           "Contribuțiile sunt voluntare și ajută exclusiv la acoperirea găzduirii și a timpului de dezvoltare.",
           "Plățile nu sunt donații deductibile fiscal; Stripe va emite o chitanță automată.",
-          "Serviciul este furnizat ca atare, fără garanții. Întrebări? info@pdflince.com.",
+          "Serviciul este furnizat ca atare, fără garanții. Întrebări? info@jaypdf.com.",
         ],
       },
     },

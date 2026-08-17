@@ -14,7 +14,7 @@ const LOCALE = "hu" as const;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
-  title: "PDFLince - PDF tömörítése, egyesítése, felosztása és konvertálása",
+  title: "JayPDF - PDF tömörítése, egyesítése, felosztása és konvertálása",
   description: "Ingyenes online PDF-eszközök: tömörítés, egyesítés, felosztás, kinyerés és konvertálás. 100% privát, helyi feldolgozás a böngésződben.",
   icons: SHARED_ICONS,
   alternates: {
@@ -47,8 +47,8 @@ export const metadata = {
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-hu.png", width: 1409, height: 736, alt: "PDFLince - Privát és ingyenes PDF-feldolgozás" }],
-    title: "PDFLince - Ingyenes és privát PDF-eszközök a böngésződben",
+    images: [{ url: "https://pdflince.com/og-images/og-image-hu.png", width: 1409, height: 736, alt: "JayPDF - Privát és ingyenes PDF-feldolgozás" }],
+    title: "JayPDF - Ingyenes és privát PDF-eszközök a böngésződben",
     description: "Egyesítsd, tömörítsd, oszd fel és konvertáld a PDF-eket szerverre feltöltés nélkül. Biztonságos és 100% privát.",
     url: "https://pdflince.com/hu",
     locale: "hu_HU",

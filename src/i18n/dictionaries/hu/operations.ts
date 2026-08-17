@@ -7,7 +7,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "tomoriteni",
     mode: "compress",
     meta: {
-      title: "PDF tömörítése ingyenesen online | Méret csökkentése | PDFLince",
+      title: "PDF tömörítése ingyenesen online | Méret csökkentése | JayPDF",
       description:
         "Csökkentsd hatékonyan a PDF fájlok méretét minőségveszteség nélkül. Ingyenes és bizalmas tömörítés közvetlenül a böngésződben – szerverre feltöltés nélkül.",
       keywords: [
@@ -20,10 +20,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "pdf kisebb méret",
         "pdf optimalizálás",
       ],
-      ogTitle: "PDF tömörítése minőségveszteség nélkül | PDFLince",
+      ogTitle: "PDF tömörítése minőségveszteség nélkül | JayPDF",
       ogDescription:
         "Töltsd fel a fájlt, válaszd ki az optimális tömörítési szintet, és töltsd le a kisebb PDF-et másodpercek alatt – biztonságosan, idegen szerverre feltöltés nélkül.",
-      ogImageAlt: "A PDFLince PDF-tömörítő eszköze",
+      ogImageAlt: "A JayPDF PDF-tömörítő eszköze",
     },
     hero: {
       title: "PDF tömörítése online, minőség megőrzésével",
@@ -34,9 +34,9 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "Válassz alacsony, közepes vagy magas tömörítési szintet az igényeidhez",
         "Szükség esetén őrizd meg a metaadatokat és a dokumentumszerkezetet",
       ],
-      imageAlt: "PDF-tömörítési munkafolyamat a PDFLince-ben",
+      imageAlt: "PDF-tömörítési munkafolyamat a JayPDF-ben",
     },
-    benefitsTitle: "Miért tömörítsd PDF-jeidet a PDFLince-szel?",
+    benefitsTitle: "Miért tömörítsd PDF-jeidet a JayPDF-szel?",
     benefits: [
       {
         title: "Kiegyensúlyozott minőség",
@@ -55,7 +55,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Hogyan tömöríts PDF-et a PDFLince-szel?",
+      title: "Hogyan tömöríts PDF-et a JayPDF-szel?",
       steps: [
         "Kattints a \"Fájlok feltöltése\" gombra, és válaszd ki az optimalizálni kívánt PDF-et.",
         "Válaszd ki a tömörítési szintet, és állítsd be a speciális lehetőségeket, például a metaadatok eltávolítását.",
@@ -77,7 +77,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "osszefuzni",
     mode: "merge",
     meta: {
-      title: "PDF összefűzése online | PDF merge ingyen | PDFLince",
+      title: "PDF összefűzése online | PDF merge ingyen | JayPDF",
       description:
         "Fűzz össze több PDF-fájlt egyetlen rendezett dokumentumba oldalszám-korlát nélkül. Húzd át, rendezd és töltsd le azonnal – teljes bizalmassággal.",
       keywords: [
@@ -90,10 +90,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "merge pdf online",
         "pdf fájlok összevonása",
       ],
-      ogTitle: "Fűzd össze a PDF-jeidet másodpercek alatt | PDFLince",
+      ogTitle: "Fűzd össze a PDF-jeidet másodpercek alatt | JayPDF",
       ogDescription:
         "Rendezd a dokumentumokat a megfelelő sorrendbe, állítsd be a beállításokat, és töltsd le az összefűzött PDF-et egyetlen adat felhőre töltése nélkül.",
-      ogImageAlt: "Több PDF-fájl összefűzése a PDFLince-ben",
+      ogImageAlt: "Több PDF-fájl összefűzése a JayPDF-ben",
     },
     hero: {
       title: "PDF összefűzése online – gyorsan és biztonságosan",
@@ -104,9 +104,9 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "Rejtett korlát nélkül – fűzz össze terjedelmes dokumentumokat ingyen",
         "Szükség esetén őrizd meg a könyvjelzőket és a metaadatokat",
       ],
-      imageAlt: "PDF dokumentumok összefűzése a PDFLince-ben",
+      imageAlt: "PDF dokumentumok összefűzése a JayPDF-ben",
     },
-    benefitsTitle: "A PDFLince-szel való PDF-összefűzés előnyei",
+    benefitsTitle: "A JayPDF-szel való PDF-összefűzés előnyei",
     benefits: [
       {
         title: "Egységes megjelenítés",
@@ -125,7 +125,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Hogyan fűzz össze PDF-eket a PDFLince-szel?",
+      title: "Hogyan fűzz össze PDF-eket a JayPDF-szel?",
       steps: [
         "Kattints a \"Fájlok feltöltése\" gombra, és válassz legalább két PDF - dokumentumot.",
         "Húzd át a fájlokat vagy használd a nyilakat a végső sorrend beállításához.",
@@ -147,7 +147,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "szetbontas",
     mode: "split",
     meta: {
-      title: "PDF szétbontása oldalak vagy fejezetek szerint | Ingyenes | PDFLince",
+      title: "PDF szétbontása oldalak vagy fejezetek szerint | Ingyenes | JayPDF",
       description:
         "Bontsd fel a PDF-et több fájlra oldaltartomány vagy szakaszok szerint. Teljes kontroll a dokumentumszerkezet felett – szerverre feltöltés nélkül.",
       keywords: [
@@ -160,10 +160,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "split pdf online",
         "pdf ketté vágás",
       ],
-      ogTitle: "Bontsd szét a PDF-jeidet pontosan | PDFLince",
+      ogTitle: "Bontsd szét a PDF-jeidet pontosan | JayPDF",
       ogDescription:
         "Válaszd ki, hogyan bontod szét a dokumentumot, hozz létre annyi különálló fájlt, amennyire szükséged van, és töltsd le őket azonnal.",
-      ogImageAlt: "PDF-fájl szétbontása a PDFLince-ben",
+      ogImageAlt: "PDF-fájl szétbontása a JayPDF-ben",
     },
     hero: {
       title: "PDF szétbontása oldalak vagy szegmensek szerint",
@@ -176,7 +176,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "PDF szétbontási munkafolyamat",
     },
-    benefitsTitle: "Mit kapsz a PDFLince-szel való szétbontással?",
+    benefitsTitle: "Mit kapsz a JayPDF-szel való szétbontással?",
     benefits: [
       {
         title: "Kontroll az információmegosztás felett",
@@ -195,14 +195,14 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Hogyan bonts szét PDF-et a PDFLince-szel?",
+      title: "Hogyan bonts szét PDF-et a JayPDF-szel?",
       steps: [
         "Töltsd fel a szétbontani kívánt PDF-et az eszközödről.",
         "Válassz rögzített oldalszám szerinti szétbontást, vagy állítsd be egyénileg a tartományokat.",
         "Kattints a \"Feldolgozás\" gombra, és töltsd le automatikusan a létrehozott dokumentumokat.",
       ],
       note:
-        "A PDFLince azonnal letölti az első fájlt, a többit extra lépések nélkül menti az eszközödre.",
+        "A JayPDF azonnal letölti az első fájlt, a többit extra lépések nélkül menti az eszközödre.",
     },
     useCasesTitle: "Tipikus PDF-szétbontási forgatókönyvek",
     useCases: [
@@ -217,7 +217,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "kivalasztani",
     mode: "extract",
     meta: {
-      title: "PDF oldalak kinyerése | Oldalak mentése külön | PDFLince",
+      title: "PDF oldalak kinyerése | Oldalak mentése külön | JayPDF",
       description:
         "Válassz ki egyes oldalakat bármely PDF-ből, és azonnal hozz létre belőlük új dokumentumot. Korlátlan, privát feldolgozás közvetlenül a böngésződben.",
       keywords: [
@@ -228,10 +228,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "pdf oldalak kivágása",
         "pdf-ből oldalak mentése",
       ],
-      ogTitle: "Csak a szükséges oldalakat nyerd ki | PDFLince",
+      ogTitle: "Csak a szükséges oldalakat nyerd ki | JayPDF",
       ogDescription:
         "Jelöld meg a kívánt oldalakat, hozz létre új PDF-et másodpercek alatt, és tartsd biztonságban az adataidat a saját eszközödön.",
-      ogImageAlt: "PDF oldalak kiválasztása a PDFLince-ben",
+      ogImageAlt: "PDF oldalak kiválasztása a JayPDF-ben",
     },
     hero: {
       title: "Egyes PDF-oldalak kinyerése",
@@ -242,9 +242,9 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "Tartsd meg az eredeti oldalszámozást, vagy hozz létre újat",
         "Töltsd le az eredmény PDF-et azonnal",
       ],
-      imageAlt: "Oldalak kinyerése PDF-ből a PDFLince-ben",
+      imageAlt: "Oldalak kinyerése PDF-ből a JayPDF-ben",
     },
-    benefitsTitle: "Az oldalak PDF-ből való kinyerésének előnyei a PDFLince-szel",
+    benefitsTitle: "Az oldalak PDF-ből való kinyerésének előnyei a JayPDF-szel",
     benefits: [
       {
         title: "Csak a szükséges tartalom",
@@ -263,7 +263,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Hogyan nyerd ki az oldalakat a PDFLince-szel?",
+      title: "Hogyan nyerd ki az oldalakat a JayPDF-szel?",
       steps: [
         "Töltsd fel a PDF-et, és válaszd ki a munkára szánt dokumentumot.",
         "Jelöld meg a szükséges oldalakat az előnézeti képek paneljén.",
@@ -285,7 +285,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "korulvagas",
     mode: "crop",
     meta: {
-      title: "PDF oldalak vágása online | Margók eltávolítása | PDFLince",
+      title: "PDF oldalak vágása online | Margók eltávolítása | JayPDF",
       description:
         "Vágd le a PDF oldalait és távolítsd el a felesleges margókat közvetlenül a böngésződben. Válaszd ki az oldalakat, állítsd be a vágási területet – szerverre feltöltés nélkül.",
       keywords: [
@@ -298,10 +298,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "pdf körbevágás",
         "crop pdf online",
       ],
-      ogTitle: "Vágd le a PDF oldalait bizalmasan | PDFLince",
+      ogTitle: "Vágd le a PDF oldalait bizalmasan | JayPDF",
       ogDescription:
         "Távolítsd el a fehér margókat, és összpontosíts minden oldal lényeges tartalmára – minden feldolgozás helyben, az eszközödön zajlik.",
-      ogImageAlt: "PDF oldalak vágása a PDFLince-ben",
+      ogImageAlt: "PDF oldalak vágása a JayPDF-ben",
     },
     hero: {
       title: "PDF oldalak vágása és margók eltávolítása",
@@ -312,9 +312,9 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "Pontosan add meg a felső, jobb, alsó és bal margókat pontokban",
         "Teljes mértékben helyi feldolgozás közvetlenül az eszközödön",
       ],
-      imageAlt: "PDF vágási munkafolyamat a PDFLince-ben",
+      imageAlt: "PDF vágási munkafolyamat a JayPDF-ben",
     },
-    benefitsTitle: "Miért érdemes PDF-et vágni a PDFLince-szel?",
+    benefitsTitle: "Miért érdemes PDF-et vágni a JayPDF-szel?",
     benefits: [
       {
         title: "Tiszta oldalak",
@@ -333,7 +333,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Hogyan vágd le a PDF-oldalakat a PDFLince-szel?",
+      title: "Hogyan vágd le a PDF-oldalakat a JayPDF-szel?",
       steps: [
         "Töltsd fel a PDF-et, és válaszd ki a vágni kívánt oldalakat tartalmazó fájlt.",
         "Jelöld meg a módosítandó oldalakat, és állítsd be a vágási margókat.",
@@ -355,7 +355,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "forgatas",
     mode: "rotate",
     meta: {
-      title: "PDF oldalak forgatása online | Tájolás javítása | PDFLince",
+      title: "PDF oldalak forgatása online | Tájolás javítása | JayPDF",
       description:
         "Forgasd el a kiválasztott PDF-oldalakat 90 vagy 180 fokkal közvetlenül a böngésződben. Ingyenes, bizalmas és teljesen helyi.",
       keywords: [
@@ -368,10 +368,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "pdf tájolás javítása",
         "rotate pdf online",
       ],
-      ogTitle: "Forgasd el a PDF oldalakat másodpercek alatt | PDFLince",
+      ogTitle: "Forgasd el a PDF oldalakat másodpercek alatt | JayPDF",
       ogDescription:
         "Válaszd ki a hibás tájolású oldalakat, add meg a szöget, és töltsd le a javított PDF-et bárhova való feltöltés nélkül.",
-      ogImageAlt: "PDF oldalak forgatása a PDFLince-ben",
+      ogImageAlt: "PDF oldalak forgatása a JayPDF-ben",
     },
     hero: {
       title: "PDF oldalak forgatása minőségveszteség nélkül",
@@ -382,9 +382,9 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "Válassz 90°-os jobbra, 180°-os vagy 90°-os balra forgatást",
         "Minden a böngésződben fut – feltöltés és várakozás nélkül",
       ],
-      imageAlt: "PDF oldal-forgatási munkafolyamat a PDFLince-ben",
+      imageAlt: "PDF oldal-forgatási munkafolyamat a JayPDF-ben",
     },
-    benefitsTitle: "Miért érdemes az oldalakat a PDFLince-szel forgatni?",
+    benefitsTitle: "Miért érdemes az oldalakat a JayPDF-szel forgatni?",
     benefits: [
       {
         title: "Pontos javítások",
@@ -403,7 +403,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Hogyan forgasd el a PDF-oldalakat a PDFLince-szel?",
+      title: "Hogyan forgasd el a PDF-oldalakat a JayPDF-szel?",
       steps: [
         "Töltsd fel a PDF-et, és válaszd ki a javítani kívánt oldalakat tartalmazó dokumentumot.",
         "Jelöld meg a forgatni kívánt oldalakat, és válassz szöget: 90° jobbra, 180° vagy 90° balra.",
@@ -425,7 +425,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "atrendezni",
     mode: "reorder",
     meta: {
-      title: "PDF oldalak átrendezése | Sorrend módosítása | PDFLince",
+      title: "PDF oldalak átrendezése | Sorrend módosítása | JayPDF",
       description:
         "Rendezd át könnyedén a PDF-oldalakat drag-and-drop módszerrel. Javítsd a sorrendet és mentsd el azonnal – teljesen helyi feldolgozással.",
       keywords: [
@@ -435,10 +435,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "pdf oldalak sorrendje",
         "pdf rendezés",
       ],
-      ogTitle: "PDF oldalak rendezése extra szoftver nélkül | PDFLince",
+      ogTitle: "PDF oldalak rendezése extra szoftver nélkül | JayPDF",
       ogDescription:
         "Húzd a megfelelő helyre az oldalakat, javítsd a sorrendet, és töltsd le a tökéletesen szervezett PDF-et.",
-      ogImageAlt: "PDF oldalak átrendezése a PDFLince-ben",
+      ogImageAlt: "PDF oldalak átrendezése a JayPDF-ben",
     },
     hero: {
       title: "PDF oldalak átrendezése drag-and-drop módszerrel",
@@ -451,7 +451,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "PDF oldalsorrend-rendező felület",
     },
-    benefitsTitle: "Miért érdemes a PDF-oldalakat a PDFLince-szel rendezni?",
+    benefitsTitle: "Miért érdemes a PDF-oldalakat a JayPDF-szel rendezni?",
     benefits: [
       {
         title: "Gyorsabb munkafolyamatok",
@@ -470,7 +470,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Hogyan rendezd át a PDF-oldalakat a PDFLince-szel?",
+      title: "Hogyan rendezd át a PDF-oldalakat a JayPDF-szel?",
       steps: [
         "Töltsd fel a PDF-et, és válaszd ki a szerkeszteni kívánt dokumentumot.",
         "Húzd az egyes előnézeti képeket a kívánt helyre.",
@@ -492,7 +492,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "pdf-kepekbe",
     mode: "pdfToImages",
     meta: {
-      title: "PDF konvertálása képekké | PNG / JPEG exportálás | PDFLince",
+      title: "PDF konvertálása képekké | PNG / JPEG exportálás | JayPDF",
       description:
         "Alakítsd át a PDF minden oldalát kiváló minőségű PNG vagy JPEG képpé. Válaszd ki a felbontást, és töltsd le ZIP-archívumban – 100%-ban privát módon.",
       keywords: [
@@ -503,10 +503,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "pdf exportálás képként",
         "pdf oldalak letöltése képként",
       ],
-      ogTitle: "Exportáld a PDF oldalakat éles képekként | PDFLince",
+      ogTitle: "Exportáld a PDF oldalakat éles képekként | JayPDF",
       ogDescription:
         "Rendereld az oldalakat közvetlenül a böngésződben. Állítsd be a minőséget, nevezd el a fájlokat, és azonnal kapj egy rendezett ZIP-archívumot.",
-      ogImageAlt: "PDFLince PDF exportálása képekbe",
+      ogImageAlt: "JayPDF PDF exportálása képekbe",
     },
     hero: {
       title: "PDF oldalak PNG vagy JPEG formátumba konvertálása",
@@ -519,7 +519,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "PDF képekbe exportálási munkafolyamat",
     },
-    benefitsTitle: "Miért exportáld a PDF-eket képekként a PDFLince-szel?",
+    benefitsTitle: "Miért exportáld a PDF-eket képekként a JayPDF-szel?",
     benefits: [
       {
         title: "Prezentációminőségű képek",
@@ -560,7 +560,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "kepek-pdf-be",
     mode: "imagesToPdf",
     meta: {
-      title: "PDF létrehozása képekből | JPG, PNG PDF-be | PDFLince",
+      title: "PDF létrehozása képekből | JPG, PNG PDF-be | JayPDF",
       description:
         "Hozz létre professzionális PDF-et a képeidből. Rendezd a fotókat, szabd testre az elrendezést és a margókat – a dokumentum helyben, a böngésződben jön létre.",
       keywords: [
@@ -571,10 +571,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "képek konvertálása pdf-be",
         "webp pdf-be",
       ],
-      ogTitle: "Hozz létre rendezett PDF-et a képeidből | PDFLince",
+      ogTitle: "Hozz létre rendezett PDF-et a képeidből | JayPDF",
       ogDescription:
         "Húzd át a képeket, állítsd be az oldalparamétereket, és exportálj nyomtatásra kész PDF-et – fájlfeltöltés és vízjel nélkül.",
-      ogImageAlt: "PDF létrehozása képekből a PDFLince-ben",
+      ogImageAlt: "PDF létrehozása képekből a JayPDF-ben",
     },
     hero: {
       title: "JPG vagy PNG képek összefűzése professzionális PDF-be",
@@ -587,7 +587,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Képek PDF-be alakításának munkafolyamata",
     },
-    benefitsTitle: "Miért érdemes PDF-et képekből összerakni a PDFLince-szel?",
+    benefitsTitle: "Miért érdemes PDF-et képekből összerakni a JayPDF-szel?",
     benefits: [
       {
         title: "Egységes megjelenés",
@@ -628,7 +628,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
     slug: "javitas",
     mode: "repair",
     meta: {
-      title: "PDF javítása ingyen online | Sérült fájlok helyreállítása | PDFLince",
+      title: "PDF javítása ingyen online | Sérült fájlok helyreállítása | JayPDF",
       description:
         "Sérült vagy hibás PDF-fájlok javítása közvetlenül a böngészőben. Olvashatatlan PDF-ek biztonságos és helyi helyreállítása.",
       keywords: [
@@ -637,10 +637,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
         "hibás pdf javítás",
         "pdf javítás online",
       ],
-      ogTitle: "Sérült PDF-ek javítása és helyreállítása online | PDFLince",
+      ogTitle: "Sérült PDF-ek javítása és helyreállítása online | JayPDF",
       ogDescription:
         "Olvashatatlan PDF-dokumentumok javítása közvetlenül a böngészőben 100% adatvédelemmel, feltöltés nélkül.",
-      ogImageAlt: "PDFLince PDF javító felület",
+      ogImageAlt: "JayPDF PDF javító felület",
     },
     hero: {
       title: "Sérült PDF-ek helyi javítása és újjáépítése",
@@ -653,7 +653,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "PDF javítási munkafolyamat",
     },
-    benefitsTitle: "Miért javíts PDF-eket a PDFLince segítségével",
+    benefitsTitle: "Miért javíts PDF-eket a JayPDF segítségével",
     benefits: [
       {
         title: "Alapos helyreállítás",
@@ -672,7 +672,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Hogyan javíts meg egy PDF-et a PDFLince-szel",
+      title: "Hogyan javíts meg egy PDF-et a JayPDF-szel",
       steps: [
         "Töltsd fel a sérült vagy hibás PDF-fájlt.",
         "Kattints a „Feldolgozás” gombra a helyreállítás elindításához.",

@@ -6,7 +6,7 @@ import type { Dictionary } from "../dictionary-types";
 
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[DEFAULT_LOCALE];
 
-const siteUrl = "https://pdflince.com";
+const siteUrl = "https://jaypdf.com";
 
 export const esDictionary: Dictionary = {
   locale: DEFAULT_LOCALE,
@@ -33,9 +33,9 @@ export const esDictionary: Dictionary = {
   },
   metadata: {
     site: {
-      title: "PDFLince - Unir, comprimir y convertir PDFs sin subir archivos",
+      title: "JayPDF - Unir, comprimir y convertir PDFs sin subir archivos",
       description:
-        "PDFLince es un kit gratuito para unir, comprimir, dividir, extraer, reordenar y convertir PDFs a imágenes o viceversa directamente en tu navegador. Todo el procesamiento sucede de forma local, sin registros ni cargas.",
+        "JayPDF es un kit gratuito para unir, comprimir, dividir, extraer, reordenar y convertir PDFs a imágenes o viceversa directamente en tu navegador. Todo el procesamiento sucede de forma local, sin registros ni cargas.",
       keywords: [
         "unir pdf",
         "comprimir pdf",
@@ -54,22 +54,22 @@ export const esDictionary: Dictionary = {
       ],
       canonical: `${siteUrl}`,
       openGraph: {
-        title: "PDFLince – Unir, Comprimir, Dividir, PDF a Imagen e Imagen a PDF",
+        title: "JayPDF – Unir, Comprimir, Dividir, PDF a Imagen e Imagen a PDF",
         description:
           "Une, comprime, divide, extrae, reordena y convierte PDFs sin subir archivos. Kit gratuito, privado y en español con procesamiento 100% local.",
         url: siteUrl,
         locale: "es_ES",
         type: "website",
-        imageUrl: "https://pdflince.com/og-images/og-image-es.png",
-        imageAlt: "PDFLince - Procesamiento de PDFs privado y gratuito",
+        imageUrl: "https://jaypdf.com/og-images/og-image-es.png",
+        imageAlt: "JayPDF - Procesamiento de PDFs privado y gratuito",
       },
     },
     faq: {
-      title: "Preguntas frecuentes | PDFLince - Herramienta para procesar PDFs",
+      title: "Preguntas frecuentes | JayPDF - Herramienta para procesar PDFs",
       description:
-        "Respuestas sobre cómo unir, comprimir, dividir, extraer y reordenar PDFs con PDFLince sin subir tus archivos a servidores.",
+        "Respuestas sobre cómo unir, comprimir, dividir, extraer y reordenar PDFs con JayPDF sin subir tus archivos a servidores.",
       keywords: [
-        "PDFLince FAQ",
+        "JayPDF FAQ",
         "preguntas frecuentes PDFs",
         "ayuda optimización PDF",
         "unir PDF dudas",
@@ -80,22 +80,22 @@ export const esDictionary: Dictionary = {
       canonical: `${siteUrl}${getRoutePath(DEFAULT_LOCALE, "faq")}`,
     },
     support: {
-      title: "Apoya PDFLince | Mantén la herramienta privada y gratuita",
+      title: "Apoya JayPDF | Mantén la herramienta privada y gratuita",
       description:
-        "Tus donaciones financian el desarrollo de PDFLince, cubren la infraestructura y garantizan que siga siendo 100% privado y sin anuncios.",
+        "Tus donaciones financian el desarrollo de JayPDF, cubren la infraestructura y garantizan que siga siendo 100% privado y sin anuncios.",
       keywords: [
-        "donar a PDFLince",
+        "donar a JayPDF",
         "apoyar herramienta pdf",
         "financiar proyecto open web",
         "donación privacidad",
-        "mantener pdflince gratis",
+        "mantener jaypdf gratis",
       ],
       canonical: `${siteUrl}${getRoutePath(DEFAULT_LOCALE, "support")}`,
     },
     operations: operationsEs,
   },
   brand: {
-    name: "PDFLince",
+    name: "JayPDF",
     tagline: "Procesamiento local • 100% privado",
   },
   components: {
@@ -109,7 +109,7 @@ export const esDictionary: Dictionary = {
     },
     footer: {
       privacy: "Procesamiento local • 100% privado • Licencias abiertas",
-      rights: `© ${new Date().getFullYear()} PDFLince - Herramientas para manipular PDFs sin comprometer tu privacidad`,
+      rights: `Copyright © 2026 Valentin Sviridov - Herramientas para manipular PDFs sin comprometer tu privacidad`,
       links: {
         home: "Inicio",
         faq: "Preguntas Frecuentes",
@@ -155,7 +155,7 @@ export const esDictionary: Dictionary = {
       question: "¿Te ha sido útil?",
       thanks: "¡Gracias por tu opinión!",
       whatWrong: "Cuéntanos qué salió mal",
-      emailSubject: "Feedback sobre PDFLince",
+      emailSubject: "Feedback sobre JayPDF",
     },
     pdfProcessor: {
       title: "Selecciona una operación",
@@ -225,16 +225,16 @@ export const esDictionary: Dictionary = {
         },
       },
       downloadNames: {
-        compress: "comprimido_PDFLince",
-        merge: "unido_PDFLince",
-        split: "parte_PDFLince",
-        extract: "extraido_PDFLince",
-        crop: "recortado_PDFLince",
-        rotate: "rotado_PDFLince",
-        reorder: "reordenado_PDFLince",
-        pdfToImages: "imagenes_PDFLince",
-        imagesToPdf: "imagenes_a_pdf_PDFLince",
-        repair: "reparado_PDFLince",
+        compress: "comprimido_JayPDF",
+        merge: "unido_JayPDF",
+        split: "parte_JayPDF",
+        extract: "extraido_JayPDF",
+        crop: "recortado_JayPDF",
+        rotate: "rotado_JayPDF",
+        reorder: "reordenado_JayPDF",
+        pdfToImages: "imagenes_JayPDF",
+        imagesToPdf: "imagenes_a_pdf_JayPDF",
+        repair: "reparado_JayPDF",
       },
       processButton: {
         idleSingle: "Procesar 1 archivo",
@@ -324,10 +324,10 @@ export const esDictionary: Dictionary = {
         clear: "Borrar resumen",
       },
       donationReminder: {
-        message: "¿PDFLince te ahorró tiempo hoy? Tu aporte mantiene el proyecto privado y gratuito.",
-        actionLabel: "Apoyar PDFLince",
+        message: "¿JayPDF te ahorró tiempo hoy? Tu aporte mantiene el proyecto privado y gratuito.",
+        actionLabel: "Apoyar JayPDF",
         withSavings: (percent: string, saved: string) =>
-          `¿Acabas de ahorrar ${saved} (${percent}% menos)? Tu apoyo mantiene PDFLince privado y gratuito.`,
+          `¿Acabas de ahorrar ${saved} (${percent}% menos)? Tu apoyo mantiene JayPDF privado y gratuito.`,
       },
       statusDialog: {
         processingTitle: "Procesando de forma local",
@@ -343,8 +343,8 @@ export const esDictionary: Dictionary = {
         retryLabel: "Intentar nuevamente",
         closeLabel: "Cerrar",
         sharePrompt: {
-          dialogMessage: "PDFLince es completamente gratis y respeta tu privacidad. Ayúdanos a mantenerlo así compartiéndolo con un colega.",
-          shareText: "Acabo de usar PDFLince para gestionar mis PDFs. Es una herramienta gratuita, rápida y totalmente privada para dividir, comprimir, unir y convertir PDFs directamente en el navegador. ¡Perfecta para documentos sensibles!",
+          dialogMessage: "JayPDF es completamente gratis y respeta tu privacidad. Ayúdanos a mantenerlo así compartiéndolo con un colega.",
+          shareText: "Acabo de usar JayPDF para gestionar mis PDFs. Es una herramienta gratuita, rápida y totalmente privada para dividir, comprimir, unir y convertir PDFs directamente en el navegador. ¡Perfecta para documentos sensibles!",
           actionLabel: "Compartir",
           copiedLabel: "¡Copiado!",
         },
@@ -513,7 +513,7 @@ export const esDictionary: Dictionary = {
         zipLabel: "Agrupar imágenes en un ZIP",
         zipHint: "Descarga un archivo único en lugar de una imagen por página.",
         baseNameLabel: "Nombre base",
-        baseNamePlaceholder: "pdflince_paginas",
+        baseNamePlaceholder: "jaypdf_paginas",
         baseNameHint: "Usamos este prefijo para las imágenes exportadas. Déjalo vacío para reutilizar el nombre del PDF.",
       },
       imagesToPdf: {
@@ -551,14 +551,14 @@ export const esDictionary: Dictionary = {
   pages: {
     home: {
       hero: {
-        title: "PDFLince: comprimir, unir y convertir PDF online gratis",
+        title: "JayPDF: comprimir, unir y convertir PDF online gratis",
         subtitle:
           "Comprime PDF, une PDF, divide documentos, extrae páginas y convierte PDF a imágenes o imágenes a PDF directamente en tu navegador. Sin subidas, 100% privado y gratuito.",
         badges: [
           "Comprimir PDF rápido",
           "Unir PDF sin límites",
           "Procesamiento local",
-          "Apoya PDFLince",
+          "Apoya JayPDF",
         ],
         imageAlt: "Ilustración de documento PDF",
         ctaLinks: [
@@ -575,7 +575,7 @@ export const esDictionary: Dictionary = {
         ],
       },
       why: {
-        title: "¿Por qué usar PDFLince?",
+        title: "¿Por qué usar JayPDF?",
         cards: [
           {
             title: "100% Privado",
@@ -598,7 +598,7 @@ export const esDictionary: Dictionary = {
         ],
       },
       callout: {
-        title: "Haz que PDFLince siga siendo gratuito",
+        title: "Haz que JayPDF siga siendo gratuito",
         description:
           "Cada donación cubre servidores, tiempo de desarrollo y nos permite mantener una experiencia 100% privada sin anuncios ni rastreadores.",
         ctaLabel: "Apoyar el proyecto",
@@ -610,9 +610,9 @@ export const esDictionary: Dictionary = {
     faq: {
       title: "Preguntas Frecuentes",
       intro:
-        "Respuestas a las dudas más comunes sobre PDFLince y el procesamiento de documentos PDF",
+        "Respuestas a las dudas más comunes sobre JayPDF y el procesamiento de documentos PDF",
       cta: {
-        title: "Prueba PDFLince ahora",
+        title: "Prueba JayPDF ahora",
         description:
           "Une, comprime, divide, extrae y reordena tus PDFs con total privacidad. Sin registros, sin subir archivos a servidores.",
         ctaLabel: "Ir a la herramienta",
@@ -621,9 +621,9 @@ export const esDictionary: Dictionary = {
     support: {
       hero: {
         eyebrow: "🌱 Proyecto independiente",
-        title: "Ayuda a mantener PDFLince gratuito y privado",
+        title: "Ayuda a mantener JayPDF gratuito y privado",
         subtitle:
-          "PDFLince es un proyecto pequeño hecho con cariño. Tu apoyo cubre los servidores y nos da tiempo para seguir mejorándolo.",
+          "JayPDF es un proyecto pequeño hecho con cariño. Tu apoyo cubre los servidores y nos da tiempo para seguir mejorándolo.",
         highlight: "Solo una herramienta que respeta tu privacidad.",
       },
       reasons: {
@@ -632,7 +632,7 @@ export const esDictionary: Dictionary = {
           {
             title: "Seguir siendo gratuito",
             description:
-              "Cada donación nos ayuda a mantener PDFLince 100% gratis para todos, sin planes premium ni funciones bloqueadas.",
+              "Cada donación nos ayuda a mantener JayPDF 100% gratis para todos, sin planes premium ni funciones bloqueadas.",
             icon: "❤️",
           },
           {
@@ -665,7 +665,7 @@ export const esDictionary: Dictionary = {
             id: "monthly",
             title: "Apoyo mensual",
             amount: "€10/mes",
-            description: "Nos permite dedicar tiempo cada semana a mejorar PDFLince.",
+            description: "Nos permite dedicar tiempo cada semana a mejorar JayPDF.",
             ctaLabel: "Donar €10/mes",
             ctaHref: "#stripe-checkout-monthly",
             badge: "💙 Gracias",
@@ -696,7 +696,7 @@ export const esDictionary: Dictionary = {
           {
             question: "¿Qué pasa si no puedo donar?",
             answer:
-              "¡No pasa nada! PDFLince seguirá siendo gratuito siempre. Si nos recomiendas a alguien o nos escribes contando cómo te ayudamos, eso también nos hace muy felices.",
+              "¡No pasa nada! JayPDF seguirá siendo gratuito siempre. Si nos recomiendas a alguien o nos escribes contando cómo te ayudamos, eso también nos hace muy felices.",
           },
           {
             question: "¿Recibiré un comprobante de pago?",
@@ -713,17 +713,17 @@ export const esDictionary: Dictionary = {
       closing: {
         title: "Gracias por estar aquí",
         description:
-          "Cada persona que apoya PDFLince hace posible que sigamos construyendo herramientas útiles, privadas y accesibles para todos.",
+          "Cada persona que apoya JayPDF hace posible que sigamos construyendo herramientas útiles, privadas y accesibles para todos.",
         ctaLabel: "Escribirnos",
-        ctaHref: "mailto:info@pdflince.com?subject=Hola%20equipo%20de%20PDFLince",
+        ctaHref: "mailto:info@jaypdf.com?subject=Hola%20equipo%20de%20JayPDF",
       },
       legalNotice: {
         title: "Aviso legal y transparencia",
         points: [
-          "PDFLince es un proyecto personal independiente gestionado por un pequeño equipo.",
+          "JayPDF es un proyecto personal independiente gestionado por un pequeño equipo.",
           "Las donaciones son voluntarias y se destinan a cubrir gastos de infraestructura y tiempo de desarrollo.",
           "Las aportaciones no son donaciones benéficas ni generan ventajas fiscales; Stripe emitirá un recibo automático.",
-          "El servicio se ofrece tal cual, sin garantías explícitas; para cualquier duda escríbenos a info@pdflince.com.",
+          "El servicio se ofrece tal cual, sin garantías explícitas; para cualquier duda escríbenos a info@jaypdf.com.",
         ],
       },
     },

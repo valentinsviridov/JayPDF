@@ -13,7 +13,7 @@ export const SHARED_OPEN_GRAPH: Metadata["openGraph"] = {
             url: "https://pdflince.com/og-images/og-image-es.png",
             width: 1409,
             height: 736,
-            alt: "PDFLince - Procesamiento de PDFs privado y gratuito"
+            alt: "JayPDF - Procesamiento de PDFs privado y gratuito"
         }
     ],
 };

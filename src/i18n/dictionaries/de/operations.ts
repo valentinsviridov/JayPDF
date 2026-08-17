@@ -7,7 +7,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "komprimieren",
     mode: "compress",
     meta: {
-      title: "PDF online komprimieren | GrÃ¶ÃŸe reduzieren | PDFLince",
+      title: "PDF online komprimieren | GrÃ¶ÃŸe reduzieren | JayPDF",
       description:
         "Reduziere PDF-GrÃ¶ÃŸe effizient ohne QualitÃ¤tsverlust. 100% privat und kostenlos direkt im Browser.",
       keywords: [
@@ -17,10 +17,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "pdf kompressor",
         "leichtes pdf",
       ],
-      ogTitle: "PDFs komprimieren ohne QualitÃ¤tsverlust | PDFLince",
+      ogTitle: "PDFs komprimieren ohne QualitÃ¤tsverlust | JayPDF",
       ogDescription:
         "Ziehe deine Datei in das Feld, wÃ¤hle die optimale Kompressionsstufe und lade das verkleinerte PDF in Sekunden herunter â€“ sicher und ohne Server-Upload.",
-      ogImageAlt: "PDFLince OberflÃ¤che beim Komprimieren",
+      ogImageAlt: "JayPDF OberflÃ¤che beim Komprimieren",
     },
     hero: {
       title: "PDF online komprimieren â€“ mit klaren Ergebnissen",
@@ -31,9 +31,9 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "Zwischen leichter, mittlerer oder starker Kompression wÃ¤hlen",
         "Metadaten und Struktur bei Bedarf beibehalten",
       ],
-      imageAlt: "PDF Komprimierungsablauf in PDFLince",
+      imageAlt: "PDF Komprimierungsablauf in JayPDF",
     },
-    benefitsTitle: "Warum PDFs mit PDFLince komprimieren",
+    benefitsTitle: "Warum PDFs mit JayPDF komprimieren",
     benefits: [
       {
         title: "Ausgewogenes Ergebnis",
@@ -52,7 +52,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "So komprimierst du ein PDF mit PDFLince",
+      title: "So komprimierst du ein PDF mit JayPDF",
       steps: [
         "Auf \"Dateien hochladen\" klicken und das gewÃ¼nschte PDF auswÃ¤hlen.",
         "Kompressionsstufe wÃ¤hlen und optional Metadaten erhalten.",
@@ -74,7 +74,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "zusammenfuehren",
     mode: "merge",
     meta: {
-      title: "PDFs online zusammenfÃ¼hren | Kombinieren | PDFLince",
+      title: "PDFs online zusammenfÃ¼hren | Kombinieren | JayPDF",
       description:
         "FÃ¼ge mehrere PDF-Dateien zu einem einzigen, geordneten Dokument zusammen. Einfach per Drag & Drop sortieren und sofort sicher herunterladen â€“ ohne Seitenlimit.",
       keywords: [
@@ -84,10 +84,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "pdf merger",
         "dokumente vereinen",
       ],
-      ogTitle: "Mehrere PDFs in Sekunden kombinieren | PDFLince",
+      ogTitle: "Mehrere PDFs in Sekunden kombinieren | JayPDF",
       ogDescription:
         "Ordne deine Dokumente beliebig an, passe die Einstellungen an und erhalte ein perfekt zusammengefÃ¼gtes PDF, ohne dass Daten in die Cloud gelangen.",
-      ogImageAlt: "ZusammenfÃ¼hren von PDFs mit PDFLince",
+      ogImageAlt: "ZusammenfÃ¼hren von PDFs mit JayPDF",
     },
     hero: {
       title: "PDFs online zusammenfÃ¼hren â€“ schnell und sicher",
@@ -100,7 +100,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "PDF ZusammenfÃ¼hrung",
     },
-    benefitsTitle: "Vorteile der ZusammenfÃ¼hrung mit PDFLince",
+    benefitsTitle: "Vorteile der ZusammenfÃ¼hrung mit JayPDF",
     benefits: [
       {
         title: "Konsistente Ãœbergabe",
@@ -119,7 +119,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "So fÃ¼hrst du PDFs mit PDFLince zusammen",
+      title: "So fÃ¼hrst du PDFs mit JayPDF zusammen",
       steps: [
         "Auf \"Dateien hochladen\" klicken und mindestens zwei PDFs auswÃ¤hlen.",
         "Mit Pfeilen oder Drag & Drop die gewÃ¼nschte Reihenfolge festlegen.",
@@ -141,7 +141,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "teilen",
     mode: "split",
     meta: {
-      title: "PDF nach Seiten oder Kapiteln teilen | Kostenlos | PDFLince",
+      title: "PDF nach Seiten oder Kapiteln teilen | Kostenlos | JayPDF",
       description:
         "Teile groÃŸe PDFs in handliche Dateien auf. Volle Kontrolle Ã¼ber deine Daten mit lokaler Verarbeitung.",
       keywords: [
@@ -151,10 +151,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "pdf splitter",
         "pdf zerlegen",
       ],
-      ogTitle: "PDFs prÃ¤zise aufteilen | PDFLince",
+      ogTitle: "PDFs prÃ¤zise aufteilen | JayPDF",
       ogDescription:
         "WÃ¤hle deinen bevorzugten Teilungsmodus, generiere so viele Einzeldateien wie nÃ¶tig und speichere sie direkt ab â€“ schnell, einfach und sicher.",
-      ogImageAlt: "PDF aufteilen mit PDFLince",
+      ogImageAlt: "PDF aufteilen mit JayPDF",
     },
     hero: {
       title: "PDFs nach Seiten oder Segmenten teilen",
@@ -167,7 +167,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "PDF-Teilung",
     },
-    benefitsTitle: "Vorteile des Teilens mit PDFLince",
+    benefitsTitle: "Vorteile des Teilens mit JayPDF",
     benefits: [
       {
         title: "Sharing mit Kontrolle",
@@ -186,14 +186,14 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "So teilst du ein PDF mit PDFLince",
+      title: "So teilst du ein PDF mit JayPDF",
       steps: [
         "Das gewÃ¼nschte PDF vom GerÃ¤t hochladen.",
         "Festlegen, ob nach Seitenanzahl oder DateigrÃ¶ÃŸe geteilt wird.",
         "\"Verarbeiten\" drÃ¼cken und die erzeugten Dateien automatisch herunterladen.",
       ],
       note:
-        "PDFLince lÃ¤dt die erste Datei sofort und speichert weitere ohne zusÃ¤tzliche Schritte.",
+        "JayPDF lÃ¤dt die erste Datei sofort und speichert weitere ohne zusÃ¤tzliche Schritte.",
     },
     useCasesTitle: "Typische AnwendungsfÃ¤lle",
     useCases: [
@@ -208,7 +208,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "seiten-extrahieren",
     mode: "extract",
     meta: {
-      title: "PDF-Seiten extrahieren | Seiten speichern | PDFLince",
+      title: "PDF-Seiten extrahieren | Seiten speichern | JayPDF",
       description:
         "WÃ¤hle einzelne Seiten aus und speichere sie als neues Dokument. Private Verarbeitung direkt im Browser.",
       keywords: [
@@ -218,10 +218,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "pdf page extractor",
         "neues pdf erstellen",
       ],
-      ogTitle: "Nur die benÃ¶tigten Seiten extrahieren | PDFLince",
+      ogTitle: "Nur die benÃ¶tigten Seiten extrahieren | JayPDF",
       ogDescription:
         "Markiere einfach die relevanten Seiten, erstelle in Sekunden ein neues PDF und behalte deine Daten sicher auf deinem eigenen GerÃ¤t.",
-      ogImageAlt: "Seiten in PDFLince auswÃ¤hlen",
+      ogImageAlt: "Seiten in JayPDF auswÃ¤hlen",
     },
     hero: {
       title: "Gezielte PDF-Seiten extrahieren",
@@ -253,7 +253,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "So extrahierst du Seiten mit PDFLince",
+      title: "So extrahierst du Seiten mit JayPDF",
       steps: [
         "PDF hochladen und die gewÃ¼nschte Datei auswÃ¤hlen.",
         "BenÃ¶tigte Seiten im Miniaturbereich markieren.",
@@ -275,7 +275,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "zuschneiden",
     mode: "crop",
     meta: {
-      title: "PDF-Seiten zuschneiden | Ränder entfernen | PDFLince",
+      title: "PDF-Seiten zuschneiden | Ränder entfernen | JayPDF",
       description:
         "Schneide PDF-Seiten direkt im Browser zu und entferne überflüssige Ränder. Alles läuft lokal und ohne Uploads.",
       keywords: [
@@ -285,10 +285,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "pdf ränder abschneiden",
         "pdf format ändern",
       ],
-      ogTitle: "PDF-Seiten lokal zuschneiden | PDFLince",
+      ogTitle: "PDF-Seiten lokal zuschneiden | JayPDF",
       ogDescription:
         "Wähle die Seiten aus, definiere die Ränder und lade ein sauber zugeschnittenes PDF herunter, ohne Dateien hochzuladen.",
-      ogImageAlt: "PDF-Seiten in PDFLince zuschneiden",
+      ogImageAlt: "PDF-Seiten in JayPDF zuschneiden",
     },
     hero: {
       title: "PDF-Seiten zuschneiden und Ränder verkleinern",
@@ -301,7 +301,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "PDF-Zuschneide-Workflow",
     },
-    benefitsTitle: "Warum PDFs mit PDFLince zuschneiden",
+    benefitsTitle: "Warum PDFs mit JayPDF zuschneiden",
     benefits: [
       {
         title: "Saubere Seiten",
@@ -320,7 +320,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "So schneidest du PDF-Seiten mit PDFLince zu",
+      title: "So schneidest du PDF-Seiten mit JayPDF zu",
       steps: [
         "Lade das PDF hoch und wähle die Datei aus, die du anpassen möchtest.",
         "Markiere die Seiten und lege die oberen, rechten, unteren und linken Ränder fest.",
@@ -342,7 +342,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "drehen",
     mode: "rotate",
     meta: {
-      title: "PDF-Seiten drehen | Ausrichtung korrigieren | PDFLince",
+      title: "PDF-Seiten drehen | Ausrichtung korrigieren | JayPDF",
       description:
         "Drehe ausgewahlte PDF-Seiten um 90 oder 180 Grad direkt im Browser. Kostenlos, privat und ohne Upload.",
       keywords: [
@@ -352,10 +352,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "gedrehte pdf seiten",
         "seitenrotation pdf",
       ],
-      ogTitle: "PDF-Seiten in Sekunden drehen | PDFLince",
+      ogTitle: "PDF-Seiten in Sekunden drehen | JayPDF",
       ogDescription:
         "Wahle die Seiten mit falscher Ausrichtung, stelle 90 oder 180 Grad ein und lade das korrigierte PDF ohne Upload herunter.",
-      ogImageAlt: "PDF-Seiten in PDFLince drehen",
+      ogImageAlt: "PDF-Seiten in JayPDF drehen",
     },
     hero: {
       title: "PDF-Seiten ohne Qualitatsverlust drehen",
@@ -368,7 +368,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Workflow zum Drehen von PDF-Seiten",
     },
-    benefitsTitle: "Warum Seiten mit PDFLince drehen",
+    benefitsTitle: "Warum Seiten mit JayPDF drehen",
     benefits: [
       {
         title: "Gezielte Korrekturen",
@@ -409,7 +409,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "seiten-sortieren",
     mode: "reorder",
     meta: {
-      title: "PDF-Seiten neu sortieren | Ordnung Ã¤ndern | PDFLince",
+      title: "PDF-Seiten neu sortieren | Ordnung Ã¤ndern | JayPDF",
       description:
         "Bringe deine PDF-Seiten per Drag & Drop ganz einfach in die richtige Reihenfolge. Organisiere Dokumente neu und speichere das Ergebnis sofort und sicher ab.",
       keywords: [
@@ -419,10 +419,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "pdf reorganisieren",
         "pdf seiten ordnen",
       ],
-      ogTitle: "PDFs organisieren ohne Zusatzsoftware | PDFLince",
+      ogTitle: "PDFs organisieren ohne Zusatzsoftware | JayPDF",
       ogDescription:
         "Verschiebe Seiten an die richtige Stelle, korrigiere die Reihenfolge und lade dein perfekt sortiertes PDF im Handumdrehen herunter.",
-      ogImageAlt: "Seiten neu anordnen in PDFLince",
+      ogImageAlt: "Seiten neu anordnen in JayPDF",
     },
     hero: {
       title: "PDF-Seiten mit Drag & Drop neu anordnen",
@@ -433,9 +433,9 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "Seiten ziehen und neue Reihenfolge sofort sehen",
         "Neu sortiertes PDF ohne Verlust von Lesezeichen oder Verlinkungen speichern",
       ],
-      imageAlt: "Seitenanordnung in PDFLince",
+      imageAlt: "Seitenanordnung in JayPDF",
     },
-    benefitsTitle: "Warum mit PDFLince neu sortieren",
+    benefitsTitle: "Warum mit JayPDF neu sortieren",
     benefits: [
       {
         title: "Schnellere Workflows",
@@ -454,7 +454,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "So sortierst du Seiten mit PDFLince neu",
+      title: "So sortierst du Seiten mit JayPDF neu",
       steps: [
         "PDF hochladen und gewÃ¼nschte Datei wÃ¤hlen.",
         "Miniaturen per Drag & Drop in die richtige Reihenfolge bringen.",
@@ -476,7 +476,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "pdf-zu-bildern",
     mode: "pdfToImages",
     meta: {
-      title: "PDF in Bilder umwandeln | PNG/JPEG Export | PDFLince",
+      title: "PDF in Bilder umwandeln | PNG/JPEG Export | JayPDF",
       description:
         "Wandle jede Seite deines PDFs in hochwertige PNG- oder JPEG-Bilder um. Bestimme die AuflÃ¶sung selbst und lade alles als ZIP-Datei herunter â€“ 100% privat.",
       keywords: [
@@ -486,10 +486,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "pdf seiten exportieren",
         "pdf als bilder herunterladen",
       ],
-      ogTitle: "PDF-Seiten als saubere Bilder exportieren | PDFLince",
+      ogTitle: "PDF-Seiten als saubere Bilder exportieren | JayPDF",
       ogDescription:
         "Render jede Seite direkt im Browser als scharfes Bild. WÃ¤hle Format und QualitÃ¤t und erhalte sofort ein strukturiertes ZIP-Archiv.",
-      ogImageAlt: "PDFLince konvertiert PDF-Seiten in Bilder",
+      ogImageAlt: "JayPDF konvertiert PDF-Seiten in Bilder",
     },
     hero: {
       title: "PDF-Seiten als PNG oder JPEG speichern",
@@ -500,9 +500,9 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "Alles als einzelnes ZIP bÃ¼ndeln oder Seiten einzeln herunterladen",
         "Rendering lÃ¤uft direkt im Browser â€“ keine Uploads, keine Spuren",
       ],
-      imageAlt: "Workflow von PDF zu Bildern in PDFLince",
+      imageAlt: "Workflow von PDF zu Bildern in JayPDF",
     },
-    benefitsTitle: "Warum PDFs mit PDFLince exportieren",
+    benefitsTitle: "Warum PDFs mit JayPDF exportieren",
     benefits: [
       {
         title: "QualitÃ¤t nach Bedarf",
@@ -543,7 +543,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "bilder-zu-pdf",
     mode: "imagesToPdf",
     meta: {
-      title: "PDF aus Bildern erstellen | JPG, PNG zu PDF | PDFLince",
+      title: "PDF aus Bildern erstellen | JPG, PNG zu PDF | JayPDF",
       description:
         "Erstelle aus deinen Bildern ein professionelles PDF. Passe Layout, RÃ¤nder und Ausrichtung an und generiere dein Dokument sicher und lokal im Browser.",
       keywords: [
@@ -553,10 +553,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "webp zu pdf",
         "pdf aus bildern erstellen",
       ],
-      ogTitle: "Ein ordentliches PDF aus Bildern bauen | PDFLince",
+      ogTitle: "Ein ordentliches PDF aus Bildern bauen | JayPDF",
       ogDescription:
         "Ziehe deine Bilder in die Liste, lege die Reihenfolge fest und exportiere ein druckfertiges PDF â€“ ganz ohne Uploads oder Wasserzeichen.",
-      ogImageAlt: "PDFLince erstellt ein PDF aus Bildern",
+      ogImageAlt: "JayPDF erstellt ein PDF aus Bildern",
     },
     hero: {
       title: "Ein aufgerÃ¤umtes PDF aus Bildern erstellen",
@@ -567,9 +567,9 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "SeitengrÃ¶ÃŸe, Ausrichtung und RÃ¤nder fÃ¼r Print oder Bildschirm anpassen",
         "Eine Hintergrundfarbe setzen, um Transparenzen zu vermeiden",
       ],
-      imageAlt: "Bilder-zu-PDF-Workflow in PDFLince",
+      imageAlt: "Bilder-zu-PDF-Workflow in JayPDF",
     },
-    benefitsTitle: "Warum Bilder mit PDFLince bÃ¼ndeln",
+    benefitsTitle: "Warum Bilder mit JayPDF bÃ¼ndeln",
     benefits: [
       {
         title: "Konsequentes Layout",
@@ -610,7 +610,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
     slug: "reparieren",
     mode: "repair",
     meta: {
-      title: "PDF reparieren kostenlos online | Beschädigte Dateien retten | PDFLince",
+      title: "PDF reparieren kostenlos online | Beschädigte Dateien retten | JayPDF",
       description:
         "Repariere beschädigte oder fehlerhafte PDF-Dateien direkt im Browser. Unlesbare PDFs sicher und lokal wiederherstellen.",
       keywords: [
@@ -619,10 +619,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
         "pdf reparieren kostenlos",
         "defektes pdf wiederherstellen",
       ],
-      ogTitle: "Beschädigte PDFs online reparieren | PDFLince",
+      ogTitle: "Beschädigte PDFs online reparieren | JayPDF",
       ogDescription:
         "Repariere fehlerhafte PDF-Dokumente direkt im Browser mit 100 % Privatsphäre und ohne Uploads.",
-      ogImageAlt: "PDFLince Reparatur-Werkzeug",
+      ogImageAlt: "JayPDF Reparatur-Werkzeug",
     },
     hero: {
       title: "Beschädigte PDFs lokal reparieren und neu aufbauen",
@@ -635,7 +635,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "PDF-Reparatur-Workflow",
     },
-    benefitsTitle: "Warum PDFs mit PDFLince reparieren",
+    benefitsTitle: "Warum PDFs mit JayPDF reparieren",
     benefits: [
       {
         title: "Tiefenwiederherstellung",
@@ -654,7 +654,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "So reparierst du ein PDF mit PDFLince",
+      title: "So reparierst du ein PDF mit JayPDF",
       steps: [
         "Lade die beschädigte PDF-Datei hoch.",
         "Klicke auf „Verarbeiten“, um die Reparatur zu starten.",

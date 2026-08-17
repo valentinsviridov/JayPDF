@@ -14,7 +14,7 @@ const LOCALE = "it" as const;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
-  title: "PDFLince - Merge, Compress, Split, and Convert PDFs Online",
+  title: "JayPDF - Merge, Compress, Split, and Convert PDFs Online",
   description: "Free online PDF tools to merge, compress, split, extract, and convert PDFs. 100% private, local processing in your browser.",
   icons: SHARED_ICONS,
   alternates: {
@@ -47,8 +47,8 @@ export const metadata = {
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-it.png", width: 1409, height: 736, alt: "PDFLince - Elaborazione PDF gratuita e privata" }],
-    title: "PDFLince - Strumenti PDF gratuiti e privati nel tuo browser",
+    images: [{ url: "https://pdflince.com/og-images/og-image-it.png", width: 1409, height: 736, alt: "JayPDF - Elaborazione PDF gratuita e privata" }],
+    title: "JayPDF - Strumenti PDF gratuiti e privati nel tuo browser",
     description: "Unisci, comprimi, dividi e converti PDF senza dover caricare i file online. Elaborazione sicura e completamente privata.",
     url: "https://pdflince.com/it",
     locale: "it_IT",

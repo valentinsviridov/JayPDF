@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "404 – Page Not Found | PDFLince",
-  description: "The page you were looking for doesn't exist. Go back to PDFLince and continue working with your PDFs.",
+  title: "404 – Page Not Found | JayPDF",
+  description: "The page you were looking for doesn't exist. Go back to JayPDF and continue working with your PDFs.",
 };
 
 export default function NotFound() {
@@ -35,8 +35,8 @@ export default function NotFound() {
         >
           <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%", display: "flex" }}>
             <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit" }}>
-              <Image src="/favicon.ico" alt="PDFLince logo" width={32} height={32} style={{ marginRight: "0.5rem" }} />
-              <span style={{ fontSize: "1.25rem", fontWeight: 700, fontFamily: "'Montserrat', sans-serif" }}>PDFLince</span>
+              <Image src="/favicon.ico" alt="JayPDF logo" width={32} height={32} style={{ marginRight: "0.5rem" }} />
+              <span style={{ fontSize: "1.25rem", fontWeight: 700, fontFamily: "'Montserrat', sans-serif" }}>JayPDF</span>
             </Link>
           </div>
         </header>
@@ -60,7 +60,7 @@ export default function NotFound() {
           <div style={{ position: "relative", marginBottom: "1.5rem" }}>
             <Image 
               src="/images/stickers/pdflince_logo_processed.webp" 
-              alt="PDFLince Mascot" 
+              alt="JayPDF Mascot" 
               width={120}
               height={120}
               style={{ width: "120px", height: "auto", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.1))" }} 

@@ -68,7 +68,7 @@ test('PDF Manual Crop Workflow', async ({ page }) => {
     await processButton.click();
     const download = await downloadPromise;
 
-    expect(download.suggestedFilename()).toMatch(/cropped_PDFLince\.pdf$/);
+    expect(download.suggestedFilename()).toMatch(/cropped_JayPDF\.pdf$/);
 
     const downloadPath = path.join(__dirname, 'downloaded-cropped.pdf');
     await download.saveAs(downloadPath);

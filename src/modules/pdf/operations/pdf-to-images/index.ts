@@ -15,7 +15,7 @@ export function sanitizeImageBaseName(raw: string): string {
     .replace(/[^\p{L}\p{N}\-_. ]/gu, '-')
     .replace(/\s+/g, '-');
   const cleaned = normalized.replace(/-+/g, '-').replace(/^-|-$/g, '');
-  return cleaned.length > 0 ? cleaned.toLowerCase() : 'pdflince';
+  return cleaned.length > 0 ? cleaned.toLowerCase() : 'jaypdf';
 }
 
 function stripExtension(fileName: string): string {
@@ -35,7 +35,7 @@ export async function pdfToImages(
     const scale = (options.imageRenderDpi ?? 144) / 72;
     const format = options.imageOutputFormat ?? 'png';
     const extension = format === 'png' ? 'png' : 'jpg';
-    const fallbackName = isNamedBinarySource(input) ? stripExtension(input.name) : 'pdflince';
+    const fallbackName = isNamedBinarySource(input) ? stripExtension(input.name) : 'jaypdf';
     const baseName = sanitizeImageBaseName(options.imageBaseName ?? fallbackName);
     const files: Array<{ name: string; blob: Blob }> = [];
 

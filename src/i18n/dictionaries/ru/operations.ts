@@ -7,7 +7,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "szhat",
     mode: "compress",
     meta: {
-      title: "Сжать PDF онлайн бесплатно | Уменьшить размер | PDFLince",
+      title: "Сжать PDF онлайн бесплатно | Уменьшить размер | JayPDF",
       description:
         "Эффективно уменьшайте размер PDF-файлов без потери качества. Бесплатное и конфиденциальное сжатие прямо в браузере — без загрузки на сервер.",
       keywords: [
@@ -18,10 +18,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "оптимизировать pdf",
         "pdf меньше весит",
       ],
-      ogTitle: "Сжимайте PDF без потери качества | PDFLince",
+      ogTitle: "Сжимайте PDF без потери качества | JayPDF",
       ogDescription:
         "Загрузите файл, выберите оптимальный уровень сжатия и скачайте уменьшенный PDF за секунды — безопасно, без загрузки на чужие серверы.",
-      ogImageAlt: "Инструмент сжатия PDF на PDFLince",
+      ogImageAlt: "Инструмент сжатия PDF на JayPDF",
     },
     hero: {
       title: "Сжать PDF онлайн с сохранением качества",
@@ -32,9 +32,9 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "Выберите низкий, средний или высокий уровень сжатия под свои задачи",
         "Сохраняйте метаданные и структуру документа по необходимости",
       ],
-      imageAlt: "Рабочий процесс сжатия PDF в PDFLince",
+      imageAlt: "Рабочий процесс сжатия PDF в JayPDF",
     },
-    benefitsTitle: "Зачем сжимать PDF через PDFLince",
+    benefitsTitle: "Зачем сжимать PDF через JayPDF",
     benefits: [
       {
         title: "Сбалансированное качество",
@@ -53,7 +53,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Как сжать PDF через PDFLince",
+      title: "Как сжать PDF через JayPDF",
       steps: [
         "Нажмите «Загрузить файлы» и выберите PDF, который хотите оптимизировать.",
         "Выберите уровень сжатия и настройте дополнительные параметры, например удаление метаданных.",
@@ -75,7 +75,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "obedinit",
     mode: "merge",
     meta: {
-      title: "Объединить PDF онлайн | Склеить несколько PDF бесплатно | PDFLince",
+      title: "Объединить PDF онлайн | Склеить несколько PDF бесплатно | JayPDF",
       description:
         "Объедините несколько PDF в один документ без ограничений по количеству страниц. Перетащите, упорядочьте и скачайте результат мгновенно — полностью конфиденциально.",
       keywords: [
@@ -85,10 +85,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "merge pdf онлайн",
         "объединение файлов pdf",
       ],
-      ogTitle: "Объедините несколько PDF за секунды | PDFLince",
+      ogTitle: "Объедините несколько PDF за секунды | JayPDF",
       ogDescription:
         "Расположите документы в нужном порядке, настройте параметры и скачайте единый PDF без единой загрузки данных в облако.",
-      ogImageAlt: "Объединение нескольких PDF-файлов на PDFLince",
+      ogImageAlt: "Объединение нескольких PDF-файлов на JayPDF",
     },
     hero: {
       title: "Объединить PDF онлайн — быстро и безопасно",
@@ -99,9 +99,9 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "Без скрытых ограничений — объединяйте объёмные документы бесплатно",
         "Сохраняйте закладки и метаданные при необходимости",
       ],
-      imageAlt: "Объединение документов PDF в PDFLince",
+      imageAlt: "Объединение документов PDF в JayPDF",
     },
-    benefitsTitle: "Преимущества объединения PDF через PDFLince",
+    benefitsTitle: "Преимущества объединения PDF через JayPDF",
     benefits: [
       {
         title: "Единообразная подача",
@@ -120,7 +120,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Как объединить PDF через PDFLince",
+      title: "Как объединить PDF через JayPDF",
       steps: [
         "Нажмите «Загрузить файлы» и выберите как минимум два PDF-документа.",
         "Перетащите файлы или используйте стрелки для настройки итогового порядка.",
@@ -142,7 +142,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "razdelit",
     mode: "split",
     meta: {
-      title: "Разделить PDF по страницам или главам | Бесплатно | PDFLince",
+      title: "Разделить PDF по страницам или главам | Бесплатно | JayPDF",
       description:
         "Разбейте PDF на несколько файлов по диапазону страниц или разделам. Полный контроль над структурой документа — без загрузки на сервер.",
       keywords: [
@@ -152,10 +152,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "pdf разделение",
         "нарезать pdf",
       ],
-      ogTitle: "Разделяйте PDF с точностью | PDFLince",
+      ogTitle: "Разделяйте PDF с точностью | JayPDF",
       ogDescription:
         "Выберите, как именно разбить документ, создайте нужное количество файлов и скачайте их мгновенно на своё устройство.",
-      ogImageAlt: "Разделение PDF-файла в PDFLince",
+      ogImageAlt: "Разделение PDF-файла в JayPDF",
     },
     hero: {
       title: "Разделить PDF по страницам или сегментам",
@@ -168,7 +168,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Рабочий процесс разделения PDF",
     },
-    benefitsTitle: "Что даёт разделение PDF через PDFLince",
+    benefitsTitle: "Что даёт разделение PDF через JayPDF",
     benefits: [
       {
         title: "Контроль над раскрытием информации",
@@ -187,14 +187,14 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Как разделить PDF через PDFLince",
+      title: "Как разделить PDF через JayPDF",
       steps: [
         "Загрузите PDF, который нужно разбить, с вашего устройства.",
         "Выберите разбивку по фиксированному числу страниц или настройте диапазоны вручную.",
         "Нажмите «Обработать» и скачайте созданные документы автоматически.",
       ],
       note:
-        "PDFLince скачает первый файл немедленно, остальные сохранятся на устройстве без лишних шагов.",
+        "JayPDF скачает первый файл немедленно, остальные сохранятся на устройстве без лишних шагов.",
     },
     useCasesTitle: "Типичные сценарии разделения PDF",
     useCases: [
@@ -209,7 +209,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "izvlech",
     mode: "extract",
     meta: {
-      title: "Извлечь страницы из PDF | Сохранить отдельно | PDFLince",
+      title: "Извлечь страницы из PDF | Сохранить отдельно | JayPDF",
       description:
         "Выберите нужные страницы из любого PDF и мгновенно создайте новый документ. Приватная обработка без ограничений прямо в браузере.",
       keywords: [
@@ -219,10 +219,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "extract pdf pages",
         "создать pdf из страниц",
       ],
-      ogTitle: "Извлекайте только нужные страницы | PDFLince",
+      ogTitle: "Извлекайте только нужные страницы | JayPDF",
       ogDescription:
         "Отметьте нужные страницы, создайте новый PDF за секунды и держите свои данные в безопасности на собственном устройстве.",
-      ogImageAlt: "Выбор страниц PDF в PDFLince",
+      ogImageAlt: "Выбор страниц PDF в JayPDF",
     },
     hero: {
       title: "Извлечь отдельные страницы из PDF",
@@ -233,9 +233,9 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "Сохраняйте оригинальную нумерацию или создавайте новую",
         "Скачивайте результирующий PDF мгновенно",
       ],
-      imageAlt: "Извлечение страниц из PDF в PDFLince",
+      imageAlt: "Извлечение страниц из PDF в JayPDF",
     },
-    benefitsTitle: "Преимущества извлечения страниц через PDFLince",
+    benefitsTitle: "Преимущества извлечения страниц через JayPDF",
     benefits: [
       {
         title: "Только нужная информация",
@@ -254,7 +254,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Как извлечь страницы через PDFLince",
+      title: "Как извлечь страницы через JayPDF",
       steps: [
         "Загрузите PDF и выберите документ для работы.",
         "Отметьте нужные страницы на панели миниатюр.",
@@ -276,7 +276,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "obrezat",
     mode: "crop",
     meta: {
-      title: "Обрезать страницы PDF онлайн | Убрать поля | PDFLince",
+      title: "Обрезать страницы PDF онлайн | Убрать поля | JayPDF",
       description:
         "Обрезайте страницы PDF и удаляйте лишние поля прямо в браузере. Выберите страницы, настройте область обрезки — без загрузки на сервер.",
       keywords: [
@@ -286,10 +286,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "убрать белые поля pdf",
         "crop pdf онлайн",
       ],
-      ogTitle: "Обрезайте страницы PDF конфиденциально | PDFLince",
+      ogTitle: "Обрезайте страницы PDF конфиденциально | JayPDF",
       ogDescription:
         "Уберите белые поля, сфокусируйте содержимое каждой страницы — всё обрабатывается локально на вашем устройстве.",
-      ogImageAlt: "Обрезка страниц PDF в PDFLince",
+      ogImageAlt: "Обрезка страниц PDF в JayPDF",
     },
     hero: {
       title: "Обрезать страницы PDF и убрать поля",
@@ -300,9 +300,9 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "Точно задайте верхнее, правое, нижнее и левое поля в пунктах",
         "Полностью локальная обработка прямо на вашем устройстве",
       ],
-      imageAlt: "Рабочий процесс обрезки PDF в PDFLince",
+      imageAlt: "Рабочий процесс обрезки PDF в JayPDF",
     },
-    benefitsTitle: "Зачем обрезать PDF через PDFLince",
+    benefitsTitle: "Зачем обрезать PDF через JayPDF",
     benefits: [
       {
         title: "Чистые страницы",
@@ -321,7 +321,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Как обрезать страницы PDF через PDFLince",
+      title: "Как обрезать страницы PDF через JayPDF",
       steps: [
         "Загрузите PDF и выберите файл, страницы которого нужно обрезать.",
         "Отметьте нужные страницы и задайте параметры обрезки по краям.",
@@ -343,7 +343,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "povernut",
     mode: "rotate",
     meta: {
-      title: "Повернуть страницы PDF онлайн | Исправить ориентацию | PDFLince",
+      title: "Повернуть страницы PDF онлайн | Исправить ориентацию | JayPDF",
       description:
         "Поворачивайте выбранные страницы PDF на 90 или 180 градусов прямо в браузере. Бесплатно, конфиденциально и полностью локально.",
       keywords: [
@@ -353,10 +353,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "исправить ориентацию pdf",
         "повернуть страницы pdf",
       ],
-      ogTitle: "Поворачивайте страницы PDF за секунды | PDFLince",
+      ogTitle: "Поворачивайте страницы PDF за секунды | JayPDF",
       ogDescription:
         "Выберите страницы с неправильной ориентацией, задайте угол поворота и скачайте исправленный PDF без загрузки куда-либо.",
-      ogImageAlt: "Поворот страниц PDF в PDFLince",
+      ogImageAlt: "Поворот страниц PDF в JayPDF",
     },
     hero: {
       title: "Повернуть страницы PDF без потери качества",
@@ -367,9 +367,9 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "Выберите поворот на 90° вправо, 180° или 90° влево",
         "Всё работает в браузере — без загрузки и задержек",
       ],
-      imageAlt: "Рабочий процесс поворота страниц PDF в PDFLince",
+      imageAlt: "Рабочий процесс поворота страниц PDF в JayPDF",
     },
-    benefitsTitle: "Зачем поворачивать страницы через PDFLince",
+    benefitsTitle: "Зачем поворачивать страницы через JayPDF",
     benefits: [
       {
         title: "Точечные исправления",
@@ -388,7 +388,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Как повернуть страницы PDF через PDFLince",
+      title: "Как повернуть страницы PDF через JayPDF",
       steps: [
         "Загрузите PDF и выберите документ, страницы которого нужно исправить.",
         "Отметьте нужные страницы и выберите угол: 90° вправо, 180° или 90° влево.",
@@ -410,7 +410,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "pereupordochit",
     mode: "reorder",
     meta: {
-      title: "Переупорядочить страницы PDF | Изменить порядок | PDFLince",
+      title: "Переупорядочить страницы PDF | Изменить порядок | JayPDF",
       description:
         "Легко переупорядочивайте страницы PDF перетаскиванием. Исправьте порядок и сохраните результат мгновенно — полностью локально.",
       keywords: [
@@ -420,10 +420,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "перестановка страниц pdf",
         "организовать pdf",
       ],
-      ogTitle: "Упорядочивайте страницы PDF без лишних программ | PDFLince",
+      ogTitle: "Упорядочивайте страницы PDF без лишних программ | JayPDF",
       ogDescription:
         "Перетащите страницы на нужное место, исправьте ошибки порядка и скачайте идеально организованный PDF.",
-      ogImageAlt: "Переупорядочивание страниц PDF в PDFLince",
+      ogImageAlt: "Переупорядочивание страниц PDF в JayPDF",
     },
     hero: {
       title: "Переупорядочить страницы PDF перетаскиванием",
@@ -436,7 +436,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Интерфейс упорядочивания страниц PDF",
     },
-    benefitsTitle: "Почему стоит упорядочивать PDF через PDFLince",
+    benefitsTitle: "Почему стоит упорядочивать PDF через JayPDF",
     benefits: [
       {
         title: "Ускорение рабочих процессов",
@@ -455,7 +455,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Как переупорядочить страницы PDF через PDFLince",
+      title: "Как переупорядочить страницы PDF через JayPDF",
       steps: [
         "Загрузите PDF и выберите документ для редактирования.",
         "Перетащите каждую миниатюру до нужного положения.",
@@ -477,7 +477,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "pdf-v-izobrazheniya",
     mode: "pdfToImages",
     meta: {
-      title: "Конвертировать PDF в изображения | Экспорт PNG / JPEG | PDFLince",
+      title: "Конвертировать PDF в изображения | Экспорт PNG / JPEG | JayPDF",
       description:
         "Превращайте каждую страницу PDF в высококачественные PNG или JPEG изображения. Выберите разрешение и скачайте всё в ZIP — 100% приватно.",
       keywords: [
@@ -488,10 +488,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "экспорт страниц pdf",
         "скачать pdf как изображения",
       ],
-      ogTitle: "Экспортируйте страницы PDF как чёткие изображения | PDFLince",
+      ogTitle: "Экспортируйте страницы PDF как чёткие изображения | JayPDF",
       ogDescription:
         "Рендерите каждую страницу прямо в браузере. Настройте качество, задайте имена файлов и получите аккуратный ZIP-архив мгновенно.",
-      ogImageAlt: "PDFLince экспортирует PDF в изображения",
+      ogImageAlt: "JayPDF экспортирует PDF в изображения",
     },
     hero: {
       title: "Конвертировать страницы PDF в PNG или JPEG",
@@ -504,7 +504,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Рабочий процесс экспорта PDF в изображения",
     },
-    benefitsTitle: "Зачем экспортировать PDF как изображения через PDFLince",
+    benefitsTitle: "Зачем экспортировать PDF как изображения через JayPDF",
     benefits: [
       {
         title: "Презентационное качество",
@@ -545,7 +545,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "izobrazheniya-v-pdf",
     mode: "imagesToPdf",
     meta: {
-      title: "Создать PDF из изображений | JPG, PNG в PDF | PDFLince",
+      title: "Создать PDF из изображений | JPG, PNG в PDF | JayPDF",
       description:
         "Создавайте профессиональные PDF из ваших изображений. Организуйте фото, настройте макет и поля — документ генерируется локально в браузере.",
       keywords: [
@@ -556,10 +556,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "конвертировать картинки в pdf",
         "webp в pdf",
       ],
-      ogTitle: "Создайте аккуратный PDF из ваших изображений | PDFLince",
+      ogTitle: "Создайте аккуратный PDF из ваших изображений | JayPDF",
       ogDescription:
         "Перетащите изображения, настройте параметры страницы и экспортируйте PDF, готовый к печати, — без загрузки файлов и водяных знаков.",
-      ogImageAlt: "Создание PDF из изображений в PDFLince",
+      ogImageAlt: "Создание PDF из изображений в JayPDF",
     },
     hero: {
       title: "Собрать JPG или PNG в профессиональный PDF",
@@ -572,7 +572,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Рабочий процесс создания PDF из изображений",
     },
-    benefitsTitle: "Зачем собирать PDF из изображений через PDFLince",
+    benefitsTitle: "Зачем собирать PDF из изображений через JayPDF",
     benefits: [
       {
         title: "Единообразный вид",
@@ -613,7 +613,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
     slug: "vosstanovit",
     mode: "repair",
     meta: {
-      title: "Восстановить PDF онлайн бесплатно | Исправление поврежденных файлов | PDFLince",
+      title: "Восстановить PDF онлайн бесплатно | Исправление поврежденных файлов | JayPDF",
       description:
         "Восстановление поврежденных или испорченных PDF-файлов прямо в браузере. Надежная локальная пересборка нечитаемых PDF.",
       keywords: [
@@ -622,10 +622,10 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
         "починить pdf",
         "восстановление pdf онлайн",
       ],
-      ogTitle: "Восстановить поврежденные PDF онлайн | PDFLince",
+      ogTitle: "Восстановить поврежденные PDF онлайн | JayPDF",
       ogDescription:
         "Исправление нечитаемых PDF прямо в браузере со 100% конфиденциальностью и без отправки на сервер.",
-      ogImageAlt: "Интерфейс восстановления PDF в PDFLince",
+      ogImageAlt: "Интерфейс восстановления PDF в JayPDF",
     },
     hero: {
       title: "Локальное восстановление и пересборка поврежденных PDF",
@@ -638,7 +638,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       ],
       imageAlt: "Процесс восстановления PDF",
     },
-    benefitsTitle: "Почему стоит восстанавливать PDF в PDFLince",
+    benefitsTitle: "Почему стоит восстанавливать PDF в JayPDF",
     benefits: [
       {
         title: "Глубокое восстановление",
@@ -657,7 +657,7 @@ const operationsRuContent: Record<OperationKey, OperationContent> = {
       },
     ],
     howTo: {
-      title: "Как восстановить PDF в PDFLince",
+      title: "Как восстановить PDF в JayPDF",
       steps: [
         "Загрузите поврежденный или нечитаемый PDF-файл.",
         "Нажмите «Обработать», чтобы запустить процесс восстановления.",

@@ -7,7 +7,7 @@ import { OperationKey } from "../../../types/operations";
 
 const locale = "ru" as const;
 const { label, nativeName, htmlLang, hrefLang } = localeLabels[locale];
-const siteUrl = "https://pdflince.com";
+const siteUrl = "https://jaypdf.com";
 const homePath = getRoutePath(locale, "home");
 
 const operationsRoutes: Record<OperationKey, string> = {
@@ -37,9 +37,9 @@ export const ruDictionary: Dictionary = {
   },
   metadata: {
     site: {
-      title: "PDFLince – Сжать, объединить и конвертировать PDF бесплатно",
+      title: "JayPDF – Сжать, объединить и конвертировать PDF бесплатно",
       description:
-        "PDFLince — набор инструментов для работы с PDF с упором на конфиденциальность. Объединяйте, сжимайте, делите, извлекайте, поворачивайте и конвертируйте PDF прямо в браузере. Вся обработка остаётся на вашем устройстве.",
+        "JayPDF — набор инструментов для работы с PDF с упором на конфиденциальность. Объединяйте, сжимайте, делите, извлекайте, поворачивайте и конвертируйте PDF прямо в браузере. Вся обработка остаётся на вашем устройстве.",
       keywords: [
         "сжать pdf",
         "объединить pdf",
@@ -59,22 +59,22 @@ export const ruDictionary: Dictionary = {
       ],
       canonical: `${siteUrl}${homePath}`,
       openGraph: {
-        title: "PDFLince – Сжать, Объединить, Разделить, PDF в Изображение",
+        title: "JayPDF – Сжать, Объединить, Разделить, PDF в Изображение",
         description:
           "Объединяйте, сжимайте, делите, извлекайте, переупорядочивайте и конвертируйте PDF без загрузки файлов на сервер. Бесплатно, конфиденциально, с локальной обработкой.",
         url: `${siteUrl}${homePath}`,
         locale: "ru_RU",
         type: "website",
-        imageUrl: "https://pdflince.com/og-images/og-image-ru.png",
-        imageAlt: "PDFLince - Конфиденциальная и бесплатная обработка PDF",
+        imageUrl: "https://jaypdf.com/og-images/og-image-ru.png",
+        imageAlt: "JayPDF - Конфиденциальная и бесплатная обработка PDF",
       },
     },
     faq: {
-      title: "FAQ | PDFLince – Бесплатный набор инструментов для PDF",
+      title: "FAQ | JayPDF – Бесплатный набор инструментов для PDF",
       description:
-        "Ответы на часто задаваемые вопросы о PDFLince. Узнайте, как объединять, сжимать, делить, извлекать и переупорядочивать PDF без загрузки файлов.",
+        "Ответы на часто задаваемые вопросы о JayPDF. Узнайте, как объединять, сжимать, делить, извлекать и переупорядочивать PDF без загрузки файлов.",
       keywords: [
-        "pdflince faq",
+        "jaypdf faq",
         "вопросы pdf",
         "помощь pdf",
         "помощь объединение pdf",
@@ -86,22 +86,22 @@ export const ruDictionary: Dictionary = {
       canonical: `${siteUrl}${getRoutePath(locale, "faq")}`,
     },
     support: {
-      title: "Поддержать PDFLince | Сохраните инструменты бесплатными и конфиденциальными",
+      title: "Поддержать JayPDF | Сохраните инструменты бесплатными и конфиденциальными",
       description:
-        "Ваша поддержка позволяет PDFLince оставаться небольшим, независимым проектом с упором на конфиденциальность. Помогите покрыть расходы на хостинг и развитие.",
+        "Ваша поддержка позволяет JayPDF оставаться небольшим, независимым проектом с упором на конфиденциальность. Помогите покрыть расходы на хостинг и развитие.",
       keywords: [
-        "поддержать pdflince",
+        "поддержать jaypdf",
         "помочь pdf инструменту",
         "поддержка конфиденциальных проектов",
-        "донат pdflince stripe",
-        "сохранить pdflince бесплатным",
+        "донат jaypdf stripe",
+        "сохранить jaypdf бесплатным",
       ],
       canonical: `${siteUrl}${getRoutePath(locale, "support")}`,
     },
     operations: operationsRu,
   },
   brand: {
-    name: "PDFLince",
+    name: "JayPDF",
     tagline: "Локальная обработка • 100% конфиденциально",
   },
   components: {
@@ -115,7 +115,7 @@ export const ruDictionary: Dictionary = {
     },
     footer: {
       privacy: "Локальная обработка • 100% конфиденциально • Открытые лицензии",
-      rights: `© ${new Date().getFullYear()} PDFLince — Инструменты для работы с PDF без компромиссов с конфиденциальностью`,
+      rights: `Copyright © 2026 Valentin Sviridov — Инструменты для работы с PDF без компромиссов с конфиденциальностью`,
       links: {
         home: "Главная",
         faq: "Вопросы и ответы",
@@ -162,7 +162,7 @@ export const ruDictionary: Dictionary = {
       question: "Было полезно?",
       thanks: "Спасибо за отзыв!",
       whatWrong: "Расскажите, что пошло не так",
-      emailSubject: "Отзыв для PDFLince",
+      emailSubject: "Отзыв для JayPDF",
     },
     pdfProcessor: {
       title: "Выберите операцию",
@@ -232,16 +232,16 @@ export const ruDictionary: Dictionary = {
         },
       },
       downloadNames: {
-        compress: "szhatyi_PDFLince",
-        merge: "obedinennyi_PDFLince",
-        split: "chast_PDFLince",
-        extract: "izvlechennyi_PDFLince",
-        crop: "obrezannyi_PDFLince",
-        rotate: "povernutyi_PDFLince",
-        reorder: "pereupordochennyi_PDFLince",
-        pdfToImages: "izobrazheniya_PDFLince",
-        imagesToPdf: "izobrazheniya_v_pdf_PDFLince",
-        repair: "vosstanovlennyi_PDFLince",
+        compress: "szhatyi_JayPDF",
+        merge: "obedinennyi_JayPDF",
+        split: "chast_JayPDF",
+        extract: "izvlechennyi_JayPDF",
+        crop: "obrezannyi_JayPDF",
+        rotate: "povernutyi_JayPDF",
+        reorder: "pereupordochennyi_JayPDF",
+        pdfToImages: "izobrazheniya_JayPDF",
+        imagesToPdf: "izobrazheniya_v_pdf_JayPDF",
+        repair: "vosstanovlennyi_JayPDF",
       },
       processButton: {
         idleSingle: "Обработать 1 файл",
@@ -331,10 +331,10 @@ export const ruDictionary: Dictionary = {
         clear: "Очистить итоги",
       },
       donationReminder: {
-        message: "PDFLince помог вам сэкономить время? Ваша поддержка сохраняет его бесплатным.",
-        actionLabel: "Поддержать PDFLince",
+        message: "JayPDF помог вам сэкономить время? Ваша поддержка сохраняет его бесплатным.",
+        actionLabel: "Поддержать JayPDF",
         withSavings: (percent: string, saved: string) =>
-          `Сэкономили ${saved} (${percent}%)? Помогите сохранить PDFLince без рекламы.`,
+          `Сэкономили ${saved} (${percent}%)? Помогите сохранить JayPDF без рекламы.`,
       },
       statusDialog: {
         processingTitle: "Локальная обработка",
@@ -350,8 +350,8 @@ export const ruDictionary: Dictionary = {
         retryLabel: "Повторить",
         closeLabel: "Закрыть",
         sharePrompt: {
-          dialogMessage: "PDFLince полностью бесплатен и уважает вашу конфиденциальность. Помогите нам сохранить его таким, порекомендовав коллеге.",
-          shareText: "Только что использовал PDFLince для работы с PDF. Это бесплатный, быстрый и полностью конфиденциальный инструментарий для разделения, сжатия, объединения и конвертации PDF прямо в браузере. Отлично подходит для чувствительных документов!",
+          dialogMessage: "JayPDF полностью бесплатен и уважает вашу конфиденциальность. Помогите нам сохранить его таким, порекомендовав коллеге.",
+          shareText: "Только что использовал JayPDF для работы с PDF. Это бесплатный, быстрый и полностью конфиденциальный инструментарий для разделения, сжатия, объединения и конвертации PDF прямо в браузере. Отлично подходит для чувствительных документов!",
           actionLabel: "Поделиться",
           copiedLabel: "Скопировано!",
         },
@@ -520,7 +520,7 @@ export const ruDictionary: Dictionary = {
         zipLabel: "Упаковать изображения в ZIP",
         zipHint: "Скачать в одном архиве.",
         baseNameLabel: "Базовое имя файла",
-        baseNamePlaceholder: "pdflince_stranitsy",
+        baseNamePlaceholder: "jaypdf_stranitsy",
         baseNameHint: "Оставьте пустым, чтобы использовать имя оригинального PDF.",
       },
       imagesToPdf: {
@@ -558,14 +558,14 @@ export const ruDictionary: Dictionary = {
   pages: {
     home: {
       hero: {
-        title: "PDFLince: Сжимайте, объединяйте и конвертируйте PDF бесплатно",
+        title: "JayPDF: Сжимайте, объединяйте и конвертируйте PDF бесплатно",
         subtitle:
           "Сжимайте, объединяйте, делите, извлекайте, поворачивайте и конвертируйте PDF прямо в браузере. Без загрузки на сервер, полностью конфиденциально.",
         badges: [
           "Сжать PDF",
           "Объединить PDF",
           "Локальная обработка",
-          "Поддержать PDFLince",
+          "Поддержать JayPDF",
         ],
         imageAlt: "Иллюстрация PDF-документа",
         ctaLinks: [
@@ -582,7 +582,7 @@ export const ruDictionary: Dictionary = {
         ],
       },
       why: {
-        title: "Почему стоит выбрать PDFLince?",
+        title: "Почему стоит выбрать JayPDF?",
         cards: [
           {
             title: "Конфиденциально по умолчанию",
@@ -605,7 +605,7 @@ export const ruDictionary: Dictionary = {
         ],
       },
       callout: {
-        title: "Помогите сохранить PDFLince бесплатным",
+        title: "Помогите сохранить JayPDF бесплатным",
         description:
           "Каждое пожертвование покрывает расходы на хостинг и позволяет нам поддерживать 100% приватную работу без рекламы и слежки.",
         ctaLabel: "Поддержать проект",
@@ -616,9 +616,9 @@ export const ruDictionary: Dictionary = {
     },
     faq: {
       title: "Вопросы и ответы",
-      intro: "Ответы на самые частые вопросы о PDFLince",
+      intro: "Ответы на самые частые вопросы о JayPDF",
       cta: {
-        title: "Попробуйте PDFLince прямо сейчас",
+        title: "Попробуйте JayPDF прямо сейчас",
         description:
           "Объединяйте, сжимайте, делите, извлекайте, поворачивайте и переупорядочивайте PDF в полной конфиденциальности.",
         ctaLabel: "Перейти к инструментам",
@@ -627,9 +627,9 @@ export const ruDictionary: Dictionary = {
     support: {
       hero: {
         eyebrow: "🌱 Независимый проект",
-        title: "Помогите сохранить PDFLince бесплатным и конфиденциальным",
+        title: "Помогите сохранить JayPDF бесплатным и конфиденциальным",
         subtitle:
-          "PDFLince — небольшой проект, созданный с душой. Ваша поддержка покрывает расходы на серверы.",
+          "JayPDF — небольшой проект, созданный с душой. Ваша поддержка покрывает расходы на серверы.",
         highlight: "Просто инструмент, который уважает вашу конфиденциальность.",
       },
       reasons: {
@@ -638,7 +638,7 @@ export const ruDictionary: Dictionary = {
           {
             title: "Сохранить бесплатным",
             description:
-              "Пожертвования позволяют нам поддерживать PDFLince 100% бесплатным для всех.",
+              "Пожертвования позволяют нам поддерживать JayPDF 100% бесплатным для всех.",
             icon: "💚",
           },
           {
@@ -671,7 +671,7 @@ export const ruDictionary: Dictionary = {
             id: "monthly",
             title: "Ежемесячная поддержка",
             amount: "10 €/месяц",
-            description: "Даёт нам время каждую неделю улучшать PDFLince.",
+            description: "Даёт нам время каждую неделю улучшать JayPDF.",
             ctaLabel: "Пожертвовать 10 €/месяц",
             ctaHref: "#stripe-checkout-monthly",
             badge: "💙 Спасибо",
@@ -702,7 +702,7 @@ export const ruDictionary: Dictionary = {
           {
             question: "Что будет, если я не смогу пожертвовать?",
             answer:
-              "Всё в порядке. PDFLince останется бесплатным. Просто рассказать о нём другим — уже огромная помощь.",
+              "Всё в порядке. JayPDF останется бесплатным. Просто рассказать о нём другим — уже огромная помощь.",
           },
           {
             question: "Получу ли я квитанцию?",
@@ -719,17 +719,17 @@ export const ruDictionary: Dictionary = {
       closing: {
         title: "Спасибо, что вы с нами",
         description:
-          "Каждый, кто поддерживает PDFLince, помогает сохранить жизнь полезному набору PDF-инструментов.",
+          "Каждый, кто поддерживает JayPDF, помогает сохранить жизнь полезному набору PDF-инструментов.",
         ctaLabel: "Написать команде",
-        ctaHref: "mailto:info@pdflince.com?subject=Привет%20команда%20PDFLince",
+        ctaHref: "mailto:info@jaypdf.com?subject=Привет%20команда%20JayPDF",
       },
       legalNotice: {
         title: "Правовая информация и прозрачность",
         points: [
-          "PDFLince — независимый личный проект, управляемый небольшой командой добровольцев.",
+          "JayPDF — независимый личный проект, управляемый небольшой командой добровольцев.",
           "Взносы добровольны и направляются исключительно на покрытие расходов на хостинг и разработку.",
           "Платежи не являются налогово вычитаемыми пожертвованиями; Stripe автоматически выдаст квитанцию.",
-          "Сервис предоставляется «как есть», без гарантий. Вопросы? info@pdflince.com.",
+          "Сервис предоставляется «как есть», без гарантий. Вопросы? info@jaypdf.com.",
         ],
       },
     },

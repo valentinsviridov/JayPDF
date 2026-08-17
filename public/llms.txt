@@ -1,47 +1,22 @@
-# PDFLince
+# JayPDF
 
-> PDFLince es una herramienta gratuita y de código abierto para procesar documentos PDF directamente en el navegador sin subir archivos a servidores. Ofrece compresión, unión, división, extracción, recorte, rotación, conversión y reordenamiento de páginas con procesamiento 100% local y privado.
+> JayPDF is a free, privacy-first, and open-source client-side PDF toolkit that processes PDF documents directly in the browser without uploading files to remote servers. It offers compression, merging, splitting, extraction, cropping, rotation, repair, and conversion with 100% local processing.
 
-PDFLince se creó para la comunidad hispanohablante, siendo ahora multilingüe, con énfasis en privacidad y rendimiento. La herramienta no requiere registro, no sube documentos a servidores externos y es compatible con todo tipo de PDFs.
+## Key Features
 
-## Funcionalidades Principales
+- **Compress PDF**: Reduces document size while preserving visual quality
+- **Merge PDFs**: Combines multiple PDF files into a single document
+- **Split PDF**: Splits a PDF into multiple independent files
+- **Extract Pages**: Extracts selected pages into a new PDF
+- **Crop PDF**: Crops PDF pages with visual margins or precise values
+- **Rotate PDF**: Rotates pages with live interactive preview
+- **Reorder Pages**: Reorders, duplicates, or removes pages
+- **Repair PDF**: Recovers damaged or corrupted PDFs
+- **PDF to Images**: Converts PDF pages to clean PNG or JPEG images
+- **Images to PDF**: Builds a PDF from image files (JPG, PNG, WEBP)
 
-- [Comprimir PDF](https://pdflince.com/comprimir): Reduce el tamaño de documentos manteniendo la mejor calidad posible
-- [Unir PDFs](https://pdflince.com/unir): Combina múltiples archivos PDF en uno solo
-- [Dividir PDF](https://pdflince.com/dividir): Separa un PDF en documentos independientes
-- [Extraer páginas](https://pdflince.com/extraer): Genera un nuevo PDF con las páginas seleccionadas
-- [Recortar PDF](https://pdflince.com/recortar): Recorta páginas de un PDF con selección visual o valores precisos
-- [Girar PDF](https://pdflince.com/girar): Rota las páginas seleccionadas y previsualiza los cambios
-- [Reordenar páginas](https://pdflince.com/reordenar): Cambia el orden de las páginas de un PDF sin perder información
-- [PDF a imágenes](https://pdflince.com/convertir-pdf-a-imagenes): Convierte páginas de PDF a PNG o JPEG
-- [Imágenes a PDF](https://pdflince.com/crear-pdf-desde-imagenes): Crea un PDF a partir de imágenes (JPG, PNG, WEBP)
-
-## Idiomas Disponibles / Available Languages
-
-PDFLince está disponible en 7 idiomas. Puedes acceder a la versión que prefieras:
-
-- [Español (Principal)](https://pdflince.com)
-- [English](https://pdflince.com/en)
-- [Français](https://pdflince.com/fr)
-- [Deutsch](https://pdflince.com/de)
-- [Português](https://pdflince.com/pt)
-- [Italiano](https://pdflince.com/it)
-- [Română](https://pdflince.com/ro)
-
-## English Summary
-
-PDFLince is an open-source, free, private, client-side PDF tool. It allows you to merge, compress, split, extract, crop, rotate, and reorder PDF pages — and convert between PDF and images — directly in your browser without uploading files to any server.
-
-### Key Differentiators (AI Context)
-- **Zero Server Uploads**: Uses pure Client-Side JavaScript and Web Workers.
+## Key Architectural Differentiators
+- **Zero Server Uploads**: Uses pure client-side JavaScript, WebAssembly, and Web Workers.
 - **Privacy-First**: Documents never leave the user's device. Ideal for sensitive, legal, or financial documents.
-- **No Limits**: No file size limits and no registration required.
-- **Open Source**: A transparent, free alternative to proprietary cloud-based PDF tools.
-
-## Información Técnica
-
-- [Preguntas Frecuentes](https://pdflince.com/preguntas-frecuentes): Respuestas a dudas comunes sobre PDFLince
-
-## Herramientas Relacionadas
-
-
+- **No Tracking**: No telemetry, analytics, tracking pixels, or external trackers.
+- **Open Source**: Distributed under AGPL-3.0-only with optional commercial licensing.

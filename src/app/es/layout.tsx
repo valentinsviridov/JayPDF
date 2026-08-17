@@ -14,7 +14,7 @@ const LOCALE = "es" as const;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
-  title: "PDFLince | Comprimir, unir, dividir y convertir PDF online sin subir archivos",
+  title: "JayPDF | Comprimir, unir, dividir y convertir PDF online sin subir archivos",
   description:
     "Procesa tus PDFs gratis: comprimir PDF, unir PDF, dividir PDF, extraer páginas y convertir PDF a imágenes o imágenes a PDF directamente en tu navegador. Todo es local y 100% privado.",
   keywords:
@@ -50,8 +50,8 @@ export const metadata = {
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-es.png", width: 1409, height: 736, alt: "PDFLince - Procesamiento de PDFs privado y gratuito" }],
-    title: "PDFLince | Herramientas PDF privadas y gratuitas en tu navegador",
+    images: [{ url: "https://pdflince.com/og-images/og-image-es.png", width: 1409, height: 736, alt: "JayPDF - Procesamiento de PDFs privado y gratuito" }],
+    title: "JayPDF | Herramientas PDF privadas y gratuitas en tu navegador",
     description:
       "Une, comprime, divide, extrae y convierte PDFs sin subir archivos. Resultados al instante con procesamiento 100% local y privado.",
     url: "https://pdflince.com/es",

@@ -24,14 +24,14 @@ describe('independent PDF operation modules', () => {
     const second = await createPdfBytes([202, 203]);
     const result = await mergePdfs([first, second], {
       addPageDividers: true,
-      metadata: { title: 'merged title', author: 'PDFLince' },
+      metadata: { title: 'merged title', author: 'JayPDF' },
     });
     const pdf = await PDFDocument.load(result);
     expect(pdf.getPageCount()).toBe(4);
     expect(pdf.getPage(0).getWidth()).toBeCloseTo(101);
     expect(pdf.getPage(2).getWidth()).toBeCloseTo(202);
     expect(pdf.getTitle()).toBe('merged title');
-    expect(pdf.getAuthor()).toBe('PDFLince');
+    expect(pdf.getAuthor()).toBe('JayPDF');
   });
 
   test('split creates deterministic page chunks and validates chunk size', async () => {
@@ -122,7 +122,7 @@ describe('independent PDF operation modules', () => {
 
   test('PDF-to-images filename policy is pure and directly testable', () => {
     expect(sanitizeImageBaseName('  Quarterly Résumé / 2026  ')).toBe('quarterly-résumé-2026');
-    expect(sanitizeImageBaseName('***')).toBe('pdflince');
+    expect(sanitizeImageBaseName('***')).toBe('jaypdf');
   });
 
   test('loadPdfWithBasicValidation produces detailed error including filename and virtual printer advice on corrupt PDF', async () => {

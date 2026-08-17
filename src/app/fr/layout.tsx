@@ -14,7 +14,7 @@ const LOCALE = "fr" as const;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
-  title: "PDFLince - Fusionner, Compresser, Diviser et Convertir des PDF",
+  title: "JayPDF - Fusionner, Compresser, Diviser et Convertir des PDF",
   description: "Outils PDF gratuits en ligne pour fusionner, compresser, diviser, extraire et convertir. 100% privé, traitement local dans votre navigateur.",
   icons: SHARED_ICONS,
   alternates: {
@@ -47,8 +47,8 @@ export const metadata = {
   },
   openGraph: {
     ...SHARED_OPEN_GRAPH,
-    images: [{ url: "https://pdflince.com/og-images/og-image-fr.png", width: 1409, height: 736, alt: "PDFLince - Traitement PDF privé et gratuit" }],
-    title: "PDFLince - Outils PDF gratuits et privés dans votre navigateur",
+    images: [{ url: "https://pdflince.com/og-images/og-image-fr.png", width: 1409, height: 736, alt: "JayPDF - Traitement PDF privé et gratuit" }],
+    title: "JayPDF - Outils PDF gratuits et privés dans votre navigateur",
     description: "Fusionnez, compressez, divisez et convertissez des PDF sans télécharger de fichiers. Sécurisé et 100% privé.",
     url: "https://pdflince.com/fr",
     locale: "fr_FR",
