@@ -81,22 +81,29 @@ export default function NavMenu() {
               </Link>
             </li>
 
-            <li className="md:ml-4">
+            <li className="flex items-center">
               <label className="sr-only" htmlFor="nav-language-select">
                 {nav.languageLabel}
               </label>
-              <select
-                id="nav-language-select"
-                className="w-full rounded-md border border-[var(--ui)] bg-white px-3 py-2 text-sm text-[var(--tx)] shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] md:w-auto"
-                value={locale}
-                onChange={handleLocaleChange}
-              >
-                {languageOptions.map(option => (
-                  <option key={option.locale} value={option.locale}>
-                    {localeLabels[option.locale].nativeName}
-                  </option>
-                ))}
-              </select>
+              <div className="relative inline-block w-full md:w-auto">
+                <select
+                  id="nav-language-select"
+                  className="w-full appearance-none rounded-lg border border-[var(--ui-2)] bg-white pl-3.5 pr-8 py-2 text-sm font-medium text-[var(--tx)] shadow-xs hover:border-[var(--accent)]/50 focus:border-[var(--accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] cursor-pointer md:w-auto transition-colors"
+                  value={locale}
+                  onChange={handleLocaleChange}
+                >
+                  {languageOptions.map(option => (
+                    <option key={option.locale} value={option.locale}>
+                      {localeLabels[option.locale].nativeName}
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5 text-[var(--tx-3)]">
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
