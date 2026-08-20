@@ -8,15 +8,19 @@ import { LocaleProvider } from "../../i18n/LocaleProvider";
 import { SchemaOrg } from "../../components/SchemaOrg";
 import { BreadcrumbSchema } from "../../components/seo/BreadcrumbSchema";
 
-import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES } from "../../lib/metadata-shared";
+import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES, SHARED_MANIFEST, SHARED_APPLE_WEB_APP, SHARED_VIEWPORT } from "../../lib/metadata-shared";
 
 const LOCALE = "de" as const;
+
+export const viewport = SHARED_VIEWPORT;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
   title: "JayPDF - PDFs zusammenführen, komprimieren, teilen und konvertieren",
   description: "Kostenlose Online-PDF-Tools zum Zusammenführen, Komprimieren, Teilen, Extrahieren und Konvertieren von PDFs. 100% privat, lokale Verarbeitung in Ihrem Browser.",
   icons: SHARED_ICONS,
+  manifest: SHARED_MANIFEST,
+  appleWebApp: SHARED_APPLE_WEB_APP,
   alternates: {
     canonical: "/de/",
     languages: SHARED_ALTERNATES_LANGUAGES,

@@ -6,6 +6,8 @@ import { DEFAULT_LOCALE, Locale, SUPPORTED_LOCALES } from "./config";
 import type { Dictionary } from "./dictionaries/dictionary-types";
 import { getDictionary, getDefaultDictionary } from "./get-dictionary";
 
+import ServiceWorkerRegister from "../components/ServiceWorkerRegister";
+
 const LocaleContext = createContext<Locale>(DEFAULT_LOCALE);
 const DictionaryContext = createContext<Dictionary>(getDefaultDictionary());
 
@@ -30,7 +32,10 @@ export function LocaleProvider({ locale: initialLocale, children }: { locale: Lo
 
   return (
     <LocaleContext.Provider value={locale}>
-      <DictionaryContext.Provider value={dictionary}>{children}</DictionaryContext.Provider>
+      <DictionaryContext.Provider value={dictionary}>
+        <ServiceWorkerRegister />
+        {children}
+      </DictionaryContext.Provider>
     </LocaleContext.Provider>
   );
 }

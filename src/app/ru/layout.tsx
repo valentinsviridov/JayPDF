@@ -8,15 +8,19 @@ import { LocaleProvider } from "../../i18n/LocaleProvider";
 import { SchemaOrg } from "../../components/SchemaOrg";
 import { BreadcrumbSchema } from "../../components/seo/BreadcrumbSchema";
 
-import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES } from "../../lib/metadata-shared";
+import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES, SHARED_MANIFEST, SHARED_APPLE_WEB_APP, SHARED_VIEWPORT } from "../../lib/metadata-shared";
 
 const LOCALE = "ru" as const;
+
+export const viewport = SHARED_VIEWPORT;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
   title: "JayPDF - Сжать, объединить, разделить и конвертировать PDF",
   description: "Бесплатные онлайн-инструменты для PDF: сжатие, объединение, разделение, извлечение и конвертация. 100% конфиденциально, локальная обработка в браузере.",
   icons: SHARED_ICONS,
+  manifest: SHARED_MANIFEST,
+  appleWebApp: SHARED_APPLE_WEB_APP,
   alternates: {
     canonical: "/ru/",
     languages: SHARED_ALTERNATES_LANGUAGES,

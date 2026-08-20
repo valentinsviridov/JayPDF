@@ -9,7 +9,9 @@ import { SchemaOrg } from "../../components/SchemaOrg";
 import { BreadcrumbSchema } from "../../components/seo/BreadcrumbSchema";
 import { localeLabels, DEFAULT_LOCALE, isLocale } from "../../i18n/config";
 
-import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES } from "../../lib/metadata-shared";
+import { METADATA_BASE, SHARED_ICONS, SHARED_OPEN_GRAPH, SHARED_TWITTER, SHARED_ALTERNATES_LANGUAGES, SHARED_MANIFEST, SHARED_APPLE_WEB_APP, SHARED_VIEWPORT } from "../../lib/metadata-shared";
+
+export const viewport = SHARED_VIEWPORT;
 
 export const metadata = {
   metadataBase: METADATA_BASE,
@@ -17,6 +19,8 @@ export const metadata = {
   description: "Free online PDF tools to merge, compress, split, extract, and convert PDFs. 100% private, local processing in your browser.",
   keywords: "merge pdf, compress pdf, split pdf, extract pdf pages, rotate pdf pages, reorder pdf, pdf to images, images to pdf, convert pdf, edit pdf offline",
   icons: SHARED_ICONS,
+  manifest: SHARED_MANIFEST,
+  appleWebApp: SHARED_APPLE_WEB_APP,
   alternates: {
     canonical: "/",
     languages: SHARED_ALTERNATES_LANGUAGES,

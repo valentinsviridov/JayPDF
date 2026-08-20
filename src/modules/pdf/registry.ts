@@ -40,3 +40,8 @@ export async function loadPdfOperation<Key extends PdfOperationKey>(
   }
   return operation;
 }
+
+export async function preloadAllPdfOperations(): Promise<void> {
+  const keys = Object.keys(operationLoaders) as PdfOperationKey[];
+  await Promise.allSettled(keys.map(key => loadPdfOperation(key)));
+}

@@ -113,6 +113,18 @@ The UI never imports `pdf-lib`, PDF.js, or the worker client directly. `src/comp
 
 ---
 
+## 📱 Progressive Web App (PWA) & Offline Support
+
+JayPDF is fully installable as a **Progressive Web App (PWA)** on mobile devices and desktop computers, offering seamless offline execution:
+
+- **Add to Home Screen**: Install JayPDF directly from your mobile browser (Safari on iOS: tap *Share* -> *Add to Home Screen*; Chrome on Android: tap the menu -> *Install app* / *Add to Home screen*).
+- **100% Offline Capability**: Once cached, all PDF tools (merge, compress, split, extract, rotate, reorder, crop, repair, and image conversions) operate completely offline without an active internet connection.
+- **Privacy & Local Isolation**: All assets and service workers run strictly on-device with zero external calls or telemetry.
+
+*This feature was proposed by **Alexandra Omelchenko**.*
+
+---
+
 ## 📄 License
 
 JayPDF uses a dual-licensing model.
@@ -144,3 +156,4 @@ The original MIT copyright and license notice is preserved in
 
 JayPDF is an independent project and is not affiliated with or
 endorsed by the PDFLince project or its maintainer.
+
