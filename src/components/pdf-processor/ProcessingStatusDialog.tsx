@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { trackEvent } from "../../lib/analytics";
+import { PwaInstallPrompt } from "../pwa/PwaInstallPrompt";
 
 export type DialogStatus = "processing" | "success" | "error";
 
@@ -284,6 +285,8 @@ export function ProcessingStatusDialog({
               ))}
             </ul>
           ) : null}
+
+          {status === "success" ? <PwaInstallPrompt /> : null}
 
           {donationPrompt ? (
             <div className="rounded-md border border-[var(--accent)]/30 bg-[var(--accent)]/10 p-4">

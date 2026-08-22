@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import "../styles/globals.css";
 
@@ -36,7 +35,7 @@ export default function NotFound() {
           }}
         >
           <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%", display: "flex" }}>
-            <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit", height: "80px", margin: "1px 0" }} aria-label="JayPDF">
+            <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit", height: "88px", margin: "0" }} aria-label="JayPDF">
               <JayPdfLogo className="h-full w-auto max-h-full object-contain" />
             </Link>
           </div>

@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useMemo, useState, type ChangeEvent } from 'react';
@@ -43,8 +42,8 @@ export default function NavMenu() {
 
   return (
     <nav className="w-full border-b border-[var(--ui)] bg-[var(--bg)]/90 backdrop-blur-sm">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-[1px] flex flex-wrap justify-between items-center">
-        <Link href={routes.home} className="flex items-center group h-[64px] sm:h-[80px] md:h-[92px] my-[1px]" aria-label="JayPDF">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-0 flex flex-wrap justify-between items-center">
+        <Link href={routes.home} className="flex items-center group h-[72px] sm:h-[88px] md:h-[96px] my-0 py-0.5" aria-label="JayPDF">
           <JayPdfLogo className="h-full w-auto max-h-full object-contain transition-transform group-hover:scale-[1.02]" />
         </Link>
 

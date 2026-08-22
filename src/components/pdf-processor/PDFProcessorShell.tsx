@@ -288,10 +288,13 @@ function PDFProcessorInterface({ initialMode }: { initialMode: ProcessingMode })
     [buildFileSignature, buildOptionsSignature]
   );
 
+  const metadataTitle = processingOptions.metadata?.title;
+  const bundleAsZip = Boolean(processingOptions.bundleAsZip);
+
   const buildFileName = useCallback(
     (operation: ProcessingMode, originalName?: string, index?: number) => {
-      if (operation === 'merge' && processingOptions.metadata?.title) {
-        const customTitle = processingOptions.metadata.title.trim();
+      if (operation === 'merge' && metadataTitle) {
+        const customTitle = metadataTitle.trim();
         if (customTitle) {
           const sanitizedTitle = customTitle.replace(/[^\p{L}\p{N}\-_ &()]/gu, '').trim();
           if (sanitizedTitle) {
@@ -305,10 +308,10 @@ function PDFProcessorInterface({ initialMode }: { initialMode: ProcessingMode })
         originalName,
         index,
         modeNames: downloadNames,
-        bundleAsZip: Boolean(processingOptions.bundleAsZip),
+        bundleAsZip,
       });
     },
-    [downloadNames, processingOptions.bundleAsZip]
+    [downloadNames, bundleAsZip, metadataTitle]
   );
 
   const currentFileKey = currentFile ? buildFileSignature(currentFile) : null;

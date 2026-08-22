@@ -1,5 +1,5 @@
 // JayPDF Service Worker - 100% Client-Side & Privacy-First Offline Caching
-const CACHE_VERSION = 'jaypdf-v1';
+const CACHE_VERSION = 'jaypdf-v2';
 const PRECACHE_ASSETS = [
   '/',
   '/manifest.webmanifest',

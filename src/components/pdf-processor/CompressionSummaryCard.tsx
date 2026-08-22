@@ -2,6 +2,7 @@
 
 import type { CompressionSummaryStrings } from "../../i18n/dictionaries/dictionary-types";
 import type { CompressionResult as ProcessingResult } from "../../modules/pdf/operations/compress/definition";
+import { PwaInstallPrompt } from "../pwa/PwaInstallPrompt";
 
 type CompressionSummaryCardProps = {
   strings: CompressionSummaryStrings;
@@ -86,6 +87,10 @@ export default function CompressionSummaryCard({
         >
           {strings.clear}
         </button>
+      </div>
+
+      <div className="mt-4">
+        <PwaInstallPrompt />
       </div>
     </div>
   );

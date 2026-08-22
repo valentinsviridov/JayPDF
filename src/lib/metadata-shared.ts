@@ -3,12 +3,12 @@ import { Metadata, Viewport } from "next";
 export const METADATA_BASE = new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://jaypdf.org");
 
 export const SHARED_ICONS = [
-    { rel: "icon", url: "/favicon.ico?v=3" },
-    { rel: "icon", type: "image/png", sizes: "32x32", url: "/favicon-32x32.png?v=3" },
-    { rel: "icon", type: "image/png", sizes: "48x48", url: "/favicon.png?v=3" },
-    { rel: "icon", type: "image/png", sizes: "192x192", url: "/favicon-192x192.png?v=3" },
-    { rel: "icon", type: "image/png", sizes: "512x512", url: "/favicon-512x512.png?v=3" },
-    { rel: "apple-touch-icon", sizes: "180x180", url: "/apple-touch-icon.png?v=3" },
+    { rel: "icon", url: "/favicon.ico?v=4" },
+    { rel: "icon", type: "image/png", sizes: "32x32", url: "/favicon-32x32.png?v=4" },
+    { rel: "icon", type: "image/png", sizes: "48x48", url: "/favicon.png?v=4" },
+    { rel: "icon", type: "image/png", sizes: "192x192", url: "/favicon-192x192.png?v=4" },
+    { rel: "icon", type: "image/png", sizes: "512x512", url: "/favicon-512x512.png?v=4" },
+    { rel: "apple-touch-icon", sizes: "180x180", url: "/apple-touch-icon.png?v=4" },
 ];
 
 export const SHARED_MANIFEST = "/manifest.webmanifest";

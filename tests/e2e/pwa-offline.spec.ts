@@ -30,6 +30,26 @@ test.describe('Progressive Web App (PWA) & Offline Capabilities', () => {
     expect(iconSizes).toContain('512x512');
   });
 
+  test('Favicon and Logo resources are properly served', async ({ request }) => {
+    const assets = [
+      '/images/jaypdf-logo.png',
+      '/images/jaypdf-logo@2x.png',
+      '/images/jaypdf-favicon.png',
+      '/favicon.ico',
+      '/favicon.png',
+      '/favicon-32x32.png',
+      '/favicon-192x192.png',
+      '/favicon-512x512.png',
+      '/apple-touch-icon.png',
+    ];
+
+    for (const asset of assets) {
+      const res = await request.get(asset);
+      expect(res.status(), `Asset ${asset} should return 200`).toBe(200);
+      expect(res.headers()['content-type']).toBeTruthy();
+    }
+  });
+
   test('HTML pages include PWA and mobile home-screen meta tags', async ({ page }) => {
     await page.goto('/');
 
@@ -44,6 +64,93 @@ test.describe('Progressive Web App (PWA) & Offline Capabilities', () => {
 
     const appleTouchIcon = page.locator('link[rel="apple-touch-icon"]').first();
     await expect(appleTouchIcon).toHaveAttribute('href', /\/apple-touch-icon\.png/);
+  });
+
+  test('Processing results page indicates PWA availability and provides install control in standard browser mode', async ({ page }, testInfo) => {
+    const testFile1 = getTestPdf1Path(testInfo.workerIndex);
+    const testFile2 = getTestPdf2Path(testInfo.workerIndex);
+
+    const doc1 = await PDFDocument.create();
+    doc1.addPage().drawText('PWA Results Test 1');
+    fs.writeFileSync(testFile1, await doc1.save());
+
+    const doc2 = await PDFDocument.create();
+    doc2.addPage().drawText('PWA Results Test 2');
+    fs.writeFileSync(testFile2, await doc2.save());
+
+    try {
+      await page.goto('/merge');
+
+      const fileInput = page.locator('input[type="file"]');
+      await fileInput.setInputFiles([testFile1, testFile2]);
+
+      const downloadPromise = page.waitForEvent('download');
+      await page.getByRole('button', { name: 'Process 2 files' }).click();
+      await downloadPromise;
+
+      // On results dialog/page in browser mode, verify PWA install indication and control are visible
+      const pwaBanner = page.locator('[data-testid="pwa-install-banner"]');
+      await expect(pwaBanner).toBeVisible();
+      await expect(page.getByText('Install JayPDF App')).toBeVisible();
+
+      const installButton = page.locator('[data-testid="pwa-install-button"]');
+      await expect(installButton).toBeVisible();
+    } finally {
+      if (fs.existsSync(testFile1)) fs.unlinkSync(testFile1);
+      if (fs.existsSync(testFile2)) fs.unlinkSync(testFile2);
+    }
+  });
+
+  test('PWA installation suggestion is NOT shown when app is run in PWA (standalone) mode', async ({ page }, testInfo) => {
+    const testFile1 = getTestPdf1Path(testInfo.workerIndex);
+    const testFile2 = getTestPdf2Path(testInfo.workerIndex);
+
+    const doc1 = await PDFDocument.create();
+    doc1.addPage().drawText('PWA Standalone Results Test 1');
+    fs.writeFileSync(testFile1, await doc1.save());
+
+    const doc2 = await PDFDocument.create();
+    doc2.addPage().drawText('PWA Standalone Results Test 2');
+    fs.writeFileSync(testFile2, await doc2.save());
+
+    try {
+      // Emulate running inside PWA standalone mode
+      await page.addInitScript(() => {
+        const originalMatchMedia = window.matchMedia;
+        window.matchMedia = function(query: string) {
+          if (query.includes('display-mode: standalone') || query.includes('display-mode: fullscreen')) {
+            return {
+              matches: true,
+              media: query,
+              onchange: null,
+              addListener: () => {},
+              removeListener: () => {},
+              addEventListener: () => {},
+              removeEventListener: () => {},
+              dispatchEvent: () => false,
+            } as unknown as MediaQueryList;
+          }
+          return originalMatchMedia.call(window, query);
+        };
+      });
+
+      await page.goto('/merge');
+
+      const fileInput = page.locator('input[type="file"]');
+      await fileInput.setInputFiles([testFile1, testFile2]);
+
+      const downloadPromise = page.waitForEvent('download');
+      await page.getByRole('button', { name: 'Process 2 files' }).click();
+      await downloadPromise;
+
+      // In standalone PWA mode, verify PWA install suggestion is NOT shown
+      const pwaBanner = page.locator('[data-testid="pwa-install-banner"]');
+      await expect(pwaBanner).not.toBeVisible();
+      await expect(page.getByText('Install JayPDF App')).not.toBeVisible();
+    } finally {
+      if (fs.existsSync(testFile1)) fs.unlinkSync(testFile1);
+      if (fs.existsSync(testFile2)) fs.unlinkSync(testFile2);
+    }
   });
 
   test('Service worker is registered and enables 100% offline PDF processing', async ({ page, context }, testInfo) => {

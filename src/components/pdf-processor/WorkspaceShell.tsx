@@ -4,9 +4,8 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useWorkspace } from './controller/use-workspace';
 import FileUploader from './FileUploader';
 import FileList from './FileList';
-import { BrandConfig } from '../../config/brand';
-import { PDF_FEATURES, PDF_FEATURE_KEYS } from '../../modules/pdf/catalog';
-import { PdfOperationKey } from '../../modules/pdf/operation-map';
+import { PDF_FEATURES, PDF_FEATURE_KEYS } from '../../modules/pdf';
+import { PdfOperationKey } from '../../modules/pdf';
 import { usePdfProcessorServices } from './services';
 import { ExtractWorkspace } from './features/ExtractWorkspace';
 import { RotateWorkspace } from './features/RotateWorkspace';
@@ -18,6 +17,7 @@ import CompressionPreviewCard, { PreviewStatus } from './CompressionPreviewCard'
 import { InsightfulProgressIndicator } from './InsightfulProgressIndicator';
 import type { PdfProgressUpdate } from '../../modules/pdf/core/contracts';
 import { resolveGeneratedFilename } from '../../lib/filename';
+import { PwaInstallPrompt } from '../pwa/PwaInstallPrompt';
 import {
   Layers,
   Minimize2,
@@ -444,13 +444,11 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
       state.globalError.includes('repair the file before using it')
     )
   );
-
-  const corruptedFilename = useMemo(() => {
+  useMemo(() => {
     if (!state.globalError) return state.sessions[state.sessionIds[0]]?.originalFile.name || '';
     const match = state.globalError.match(/\(file:\s*"([^"]+)"\)/);
     return match ? match[1] : (state.sessions[state.sessionIds[0]]?.originalFile.name || '');
   }, [state.globalError, state.sessions, state.sessionIds]);
-
   const handleRelaunchWithAutoRepair = () => {
     setProcessingOptions((prev: any) => ({ ...prev, autoRepairCorrupted: true }));
     handleStartProcessing(true);
@@ -719,6 +717,10 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
               <span>Download Result</span>
             </button>
             )}
+          </div>
+
+          <div className="mt-8 max-w-xl mx-auto text-left">
+            <PwaInstallPrompt />
           </div>
         </div>
       )}
