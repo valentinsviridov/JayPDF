@@ -66,7 +66,7 @@ export function InsightfulProgressIndicator({
               {operationLabel || (operationKey ? `${operationKey.charAt(0).toUpperCase() + operationKey.slice(1)}ing PDF...` : 'Processing PDF...')}
             </h3>
             {activeFileName ? (
-              <p className="text-xs text-[var(--tx-3)] truncate max-w-[240px] sm:max-w-xs" title={activeFileName}>
+              <p className="text-xs text-[var(--tx-3)] break-words [overflow-wrap:anywhere] max-w-[240px] sm:max-w-xs" title={activeFileName}>
                 {activeFileName}
               </p>
             ) : null}

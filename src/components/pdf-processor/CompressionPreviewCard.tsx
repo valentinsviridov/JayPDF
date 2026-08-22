@@ -56,12 +56,12 @@ export default function CompressionPreviewCard({
   return (
     <div className="rounded-lg border border-[var(--ui-2)] bg-[var(--bg-2)] p-4">
       <div className="flex items-start justify-between gap-3">
-        <div className="space-y-1">
+        <div className="min-w-0 flex-1 space-y-1">
           <h3 className="text-base font-semibold text-[var(--tx)]">
             {strings.title}
             {typeof order === "number" ? ` #${order + 1}` : ""}
           </h3>
-          {fileName && <p className="text-sm text-[var(--tx-2)]">{fileName}</p>}
+          {fileName && <p className="text-sm text-[var(--tx-2)] break-words [overflow-wrap:anywhere]">{fileName}</p>}
           {status === "idle" && (
             <p className="text-sm text-[var(--tx-2)]">{strings.description}</p>
           )}

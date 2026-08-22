@@ -503,7 +503,7 @@ export default function FileList({
               {/* File info with improved filename display */}
               <div className="pdf-preview-info">
                 <div className="pdf-preview-name" title={file.name}>
-                  {truncateFilename(file.name)}
+                  {file.name}
                 </div>
                 <div className="pdf-preview-size">
                   {isPdf

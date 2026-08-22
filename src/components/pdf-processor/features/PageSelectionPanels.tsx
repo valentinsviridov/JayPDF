@@ -64,7 +64,7 @@ export function PageSelectionPanels({
               }}
             >
               <div>
-                <p className="max-w-[280px] truncate font-medium text-[var(--tx)] sm:max-w-none">
+                <p className="font-medium text-[var(--tx)] break-words [overflow-wrap:anywhere]" title={file.name}>
                   {file.name}
                 </p>
                 <p className="text-xs text-[var(--tx-3)]">

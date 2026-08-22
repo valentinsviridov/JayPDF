@@ -588,15 +588,18 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .pdf-preview-info {
   flex: 1;
   min-width: 0;
+  overflow: hidden;
 }
 
 /* PDF preview filename display */
 .pdf-preview-name {
   font-weight: 500;
   margin-bottom: 0.25rem;
-  white-space: nowrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
   width: 100%;
-  display: inline-block;
+  display: block;
 }
 
 .pdf-preview-size {

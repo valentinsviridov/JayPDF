@@ -500,7 +500,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
                 <button
                   key={modeKey}
                   type="button"
-                  className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl font-medium text-xs sm:text-sm transition-all duration-150 cursor-pointer ${
+                  className={`flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl font-medium text-xs sm:text-sm min-h-[46px] transition-all duration-150 cursor-pointer text-center ${
                     isActive
                       ? 'bg-[var(--accent)] text-white shadow-sm ring-2 ring-[var(--accent)]/20 font-semibold scale-[1.01]'
                       : 'bg-[var(--bg-2)] border border-[var(--ui-2)] text-[var(--tx-2)] hover:bg-[var(--ui)] hover:text-[var(--tx)] hover:border-[var(--ui-3)]'
@@ -508,7 +508,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
                   onClick={() => selectOperation(modeKey)}
                 >
                   <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[var(--accent)]'}`} />
-                  <span className="truncate">{label}</span>
+                  <span className="leading-tight break-words [overflow-wrap:anywhere]">{label}</span>
                 </button>
               );
             })}
