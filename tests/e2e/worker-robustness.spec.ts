@@ -52,7 +52,7 @@ test.describe('Worker Robustness & Rendering', () => {
         await processBtn.click();
 
         // 6. Wait for processing to complete - look for success OR error state
-        const successIndicator = page.getByRole('button', { name: /Download Result/i });
+        const successIndicator = page.getByRole('button', { name: /Download (again|Result)/i });
         const errorIndicator = page.getByText(/error/i).first();
 
         await expect(successIndicator.or(errorIndicator)).toBeVisible({ timeout: 30000 });

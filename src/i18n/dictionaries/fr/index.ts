@@ -150,6 +150,21 @@ export const frDictionary: Dictionary = {
       whatWrong: "Dites-nous ce qui s'est mal passé",
       emailSubject: "Commentaires pour JayPDF",
     },
+    pwaPrompt: {
+      title: "Installer l'application JayPDF",
+      badge: "Prêt hors-ligne",
+      description: "Ajoutez JayPDF à votre appareil pour une modification de PDF instantanée et 100% privée hors ligne.",
+      installButton: "Installer l'app",
+      addToHomeScreen: "Sur l'écran d'accueil",
+      iosGuideTitle: "Comment installer sur mobile :",
+      iosStep1Pre: "Dans votre navigateur (ex. Safari ou Chrome), appuyez sur ",
+      shareLabel: "Partager",
+      orLabel: " ou ",
+      menuLabel: "Menu",
+      iosStep1Post: " ( ⎋ / ⋮ ).",
+      iosStep2Pre: "Faites défiler et sélectionnez ",
+      iosStep3: "Lancez JayPDF directement depuis votre écran d'accueil avec une prise en charge hors ligne complète !",
+    },
     pdfProcessor: {
       title: "Choisissez une opération",
       modes: {

@@ -157,6 +157,21 @@ export const huDictionary: Dictionary = {
       whatWrong: "Mondd el, mi nem működött jól",
       emailSubject: "Visszajelzés a JayPDF-nek",
     },
+    pwaPrompt: {
+      title: "JayPDF alkalmazás telepítése",
+      badge: "Offline kész",
+      description: "Adja hozzá a JayPDF-et eszközéhez az azonnali, 100%-ban privát offline PDF-szerkesztéshez.",
+      installButton: "Alkalmazás telepítése",
+      addToHomeScreen: "Hozzáadás a kezdőképernyőhöz",
+      iosGuideTitle: "Telepítés mobilon:",
+      iosStep1Pre: "A böngészőben (pl. Safari vagy Chrome) koppintson a ",
+      shareLabel: "Megosztás",
+      orLabel: " vagy ",
+      menuLabel: "Menü",
+      iosStep1Post: " gombra ( ⎋ / ⋮ ).",
+      iosStep2Pre: "Görgessen le, és válassza a ",
+      iosStep3: "Indítsa el a JayPDF-et közvetlenül a kezdőképernyőről teljes offline támogatással!",
+    },
     pdfProcessor: {
       title: "Válassz műveletet",
       modes: {

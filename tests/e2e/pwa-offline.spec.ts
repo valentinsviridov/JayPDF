@@ -219,4 +219,41 @@ test.describe('Progressive Web App (PWA) & Offline Capabilities', () => {
       if (fs.existsSync(testFile2)) fs.unlinkSync(testFile2);
     }
   });
+
+  test('Processing results page displays localized PWA prompt widget in non-English locales', async ({ page }, testInfo) => {
+    const testFile1 = getTestPdf1Path(testInfo.workerIndex);
+    const testFile2 = getTestPdf2Path(testInfo.workerIndex);
+
+    const doc1 = await PDFDocument.create();
+    doc1.addPage().drawText('Spanish PWA Test 1');
+    fs.writeFileSync(testFile1, await doc1.save());
+
+    const doc2 = await PDFDocument.create();
+    doc2.addPage().drawText('Spanish PWA Test 2');
+    fs.writeFileSync(testFile2, await doc2.save());
+
+    try {
+      // Navigate to Spanish merge page
+      await page.goto('/es/unir');
+
+      const fileInput = page.locator('input[type="file"]');
+      await fileInput.setInputFiles([testFile1, testFile2]);
+
+      const downloadPromise = page.waitForEvent('download');
+      // Spanish button label for 2 files
+      await page.getByRole('button', { name: /Unir 2 archivos|Procesar 2 archivos/i }).click();
+      await downloadPromise;
+
+      // Verify the PWA widget is translated into Spanish
+      const pwaBanner = page.locator('[data-testid="pwa-install-banner"]');
+      await expect(pwaBanner).toBeVisible();
+      await expect(page.getByText('Instalar la app JayPDF')).toBeVisible();
+      await expect(page.getByText('Listo offline')).toBeVisible();
+      await expect(page.getByText('Instalar app')).toBeVisible();
+    } finally {
+      if (fs.existsSync(testFile1)) fs.unlinkSync(testFile1);
+      if (fs.existsSync(testFile2)) fs.unlinkSync(testFile2);
+    }
+  });
 });
+

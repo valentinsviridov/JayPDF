@@ -507,6 +507,22 @@ export interface FeedbackStrings {
   emailSubject: string;
 }
 
+export interface PwaPromptStrings {
+  title: string;
+  badge: string;
+  description: string;
+  installButton: string;
+  addToHomeScreen: string;
+  iosGuideTitle: string;
+  iosStep1Pre: string;
+  shareLabel: string;
+  orLabel: string;
+  menuLabel: string;
+  iosStep1Post: string;
+  iosStep2Pre: string;
+  iosStep3: string;
+}
+
 export interface ComponentsStrings {
   nav: NavStrings;
   footer: FooterStrings;
@@ -519,6 +535,7 @@ export interface ComponentsStrings {
   processingOptions: ProcessingOptionsStrings;
   cookieBanner: CookieBannerStrings;
   feedback: FeedbackStrings;
+  pwaPrompt: PwaPromptStrings;
 }
 
 export interface Dictionary {

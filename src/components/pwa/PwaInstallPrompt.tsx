@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Download, Sparkles, Smartphone, X } from "lucide-react";
 import { usePwaInstall } from "./usePwaInstall";
+import { useDictionary } from "../../i18n/LocaleProvider";
 
 interface PwaInstallPromptProps {
   variant?: "card" | "banner" | "compact";
@@ -13,6 +14,23 @@ interface PwaInstallPromptProps {
 export function PwaInstallPrompt({
   className = "",
 }: PwaInstallPromptProps) {
+  const dictionary = useDictionary();
+  const t = dictionary.components?.pwaPrompt || {
+    title: "Install JayPDF App",
+    badge: "Offline Ready",
+    description: "Add JayPDF to your device for instant, 100% private offline PDF editing anytime.",
+    installButton: "Install App",
+    addToHomeScreen: "Add to Home Screen",
+    iosGuideTitle: "How to install on mobile:",
+    iosStep1Pre: "In your browser (e.g. Safari or Chrome), tap the ",
+    shareLabel: "Share",
+    orLabel: " or ",
+    menuLabel: "Menu",
+    iosStep1Post: " button ( ⎋ / ⋮ ).",
+    iosStep2Pre: "Scroll and select ",
+    iosStep3: "Launch JayPDF directly from your home screen with complete offline support!",
+  };
+
   const { canInstall, isStandalone, isInstalled, isIOS, isInstallPromptSupported, promptInstall } = usePwaInstall();
   const [showIosGuide, setShowIosGuide] = useState(false);
   const [installStatus, setInstallStatus] = useState<"idle" | "installing" | "installed">("idle");
@@ -56,14 +74,14 @@ export function PwaInstallPrompt({
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h4 className="text-sm font-semibold text-[var(--tx)]">Install JayPDF App</h4>
+              <h4 className="text-sm font-semibold text-[var(--tx)]">{t.title}</h4>
               <span className="inline-flex items-center gap-1 rounded-full bg-[var(--accent)]/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--accent)]">
                 <Sparkles className="h-2.5 w-2.5" />
-                Offline Ready
+                {t.badge}
               </span>
             </div>
             <p className="mt-0.5 text-xs text-[var(--tx-2)]">
-              Add JayPDF to your device for instant, 100% private offline PDF editing anytime.
+              {t.description}
             </p>
           </div>
         </div>
@@ -78,17 +96,17 @@ export function PwaInstallPrompt({
             {isInstallPromptSupported ? (
               <>
                 <Download className="h-3.5 w-3.5" />
-                <span>Install App</span>
+                <span>{t.installButton}</span>
               </>
             ) : isIOS ? (
               <>
                 <Smartphone className="h-3.5 w-3.5" />
-                <span>Add to Home Screen</span>
+                <span>{t.addToHomeScreen}</span>
               </>
             ) : (
               <>
                 <Download className="h-3.5 w-3.5" />
-                <span>Install App</span>
+                <span>{t.installButton}</span>
               </>
             )}
           </button>
@@ -100,7 +118,7 @@ export function PwaInstallPrompt({
           <div className="flex items-center justify-between font-semibold text-[var(--tx)]">
             <span className="flex items-center gap-1.5">
               <Smartphone className="h-3.5 w-3.5 text-[var(--accent)]" />
-              How to install on mobile:
+              {t.iosGuideTitle}
             </span>
             <button
               type="button"
@@ -112,13 +130,20 @@ export function PwaInstallPrompt({
           </div>
           <ol className="mt-2 list-decimal space-y-1 pl-4 text-[11px] text-[var(--tx-2)]">
             <li>
-              In your browser (e.g. Safari or Chrome), tap the <span className="font-semibold">Share</span> or <span className="font-semibold">Menu</span> button ( <span className="font-mono">⎋</span> / <span className="font-mono">⋮</span> ).
+              {t.iosStep1Pre}
+              <span className="font-semibold">{t.shareLabel}</span>
+              {t.orLabel}
+              <span className="font-semibold">{t.menuLabel}</span>
+              {t.iosStep1Post}
             </li>
             <li>
-              Scroll and select <span className="font-semibold">&quot;Add to Home Screen&quot;</span> or <span className="font-semibold">&quot;Install App&quot;</span>.
+              {t.iosStep2Pre}
+              <span className="font-semibold">&quot;{t.addToHomeScreen}&quot;</span>
+              {t.orLabel}
+              <span className="font-semibold">&quot;{t.installButton}&quot;</span>.
             </li>
             <li>
-              Launch JayPDF directly from your home screen with complete offline support!
+              {t.iosStep3}
             </li>
           </ol>
         </div>

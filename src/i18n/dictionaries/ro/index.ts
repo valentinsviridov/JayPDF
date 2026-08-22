@@ -158,6 +158,21 @@ export const roDictionary: Dictionary = {
       whatWrong: "Spune-ne ce nu a funcționat bine",
       emailSubject: "Feedback pentru JayPDF",
     },
+    pwaPrompt: {
+      title: "Instalează aplicația JayPDF",
+      badge: "Disponibil offline",
+      description: "Adaugă JayPDF pe dispozitivul tău pentru editare PDF instantanee, 100% privată și offline oricând.",
+      installButton: "Instalează aplicația",
+      addToHomeScreen: "Adaugă pe ecranul principal",
+      iosGuideTitle: "Cum se instalează pe mobil:",
+      iosStep1Pre: "În browser (de ex. Safari sau Chrome), atinge butonul ",
+      shareLabel: "Partajare",
+      orLabel: " sau ",
+      menuLabel: "Meniu",
+      iosStep1Post: " ( ⎋ / ⋮ ).",
+      iosStep2Pre: "Derulează și selectează ",
+      iosStep3: "Lansează JayPDF direct de pe ecranul principal cu suport complet offline!",
+    },
     pdfProcessor: {
       title: "Alege o operațiune",
       modes: {

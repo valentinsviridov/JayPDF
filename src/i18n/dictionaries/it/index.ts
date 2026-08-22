@@ -150,6 +150,21 @@ export const itDictionary: Dictionary = {
       whatWrong: "Dicci cosa non ha funzionato",
       emailSubject: "Feedback per JayPDF",
     },
+    pwaPrompt: {
+      title: "Installa l'app JayPDF",
+      badge: "Pronto offline",
+      description: "Aggiungi JayPDF al tuo dispositivo per modificare PDF offline in modo immediato e privato al 100%.",
+      installButton: "Installa app",
+      addToHomeScreen: "Aggiungi a schermata Home",
+      iosGuideTitle: "Come installare su smartphone:",
+      iosStep1Pre: "Nel browser (es. Safari o Chrome), tocca il pulsante ",
+      shareLabel: "Condividi",
+      orLabel: " o ",
+      menuLabel: "Menu",
+      iosStep1Post: " ( ⎋ / ⋮ ).",
+      iosStep2Pre: "Scorri e seleziona ",
+      iosStep3: "Avvia JayPDF direttamente dalla schermata iniziale con supporto offline completo!",
+    },
     pdfProcessor: {
       title: "Scegli un'operazione",
       modes: {

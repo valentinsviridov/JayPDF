@@ -151,6 +151,21 @@ export const ruDictionary: Dictionary = {
       whatWrong: "Расскажите, что пошло не так",
       emailSubject: "Отзыв для JayPDF",
     },
+    pwaPrompt: {
+      title: "Установить приложение JayPDF",
+      badge: "Работает офлайн",
+      description: "Добавьте JayPDF на устройство для мгновенного и на 100% приватного редактирования PDF офлайн.",
+      installButton: "Установить приложение",
+      addToHomeScreen: "На экран «Домой»",
+      iosGuideTitle: "Как установить на телефон:",
+      iosStep1Pre: "В браузере (например, Safari или Chrome) нажмите ",
+      shareLabel: "Поделиться",
+      orLabel: " или ",
+      menuLabel: "Меню",
+      iosStep1Post: " ( ⎋ / ⋮ ).",
+      iosStep2Pre: "Прокрутите и выберите ",
+      iosStep3: "Запускайте JayPDF прямо с главного экрана с полной поддержкой работы офлайн!",
+    },
     pdfProcessor: {
       title: "Выберите операцию",
       modes: {
