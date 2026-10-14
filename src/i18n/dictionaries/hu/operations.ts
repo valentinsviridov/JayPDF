@@ -186,7 +186,7 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       {
         title: "Hatékony fájlgenerálás",
         description:
-          "Egyszerre hozz létre több fájlt, és töltsd le őket automatikusan archiváláshoz vagy továbbításhoz.",
+          "Egyszerre hozz létre több fájlt, majd mentsd el az archiváláshoz vagy továbbításhoz szükségeseket.",
       },
       {
         title: "Rugalmas beállítások",
@@ -199,10 +199,10 @@ const operationsHuContent: Record<OperationKey, OperationContent> = {
       steps: [
         "Töltsd fel a szétbontani kívánt PDF-et az eszközödről.",
         "Válassz rögzített oldalszám szerinti szétbontást, vagy állítsd be egyénileg a tartományokat.",
-        "Kattints a \"Feldolgozás\" gombra, és töltsd le automatikusan a létrehozott dokumentumokat.",
+        "Kattints a „Feldolgozás” gombra, majd mentsd el a fájlokat a mellettük lévő gombbal.",
       ],
       note:
-        "A JayPDF azonnal letölti az első fájlt, a többit extra lépések nélkül menti az eszközödre.",
+        "Mentsd el külön-külön az eredményeket. Az elérhető mentési lehetőségek a böngészőtől függnek.",
     },
     useCasesTitle: "Tipikus PDF-szétbontási forgatókönyvek",
     useCases: [

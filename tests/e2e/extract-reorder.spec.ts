@@ -1,3 +1,4 @@
+import { downloadFirstResult } from '../helpers/downloads';
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
@@ -52,6 +53,7 @@ test('PDF Page Extraction Workflow', async ({ page }, testInfo) => {
     // 4. Process
     const downloadPromise = page.waitForEvent('download', { timeout: 60_000 });
     await processButton.click();
+    await downloadFirstResult(page);
     const download = await downloadPromise;
 
     // 5. Verification
@@ -89,6 +91,7 @@ test('PDF Page Reordering Workflow', async ({ page }, testInfo) => {
     // 4. Process
     const downloadPromise = page.waitForEvent('download', { timeout: 60_000 });
     await processButton.click();
+    await downloadFirstResult(page);
     const download = await downloadPromise;
 
     // 5. Verification

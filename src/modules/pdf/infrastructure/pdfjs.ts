@@ -57,6 +57,7 @@ export async function loadPdfJsDocument(input: BinaryInput): Promise<PdfjsDocume
       cMapUrl: `${origin}/cmaps/`,
       cMapPacked: true,
       standardFontDataUrl: `${origin}/standard_fonts/`,
+      wasmUrl: `${origin}/wasm/`,
       disableFontFace: isApplicationWorker,
       useWorkerFetch: !isApplicationWorker,
     });

@@ -1,3 +1,4 @@
+import { downloadFirstResult } from '../helpers/downloads';
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
@@ -64,6 +65,7 @@ test('PDF Rotate Workflow', async ({ page }) => {
 
     const downloadPromise = page.waitForEvent('download', { timeout: 60_000 });
     await processButton.click();
+    await downloadFirstResult(page);
     const download = await downloadPromise;
 
     expect(download.suggestedFilename()).toMatch(/rotated_JayPDF_\d{8}_\d{6}\.pdf$/);

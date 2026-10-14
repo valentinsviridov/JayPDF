@@ -348,7 +348,7 @@ export const huDictionary: Dictionary = {
         processingTitle: "Helyi feldolgozás",
         successTitle: "A fájlaid készen állnak",
         successDescription:
-          "A letöltés automatikusan elindul.",
+          "Az eredmények elkészültek. Mentsd el a fájlokat a mellettük lévő gombbal.",
         resultsLabel: "Utolsó eredmény",
         filesProcessedLabel: (count: number) =>
           `${count} fájl feldolgozva`,

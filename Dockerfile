@@ -2,7 +2,7 @@ FROM oven/bun:1 AS build
 
 WORKDIR /usr/src/app
 
-COPY package.json bun.lock ./
+COPY package.json bun.lock bunfig.toml ./
 COPY scripts/setup-pdf-worker.mjs ./scripts/setup-pdf-worker.mjs
 
 RUN bun install --frozen-lockfile

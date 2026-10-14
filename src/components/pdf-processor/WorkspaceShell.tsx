@@ -18,6 +18,7 @@ import { InsightfulProgressIndicator } from './InsightfulProgressIndicator';
 import type { PdfProgressUpdate } from '../../modules/pdf/core/contracts';
 import { resolveGeneratedFilename } from '../../lib/filename';
 import { PwaInstallPrompt } from '../pwa/PwaInstallPrompt';
+import ResultDownloads from './ResultDownloads';
 import {
   Layers,
   Minimize2,
@@ -30,7 +31,6 @@ import {
   FileImage,
   Images,
   Trash2,
-  Download,
   Sparkles,
   RefreshCw,
   AlertCircle,
@@ -344,19 +344,6 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
           results: resultsArray.map(r => ({ fileId: state.sessionIds[0], blob: r.blob, filename: r.filename })) 
         });
         
-        // Auto-download for all operations
-        resultsArray.forEach(r => {
-          if (r.blob) {
-            const url = URL.createObjectURL(r.blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = r.filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-          }
-        });
       } else {
         dispatch({ type: 'PROCESSING_FAILED', error: 'Processing returned no result.' });
       }
@@ -687,6 +674,11 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
           </div>
           <h2 className="text-2xl font-bold mb-2">Success!</h2>
           <p className="text-[var(--tx-2)] mb-8">Your files have been processed locally.</p>
+
+          <ResultDownloads artifacts={state.results.filter(result => result.blob).map(result => ({
+            blob: result.blob as Blob,
+            fileName: result.filename || 'jaypdf_result.pdf',
+          }))} />
           
           <div className="flex justify-center space-x-4">
             <button 
@@ -696,27 +688,6 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
               <RefreshCw className="w-4 h-4" />
               <span>Process More Files</span>
             </button>
-            {state.results[0]?.blob && (
-              <button
-              onClick={() => {
-                if (state.results.length > 0 && state.results[0].blob) {
-                  const result = state.results[0];
-                  const url = URL.createObjectURL(result.blob as Blob);
-                  const a = document.createElement('a');
-                  a.href = url;
-                  a.download = result.filename || 'jaypdf_result.pdf';
-                  document.body.appendChild(a);
-                  a.click();
-                  document.body.removeChild(a);
-                  URL.revokeObjectURL(url);
-                }
-              }}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[var(--accent)] text-white rounded-xl hover:bg-[var(--accent-2)] transition-all shadow-sm font-bold text-sm sm:text-base cursor-pointer"
-            >
-              <Download className="w-4 h-4" />
-              <span>Download Result</span>
-            </button>
-            )}
           </div>
 
           <div className="mt-8 max-w-xl mx-auto text-left">

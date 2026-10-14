@@ -342,7 +342,7 @@ export const deDictionary: Dictionary = {
         processingTitle: "Verarbeitung läuft lokal",
         successTitle: "Deine Dateien sind bereit",
         successDescription:
-          "Die Downloads starten automatisch. Hier kannst du sie erneut herunterladen.",
+          "Deine Ergebnisse sind bereit. Speichere jede Datei über die zugehörige Schaltfläche.",
         resultsLabel: "Aktuelles Ergebnis",
         filesProcessedLabel: (count: number) =>
           `${count} ${count === 1 ? "Datei verarbeitet" : "Dateien verarbeitet"}`,

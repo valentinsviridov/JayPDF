@@ -1,3 +1,4 @@
+import { downloadFirstResult } from '../helpers/downloads';
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import { PDFDocument } from 'pdf-lib';
@@ -64,6 +65,7 @@ test('PDF Compression Workflow', async ({ page }) => {
     await page.getByRole('button', { name: 'Process 1 file' }).click();
 
     // 7. Verification
+    await downloadFirstResult(page);
     const download = await downloadPromise;
 
     // Check filename
@@ -135,6 +137,8 @@ test('PDF Compression on Corrupt PDF offers 1-click Fix with Auto-Repair and com
     // 5. Click the 1-click recovery button and verify automatic relaunch and download
     const downloadPromise = page.waitForEvent('download', { timeout: 240_000 });
     await repairAndRetryBtn.click();
+
+    await downloadFirstResult(page);
 
     const download = await downloadPromise;
     expect(download.suggestedFilename()).toMatch(/^cg-brsvie_compressed_JayPDF_\d{8}_\d{6}\.pdf$/);

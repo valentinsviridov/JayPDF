@@ -45,3 +45,14 @@ LICENSE
 *.pdf
 .env*
 .npmrc
+
+# Android build products and private release configuration
+android/.gradle/
+android/**/build/
+android/app/src/main/assets/web/
+android/local.properties
+android/release.properties
+*.jks
+*.keystore
+*.aab
+*.apk

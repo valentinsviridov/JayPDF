@@ -251,9 +251,9 @@ const operationsItContent: Record<OperationKey, OperationContent> = {
       steps: [
         "Carica il file.",
         "Scegli modalità.",
-        "Scarica i file.",
+        "Elabora il documento, poi salva ogni file con il pulsante corrispondente.",
       ],
-      note: "Download automatico.",
+      note: "Salva ogni risultato separatamente. Le opzioni disponibili dipendono dal browser.",
     },
     useCasesTitle: "Uso",
     useCases: [

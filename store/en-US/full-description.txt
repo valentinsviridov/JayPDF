@@ -1,0 +1,27 @@
+Work with your PDFs on your device, wherever you are.
+
+JayPDF brings local PDF tools to Android in one purchase. No subscription, ads, account or internet connection is required to process your documents.
+
+YOUR DOCUMENTS, YOUR DEVICE
+• Process PDFs and images locally.
+• Work offline from the first launch.
+• No internet permission, analytics or advertising trackers in the app.
+• Open selected files and save results with Android’s system file picker.
+• Choose local storage for an entirely offline workflow. Cloud document providers you choose follow their own settings.
+
+PDF TOOLS
+• Merge multiple PDFs.
+• Split documents and extract selected pages.
+• Compress PDFs, with results depending on the document and settings.
+• Rotate, reorder and crop pages.
+• Repair some damaged PDFs; not every file can be recovered.
+• Convert PDF pages to images and combine images into a PDF.
+
+The interface supports English, French, German, Spanish, Italian, Portuguese, Romanian, Hungarian and Russian.
+
+Large or complex files may be limited by your device’s memory. Android exports are limited to 512 MB per file. Some encrypted or damaged PDFs may not be supported. Compression results vary and image-based compression can reduce quality.
+
+JayPDF is open source under AGPL-3.0-only. The purchase supports development and provides convenient installation and updates through Google Play. Source code and license information are available inside the app and at https://github.com/valentinsviridov/JayPDF.
+
+Support: info@jaypdf.org
+Privacy policy: https://jaypdf.org/privacy/

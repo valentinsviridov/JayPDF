@@ -177,7 +177,7 @@ const operationsPtContent: Record<OperationKey, OperationContent> = {
       {
         title: "Entrega escalÃ¡vel",
         description:
-          "Gere mÃºltiplos arquivos de uma vez e faÃ§a o download automÃ¡tico para arquivar ou enviar.",
+          "Gere vários arquivos de uma vez e salve os que precisar para arquivar ou enviar.",
       },
       {
         title: "Ajustes avanÃ§ados",
@@ -190,10 +190,10 @@ const operationsPtContent: Record<OperationKey, OperationContent> = {
       steps: [
         "Envie o PDF que deseja segmentar.",
         "Escolha se vai dividir por nÃºmero fixo de pÃ¡ginas ou por tamanho do arquivo.",
-        "Clique em â€œProcessarâ€ e baixe automaticamente os novos documentos.",
+        "Clique em “Processar” e depois use o botão ao lado de cada arquivo para salvá-lo.",
       ],
       note:
-        "O JayPDF baixa o primeiro arquivo na hora e salva os demais sem etapas extras.",
+        "Salve cada resultado separadamente. As opções disponíveis dependem do navegador.",
     },
     useCasesTitle: "CenÃ¡rios comuns para dividir PDFs",
     useCases: [

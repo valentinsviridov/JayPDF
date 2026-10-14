@@ -1,3 +1,4 @@
+import { downloadFirstResult } from '../helpers/downloads';
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import { PDFDocument } from 'pdf-lib';
@@ -86,6 +87,7 @@ test.describe('Progressive Web App (PWA) & Offline Capabilities', () => {
 
       const downloadPromise = page.waitForEvent('download');
       await page.getByRole('button', { name: 'Process 2 files' }).click();
+      await downloadFirstResult(page);
       await downloadPromise;
 
       // On results dialog/page in browser mode, verify PWA install indication and control are visible
@@ -141,6 +143,7 @@ test.describe('Progressive Web App (PWA) & Offline Capabilities', () => {
 
       const downloadPromise = page.waitForEvent('download');
       await page.getByRole('button', { name: 'Process 2 files' }).click();
+      await downloadFirstResult(page);
       await downloadPromise;
 
       // In standalone PWA mode, verify PWA install suggestion is NOT shown
@@ -197,6 +200,7 @@ test.describe('Progressive Web App (PWA) & Offline Capabilities', () => {
       // 7. Process PDF merger entirely client-side offline
       const downloadPromise = page.waitForEvent('download');
       await page.getByRole('button', { name: 'Process 2 files' }).click();
+      await downloadFirstResult(page);
       const download = await downloadPromise;
 
       expect(download.suggestedFilename()).toMatch(/merged_JayPDF_\d{8}_\d{6}\.pdf$/);
@@ -242,6 +246,7 @@ test.describe('Progressive Web App (PWA) & Offline Capabilities', () => {
       const downloadPromise = page.waitForEvent('download');
       // Spanish button label for 2 files
       await page.getByRole('button', { name: /Unir 2 archivos|Procesar 2 archivos/i }).click();
+      await downloadFirstResult(page);
       await downloadPromise;
 
       // Verify the PWA widget is translated into Spanish

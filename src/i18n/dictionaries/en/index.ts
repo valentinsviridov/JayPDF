@@ -341,7 +341,7 @@ export const enDictionary: Dictionary = {
         processingTitle: "Processing locally",
         successTitle: "Your files are ready",
         successDescription:
-          "Downloads start automatically. You can download them again.",
+          "Your results are ready. Use the save button beside each file.",
         resultsLabel: "Latest result",
         filesProcessedLabel: (count: number) =>
           `${count} ${count === 1 ? "file processed" : "files processed"}`,

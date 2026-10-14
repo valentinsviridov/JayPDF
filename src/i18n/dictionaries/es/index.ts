@@ -335,7 +335,7 @@ export const esDictionary: Dictionary = {
         processingTitle: "Procesando de forma local",
         successTitle: "Tus archivos están listos",
         successDescription:
-          "Las descargas se inician automáticamente. Aquí puedes volver a descargarlas.",
+          "Tus resultados están listos. Usa el botón junto a cada archivo para guardarlo.",
         resultsLabel: "Último resultado",
         filesProcessedLabel: (count: number) =>
           `${count} ${count === 1 ? "archivo procesado" : "archivos procesados"}`,

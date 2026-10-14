@@ -177,7 +177,7 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       {
         title: "Skalierbare Auslieferung",
         description:
-          "Mehrere Dateien in einem Schritt erzeugen und automatisch herunterladen.",
+          "Mehrere Dateien in einem Schritt erzeugen und die benötigten Dateien speichern.",
       },
       {
         title: "Feineinstellungen",
@@ -190,10 +190,10 @@ const operationsDeContent: Record<OperationKey, OperationContent> = {
       steps: [
         "Das gewÃ¼nschte PDF vom GerÃ¤t hochladen.",
         "Festlegen, ob nach Seitenanzahl oder DateigrÃ¶ÃŸe geteilt wird.",
-        "\"Verarbeiten\" drÃ¼cken und die erzeugten Dateien automatisch herunterladen.",
+        "Nach dem Verarbeiten jede Datei über die zugehörige Schaltfläche speichern.",
       ],
       note:
-        "JayPDF lÃ¤dt die erste Datei sofort und speichert weitere ohne zusÃ¤tzliche Schritte.",
+        "Speichere jedes Ergebnis einzeln. Die verfügbaren Optionen hängen von deinem Browser ab.",
     },
     useCasesTitle: "Typische AnwendungsfÃ¤lle",
     useCases: [

@@ -341,7 +341,7 @@ export const frDictionary: Dictionary = {
         processingTitle: "Traitement local",
         successTitle: "Vos fichiers sont prêts",
         successDescription:
-          "Les téléchargements démarrent automatiquement.",
+          "Vos résultats sont prêts. Utilisez le bouton à côté de chaque fichier pour l’enregistrer.",
         resultsLabel: "Dernier résultat",
         filesProcessedLabel: (count: number) =>
           `${count} fichier${count > 1 ? "s" : ""} traité${count > 1 ? "s" : ""}`,

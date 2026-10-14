@@ -1,3 +1,4 @@
+import { downloadFirstResult } from '../helpers/downloads';
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
@@ -54,6 +55,7 @@ test('PDF Split Workflow', async ({ page }) => {
     // 6. Process
     const downloadPromise = page.waitForEvent('download');
     await page.getByRole('button', { name: 'Process 1 file' }).click();
+    await downloadFirstResult(page);
     const download = await downloadPromise;
 
     // 7. Verification

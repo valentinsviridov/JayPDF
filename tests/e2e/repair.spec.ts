@@ -1,3 +1,4 @@
+import { downloadFirstResult } from '../helpers/downloads';
 import { test, expect } from '@playwright/test';
 import * as path from 'path';
 import * as fs from 'fs';
@@ -29,6 +30,7 @@ test.describe('PDF Repair Operation', () => {
     await processButton.click();
 
     // 5. Wait for download
+    await downloadFirstResult(page);
     const download = await downloadPromise;
     const downloadPath = path.join(__dirname, 'fixtures', `repaired_test_${Date.now()}.pdf`);
     await download.saveAs(downloadPath);

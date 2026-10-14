@@ -388,7 +388,7 @@ export const itDictionary: Dictionary = {
         processingTitle: "Elaborazione in locale",
         successTitle: "I tuoi file sono pronti",
         successDescription:
-          "Il download parte automaticamente. Puoi scaricarli di nuovo.",
+          "I risultati sono pronti. Salva ogni file con il pulsante corrispondente.",
         resultsLabel: "Ultimo risultato",
         filesProcessedLabel: (count: number) =>
           `${count} ${

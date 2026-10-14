@@ -92,3 +92,19 @@ next-env.d.ts
 # Legacy AWS specific assets (deprecated)
 .aws
 aws-exports.js
+
+# Generated offline assets and notices
+/public/wasm/
+/public/licenses/
+/public/build-info.json
+
+# Android build products and signing secrets
+/android/.gradle/
+/android/**/build/
+/android/app/src/main/assets/web/
+/android/local.properties
+/android/release.properties
+*.jks
+*.keystore
+*.aab
+*.apk

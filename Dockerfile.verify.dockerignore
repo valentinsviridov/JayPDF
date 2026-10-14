@@ -1,0 +1,32 @@
+# Only send source, test fixtures, and build configuration to the test image.
+# Host dependencies, environment files, signing keys, and build outputs stay out.
+**
+!package.json
+!bun.lock
+!bunfig.toml
+!tsconfig.json
+!next.config.*
+!postcss.config.*
+!tailwind.config.*
+!eslint.config.*
+!playwright*.config.ts
+!src/**
+!content/**
+!public/**
+!scripts/**
+!tests/**
+!LICENSES/**
+!NOTICE
+!android/THIRD_PARTY_NOTICES.txt
+
+# Regenerate these from the container's locked dependencies.
+public/cmaps/
+public/standard_fonts/
+public/wasm/
+public/licenses/
+public/pdf.worker.min.js
+public/build-info.json
+
+# Browser tests generate these alongside their source files.
+tests/e2e/*.pdf
+tests/e2e/*.zip

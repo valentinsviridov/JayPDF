@@ -1,3 +1,4 @@
+import { downloadFirstResult } from '../helpers/downloads';
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import { PDFDocument } from 'pdf-lib';
@@ -48,6 +49,7 @@ test('PDF Merge Workflow', async ({ page }) => {
     // 4. Process
     const downloadPromise = page.waitForEvent('download');
     await page.getByRole('button', { name: 'Process 2 files' }).click();
+    await downloadFirstResult(page);
     const download = await downloadPromise;
 
     // 5. Verification

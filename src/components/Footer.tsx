@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useDictionary } from '../i18n/LocaleProvider';
 import { BrandConfig } from '../config/brand';
+import DownloadStatus from './DownloadStatus';
 
 export default function Footer() {
   const dictionary = useDictionary();
@@ -11,6 +12,7 @@ export default function Footer() {
 
   return (
     <footer className="text-center py-5 bg-[var(--bg-2)] border-t border-[var(--ui)] text-xs text-[var(--tx-3)]">
+      <DownloadStatus />
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1">
           <span className="font-semibold text-[var(--tx)]">JayPDF</span>
@@ -20,7 +22,9 @@ export default function Footer() {
           <span className="text-[var(--tx-3)]/80">Portions derived from PDFLince (MIT)</span>
         </div>
 
-        <div className="flex items-center gap-4 font-medium text-[var(--tx-2)]">
+        <div className="flex flex-wrap justify-center items-center gap-4 font-medium text-[var(--tx-2)]">
+          <Link href="/privacy/" className="hover:text-[var(--accent)]">Privacy</Link>
+          <Link href="/licenses/" className="hover:text-[var(--accent)]">Licenses</Link>
           <Link href={routes.home} className="hover:text-[var(--accent)] transition-colors">
             {footer.links.home}
           </Link>

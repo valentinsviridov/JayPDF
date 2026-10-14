@@ -244,7 +244,7 @@ const operationsFrContent: Record<OperationKey, OperationContent> = {
       {
         title: "Livraison évolutive",
         description:
-          "Générez plusieurs fichiers à la fois et téléchargez-les automatiquement pour l'archivage ou le transfert.",
+          "Générez plusieurs fichiers à la fois, puis enregistrez ceux dont vous avez besoin.",
       },
       {
         title: "Ajustements avancés",
@@ -257,10 +257,10 @@ const operationsFrContent: Record<OperationKey, OperationContent> = {
       steps: [
         "Téléchargez le PDF que vous souhaitez segmenter à partir de votre appareil.",
         "Choisissez si vous souhaitez diviser par un nombre fixe de pages ou par taille de fichier.",
-        "Appuyez sur « Traiter » et téléchargez automatiquement les documents nouvellement générés.",
+        "Appuyez sur « Traiter », puis utilisez le bouton à côté de chaque fichier pour l’enregistrer.",
       ],
       note:
-        "JayPDF télécharge le premier fichier immédiatement et enregistre le reste sur votre appareil sans étapes supplémentaires.",
+        "Enregistrez chaque résultat séparément. Les options disponibles dépendent de votre navigateur.",
     },
     useCasesTitle: "Scénarios typiques pour diviser des PDF",
     useCases: [

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">JayPDF</string>
+    <string name="webview_update">Please update Android System WebView or Chrome to use JayPDF, then reopen the app.</string>
+    <string name="leave_title">Close JayPDF?</string>
+    <string name="leave_message">Unsaved documents and results will be cleared. Save your results before closing.</string>
+    <string name="close">Close</string>
+    <string name="stay">Stay</string>
+    <string name="no_handler">No app is available to open this link.</string>
+    <string name="picker_unavailable">The Android file picker is unavailable.</string>
+</resources>

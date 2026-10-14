@@ -1,0 +1,3 @@
+[install]
+# Resolve new direct and transitive npm versions only after a 48-hour wait.
+minimumReleaseAge = 172800

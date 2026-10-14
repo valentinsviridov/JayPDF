@@ -1,0 +1,5 @@
+First Android release of JayPDF.
+• Offline PDF merging, splitting, compression and conversion.
+• System file picker for opening documents and saving results.
+• No internet permission, ads or analytics.
+• Bundled privacy policy, licenses and source information.

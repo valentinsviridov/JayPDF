@@ -244,7 +244,7 @@ const operationsEnContent: Record<OperationKey, OperationContent> = {
       {
         title: "Scalable delivery",
         description:
-          "Generate multiple files at once and download them automatically for archiving or handoff.",
+          "Generate multiple files at once, then save the files you need for archiving or handoff.",
       },
       {
         title: "Advanced adjustments",
@@ -257,10 +257,10 @@ const operationsEnContent: Record<OperationKey, OperationContent> = {
       steps: [
         "Upload the PDF you want to segment from your device.",
         "Pick whether you’ll split by a fixed number of pages or by file size.",
-        "Press “Process” and download the newly generated documents automatically.",
+        "Press “Process”, then use the save button beside each generated file.",
       ],
       note:
-        "JayPDF downloads the first file immediately and saves the rest to your device without extra steps.",
+        "Save each result separately. Your browser determines which save options are available.",
     },
     useCasesTitle: "Typical scenarios for splitting PDFs",
     useCases: [

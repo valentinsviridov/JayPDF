@@ -60,7 +60,7 @@ test.describe('UI Refinements', () => {
         await expect(page.getByText(/Your files have been processed locally/i)).toBeVisible();
 
         // 7. Verify the download button exists
-        const downloadButton = page.getByRole('button', { name: /Download Result/i });
+        const downloadButton = page.getByTestId('save-result').first();
         await expect(downloadButton).toBeVisible();
 
         // 8. Clear All — click "Process More Files" button which acts as clear

@@ -1,0 +1,77 @@
+plugins { id 'com.android.application' }
+
+def releaseProperties = new Properties()
+def releaseFile = rootProject.file('release.properties')
+if (releaseFile.exists()) releaseFile.withInputStream { releaseProperties.load(it) }
+def signingValue = { name -> System.getenv(name) ?: releaseProperties.getProperty(name) }
+def signingKeys = ['JAYPDF_KEYSTORE_FILE', 'JAYPDF_KEYSTORE_PASSWORD', 'JAYPDF_KEY_ALIAS', 'JAYPDF_KEY_PASSWORD']
+def hasSigning = signingKeys.every { signingValue(it) }
+
+android {
+    namespace 'org.jaypdf.app'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'org.jaypdf.app'
+        minSdk 26
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    signingConfigs {
+        if (hasSigning) {
+            release {
+                storeFile rootProject.file(signingValue('JAYPDF_KEYSTORE_FILE'))
+                storePassword signingValue('JAYPDF_KEYSTORE_PASSWORD')
+                keyAlias signingValue('JAYPDF_KEY_ALIAS')
+                keyPassword signingValue('JAYPDF_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        debug { applicationIdSuffix '.debug'; versionNameSuffix '-debug' }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasSigning) signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures { buildConfig true }
+    lint { abortOnError true; checkReleaseBuilds true }
+}
+
+tasks.register('verifyWebAssets') {
+    doLast {
+        ['index.html', 'privacy/index.html', 'licenses/index.html', 'pdf.worker.min.js',
+         'licenses/third-party.txt', 'wasm/openjpeg.wasm', 'build-info.json'].each {
+            if (!file("src/main/assets/web/${it}").isFile()) {
+                throw new GradleException('Bundled web assets are missing. Run bun run android:prepare from the repository root.')
+            }
+        }
+    }
+}
+tasks.named('preBuild').configure { dependsOn 'verifyWebAssets' }
+tasks.register('verifyReleaseSigning') {
+    doLast {
+        if (!hasSigning) throw new GradleException('Release signing is required. Configure android/release.properties or JAYPDF_KEYSTORE_* environment variables; see docs/android-release.md.')
+    }
+}
+// A release build must never silently fall back to a debug key or produce an unsigned bundle.
+tasks.configureEach {
+    if (name == 'preReleaseBuild') dependsOn 'verifyReleaseSigning'
+}
+
+dependencies {
+    implementation 'androidx.activity:activity:1.13.0'
+    implementation 'androidx.webkit:webkit:1.17.1'
+    implementation 'androidx.core:core:1.18.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test:rules:1.7.0'
+}

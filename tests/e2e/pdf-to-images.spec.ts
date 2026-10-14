@@ -1,3 +1,4 @@
+import { downloadFirstResult } from '../helpers/downloads';
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
@@ -54,6 +55,7 @@ test('PDF to Images Workflow', async ({ page }) => {
     const downloadPromise = page.waitForEvent('download');
     // Using handle with specific name from dictionary
     await page.getByRole('button', { name: 'Export images' }).click();
+    await downloadFirstResult(page);
     const download = await downloadPromise;
 
     // 7. Verification

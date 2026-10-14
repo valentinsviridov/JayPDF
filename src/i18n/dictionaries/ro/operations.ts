@@ -248,7 +248,7 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       {
         title: "Generare eficientă",
         description:
-          "Generează mai multe fișiere simultan și descarcă-le automat pentru arhivare sau transfer.",
+          "Generează mai multe fișiere simultan, apoi salvează-le pe cele necesare pentru arhivare sau transfer.",
       },
       {
         title: "Configurări avansate",
@@ -261,10 +261,10 @@ const operationsRoContent: Record<OperationKey, OperationContent> = {
       steps: [
         "Încarcă PDF-ul pe care dorești să-l fragmentezi de pe dispozitivul tău.",
         "Alege dacă dorești să divizezi după un număr fix de pagini sau prin intervale personalizate.",
-        "Apasă pe „Procesează” și descarcă automat documentele nou generate.",
+        "Apasă pe „Procesează”, apoi folosește butonul de lângă fiecare fișier pentru a-l salva.",
       ],
       note:
-        "JayPDF descarcă primul fișier imediat și le salvează pe restul pe dispozitivul tău fără pași suplimentari.",
+        "Salvează fiecare rezultat separat. Opțiunile disponibile depind de browser.",
     },
     useCasesTitle: "Scenarii tipice pentru divizarea PDF-urilor",
     useCases: [

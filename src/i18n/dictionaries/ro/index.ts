@@ -349,7 +349,7 @@ export const roDictionary: Dictionary = {
         processingTitle: "Procesare locală",
         successTitle: "Fișierele tale sunt gata",
         successDescription:
-          "Descărcarea va începe în mod automat.",
+          "Rezultatele sunt gata. Folosește butonul de lângă fiecare fișier pentru a-l salva.",
         resultsLabel: "Ultimul rezultat",
         filesProcessedLabel: (count: number) =>
           `${count} fișier${count > 1 ? "e" : ""} procesat${count > 1 ? "e" : ""}`,

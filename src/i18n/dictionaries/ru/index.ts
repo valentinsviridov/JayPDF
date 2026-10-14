@@ -342,7 +342,7 @@ export const ruDictionary: Dictionary = {
         processingTitle: "Локальная обработка",
         successTitle: "Ваши файлы готовы",
         successDescription:
-          "Загрузка начнётся автоматически.",
+          "Результаты готовы. Сохраните каждый файл кнопкой рядом с ним.",
         resultsLabel: "Последний результат",
         filesProcessedLabel: (count: number) =>
           `${count} файл${count === 1 ? "" : count < 5 ? "а" : "ов"} обработан${count === 1 ? "" : count < 5 ? "о" : "о"}`,

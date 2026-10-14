@@ -11,8 +11,7 @@ async function copyWorker() {
   try {
     await fs.access(source);
   } catch {
-    console.warn('[setup-pdf-worker] pdf.worker.min.mjs not found, skipping copy. Did you install dependencies?');
-    return;
+    throw new Error('pdf.worker.min.mjs not found. Run bun install before building.');
   }
 
   await fs.mkdir(destinationDir, { recursive: true });
@@ -38,7 +37,7 @@ async function copyWorker() {
     }
     console.log(`[setup-pdf-worker] Copied CMaps to ${path.relative(projectRoot, cmapsDest)}`);
   } catch (err) {
-    console.warn(`[setup-pdf-worker] Failed to copy CMaps: ${err.message}`);
+    throw new Error(`Failed to copy CMaps: ${err.message}`);
   }
 
   // Copy Standard Fonts
@@ -55,8 +54,11 @@ async function copyWorker() {
     }
     console.log(`[setup-pdf-worker] Copied Standard Fonts to ${path.relative(projectRoot, fontsDest)}`);
   } catch (err) {
-    console.warn(`[setup-pdf-worker] Failed to copy Standard Fonts: ${err.message}`);
+    throw new Error(`Failed to copy Standard Fonts: ${err.message}`);
   }
+
+  await fs.cp(path.join(projectRoot, 'node_modules/pdfjs-dist/wasm'), path.join(destinationDir, 'wasm'), { recursive: true });
+  console.log('[setup-pdf-worker] Copied local PDF.js WASM codecs and licenses');
 }
 
 copyWorker().catch((error) => {

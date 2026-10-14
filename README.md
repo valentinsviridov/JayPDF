@@ -21,6 +21,16 @@ JayPDF is designed to process documents locally in your browser.
 - No document-content telemetry.
 - No account is required for local PDF processing.
 
+### Saving results
+
+Processing keeps the results on screen until you choose to save them. On supporting browsers over HTTPS, **Save as…** opens a destination and filename picker. Each batch result has its own save action. Cancelling keeps the result available to retry.
+
+Browsers without the picker API, including Safari and older Android browsers, show **Download** and use the browser's existing download behavior. **Download instead** is also available when a picker is present but blocked or fails. A browser may open a file for viewing; use its download/share menu to save it. No server upload is involved. The packaged Android app uses its native system save picker.
+
+Run `./scripts/verify-all.sh` for the full verification suite in Docker, including Chromium picker, Android fallback, and desktop/iPhone WebKit compatibility tests. No browser installation or system-library installation is needed on the host. The picker is simulated to exercise cancellation, write failures and user activation; real device dialogs still need manual checks.
+
+To run just the save tests directly on the host, install browser dependencies with `bunx --no-install playwright install --with-deps chromium webkit`, then run `bun run build` and `bun run test:save`. This optional path may require sudo on Linux.
+
 ## 🚀 Getting Started
 
 ### Clone and Run Locally
@@ -107,13 +117,22 @@ The UI never imports `pdf-lib`, PDF.js, or the worker client directly. `src/comp
 ### 4. Development Tools (DevX)
 
 - **Package Manager**: **`bun`** is the mandatory package manager and script runner. Do not use `npm` or `yarn`.
+- **Dependency Updates**: `bunfig.toml` requires newly resolved npm packages to be at least 48 hours old, including transitive dependencies. Use `bun update` for compatible updates and commit both `package.json` and `bun.lock`. Docker builds use the same configuration and frozen lockfile. Existing locked versions are retained; Android dependency dates are reviewed separately. Transitive security fixes may require regenerating `bun.lock` under the age gate, because `bun update` keeps locked transitive versions that still satisfy their ranges. See [the October 2026 dependency and security review](docs/dependency-updates-2026-10-14.md) for the versions selected, advisories addressed, and compatibility limits.
 - **Linting & Formatting**: `eslint` and `prettier`.
 - **Testing**: Bun unit/operation contract tests cover byte-level behavior and worker lifecycle; **`@playwright/test`** covers browser workers, canvas/PDF.js rendering, UI, and downloads.
-- **Verification Script**: `./scripts/verify-all.sh` must be run before finalizing any code. It runs type-checking, linting, builds, Playwright tests, and Docker builds.
+- **Verification Script**: `./scripts/verify-all.sh` must be run before finalizing any code. The host needs only Bash and a running Docker daemon accessible to your user. Bun, Node, dependencies, Chromium, WebKit, linting, type checks, unit tests, and browser tests run in a disposable container. The script then builds the production image as `jaypdf:local`.
+
+The first verification run downloads the container tooling and browser libraries; later runs reuse Docker's cached layers. Browser versions come from the frozen Bun lockfile. The container uses a copy of the source, leaving host dependencies and build outputs untouched. Test reports are copied to a new `test-results/docker-*` directory on success or failure, and the container is removed. The verification image remains cached as `jaypdf:verify`. See [Dockerfile.verify](Dockerfile.verify) for the environment and its companion ignore file for the build context.
 
 ---
 
 ## 📱 Progressive Web App (PWA) & Offline Support
+
+### Android / Google Play
+
+JayPDF also includes an offline Android app in `android/`, with no internet permission, Android document picking/saving, bundled privacy and license pages, and signed Android App Bundle builds for paid Google Play distribution.
+
+Run `bun run android:debug` to prepare the web assets and build a debug APK (Android SDK and JDK required). Run `bun run android:bundle` after configuring your upload key to build a release AAB. See [the Android release guide](docs/android-release.md) for the €1 paid listing, signing, privacy declarations, source distribution, CI, and device testing.
 
 JayPDF is fully installable as a **Progressive Web App (PWA)** on mobile devices and desktop computers, offering seamless offline execution:
 
@@ -156,4 +175,3 @@ The original MIT copyright and license notice is preserved in
 
 JayPDF is an independent project and is not affiliated with or
 endorsed by the PDFLince project or its maintainer.
-

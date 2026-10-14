@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { isAndroidApp } from '../lib/platform';
 
 export default function ServiceWorkerRegister() {
   useEffect(() => {
+    if (isAndroidApp()) return;
     if (
       typeof window !== "undefined" &&
       "serviceWorker" in navigator &&

@@ -1,4 +1,4 @@
-import routeMapJson from "../../content/i18n-route-map.json" assert { type: "json" };
+import routeMapJson from "../../content/i18n-route-map.json" with { type: "json" };
 import { DEFAULT_LOCALE, Locale } from "./config";
 import { OperationKey } from "../types/operations";
 

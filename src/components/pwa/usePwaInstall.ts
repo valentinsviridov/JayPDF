@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { isAndroidApp } from '../../lib/platform';
 
 export interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
@@ -22,6 +23,7 @@ export function isRunningInPwaMode(): boolean {
   if (typeof window === "undefined") return false;
 
   return (
+    isAndroidApp() ||
     window.matchMedia("(display-mode: standalone)").matches ||
     window.matchMedia("(display-mode: fullscreen)").matches ||
     window.matchMedia("(display-mode: minimal-ui)").matches ||

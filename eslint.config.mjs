@@ -2,7 +2,7 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTypescript from "eslint-config-next/typescript";
 
 const eslintConfig = [
-  { ignores: ["public/**", "out/**", ".next/**"] },
+  { ignores: ["public/**", "out/**", ".next/**", "android/**/build/**", "android/app/src/main/assets/**"] },
   ...nextVitals,
   ...nextTypescript,
   {

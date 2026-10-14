@@ -341,7 +341,7 @@ export const ptDictionary: Dictionary = {
         processingTitle: "Processando localmente",
         successTitle: "Seus arquivos estão prontos",
         successDescription:
-          "Os downloads começam automaticamente. Aqui você pode baixá-los novamente.",
+          "Seus resultados estão prontos. Use o botão ao lado de cada arquivo para salvá-lo.",
         resultsLabel: "Resultado recente",
         filesProcessedLabel: (count: number) =>
           `${count} ${count === 1 ? "arquivo processado" : "arquivos processados"}`,

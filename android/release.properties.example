@@ -1,0 +1,6 @@
+# Copy to release.properties (gitignored). Prefer environment variables in CI.
+# Relative paths are resolved from android/. Keep the actual keystore outside the repo.
+JAYPDF_KEYSTORE_FILE=/absolute/path/to/jaypdf-upload.jks
+JAYPDF_KEYSTORE_PASSWORD=
+JAYPDF_KEY_ALIAS=jaypdf-upload
+JAYPDF_KEY_PASSWORD=

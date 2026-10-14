@@ -177,7 +177,7 @@ const operationsEsContent: Record<OperationKey, OperationContent> = {
       {
         title: "Entrega escalable",
         description:
-          "Genera múltiples archivos en un solo paso y descárgalos automáticamente listos para archivar o enviar.",
+          "Genera varios archivos a la vez y guarda los que necesites para archivar o enviar.",
       },
       {
         title: "Ajustes avanzados",
@@ -190,10 +190,10 @@ const operationsEsContent: Record<OperationKey, OperationContent> = {
       steps: [
         "Carga el PDF que quieres segmentar desde tu equipo.",
         "Elige si prefieres dividir por número fijo de páginas o según el tamaño del archivo.",
-        "Pulsa \"Procesar\" y descarga los documentos generados automáticamente.",
+        "Pulsa «Procesar» y luego usa el botón junto a cada archivo para guardarlo.",
       ],
       note:
-        "JayPDF descargará el primer archivo de inmediato y guardará los siguientes en tu dispositivo sin pasos extra.",
+        "Guarda cada resultado por separado. Las opciones disponibles dependen de tu navegador.",
     },
     useCasesTitle: "Escenarios habituales para dividir PDFs",
     useCases: [

@@ -25,9 +25,9 @@
 
 ### 1.3 Project Heritage & Attribution
 JayPDF is an independent, modular fork derived in part from **PDFLince** (originally created by Guillermo Siesto / GSiesto), maintained under the MIT License. In accordance with the MIT license and the project charter:
-- The original MIT permission and copyright notices are preserved in [`LICENSE`](file:///home/alstein/projects/pdf-lince/LICENSE).
+- The original MIT permission and copyright notices are preserved in [`LICENSE`](LICENSE).
 - Portions derived from PDFLince are explicitly attributed in the UI footer and metadata.
-- The project is decoupled into an independent brand configuration located in [`src/config/brand.ts`](file:///home/alstein/projects/pdf-lince/src/config/brand.ts).
+- The project is decoupled into an independent brand configuration located in [`src/config/brand.ts`](src/config/brand.ts).
 
 ---
 
@@ -90,7 +90,7 @@ The system is structured as a **modular monolith** with clear architectural boun
 
 ## 3. Modular PDF Engine (`src/modules/pdf/`)
 
-Every PDF operation is encapsulated in its own self-contained directory under [`src/modules/pdf/operations/`](file:///home/alstein/projects/pdf-lince/src/modules/pdf/operations).
+Every PDF operation is encapsulated in its own self-contained directory under [`src/modules/pdf/operations/`](src/modules/pdf/operations).
 
 ### 3.1 Design Principles
 1. **No Inter-Operation Dependencies**: An operation module (e.g., `merge`) never imports another operation module (e.g., `split`).
@@ -120,8 +120,8 @@ Every PDF operation is encapsulated in its own self-contained directory under [`
 CPU-intensive operations run in a dedicated Web Worker to maintain smooth 60 FPS UI interactivity.
 
 ### 4.1 Worker Protocol
-- **Worker Script**: [`src/workers/pdf.worker.ts`](file:///home/alstein/projects/pdf-lince/src/workers/pdf.worker.ts) acts as a generic protocol endpoint. It imports the lazy operation registry instead of hardcoding a manual feature switch.
-- **Client Client**: [`src/modules/pdf/worker-client.ts`](file:///home/alstein/projects/pdf-lince/src/modules/pdf/worker-client.ts) manages worker instantiation, request correlation using unique request IDs, and promise settlements.
+- **Worker Script**: [`src/workers/pdf.worker.ts`](src/workers/pdf.worker.ts) acts as a generic protocol endpoint. It imports the lazy operation registry instead of hardcoding a manual feature switch.
+- **Client Client**: [`src/modules/pdf/worker-client.ts`](src/modules/pdf/worker-client.ts) manages worker instantiation, request correlation using unique request IDs, and promise settlements.
 - **Zero-Copy Transfers**: Input `ArrayBuffer`s and output byte arrays are placed in the `postMessage` transfer list, avoiding expensive memory copies.
 
 ### 4.2 Error Handling & Fallback Model
@@ -133,7 +133,7 @@ CPU-intensive operations run in a dedicated Web Worker to maintain smooth 60 FPS
 
 ## 5. UI Architecture & State Machine
 
-The user interface in [`src/components/pdf-processor/`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor) is built around a centralized reducer and workspace controller ([`useWorkspace`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor/controller/use-workspace.ts)).
+The user interface in [`src/components/pdf-processor/`](src/components/pdf-processor) is built around a centralized reducer and workspace controller ([`useWorkspace`](src/components/pdf-processor/controller/use-workspace.ts)).
 
 ### 5.1 Workspace Phases
 The workspace moves through explicit lifecycle stages:
@@ -150,16 +150,16 @@ The workspace moves through explicit lifecycle stages:
  └─────────┘                      └─────────┘                        └────────────┘
 ```
 
-1. **`EMPTY`**: Universal accessible drag-and-drop dropzone ([`FileUploader.tsx`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor/FileUploader.tsx)).
+1. **`EMPTY`**: Universal accessible drag-and-drop dropzone ([`FileUploader.tsx`](src/components/pdf-processor/FileUploader.tsx)).
 2. **`READY`**: Analyzes file count and types:
    - Multiple PDFs $\to$ Recommends **Merge**.
    - Multiple Images $\to$ Recommends **Images to PDF**.
    - Single PDF $\to$ Recommends **Compress** (or focused deep-linked route operation).
 3. **`EDITING`**: Renders contextual interactive tools when required:
-   - Visual page organizer ([`PageSelector.tsx`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor/PageSelector.tsx), [`PageOrderer.tsx`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor/PageOrderer.tsx))
-   - Visual crop overlay ([`UnifiedCropInterface.tsx`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor/UnifiedCropInterface.tsx))
-   - Rotation controls ([`RotateWorkspace.tsx`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor/features/RotateWorkspace.tsx))
-4. **`PROCESSING`**: Displays truthful progress ([`InsightfulProgressIndicator.tsx`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor/InsightfulProgressIndicator.tsx)) indicating stages, elapsed time, and per-file progress without fake percentages.
+   - Visual page organizer ([`PageSelector.tsx`](src/components/pdf-processor/PageSelector.tsx), [`PageOrderer.tsx`](src/components/pdf-processor/PageOrderer.tsx))
+   - Visual crop overlay ([`UnifiedCropInterface.tsx`](src/components/pdf-processor/UnifiedCropInterface.tsx))
+   - Rotation controls ([`RotateWorkspace.tsx`](src/components/pdf-processor/features/RotateWorkspace.tsx))
+4. **`PROCESSING`**: Displays truthful progress ([`InsightfulProgressIndicator.tsx`](src/components/pdf-processor/InsightfulProgressIndicator.tsx)) indicating stages, elapsed time, and per-file progress without fake percentages.
 5. **`RESULT`**: Inline presentation of output files, size reductions, compression savings, and explicit individual / batch download buttons.
 6. **`ERROR`**: Non-blocking inline errors with actionable recovery (e.g., 1-click **"Fix with Auto-Repair & Retry"** button for corrupted files).
 
@@ -286,14 +286,14 @@ Create `src/modules/pdf/operations/watermark/`:
    ```
 
 ### Step 2: Register in Engine Type Maps
-1. Add to [`src/modules/pdf/operation-map.ts`](file:///home/alstein/projects/pdf-lince/src/modules/pdf/operation-map.ts):
+1. Add to [`src/modules/pdf/operation-map.ts`](src/modules/pdf/operation-map.ts):
    ```ts
    export interface PdfOperationMap {
      // ... existing operations
      watermark: { options: WatermarkOptions; result: Uint8Array };
    }
    ```
-2. Add catalog entry in [`src/modules/pdf/catalog.ts`](file:///home/alstein/projects/pdf-lince/src/modules/pdf/catalog.ts):
+2. Add catalog entry in [`src/modules/pdf/catalog.ts`](src/modules/pdf/catalog.ts):
    ```ts
    watermark: {
      key: 'watermark',
@@ -303,20 +303,20 @@ Create `src/modules/pdf/operations/watermark/`:
      defaultOptions: DEFAULT_WATERMARK_OPTIONS,
    }
    ```
-3. Add lazy loader in [`src/modules/pdf/registry.ts`](file:///home/alstein/projects/pdf-lince/src/modules/pdf/registry.ts):
+3. Add lazy loader in [`src/modules/pdf/registry.ts`](src/modules/pdf/registry.ts):
    ```ts
    watermark: async () => (await import('./operations/watermark')).watermarkOperation,
    ```
 
 ### Step 3: Add Unit Contract Tests
-In [`tests/unit/pdf/operations.test.ts`](file:///home/alstein/projects/pdf-lince/tests/unit/pdf/operations.test.ts), add a test generating an in-memory PDF, executing the operation, and asserting document correctness.
+In [`tests/unit/pdf/operations.test.ts`](tests/unit/pdf/operations.test.ts), add a test generating an in-memory PDF, executing the operation, and asserting document correctness.
 
 ### Step 4: Add UI Option Panel
-Create `src/components/pdf-processor/features/options/WatermarkOptions.tsx` and register it inside [`ProcessingOptions.tsx`](file:///home/alstein/projects/pdf-lince/src/components/pdf-processor/ProcessingOptions.tsx).
+Create `src/components/pdf-processor/features/options/WatermarkOptions.tsx` and register it inside [`ProcessingOptions.tsx`](src/components/pdf-processor/ProcessingOptions.tsx).
 
 ### Step 5: Add Localized Dictionaries & Routes
-1. Add dictionary labels in [`src/i18n/dictionaries/dictionary-types.ts`](file:///home/alstein/projects/pdf-lince/src/i18n/dictionaries/dictionary-types.ts) and all 9 locale index files (`src/i18n/dictionaries/*/index.ts`).
-2. Add localized route paths in [`src/i18n/routing.ts`](file:///home/alstein/projects/pdf-lince/src/i18n/routing.ts).
+1. Add dictionary labels in [`src/i18n/dictionaries/dictionary-types.ts`](src/i18n/dictionaries/dictionary-types.ts) and all 9 locale index files (`src/i18n/dictionaries/*/index.ts`).
+2. Add localized route paths in [`src/i18n/routing.ts`](src/i18n/routing.ts).
 
 ### Step 6: Verify
 Run `./scripts/verify-all.sh` to ensure all tests, static builds, and Docker packaging pass cleanly.
