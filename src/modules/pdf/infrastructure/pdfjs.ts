@@ -30,11 +30,17 @@ function getRuntimeOrigin(): string {
   throw new PdfModuleError('UNSUPPORTED_CAPABILITY', 'PDF.js requires a browser or worker location');
 }
 
+export function getPdfJsWorkerSrc(version: string): string {
+  return `/pdf.worker.min.js?v=${encodeURIComponent(version)}`;
+}
+
 async function getPdfJsModule(): Promise<PdfJsModule> {
   if (!pdfjsModulePromise) {
     pdfjsModulePromise = import('pdfjs-dist/legacy/build/pdf').then(module => {
       if (!module.GlobalWorkerOptions.workerSrc) {
-        module.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
+        // Versioned so a cached worker from an older PDF.js release is never paired with
+        // a newer API (PDF.js refuses mismatched versions and every render fails).
+        module.GlobalWorkerOptions.workerSrc = getPdfJsWorkerSrc(module.version);
       }
       return module;
     });

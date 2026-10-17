@@ -1,5 +1,5 @@
-import { PdfOperationKey, ProcessorOptions } from '../../../modules/pdf/operation-map';
-import { PDF_FEATURES, isPdfFile, isImageFile } from '../../../modules/pdf/catalog';
+import { PdfOperationKey, ProcessorOptions } from '../../../modules/pdf';
+import { PDF_FEATURES, isPdfFile, isImageFile } from '../../../modules/pdf';
 
 export type WorkspacePhase =
   | 'EMPTY'
@@ -101,7 +101,13 @@ export function workspaceReducer(state: WorkspaceState, action: WorkspaceAction)
       };
     }
     case 'CLEAR_FILES':
-      return { ...initialWorkspaceState };
+      return {
+        ...initialWorkspaceState,
+        activeKey: state.activeKey,
+        options: state.activeKey && PDF_FEATURES[state.activeKey]
+          ? { ...PDF_FEATURES[state.activeKey].defaults }
+          : {},
+      };
     case 'ANALYSIS_COMPLETE': {
       // If the user is already on a specific tool (activeKey is set), don't override it.
       // Only use the recommendedKey if there is no active tool selected.

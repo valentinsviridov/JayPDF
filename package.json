@@ -27,7 +27,7 @@
     "android:bundle": "bun run android:prepare && cd android && ./gradlew bundleRelease",
     "android:check": "bun scripts/check-android.mjs",
     "android:test-web": "playwright test --config=playwright.android.config.ts",
-    "dev": "cross-env STRICT_LINT=true next dev --turbo",
+    "dev": "bun run setup-worker && cross-env STRICT_LINT=true next dev --turbo",
     "lint": "cross-env STRICT_LINT=true eslint .",
     "lint:fix": "cross-env STRICT_LINT=true eslint --fix .",
     "preview": "bun run build && bunx serve out --single",

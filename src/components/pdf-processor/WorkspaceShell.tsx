@@ -16,6 +16,7 @@ import ProcessingOptions from './ProcessingOptions';
 import CompressionPreviewCard, { PreviewStatus } from './CompressionPreviewCard';
 import { InsightfulProgressIndicator } from './InsightfulProgressIndicator';
 import type { PdfProgressUpdate } from '../../modules/pdf/core/contracts';
+import type { PdfToImagesResult } from '../../modules/pdf';
 import { resolveGeneratedFilename } from '../../lib/filename';
 import { PwaInstallPrompt } from '../pwa/PwaInstallPrompt';
 import ResultDownloads from './ResultDownloads';
@@ -187,7 +188,7 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
       originalName,
       index,
       modeNames,
-      bundleAsZip: Boolean((state.options as any).bundleAsZip),
+      bundleAsZip: (state.options as any).bundleAsZip !== false,
     });
   };
 
@@ -326,8 +327,16 @@ export default function WorkspaceShell({ initialMode }: WorkspaceShellProps) {
           return r?.blob || r;
         };
 
-        let resultsArray: any[] = [];
-        if (Array.isArray(result)) {
+        let resultsArray: any[];
+        if (state.activeKey === 'pdfToImages') {
+          const imagesResult = result as PdfToImagesResult;
+          resultsArray = imagesResult.kind === 'zip'
+            ? [{
+                blob: imagesResult.blob,
+                filename: resolveDownloadName('pdfToImages', activeFiles[0]?.name),
+              }]
+            : imagesResult.files.map(file => ({ blob: file.blob, filename: file.name }));
+        } else if (Array.isArray(result)) {
           resultsArray = result.map((r, i) => ({
             blob: getBlob(r),
             filename: resolveDownloadName(state.activeKey!, (r as any).name || activeFiles[0]?.name, Array.isArray(result) && result.length > 1 ? i : undefined),

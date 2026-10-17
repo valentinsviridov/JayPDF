@@ -36,7 +36,7 @@ export async function pdfToImages(
     const format = options.imageOutputFormat ?? 'png';
     const extension = format === 'png' ? 'png' : 'jpg';
     const fallbackName = isNamedBinarySource(input) ? stripExtension(input.name) : 'jaypdf';
-    const baseName = sanitizeImageBaseName(options.imageBaseName ?? fallbackName);
+    const baseName = sanitizeImageBaseName(options.imageBaseName?.trim() || fallbackName);
     const files: Array<{ name: string; blob: Blob }> = [];
 
     for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
